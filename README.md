@@ -1,11 +1,11 @@
 # IngeniumDevelopment
 
 Integrantes
-	Dante Maximiliano Flores Moreno			A01207543
-	Andres Yunis Philibert					A01215638
-	José Manuel García Lug					A01207405
-	Alejandro Álvarez Palafox				A01207765
-	Paulo Eugenio Solís Álvarez				A01207593
+	Dante Maximiliano Flores Moreno				A01207543 <br />
+	Andres Yunis Philibert					A01215638 <br />
+	José Manuel García Lug					A01207405 <br />
+	Alejandro Álvarez Palafox				A01207765 <br />
+	Paulo Eugenio Solís Álvarez				A01207593 <br />
 	
 
 	
