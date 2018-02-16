@@ -13,10 +13,6 @@
 </head>
 <body>
 <header>
-    <div class="logo-header row">
-        <div class="col-sm-1 s2" ><a><img src="images/logo.png" alt="Image logo1" style="width:80px; height: 80px;"></a></div>
-        <div class="col-sm-2 s10">Yunis Creativos</div>
-    </div>
     <nav >
         <div class="parent">
             <div class="child">
@@ -42,7 +38,7 @@
 
 
 
-    
+
 
 
   <div id="index-banner" class="parallax-container">
@@ -50,13 +46,13 @@
       <div class="container">
         <br><br>
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">[Nombre Evento]</h1>
+        <h1 class="header center white-text text-lighten-2">[Nombre Evento]</h1>
         <br><br>
 
       </div>
     </div>
-    <div class="parallax"><img src="Images/background1.jpg" alt="Unsplashed background img 1"></div>
-        
+    <div class="parallax"><img src="Images/background1.png" alt="Unsplashed background img 1"></div>
+
   </div>
   <div class="container">
     <article>
@@ -68,11 +64,11 @@
                           <label>
                           <i class="material-icons prefix">account_circle</i>Nombre completo:
                           <input id="icon_prefix" type="text" class="validate" required/>
-                          </label>  
+                          </label>
                         </p>
                         <br>
                         <p>
-                            <label>Fecha Nacimiento: 
+                            <label>Fecha Nacimiento:
                                 <input type="date" class="validate" required/>
                             </label>
                         </p>
@@ -91,14 +87,14 @@
                         </p>
                         <br>
                         <p>
-                            <label>*Correo: 
+                            <label>*Correo:
                                 <input type="email" placeholder="nombre@dominio.com" required/>
                             </label>
                         </p>
                         <br>
                         <p>
                             <label>
-                              <i class="material-icons prefix">phone</i>Número de teléfono: 
+                              <i class="material-icons prefix">phone</i>Número de teléfono:
                                 <input type="number" required/>
                             </label>
                         </p>
@@ -173,23 +169,33 @@
                           </label>
                         </p>
                         <br>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
+                        <button class="btn waves-effect waves-light black modal-trigger" type="submit" name="action" href="#popup">Registrar
                           <i class="material-icons right">send</i>
                         </button>
                         <br><br>
-        
-                        
+                        <!-- Modal Structure -->
+                        <div id="popup" class="modal">
+                          <div class="modal-content">
+                            <h4>Modal Header</h4>
+                            <p>A bunch of text</p>
+                          </div>
+                          <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                          </div>
+                        </div>
+
+
                   </form>
                 <footer></footer>
             </article>
   </div>
 
-  <footer class="page-footer teal">
+  <footer class="page-footer black">
     <div class="container">
       <div class="row">
-      
+
       <div class="container">
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Made by <a class="black-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
   </footer>
