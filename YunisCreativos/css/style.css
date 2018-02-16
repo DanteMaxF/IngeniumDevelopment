@@ -6,7 +6,77 @@
  * Made By MaterializeCSS.com
  */
 
-nav ul a,
+.parent{
+    background: -webkit-linear-gradient(top, #000000 , #1e1d1d);
+    height: 60px;
+    width: 100%;
+    list-style: none;
+    color: white;
+
+
+}
+
+.child{
+    ling-height: 40px;
+    background: -webkit-linear-gradient(top, #000000 , #1e1d1d);
+    height: 40px;width: 1200px;
+    margin: 0 auto;
+
+}
+.button{
+    background:  -webkit-linear-gradient(top,#000000,#1e1d1d);
+    text-decoration: none;font-size: 24px;color: white;
+    display: inline-block;
+    padding-top: 5px;padding-bottom: 5px;
+    padding-left: 10px; padding-right: 10px;
+    line-height: 30px;
+    border-left: 1px solid white;
+
+}
+
+ul li {
+    float: left;
+}
+.col-sm-2{
+
+    width: 90%;
+    text-align: center;
+    font-size: 100px;
+    padding-top: 15px;
+
+
+
+
+}
+.col-sm-1{
+    float: left;
+    width: 10%;
+    border-right: solid black;
+    padding-top: 15px;
+
+
+
+
+}
+div.logo-header {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100px;
+    line-height: 56px;
+    font-size: 2.1rem;
+    padding-left: 200px;
+
+
+
+
+}
+
+.navigation{
+    background-color: white;
+
+
+}
+
 nav .brand-logo {
   color: #444;
 }
