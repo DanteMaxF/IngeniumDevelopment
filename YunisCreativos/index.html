@@ -1,274 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Título</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Parallax Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body id="top">
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
 
-<div class="wrapper row1">
-  <header id="header" class="clear">
-    <div id="logo" class="fl_left">
-      <h1><a href="index.html">Inicio</a></h1>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
-    <nav id="mainav" class="fl_right">
-      <ul class="clear">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="#">Pages</a>
-        </li>
-        <li><a  href="#">Dropdown</a>
-        </li>
-        <li><a href="#">Link Text</a></li>
-        <li><a href="#">Link Text</a></li>
-      </ul>
-    </nav>
+  </nav>
 
-  </header>
-</div>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+        <div class="row center">
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+        </div>
+        <br><br>
 
-<div class="wrapper">
-  <div id="slider" class="clear"> 
+      </div>
+    </div>
+    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
 
-    <div class="flexslider basicslider">
-      <ul class="slides">
-        <li><img src="images" alt="">
-          <div class="txtoverlay">
-            <div class="centralise">
-              <div class="verticalwrap">
-                <article>
-                  <h2 class="heading uppercase">ivamus commodo mi a lobortis ultrices</h2>
-                  <p><a class="btn orange pushright" href="#">Leo facilisis odio</a> <a class="btn red" href="#">Quis mollis nibh dolor</a></p>
-                </article>
-              </div>
-            </div>
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
           </div>
-        </li>
-        <li><img src="images/demo/slides/02.png" alt="">
-          <div class="txtoverlay">
-            <div class="centralise">
-              <div class="verticalwrap">
-                <article>
-                  <h2 class="heading uppercase">Curabitur ullamcorper malesuada tempor</h2>
-                  <p><a class="btn red" href="#">Suspendisse lobortis mauris</a></p>
-                </article>
-              </div>
-            </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
           </div>
-        </li>
-        <li><img src="images" alt="">
-          <div class="txtoverlay">
-            <div class="centralise">
-              <div class="verticalwrap">
-                <article>
-                  <h2 class="heading uppercase">Fusce in nisi auctor imperdiet quam quis</h2>
-                  <p><a class="btn orange pushright" href="#">Integer posuere arcu nec</a> <a class="btn red" href="#">Odio sollicitudin sagittis</a></p>
-                </article>
-              </div>
-            </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
 
-<div class="wrapper row2">
-  <div id="services" class="clear">
-    <div class="group">
-      <div class="one_third first">
-        <article class="service"><i class="icon red circle fa fa-bell-o"></i>
-          <h2 class="heading">Phasellus accumsan velit lacus</h2>
-          <p class="btmspace-10">Ut vitae mi turpis donec convallis turpis bibendum dolor hendrerit eget ultrices.</p>
-          <p><a href="#">Read More &raquo;</a></p>
-        </article>
-      </div>
-      <div class="one_third">
-        <article class="service"><i class="icon orange circle fa fa-bicycle"></i>
-          <h2 class="heading">Duis in dictum erat phasellus cursus</h2>
-          <p class="btmspace-10">Ut augue ante euismod vitae scelerisque non tincidunt ut velit integer et iaculis.</p>
-          <p><a href="#">Read More &raquo;</a></p>
-        </article>
-      </div>
-      <div class="one_third">
-        <article class="service"><i class="icon green circle fa fa-mortar-board"></i>
-          <h2 class="heading">Vivamus accumsan mollis mi in ultricies</h2>
-          <p class="btmspace-10">Nullam commodo orci ut justo bibendum tristique proin vel est at risus volutpat.</p>
-          <p><a href="#">Read More &raquo;</a></p>
-        </article>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
       </div>
     </div>
-    <!-- ################################################################################################ -->
-    <div class="clear"></div>
+    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
   </div>
-</div>
 
-<div class="wrapper row6">
-  <section id="cta" class="clear"> 
+  <div class="container">
+    <div class="section">
 
-    <div class="three_quarter first">
-      <h2 class="heading">Fusce quis feugiat urna dui leo egestas augue</h2>
-      <p>Aenean semper elementum tellus, ut placerat leo. Quisque vehicula, urna sit amet pulvinar dapibus.</p>
-    </div>
-    <div class="one_quarter"><a class="btn" href="#">Get it now <span class="fa fa-arrow-right"></span></a></div>
-
-  </section>
-</div>
-
-<div class="wrapper row2">
-  <div class="latest"> 
-
-    <ul class="nospace group">
-      <li>
-        <figure><a class="overlay" href="#"><img src="images/demo/latest/01.png" alt=""></a>
-          <figcaption class="inspace-30 center">
-            <p class="bold uppercase">Ante lectus laoreet</p>
-            <p><a href="#">View Here &raquo;</a></p>
-          </figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure><a class="overlay" href="#"><img src="images/demo/latest/01.png" alt=""></a>
-          <figcaption class="inspace-30 center">
-            <p class="bold uppercase">Non facilisis tellus</p>
-            <p><a href="#">View Here &raquo;</a></p>
-          </figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure><a class="overlay" href="#"><img src="images/demo/latest/01.png" alt=""></a>
-          <figcaption class="inspace-30 center">
-            <p class="bold uppercase">In egestas tincidunt</p>
-            <p><a href="#">View Here &raquo;</a></p>
-          </figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure><a class="overlay" href="#"><img src="images/demo/latest/01.png" alt=""></a>
-          <figcaption class="inspace-30 center">
-            <p class="bold uppercase">Integer ullamcorper</p>
-            <p><a href="#">View Here &raquo;</a></p>
-          </figcaption>
-        </figure>
-      </li>
-      <li>
-        <figure><a class="overlay" href="#"><img src="images/demo/latest/01.png" alt=""></a>
-          <figcaption class="inspace-30 center">
-            <p class="bold uppercase">Cras lectus pulvinar</p>
-            <p><a href="#">View Here &raquo;</a></p>
-          </figcaption>
-        </figure>
-      </li>
-    </ul>
-
-  </div>
-</div>
-
-<div class="wrapper row3">
-  <main class="container nospace clear"> 
-
-    <div class="group">
-      <div class="one_half first paditout">
-        <h2 class="heading uppercase btmspace-50">Integer varius enim id augue faucibus mattis</h2>
-        <ul class="nospace group">
-          <li class="btmspace-30">
-            <article class="service largeicon"><i class="icon nobg circle fa fa-ra"></i>
-              <h6 class="heading"><a href="#">Vestibulum nibh enim</a></h6>
-              <p>Aenean semper elementum tellus, ut placerat leo. Quisque vehicula, urna sit amet.</p>
-            </article>
-          </li>
-          <li class="btmspace-30">
-            <article class="service largeicon"><i class="icon nobg circle fa fa-female"></i>
-              <h6 class="heading"><a href="#">Praesent facilisis diam</a></h6>
-              <p>Aenean semper elementum tellus, ut placerat leo. Quisque vehicula, urna sit amet.</p>
-            </article>
-          </li>
-          <li>
-            <article class="service largeicon"><i class="icon nobg circle fa fa-history"></i>
-              <h6 class="heading"><a href="#">Proin ac augue sed nulla</a></h6>
-              <p>Aenean semper elementum tellus, ut placerat leo. Quisque vehicula, urna sit amet.</p>
-            </article>
-          </li>
-        </ul>
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Contact Us</h4>
+          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        </div>
       </div>
-      <div class="one_half"><a href="#"><img src="images/demo/vertical.png" alt=""></a></div>
-    </div>
 
-    <div class="clear"></div>
-  </main>
-</div>
+    </div>
+  </div>
 
-<div class="wrapper row4">
-  <footer id="footer" class="clear"> 
 
-    <div class="one_quarter first">
-      <h6 class="title">Company Details</h6>
-      <address class="btmspace-15">
-      Company Name<br>
-      Street Name &amp; Number<br>
-      Town<br>
-      Postcode/Zip
-      </address>
-      <ul class="nospace">
-        <li class="btmspace-10"><span class="fa fa-phone"></span> +00 (123) 456 7890</li>
-        <li><span class="fa fa-envelope-o"></span> info@domain.com</li>
-      </ul>
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
     </div>
-    <div class="one_quarter">
-      <h6 class="title">Quick Links</h6>
-      <ul class="nospace linklist">
-        <li><a href="#">Home Page</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-    </div>
-    <div class="one_quarter">
-      <h6 class="title">From The Blog</h6>
-      <article>
-        <h2 class="nospace"><a href="#">Lorem ipsum dolor</a></h2>
-        <time class="smallfont" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
-        <p>Vestibulumaccumsan egestibulum eu justo convallis augue estas aenean elit intesque sed.</p>
-      </article>
-    </div>
-    <div class="one_quarter">
-      <h6 class="title">Keep In Touch</h6>
-      <form class="btmspace-30" method="post" action="#">
-        <fieldset>
-          <legend>Newsletter:</legend>
-          <input class="btmspace-15" type="text" value="" placeholder="Email">
-          <button type="submit" value="submit">Submit</button>
-        </fieldset>
-      </form>
-      <ul class="faico clear">
-        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-        <li><a class="faicon-instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-        <li><a class="faicon-tumblr" href="#"><i class="fa fa-tumblr"></i></a></li>
-      </ul>
-    </div>
+    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
+  </div>
 
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
   </footer>
-</div>
 
-<div class="wrapper row5">
-  <div id="copyright" class="clear"> 
 
-    <p class="fl_left"> <a href="#"></a></p>
-    <p class="fl_right"> <a target="_blank" href="" title="Free Website Templates">Hola</a></p>
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
 
-  </div>
-</div>
-
-<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> 
-
-<script src="layout/scripts/jquery.min.js"></script>
-<script src="layout/scripts/jquery.backtotop.js"></script>
-<script src="layout/scripts/jquery.mobilemenu.js"></script>
-<script src="layout/scripts/jquery.flexslider-min.js"></script>
-</body>
+  </body>
 </html>
