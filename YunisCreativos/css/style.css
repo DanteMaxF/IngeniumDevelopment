@@ -7,6 +7,7 @@
  */
 
 .Login{
+  display: inline-block;
  position: relative;
     left: 1280px;
     top: -35px;
