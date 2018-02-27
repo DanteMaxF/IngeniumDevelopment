@@ -3,19 +3,16 @@
 
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
+    $('#modal1').modal('open'); 
+ 
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
 
  $(document).ready(function() {
     $('select').material_select();
-  });
-  
-$(document).ready(function(){
-    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $(".button-collapse").sideNav();
     $('.modal').modal();
   });
- $('#modal1').modal('open'); 
- 
-        
+  
             
