@@ -13,13 +13,12 @@
 <body>
 <header>
       <div>
-           <div class="col-sm-1 s2" ><a><img src="images/logo.png" alt="Image logo1" style="width:10vw; height: 10vw;"></a></div>
+           <div><a><img src="images/logo.png" alt="Image logo1"></a></div>
           <div class="small-12 medium-10 large-8 columns" tex-align="center"><h1>Yunis Creativos</h1></div>
       </div>
+    
     <nav>
     <div class="nav-wrapper grey darken-4">
-     <nav>
-    <div class="nav-wrapper">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="left hide-on-med-and-down">
         <li><a href="">Eventos</a></li>
@@ -28,18 +27,23 @@
         
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
+        <li><a href="">Eventos</a></li>
+        <li><a href="plantillas.html">Plantillas</a></li>
+        <li><a href="Consulta de usuarios.html">Usuarios</a></li>
       </ul>
     </div>
   </nav>
-    </div>
-  </nav>
-        
+
 </header>
+ 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>         
 <script type="text/javascript" src="js/init.js"></script>
-<script type="text/javascript" src="js/materialize.js/init.js"></script>
-<script type="text/javascript" src="js/materialize.min.js/init.js"></script>
+
+<script>
+  $( document ).ready(function(){
+    $(".button-collapse").sideNav();
+  });
+</script>
 </body>
+</html>
