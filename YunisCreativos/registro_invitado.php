@@ -1,4 +1,4 @@
-<?php include("_navbarCEO.html"); ?>
+<?php include("partial/_navbarCEO.html"); ?>
 <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
         <div class="container">
@@ -138,4 +138,4 @@
     </article>
 </div>
 
-<?php include("_footer.html"); ?>
+<?php include("partial/_footer.html"); ?>

@@ -1,4 +1,4 @@
-<?php include("_navbarCEO.html"); ?>
+<?php include("partial/_navbarCEO.html"); ?>
 <div class="container">
     <article>
         <header>
@@ -82,22 +82,16 @@
                 </label>
             </p>
             <br>
-
             <br>
-
             <br>
-
-          
             <br>
             <br>
             <button class="btn waves-effect waves-light grey darken-3" type="submit" name="action">Registrar
                 <i class="material-icons right ">send</i>
             </button>
             <br><br>
-
-
         </form>
         <footer></footer>
     </article>
 </div>
-<?php include("_footer.html"); ?>
+<?php include("partial/_footer.html"); ?>

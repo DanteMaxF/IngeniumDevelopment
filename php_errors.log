@@ -1,0 +1,6 @@
+[06-Mar-2018 21:54:33 UTC] PHP Warning:  include(patial/_navbarInvitado.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/foro_invitado.php on line 1
+[06-Mar-2018 21:54:33 UTC] PHP Stack trace:
+[06-Mar-2018 21:54:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/foro_invitado.php:0
+[06-Mar-2018 21:54:33 UTC] PHP Warning:  include(): Failed opening 'patial/_navbarInvitado.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/foro_invitado.php on line 1
+[06-Mar-2018 21:54:33 UTC] PHP Stack trace:
+[06-Mar-2018 21:54:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/foro_invitado.php:0
