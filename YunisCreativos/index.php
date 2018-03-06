@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Parallax Template - Materialize</title>
-
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
-</head>
-<body>
-<header>
-      <div class="logo-header row">
-           <div class="col-sm-1 s2" ><a><img src="images/logo.png" alt="Image logo1" style="width:10vw; height: 10vw;"></a></div>
-          <div class="col-sm-2 s10" size="80vw">Yunis Creativos</div>
-      </div>
-    <nav>
-    <div class="nav-wrapper grey darken-4" size="auto" >
-      <a href="#" class="brand-logo right">Logo</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="sass.html">Botón 1</a></li>
-        <li><a href="badges.html">Botón 2</a></li>
-        <li><a href="collapsible.html">Botón 3</a></li>
-      </ul>
-    </div>
-  </nav>
-        
-</header>
+<?php include("_navbarLogOut.html"); ?>
 
 <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
