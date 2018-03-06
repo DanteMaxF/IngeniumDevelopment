@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>main-page-usuario</title>
-
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
-<body>
-<nav >
-    <div class="parent">
-        <div class="child">
-            <ul>
-                <li class="button"><a  href="#">boton 1</a></li>
-                <li class="button"><a href="#">Botón 2</a></li>
-                <li class="button"><a href="#">Botón 3</a></li>
-
-            </ul>
-
-        </div>
-        <div class="Login"><i class="large material-icons">account_circle </i></div>
-    </div>
-
-
-</nav>
+<?php include("_navabarLogOut.html"); ?>
 
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">

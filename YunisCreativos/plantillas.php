@@ -12,7 +12,7 @@
     <div class="parallax"><img src="Images/background1.jpg" alt="Unsplashed background img 1"></div>
         
   </div>
-  <div class="container">
+  <!--<div class="container">-->
        <!-- Modal Trigger -->
        <a class="waves-effect waves-light btn modal-trigger black" href="#modal1" style="float:right;">Agregar Plantilla</a>
 
@@ -68,17 +68,13 @@
               </form>
           </p>
         </div>
+    
         <div class="modal-footer">
           <a class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
         </div>
-      </div>
-       <div class="container">
-       <!-- Modal Trigger -->
-       <div><a class="modal-trigger" href="#modal2">
-         
-         <div class="container">
-    <article>
-  
+     <!--</div>Terminar modal-->
+       </div><a class="modal-trigger" href="#modal2">
+        <article>
         <table class="bordered striped black-text" >
             <thead>
             <h3 class="black-text">Plantillas Registradas:</h3>
@@ -125,8 +121,8 @@
             
         <br><br><br>
     </article>
+    </div>
 </div>
-       </a></div>
       <br>
       <br>
  <?php include("_footer.html"); ?>
