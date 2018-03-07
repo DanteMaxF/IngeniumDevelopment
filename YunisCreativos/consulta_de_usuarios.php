@@ -1,17 +1,4 @@
 <?php include("partial/_navbarCEO.html") ?>
-<div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-        <div class="container">
-            <br><br>
-            <br><br>
-            <h1 class="header center teal-text text-lighten-2"> </h1>
-            <br><br>
-
-        </div>
-    </div>
-    <div class="parallax"><img src="Images/background1.png" alt="Unsplashed background img 1"></div>
-
-</div>
 <div class="container">
     <article>
         <header>
@@ -63,7 +50,7 @@
             <tbody>
             <tr>
 
-                <td>Raúl</td>
+                <td>Raúl Moncayo</td>
                 <td>52</td>
                 <td>Guanajuato</td>
                 <td>477 113 2009</td>
@@ -79,7 +66,7 @@
             </tr>
             <tr>
 
-                <td></td>
+                <td>Jonnah Hill</td>
                 <td>52</td>
                 <td>Guanajuato</td>
                 <td>477 113 2011</td>
@@ -141,7 +128,7 @@
             <tbody>
             <tr>
 
-                <td>Raúl</td>
+                <td>John Cena</td>
                 <td>52</td>
                 <td>Guanajuato</td>
                 <td>477 113 2009</td>
@@ -149,7 +136,7 @@
             </tr>
             <tr>
 
-                <td>Alvin Yakitori</td>
+                <td>Álvaro Álvarez</td>
                 <td>52</td>
                 <td>Guanajuato</td>
                 <td>477 113 2010</td>
@@ -157,7 +144,7 @@
             </tr>
             <tr>
 
-                <td></td>
+                <td>Xavier García</td>
                 <td>52</td>
                 <td>Guanajuato</td>
                 <td>477 113 2011</td>

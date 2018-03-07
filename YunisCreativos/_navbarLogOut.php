@@ -22,11 +22,14 @@
     <div class="nav-wrapper grey darken-3">
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons"></i></a>
       <ul class="left hide-on-med-and-down">
-        <li><a href="">Ingresar a Evento</a></li>
-        <li><a href="">Acerca de Yunis Creativos</a></li>
-        <li><a href="">Contacto</a></li>
+        <li><a href="#codigo">Ingresar Código</a></li>
+        <li><a href="#nosotros">Acerca de nosotros</a></li>
+        <li><a href="#contacto">Contactos</a></li>
+        <li><a href="home_invitado.php">Home Invitado</a></li>
+        <li><a href="home_coordinador.php">Home Coordinador</a></li>
+        <li><a href="home_empleado.php">Home Empleado</a></li>
+        <li><a href="home_CEO.php">Home CEO</a></li>
       </ul>
-
         <ul class="right">
             <li><a class="modal-trigger" href="#modal1"><i class="material-icons">account_circle</i></a></li>
         </ul>
@@ -40,20 +43,14 @@
                 <a href="home_coordinador.php" class="modal-action modal-close waves-effect waves-green btn-flat ">Submit</a>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
         <ul class="side-nav" id="mobile-demo">
-          <li><a href="">Ingresar a Evento</a></li>
-        <li><a href="">Acerca de Yunis Creativos</a></li>
-        <li><a href="">Contacto</a></li>
+            <li><a href="#codigo">Ingresar Código</a></li>
+            <li><a href="#nosotros">Acerca de nosotros</a></li>
+            <li><a href="#contacto">Contactos</a></li>
+            <li><a href="home_invitado.php">Home Invitado</a></li>
+            <li><a href="home_coordinador.php">Home Coordinador</a></li>
+            <li><a href="home_empleado.php">Home Empleado</a></li>
+            <li><a href="home_CEO.php">Home CEO</a></li>
       </ul>
     </div>
   </nav>

@@ -1,0 +1,262 @@
+[07-Mar-2018 03:09:11 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:09:11 UTC] PHP Stack trace:
+[07-Mar-2018 03:09:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php:0
+[07-Mar-2018 03:09:11 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:09:11 UTC] PHP Stack trace:
+[07-Mar-2018 03:09:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php:0
+[07-Mar-2018 03:11:00 UTC] PHP Warning:  include(partial/_navbarLogOut.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:11:00 UTC] PHP Stack trace:
+[07-Mar-2018 03:11:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:11:00 UTC] PHP Warning:  include(): Failed opening 'partial/_navbarLogOut.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:11:00 UTC] PHP Stack trace:
+[07-Mar-2018 03:11:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:11:00 UTC] PHP Warning:  include(_footer.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:11:00 UTC] PHP Stack trace:
+[07-Mar-2018 03:11:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:11:00 UTC] PHP Warning:  include(): Failed opening '_footer.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:11:00 UTC] PHP Stack trace:
+[07-Mar-2018 03:11:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:11:31 UTC] PHP Warning:  include(partial/_navbarLogOut.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:11:31 UTC] PHP Stack trace:
+[07-Mar-2018 03:11:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:11:31 UTC] PHP Warning:  include(): Failed opening 'partial/_navbarLogOut.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:11:31 UTC] PHP Stack trace:
+[07-Mar-2018 03:11:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:11:31 UTC] PHP Warning:  include(_footer.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:11:31 UTC] PHP Stack trace:
+[07-Mar-2018 03:11:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:11:31 UTC] PHP Warning:  include(): Failed opening '_footer.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:11:31 UTC] PHP Stack trace:
+[07-Mar-2018 03:11:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:40 UTC] PHP Warning:  include(partial/_navbarLogOut.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:12:40 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:40 UTC] PHP Warning:  include(): Failed opening 'partial/_navbarLogOut.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:12:40 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:40 UTC] PHP Warning:  include(_footer.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:12:40 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:40 UTC] PHP Warning:  include(): Failed opening '_footer.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:12:40 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:43 UTC] PHP Warning:  include(partial/_navbarLogOut.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:12:43 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:43 UTC] PHP Warning:  include(): Failed opening 'partial/_navbarLogOut.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:12:43 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:43 UTC] PHP Warning:  include(_footer.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:12:43 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:43 UTC] PHP Warning:  include(): Failed opening '_footer.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:12:43 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:47 UTC] PHP Warning:  include(partial/_navbarLogOut.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:12:47 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:47 UTC] PHP Warning:  include(): Failed opening 'partial/_navbarLogOut.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:12:47 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:47 UTC] PHP Warning:  include(_footer.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:12:47 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:47 UTC] PHP Warning:  include(): Failed opening '_footer.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:12:47 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:53 UTC] PHP Warning:  include(partial/_navbarLogOut.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:12:53 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:53 UTC] PHP Warning:  include(): Failed opening 'partial/_navbarLogOut.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:12:53 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:53 UTC] PHP Warning:  include(_footer.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:12:53 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:12:53 UTC] PHP Warning:  include(): Failed opening '_footer.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:12:53 UTC] PHP Stack trace:
+[07-Mar-2018 03:12:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:13:00 UTC] PHP Warning:  include(partial/_navbarLogOut.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:13:00 UTC] PHP Stack trace:
+[07-Mar-2018 03:13:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:13:00 UTC] PHP Warning:  include(): Failed opening 'partial/_navbarLogOut.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:13:00 UTC] PHP Stack trace:
+[07-Mar-2018 03:13:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:13:00 UTC] PHP Warning:  include(_footer.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:13:00 UTC] PHP Stack trace:
+[07-Mar-2018 03:13:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:13:00 UTC] PHP Warning:  include(): Failed opening '_footer.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:13:00 UTC] PHP Stack trace:
+[07-Mar-2018 03:13:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:13:50 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:13:50 UTC] PHP Stack trace:
+[07-Mar-2018 03:13:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:13:50 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:13:50 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:13:50 UTC] PHP Stack trace:
+[07-Mar-2018 03:13:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:13:50 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:13:50 UTC] PHP Warning:  include(_footer.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:13:50 UTC] PHP Stack trace:
+[07-Mar-2018 03:13:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:13:50 UTC] PHP Warning:  include(): Failed opening '_footer.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 139
+[07-Mar-2018 03:13:50 UTC] PHP Stack trace:
+[07-Mar-2018 03:13:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:15:30 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:15:30 UTC] PHP Stack trace:
+[07-Mar-2018 03:15:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:15:30 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:15:30 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:15:30 UTC] PHP Stack trace:
+[07-Mar-2018 03:15:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:15:30 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:15:31 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:15:31 UTC] PHP Stack trace:
+[07-Mar-2018 03:15:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:15:31 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:15:31 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:15:31 UTC] PHP Stack trace:
+[07-Mar-2018 03:15:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:15:31 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:21:54 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:21:54 UTC] PHP Stack trace:
+[07-Mar-2018 03:21:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:21:54 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:21:54 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:21:54 UTC] PHP Stack trace:
+[07-Mar-2018 03:21:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:21:54 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:01 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:01 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:01 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:01 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:01 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:01 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:04 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:04 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:04 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:04 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:04 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:04 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:05 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:05 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:05 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:05 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:05 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:05 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:07 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:07 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:07 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:07 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:07 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:07 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:08 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:08 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:08 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:08 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:08 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:08 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:09 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:09 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:09 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:09 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:09 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:09 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:11 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:11 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:11 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:24:11 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 36
+[07-Mar-2018 03:24:11 UTC] PHP Stack trace:
+[07-Mar-2018 03:24:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:24:11 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:27:34 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:27:34 UTC] PHP Stack trace:
+[07-Mar-2018 03:27:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:27:34 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:27:34 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:27:34 UTC] PHP Stack trace:
+[07-Mar-2018 03:27:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:27:34 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:27:57 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:27:57 UTC] PHP Stack trace:
+[07-Mar-2018 03:27:57 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:27:57 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:27:57 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:27:57 UTC] PHP Stack trace:
+[07-Mar-2018 03:27:57 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:27:57 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:28:02 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:28:02 UTC] PHP Stack trace:
+[07-Mar-2018 03:28:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:28:02 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:28:02 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:28:02 UTC] PHP Stack trace:
+[07-Mar-2018 03:28:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:28:02 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:28:11 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:28:11 UTC] PHP Stack trace:
+[07-Mar-2018 03:28:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:28:11 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:28:11 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:28:11 UTC] PHP Stack trace:
+[07-Mar-2018 03:28:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:28:11 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:28:31 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:28:31 UTC] PHP Stack trace:
+[07-Mar-2018 03:28:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:28:31 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:28:31 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:28:31 UTC] PHP Stack trace:
+[07-Mar-2018 03:28:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:28:31 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:28:45 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:28:45 UTC] PHP Stack trace:
+[07-Mar-2018 03:28:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:28:45 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:28:45 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:28:45 UTC] PHP Stack trace:
+[07-Mar-2018 03:28:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:28:45 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:30:16 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:30:16 UTC] PHP Stack trace:
+[07-Mar-2018 03:30:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:30:16 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:30:16 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:30:16 UTC] PHP Stack trace:
+[07-Mar-2018 03:30:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:30:16 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:38:03 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:38:03 UTC] PHP Stack trace:
+[07-Mar-2018 03:38:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:38:03 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:38:03 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:38:03 UTC] PHP Stack trace:
+[07-Mar-2018 03:38:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:38:03 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:41:31 UTC] PHP Warning:  include(Login.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:41:31 UTC] PHP Stack trace:
+[07-Mar-2018 03:41:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:41:31 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:41:31 UTC] PHP Warning:  include(): Failed opening 'Login.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/_navbarLogOut.php on line 39
+[07-Mar-2018 03:41:31 UTC] PHP Stack trace:
+[07-Mar-2018 03:41:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:41:31 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:3
+[07-Mar-2018 03:44:03 UTC] PHP Warning:  include(_navbarLogOut.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:44:03 UTC] PHP Stack trace:
+[07-Mar-2018 03:44:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
+[07-Mar-2018 03:44:03 UTC] PHP Warning:  include(): Failed opening '_navbarLogOut.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php on line 3
+[07-Mar-2018 03:44:03 UTC] PHP Stack trace:
+[07-Mar-2018 03:44:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/index.php:0
