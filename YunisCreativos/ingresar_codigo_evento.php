@@ -1,4 +1,4 @@
-<?php include("partial/_navabarLogOut.html"); ?>
+<?php include("partial/_navbarLogOut.html"); ?>
 
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
@@ -34,7 +34,7 @@
 
 
                         -->
-                          <a class="btn waves-effect waves-light black"  href="registro-invitado.html" >Aceptar
+                          <a class="btn waves-effect waves-light black"  href="registro_invitado.php" >Aceptar
                             <i class="material-icons right"></i>
                           </a>
 

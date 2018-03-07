@@ -11,7 +11,7 @@
                 <h5 class="header col s12 light">Ingresa el código que te otorgaron y crea tu cuenta</h5>
             </div>
             <div class="row center">
-                <a href="ingresar-codigo-evento.html" id="download-button" class="btn-large waves-effect waves-light black lighten-1">¡Participa en un evento!</a>
+                <a href="ingresar_codigo_evento.php" id="download-button" class="btn-large waves-effect waves-light black lighten-1">¡Participa en un evento!</a>
             </div>
             <br><br>
 

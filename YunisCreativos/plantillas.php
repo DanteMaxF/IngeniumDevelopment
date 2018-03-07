@@ -93,8 +93,8 @@
                 <td>#b3ffb3</td>
                 <td>#ffb366</td>
                 <td>imagen1.jpg</td>
-                <td><a href="home_CEO.php"><i class="medium material-icons">mode_edit</i></a></td>
-                 <td><a href="home_CEO.php"><i class="medium material-icons">delete</i></a></td>
+                <td><a href="plantillas.php"><i class="medium material-icons">mode_edit</i></a></td>
+                <td><a href="plantillas.php"><i class="medium material-icons">delete</i></a></td>
             </tr>
             <tr>
 
@@ -102,8 +102,8 @@
                 <td>#ffb366</td>
                 <td>#ffb366</td>
                 <td>imagen2.jpg</td>
-                <td><a href="home_CEO.php"><i class="medium material-icons">mode_edit</i></a></td>
-                <td><a href="home_CEO.php"><i class="medium material-icons">delete</i></a></td>
+                <td><a href="plantillas.php"><i class="medium material-icons">mode_edit</i></a></td>
+                <td><a href="plantillas.php"><i class="medium material-icons">delete</i></a></td>
 
             </tr>
             <tr>
@@ -112,8 +112,8 @@
                 <td> #ffa31a</td>
                 <td>#9999ff</td>
                 <td>imagen3.jpg</td>
-                <td><a href="home_CEO.php"><i class="medium material-icons">mode_edit</i></a></td>
-                <td><a href="home_CEO.php"><i class="medium material-icons">delete</i></a></td>
+               <td><a href="plantillas.php"><i class="medium material-icons">mode_edit</i></a></td>
+                <td><a href="plantillas.php"><i class="medium material-icons">delete</i></a></td>
             </tr>
             </tbody>
         </table>
