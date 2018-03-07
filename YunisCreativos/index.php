@@ -4,7 +4,7 @@
     <div class="section no-pad-bot">
         <div class="container">
             <br><br>
-            <h1 class="header center white-text text-lighten-2">¿Eres un invitado a un evento?</h1>
+            <h1 class="header center white-text text-lighten-2" id="codigo">¿Eres un invitado a un evento?</h1>
             <div class="row center">
                 <h5 class="header col s12 light">Ingresa el código que te otorgaron y crea tu cuenta</h5>
             </div>
@@ -20,7 +20,7 @@
 
 
 <div class="container">
-    <div class="section">
+    <div class="section" id="nosotros">
 
         <!--   Icon Section   -->
         <div class="row">
@@ -73,7 +73,7 @@
         <div class="row">
             <div class="col s12 center">
                 <h3><i class="mdi-content-send black-text"></i></h3>
-                <h4>Contact Us</h4>
+                <h4 id="contacto">Contact Us</h4>
                 <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
             </div>
         </div>
