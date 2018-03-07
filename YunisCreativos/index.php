@@ -1,4 +1,5 @@
-<?php include("_navbarLogOut.html"); ?>
+<html>
+<?php include("_navbarLogOut.php"); ?>
 
 <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
@@ -137,3 +138,7 @@
 
 </body>
 </html>
+<footer>
+    <?php include("_footer.html"); ?>
+
+</footer>
