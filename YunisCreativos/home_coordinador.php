@@ -14,7 +14,7 @@
   </div>
   <div class="container">
        <!-- Modal Trigger -->
-       <a class="waves-effect waves-light btn modal-trigger black" href="#modal1" style="float:right;">Registrar Actividad</a>
+       
 
       <!-- Modal Structure -->
       <div id="modal1" class="modal">
