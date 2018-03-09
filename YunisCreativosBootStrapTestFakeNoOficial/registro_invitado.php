@@ -38,6 +38,21 @@
               </div>
             </div>
             <br>
+            <div class="form-group row">
+              <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
+              <div class="col-10">
+                <input class="form-control" type="password" value="" id="example-password-input">
+              </div>
+            </div>
+            <br>
+            <p>
+            <div class="form-group row">
+              <label for="example-password-input" class="col-2 col-form-label">Verificar Contraseña: </label>
+              <div class="col-10">
+                <input class="form-control" type="password" value="" id="example-password-input">
+              </div>
+            </div>
+            <br>
             <div class="form-group"
                 <label>Talla:</label>
                 <select class="form-control" id="estados">
@@ -50,63 +65,39 @@
                 </select>
             </div>
             <br>
-            <p>
-                <label>Confirmar asistencia:</label>
-            <p>
-                <input name="group1" type="radio" id="test1" />
-                <label for="test1">Asistiré</label>
-            </p>
-            <p>
-                <input name="group1" type="radio" id="test2" />
-                <label for="test2">No asistiré</label>
-            </p>
-            
-            </p>
+            <div>
+                <label>Confirmar Asistencia:</label><br>
+                <div class="radio">
+                  <label><input type="radio" name="optradio"> Asistiré</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="optradio"> No asistiré</label>
+                </div>
+            </div>
             <br>
-            <p>
-                <label>*Idioma:
-                    <div class="input-field col s1, validate ">
-                        <select>
-                            <option value="" disabled selected>Selecciona tu idioma/ Language</option>
-                            <option value="esp">Español</option>
-                            <option value="eng">English</option>
-                        </select>
-                    </div>
-                </label>
-            </p>
-            <br
-            <p>
-                <label>*Contraseña:
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="password" type="password" class="validate" required/>
-                            <label for="password">*Contraseña:</label>
-                        </div>
-                    </div>
-                </label>
-            </p>
+            <div class="form-group"
+                <label>Seleccionar Idioma:</label>
+                <select class="form-control" id="estados">
+                    <option> </option>
+                    <option>Español</option>
+                    <option>English</option>
+                </select>
+            </div>
             <br>
-            <p>
-                <label>*Verificar contraseña:
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="password-verificar" type="password" class="validate" required/>
-                            <label for="password-verificar">Contraseña</label>
-                        </div>
-                    </div>
-                </label>
-            </p>
-            <br>
-            <p>
-                <label>Datos Importantes (Alergias, Discapacidades, etc)
-                    <!--No cambia el tamaño del campo de registro-->
-                    <textarea name="message" rows="10" cols="30" placeholder="Alérgico al man"></textarea>
-                    <br>
-                </label>
-            </p>
+            <div class="form-group"
+                <label>Alergias:</label>
+                <select class="form-control" id="estados">
+                    <option> </option>
+                    <option>Mani</option>
+                    <option>Nueces</option>
+                    <option>Fresas</option>
+                    <option>Camarones</option>
+                    <option>Pescado</option>
+                </select>
+            </div>
             <br>
             <button class="btn" type="submit" name="action">Registrar</button>
-            <br><br>
+            <br><br><br>
         </form>
 </div>
 
