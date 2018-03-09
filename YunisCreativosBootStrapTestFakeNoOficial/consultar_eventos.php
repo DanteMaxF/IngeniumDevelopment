@@ -1,34 +1,16 @@
 <?php include("partial/_navbarCEO.html"); ?>
   <div class="container">
-<!--
-  <div id="demo" class="carousel slide" data-ride="carousel">
-
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="images/lasvegas.jpg" alt="Los Angeles">
+    <div class="form-group"
+      <label>Seleccionar evento:</label>
+      <select class="form-control" id="estados">
+          <option> </option>
+          <option>Las Vegas</option>
+          <option>Machu Pichu</option>
+          <option>Oaxaca</option>
+          <option>Cancún</option>
+      </select>
     </div>
-    <div class="carousel-item">
-      <img src="images/logo.png" alt="Chicago">
-    </div>
-    <div class="carousel-item">
-      <img src="images/background1.png" alt="New York">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
--->
-    <h2 class="align-left">Evento Las Vegas Acme Tools [Evento más próximo]</h2>
+    <h2 class="align-left">Evento Seleccionado</h2>
     <!-- Button to Open the Modal -->
     <img src="Images/CalendarioUsuario.PNG" data-toggle="modal" data-target="#myModal" alt="Full Callendar" width="100%">
     

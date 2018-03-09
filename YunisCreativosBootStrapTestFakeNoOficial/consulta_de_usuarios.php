@@ -114,8 +114,6 @@
         <button class="btn waves-effect waves-light" type="submit" name="action">Borrar</button>
         <button class="btn waves-effect waves-light" type="submit" name="action">Modificar</button>
         <br><br>
-
-
     </article>
 </div>
 <?php include("partial/_footer.html")?>
