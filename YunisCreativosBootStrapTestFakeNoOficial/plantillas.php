@@ -2,9 +2,9 @@
 
 <div class="container">
   <!-- Button to Open the Modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  <div class="float-right"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
     Agregar Plantilla
-  </button>
+  </button></div>
   <!-- The Modal -->
     <div class="modal fade" id="myModal">
       <div class="modal-dialog">
@@ -12,54 +12,39 @@
     
           <!-- Modal Header -->
           <div class="modal-header">
-            <h4 class="modal-title">Consultar Actividad</h4>
+            <h4 class="modal-title">Registrar Plantilla</h4>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
     
           <!-- Modal body -->
           <div class="modal-body">
              <form>
-                <div>
-                  <label>Nombre de la Plantilla:
-                    <input id="icon_prefix" type="text" class="validate" required/>
-                  </label>
-                </div>
-                <br>
-                <div>
-                  <label>Color texto:
-                    <input type="color">
-                  </label>
-                </div>
-                <br>
-                <div>
-                  <label>Color fondo:
-                    <input type="color">
-                  </label>
-                </div>
-                <br>
-                <div>
-                  <label>Color botones:
-                    <input type="color">
-                  </label>
-                </div>
-                <br>
-                <div>
-                  <label>Adjuntar Imagen:
-                    <div class="file-field input-field">
-                      <div class="btn">
-                        <span>Archivo</span>
-                        <input type="file">
-                      </div>
-                      <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                      </div>
-                    </div>
-                  </label>
+                 <div class="form-group">
+                    <label for="formGroupExampleInput">Nombre</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre plantilla">
                   </div>
+                <br>
+                <label>Color texto:</label>
+                <div class="col-10">
+                  <input class="form-control" type="color" value="#563d7c" id="example-color-input">
+                </div>
+                <br>
+                <label>Color fondo:</label>
+                <div class="col-10">
+                  <input class="form-control" type="color" value="#563d7c" id="example-color-input">
+                </div>
+                <br>
+                <label>Color botones:</label>
+                <div class="col-10">
+                  <input class="form-control" type="color" value="#563d7c" id="example-color-input">
+                </div>
+                <br>
+                 <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                    <label class="custom-file-label" for="customFileLang">Seleccionar Archivo:</label>
+                 </div>
                   <br><br>
-                  <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
-                    <i class="material-icons right">send</i>
-                  </button>
+                  <button class="btn waves-effect waves-light" type="submit" name="action">Registrar</button>
                   <br><br>
                 </form>
           </div>
@@ -71,14 +56,16 @@
        
       
         <article>
-        <table class="bordered striped black-text" >
-            <thead>
-            <h3 class="black-text">Plantillas Registradas:</h3>
+        <h3 class="black-text">Plantillas Registradas:</h3><br>
+        <table class="table" >
+            <thead class="thead-dark">
               <tr>
                 <th>Nombre plantilla</th>
                 <th>Color Fuente</th>
                 <th>Color botones</th>
                 <th>Dirección de la imágen</th>
+                <th> </th>
+                <th> </th>
             </tr>
             </thead>
 
@@ -89,7 +76,7 @@
                 <td>#b3ffb3</td>
                 <td>#ffb366</td>
                 <td>imagen1.jpg</td>
-                <td><a href="plantillas.php"><i class="medium material-icons">mode_edit</i></a></td>
+                <td><a href="#"></a><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td><a href="plantillas.php"><i class="medium material-icons">delete</i></a></td>
             </tr>
             <tr>

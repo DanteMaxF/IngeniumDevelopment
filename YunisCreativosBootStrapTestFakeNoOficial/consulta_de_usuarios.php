@@ -10,7 +10,7 @@
             <div class="form-group"
                 <label>Rol:</label>
                  <select class="form-control" id="estados">
-                    <option> </option>
+                    <option>-</option>
                     <option>Invitado</option>
                     <option>Coordinador</option>
                     <option>Empleado</option>
