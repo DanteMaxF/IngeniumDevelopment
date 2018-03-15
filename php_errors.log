@@ -302,3 +302,16 @@
 [07-Mar-2018 17:04:03 UTC] PHP Warning:  include(): Failed opening '_footer.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/registrar_evento.php on line 14
 [07-Mar-2018 17:04:03 UTC] PHP Stack trace:
 [07-Mar-2018 17:04:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativos/registrar_evento.php:0
+[15-Mar-2018 00:20:37 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 3
+[15-Mar-2018 00:25:54 UTC] PHP Warning:  include(partial/_home_coordinador.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_coordinador.php on line 2
+[15-Mar-2018 00:25:54 UTC] PHP Stack trace:
+[15-Mar-2018 00:25:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_coordinador.php:0
+[15-Mar-2018 00:25:54 UTC] PHP Warning:  include(): Failed opening 'partial/_home_coordinador.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_coordinador.php on line 2
+[15-Mar-2018 00:25:54 UTC] PHP Stack trace:
+[15-Mar-2018 00:25:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_coordinador.php:0
+[15-Mar-2018 00:34:54 UTC] PHP Warning:  include(partial/_modifica_actividad.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_actividad.php on line 2
+[15-Mar-2018 00:34:54 UTC] PHP Stack trace:
+[15-Mar-2018 00:34:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_actividad.php:0
+[15-Mar-2018 00:34:54 UTC] PHP Warning:  include(): Failed opening 'partial/_modifica_actividad.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_actividad.php on line 2
+[15-Mar-2018 00:34:54 UTC] PHP Stack trace:
+[15-Mar-2018 00:34:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_actividad.php:0

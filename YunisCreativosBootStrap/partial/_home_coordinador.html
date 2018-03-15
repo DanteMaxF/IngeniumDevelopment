@@ -1,18 +1,4 @@
-<?php include("partial/_navbarCoordinador.html") ?>
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <br><br>
-        <h1 class="header center white-text text-lighten-2">[Nombre Evento]</h1>
-        <br><br>
-
-      </div>
-    </div>
-    <div class="parallax"><img src="Images/background1.jpg" alt="Unsplashed background img 1"></div>
-        
-  </div>
-  <div class="container">
+ <div class="container">
        <!-- Modal Trigger -->
        
 
@@ -70,43 +56,50 @@
           <a class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
         </div>
       </div>
-       <div class="container">
-       <!-- Modal Trigger -->
-       <div><a class="modal-trigger" href="#modal2"><img src="Images/CalendarioUsuario.PNG" alt="Full Callendar" width="100%"></a></div>
-
-      <!-- Modal Structure -->
-      <div id="modal2" class="modal">
+       <!-- Button to Open the Modal -->
+    <img src="Images/CalendarioUsuario.PNG" data-toggle="modal" data-target="#myModal" alt="Full Callendar" width="100%">
+    
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
         <div class="modal-content">
-          <h4>Consultar Actividad</h4>
-          <p>
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Consultar Actividad</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body">
              <form>
-                        
-                        <p>
-                          <label>Descripción:</label> 
-                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                          Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                          Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                          Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
-                          a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
-                        </p>
-                        <p>
-                          <label>Ubicación:</label>
-                        </p>
-                        <center><img src="Images/GoogleMaps.PNG" alt="GoogleMaps demo" width="90%"/></center>
-                        <br><br>
-                        <p>
-                            <label>Evento Sorpresa: [On / OFF]</label>
-                        </p>
-                        <br><br>
-              </form>
-          </p>
-        </div>
-        <div class="modal-footer">
-          <a class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                            
+                            <div>
+                              <label>Descripción:</label> 
+                              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                              Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                              Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet
+                              a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+                            </div><br>
+                            <div>
+                              <label>Ubicación:</label>
+                            </div><br>
+                            <center><img src="Images/GoogleMaps.PNG" alt="GoogleMaps demo" width="90%"/></center>
+                            <br><br>
+                            <div>
+                                <label>Evento Sorpresa: [On / OFF]</label>
+                            </div>
+                            <br><br>
+                  </form>
+          </div>
+    
+          <!-- Modal footer -->
+    
         </div>
       </div>
-      <br>
-      <br>
+    </div>
+     <br><br>
+</div>
       
   </div>
- <?php include("partial/_footer.html")?>
