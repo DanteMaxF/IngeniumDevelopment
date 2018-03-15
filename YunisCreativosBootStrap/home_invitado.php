@@ -1,31 +1,29 @@
 <?php include("partial/_navbarInvitado.html"); ?>
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <br><br>
-        <h1 class="header center teal-text text-lighten-2">[Nombre Evento]</h1>
-        <br><br>
+<div class="wrapper">
+    <section class="module-cover parallax fullscreen text-center" data-background="images/background1.png" data-overlay="0.65" data-gradient="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 m-auto">
+                    <div class="m-b-20">
+                        <h6>Nombre del Evento</h6>
+                    </div>
 
-      </div>
-    </div>
-    <div class="parallax"><img src="Images/background1.jpg" alt="Unsplashed background img 1"></div>
-        
-  </div>
-  <div class="container">
-      <br>
-      <br>
-      <img src="Images/CalendarioUsuario.PNG" alt="Full Callendar" width="90%">
-  </div>
+                </div>
+            </div>
+        </div>
 
- 
+    </section>
+</div>
+<div class="wrapper">
+    <br>
+    <br>
+    <img src="Images/CalendarioUsuario.PNG" alt="Full Callendar" width="90%">
+</div>
 
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
 
-  </body>
 
+
+
+</body>
 <?php include("partial/_footer.html"); ?>
