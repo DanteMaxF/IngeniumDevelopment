@@ -1,4 +1,6 @@
-<?php include("partial/_navbarCEO.html"); ?>
-<?php include("partial/_consultar_eventos.html"); ?> 
-<?php include("partial/_footer.html"); ?>
+<?php 
+    include("partial/_navbarCEO.html"); 
+    include("partial/_consultar_eventos.html"); 
+    include("partial/_footer.html"); 
+?>
 
