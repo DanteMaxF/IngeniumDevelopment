@@ -1,4 +1,4 @@
-<html>
+
 <?php 
     include("partial/_head.html");
     include("partial/_navbarLogOut.html");
