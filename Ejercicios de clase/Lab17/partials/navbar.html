@@ -1,0 +1,39 @@
+<!--NAVBAR-->
+<nav>
+    <div class="nav-wrapper grey darken-3">
+        <ul class="left">
+            <li><a href="index.php">♠</a></li>
+            <li><a href="preguntas.php">Preguntas</a></li>
+        <!--Pestanas del empleado-->
+        <?php if(isset($_SESSION["user"]) && $userRol == 'Cliente'): ?>
+            <li><a href="micuenta.php">Mi cuenta</a></li>
+            <li><a href= "transaccion.php">Transacciones</a></li>
+        <?php endif; ?>
+        
+        <?php if(isset($_SESSION["user"]) && $userRol == 'Empleado'): ?>
+         <li><a href="micuenta.php">Mi cuenta</a></li>
+        <li><a href = "areaTrabajo.php">Area de Trabajo</a></li>
+        <li><a href = "transaccion.php">Transacciones</a></li>
+        <?php endif; ?> 
+       
+       <?php if(isset($_SESSION["user"]) && $userRol == 'Administrador'): ?>
+        <li><a href = "">Consultar Usuarios</a></li>
+        <li><a href = "">Consultar Personal Habilitado</a></li>
+        <li><a href = "">Consultar Usuarios</a></li>
+        <?php endif; ?>
+       
+       
+        </ul>
+    <ul class="right">
+        <li><a><?=$username?></a></li>
+        <?php if(isset($_SESSION["user"])): ?>
+            <li><a href="logout.php">Salir</a></li>
+        <?php endif; ?>
+        <?php if(!isset($_SESSION["user"])): ?>
+            <li><a href="inicio_sesion.php">Iniciar Sesion</a></li>
+        <?php endif; ?>
+         
+    </ul>
+
+    </div>
+</nav>

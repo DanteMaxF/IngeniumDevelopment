@@ -1,0 +1,30 @@
+<div class="contenido">
+    <div class="container">
+        <h3>Modificar datos personales</h3>
+    
+        <br><br>
+        <form action="newInfo.php" method="POST">
+            <div class="input-field col s12">
+                <input value="<?=$username?>" placeholder="username" name="username" id="username" type="text" class="validate" required>
+                <label for="username">Nombre</label>
+            </div>
+            <div class="input-field col s12">
+                <input value="<?=$apellido?>" placeholder="apellido" name="apellido" id="user" type="text" class="validate" required>
+                <label for="user">Apellido</label>
+            </div>
+            cumpleaños
+            <div class="input-field col s12">
+                <input value="<?=$cumple?>" placeholder="cumple" name="cumple" id="cumple" type="date" required>
+                <label for="cumple"></label>
+            </div>
+             <div class="input-field col s12">
+                <input value="<?=$passwd?>" name="passwd" id="passwd" type="password" class="validate" required>
+                <label for="passwd">Contraseña</label>
+            </div>
+            
+            <div class="input-field col s12">
+                <input  class="btn waves-effect waves-light red" type="submit" value="Modificar">
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="contenido">
+    <div class="container center-align">
+        <p>Hola <?=$username?></p>
+        <p>Tu rol es: <?=$userRol?></p>
+        <?php
+            $menosSeisHoras = time() - (3600 * 6);
+            echo date("l jS \of F Y h:i:s A",$menosSeisHoras) . "<br>";
+        ?>
+    </div>
+</div>

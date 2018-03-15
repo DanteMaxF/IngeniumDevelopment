@@ -1,0 +1,46 @@
+header {
+  overflow: hidden;
+  background-color: #006600;
+}
+
+h1{
+  color: white;
+  text-align: center;
+}
+
+.contenido{
+  background-color: #ddd;
+  padding: 10px;
+  background-image:url(watermark.png);
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size:100%;
+  background-position: center;
+}
+
+
+
+#hiddenButtons {
+  text-align: center;
+  visibility: hidden;
+}
+footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

@@ -1,0 +1,55 @@
+<div class="contenido">
+  <div class="container">
+    <h4><strong>Preguntas</strong></h4>
+      <ol>
+          <li><strong>¿En qué consiste el acceso basado en roles?</strong>
+            <ul><li>
+              Es una función de seguridad para controlar el acceso de usuarios a tareas que normalmente están restringidas al superusuario. 
+              Mediante la aplicación de atributos de seguridad a procesos y usuarios, RBAC puede dividir las capacidades de superusuario entre varios administradores. 
+              La gestión de derechos de procesos se implementa a través de privilegios. 
+              La gestión de derechos de usuarios se implementa a través de RBAC. [1]
+            </li></ul>
+          </li><br>
+
+          <li><strong>Investiga y describe 6 sistemas, 3 conocidos que empleen RBAC y 3 desconocidos que no, junto con su funcionamiento general:</strong>
+            <ul><li>
+              Solaris: Es un sistema operativo de tipo Unix desarrollado desde 1992 por Sun Microsystems hasta que el  fue adquirido por Oracle, que es su actual propietario.<br>
+              Microsoft Active Directory: es una base de datos distribuida que permite almacenar información relativa a los recursos de una red con el fin de facilitar su localización y administración. <br>
+              SELinux: Es una arquitectura de seguridad integrada en el kernel 2.6.x usando los módulos de seguridad linux.<br> 
+              Oracle DBMS: Es un sistema de gestión de base de datos de tipo objeto-relacional  desarrollado por Oracle Corporation.<br>
+              PostgreSQL: Es una base de datos de tipo Open Source.<br>
+              IBM Security Identity Governance and Intelligence: Es un sistema que proporciona funcionalidad para cubrir la gestión del ciclo de vida de los usuarios empresariales, 
+              incluida la evaluación y mitigación del riesgo de acceso.
+            </li></ul>
+          </li><br>
+
+          <li><strong>Beneficios y desventajas de este modelo:</strong>
+            <ul>
+              <li>Beneficios: ofrece una alternativa más segura al modelo de superusuario del tipo "todo o nada". Con RBAC, puede aplicar una política de seguridad en un nivel más específico. 
+                  RBAC utiliza el principio de seguridad del privilegio mínimo. 
+                  Privilegio mínimo significa que un usuario dispone exactamente de la cantidad de privilegios necesaria para realizar un trabajo. 
+                  Los usuarios comunes tienen privilegios suficientes para utilizar sus aplicaciones, comprobar el estado de sus trabajos, imprimir archivos, crear archivos nuevos, etc. 
+                  Las capacidades que van más allá de las capacidades de los usuarios comunes se agrupan en perfiles de derechos. 
+                  Los usuarios que realizarán trabajos que requieren algunas de las capacidades de superusuario asumen un rol que incluye el perfil de derechos adecuado. 
+                  Los perfiles de derechos pueden proporcionar capacidades amplias. La flexibilidad en la configuración de los roles posibilita una variedad de políticas de seguridad. [1]<br><br>
+
+                  Desventajas: En los sistemas UNIX convencionales, el usuario root, también conocido como superusuario, es omnipotente.
+                  Los programas que se ejecutan como root, o los programas setuid, son omnipotentes. 
+                  El usuario root puede leer y escribir en cualquier archivo, ejecutar todos los programas y enviar señales de terminación a cualquier proceso. 
+                  De hecho, cualquier persona que puede convertirse en superusuario puede modificar el cortafuegos de un sitio, modificar la pista de auditoría, leer registros confidenciales y apagar toda la red. 
+                  Un programa setuid usurpado puede realizar cualquier tarea en el sistema. [1]
+              </li>
+            </ul>
+          </li><br>
+          <li><strong>Referencia:</strong>
+            <ul>
+              <li>[1] https://docs.oracle.com/cd/E24842_01/html/E23286/rbac-1.html</li>
+              <li>[2] https://support.microsoft.com/es-es/help/196464</li>
+              <li>[3] http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-rg-es-4/ch-selinux.html</li>
+              <li>[4] http://www-03.ibm.com/software/products/en/ibm-security-identity-governance-and-intelligence?S_TACT=none/sysz</li>
+            </ul>
+          </li><br>
+          
+        </ol>
+  </div>
+</div>
