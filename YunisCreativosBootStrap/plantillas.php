@@ -1,3 +1,7 @@
-<?php include("partial/_navbarCEO.html"); ?>
- <?php include("partial/_plantillas.html"); ?>
- <?php include("partial/_footer.html"); ?>
+<?php 
+   include("partial/_head.html"); 
+   include("partial/_navbarCEO.html"); 
+   include("partial/_plantillas.html");
+   include("partial/_scripts.html"); 
+   include("partial/_footer.html"); 
+?>
