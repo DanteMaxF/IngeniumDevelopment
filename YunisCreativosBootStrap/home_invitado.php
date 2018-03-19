@@ -1,4 +1,7 @@
-<?php include("partial/_navbarInvitado.html"); ?>
+<?php 
+  include("partial/_head.html");
+
+include("partial/_navbarInvitado.html"); ?>
 <div class="wrapper">
     <section class="module-cover parallax fullscreen text-center" data-background="images/background1.png" data-overlay="0.65" data-gradient="">
         <div class="container">
