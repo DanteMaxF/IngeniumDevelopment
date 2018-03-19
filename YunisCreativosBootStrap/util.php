@@ -86,5 +86,23 @@ function getRol($idUser) {
     return $res;
 }
 
+function getEventosDescripcion(){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = 'SELECT E.descripcionEvento FROM Evento';
+        
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($result) > 0){
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<option>";
+                echo $row["descripcionEvento"];
+                echo "</option>";
+            }
+        }
+        
+    }
+}
 
 ?>
