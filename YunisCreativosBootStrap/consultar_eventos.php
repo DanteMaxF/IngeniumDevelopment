@@ -5,8 +5,9 @@
         include("partial/_head.html");
         include("partial/_navbarCEO.html"); 
         include("partial/_forma_consultar_eventos.html");
-        if ($_POST["eventInput"] != "" && $_POST["eventInput"] != "-"){
-            $evento =  $_POST["eventInput"];
+        if ($_POST["eventInput"] != "" && $_POST["eventInput"] != "-" || isset($_SESSION["evento"])){
+            $_SESSION["evento"] =  $_POST["eventInput"];
+            $evento = $_SESSION["evento"];
             include("partial/_consultar_eventos.html"); 
         }
         include("partial/_scripts.html");

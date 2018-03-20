@@ -134,7 +134,7 @@ function getStaffEvento($descripcionEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT U.nombreUsuario, U.correo FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.descripcionEvento="'.$descripcionEvento.'"';
+        $query = 'SELECT U.nombreUsuario, U.correo, U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.descripcionEvento="'.$descripcionEvento.'"';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -146,11 +146,63 @@ function getStaffEvento($descripcionEvento){
                  echo '<tr>';
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
-                 echo '<td><button type="button" class="btn btn-danger btn-sm"data-toggle="modal" data-target="#modaldel">Borrar</button></td>';
+                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                 generateModal($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
              } 
         }
     }
+}
+
+function generateModal($id,$nombre) {
+    echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <p>¿Estás seguro que quieres eliminar a '.$nombre.'?</p>
+        </div>
+        <div class="modal-footer">
+          <a type="button" class="btn btn-danger" href="eliminar_staff.php?idStaff='.$id.'">Borrar</a>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>';
+}
+
+
+
+function eliminarStaff($descripcionEvento,$idStaff){
+  $db = connectDB();
+        if ($db != NULL) {
+
+            // insert command specification
+            //$query='INSERT INTO alumnos (nombreA,carreraA,deuda) VALUES (?,?,?) ';
+            $query = 'DELETE FROM staffEvento WHERE idEvento IN (SELECT idEvento FROM Evento WHERE descripcionEvento=?) AND idStaff=?';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("si", $descripcionEvento, $idStaff)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
 }
 
 ?>
