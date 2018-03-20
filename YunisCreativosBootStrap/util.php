@@ -120,26 +120,36 @@ function getInfoGeneralEvento($descripcionEvento){
             while ($row = mysqli_fetch_assoc($results)){
                  echo '<tr>';
                  echo '<th scope="row">'.$row["nombreEvento"].'</th>';
-                 echo '<td>'.$row["descripcionEvento"].'</tf>';
-                 echo '<td>'.$row["statusEvento"].'</tf>';
-                 echo '<td>'.$row["califPromedio"].'</tf>';
-                 echo '<td>'.$row["Cliente"].'</tf>';
-                 echo '<td>'.$row["Coordinador"].'</tf>';
+                 echo '<td>'.$row["descripcionEvento"].'</td>';
+                 echo '<td>'.$row["statusEvento"].'</td>';
+                 echo '<td>'.$row["califPromedio"].'</td>';
+                 echo '<td>'.$row["Cliente"].'</td>';
+                 echo '<td>'.$row["Coordinador"].'</td>';
             }
         }
     }
 }
 
-function getStaffEvento(){
+function getStaffEvento($descripcionEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = '';
+        $query = 'SELECT U.nombreUsuario, U.correo FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.descripcionEvento="'.$descripcionEvento.'"';
         //Pa' debugear
         //var_dump($query); 
         //die('');
         $results = mysqli_query($db,$query);
         disconnectDB($db);
+        
+        if(mysqli_num_rows($results) > 0) {
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<tr>';
+                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["correo"].'</td>';
+                 echo '<td><button type="button" class="btn btn-danger btn-sm"data-toggle="modal" data-target="#modaldel">Borrar</button></td>';
+                 echo '</tr>';
+             } 
+        }
     }
 }
 

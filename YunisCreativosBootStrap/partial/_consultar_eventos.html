@@ -18,6 +18,23 @@
         <?php echo getInfoGeneralEvento($evento); ?>
       </tbody>
     </table>
+    
+    <h3>Staff</h3>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Correo</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Aqui va la funcion-->
+        <?php echo getStaffEvento($evento); ?>
+      </tbody>
+    </table>
+    
+    <h3>Calendario de actividades</h3>
       
     <!-- Button to Open the Modal 
     <img src="Images/CalendarioUsuario.PNG" data-toggle="modal" data-target="#myModal" alt="Full Callendar" width="100%">-->
