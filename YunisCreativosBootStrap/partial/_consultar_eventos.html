@@ -2,7 +2,23 @@
     <h2 class="align-left">Evento <?=$evento?></h2>
     <!--Aqui se despliega la info general del eventto-->
     <h3> Información general</h3>
-    
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Empresa</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Estado del evento</th>
+          <th scope="col">Calificación Promedio</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Coordinador</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Aqui va la funcion-->
+        <?php echo getInfoGeneralEvento($evento); ?>
+      </tbody>
+    </table>
+      
     <!-- Button to Open the Modal 
     <img src="Images/CalendarioUsuario.PNG" data-toggle="modal" data-target="#myModal" alt="Full Callendar" width="100%">-->
     

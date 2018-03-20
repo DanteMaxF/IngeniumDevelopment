@@ -110,8 +110,36 @@ function getInfoGeneralEvento($descripcionEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = '';
+        $query = 'SELECT E.nombreEvento, E.descripcionEvento, E.statusEvento, En.califPromedio, Cl.nombreUsuario AS  "Cliente", Co.nombreUsuario AS  "Coordinador" FROM Evento E, Encuesta En, Usuario Cl, Usuario Co WHERE E.idEncuesta = En.idEncuesta AND E.idCliente = Cl.idUsuario AND E.idCoordinador = Co.idUsuario AND descripcionEvento =  "'.$descripcionEvento.'"';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)){
+                 echo '<tr>';
+                 echo '<th scope="row">'.$row["nombreEvento"].'</th>';
+                 echo '<td>'.$row["descripcionEvento"].'</tf>';
+                 echo '<td>'.$row["statusEvento"].'</tf>';
+                 echo '<td>'.$row["califPromedio"].'</tf>';
+                 echo '<td>'.$row["Cliente"].'</tf>';
+                 echo '<td>'.$row["Coordinador"].'</tf>';
+            }
+        }
+    }
+}
+
+function getStaffEvento(){
+    $db = connectDB();
+    if ($db != NULL) {
         
+        $query = '';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
     }
 }
 
