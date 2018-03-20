@@ -12,7 +12,6 @@ function disconnectDB($mysql){
   mysqli_close($mysql);
 }
 
-
 //FUNCION PARA VERIFICAR EL LOGIN
 function login($mail, $passwd) {
   $db = connectDB();
@@ -107,4 +106,80 @@ function getEventosDescripcion(){
     }
 }
 
+   function eliminarEvento($idEvento){
+        $db = connectDB();
+        
+        // insert command specification 
+        $query='DELETE FROM Evento WHERE idEvento= ?';
+        // Preparing the statement 
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params 
+        if (!$statement->bind_param("s", $idEvento)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }   
+        // update execution
+        if ($statement->execute()) {
+            echo 'There were ' . mysqli_affected_rows($db) . ' affected rows';
+        } else {
+            die("Update failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        
+        disconnectDB($db); 
+    
+    }
+    
+    
+ function editarEvento($idEvento, $nombreEvento, $descripcionEvento, $statusEvento, $idEncuesta, $idCliente, $idCoordinador, $idStaff){
+        $db = connectDb();
+        
+        // insert command specification 
+        $query='UPDATE Evento SET idEvento=?, nombreEvento=?, descripcionEvento=?, fechaCreacion=?, statusEvento=?, idEncuesta=?, idCliente=?, idCoordinador=? WHERE 1';
+        // Preparing the statement 
+        if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+        }
+        // Binding statement params 
+        if (!$statement->bind_param("sssssssss", $idEvento, $nombreEvento, $descripcionEvento, $statusEvento, $idEncuesta, $idCliente, $idCoordinador)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }   
+        // update execution
+        if ($statement->execute()) {
+            echo 'There were ' . mysqli_affected_rows($db) . ' affected rows';
+        } else {
+            die("Update failed: (" . $statement->errno . ") " . $statement->error);
+        }
+        
+        disconnectDB($db);    
+    }
+
+ function insertarEvento($idEvento, $nombreEvento, $descripcionEvento, $statusEvento, $idEncuesta, $idCliente, $idCoordinador, $idStaff) {
+          $db = connectDB();
+        if ($db != NULL) {
+            
+            // insert command specification 
+            // $query='INSERT INTO productos (nombre,imagen) VALUES (?,?) ';
+            $query='INSERT INTO Evento (idEvento,nombreEvento,descripcionEvento,fechaCreacion,statusEvento,idEncuesta,idCliente,idCoordinador) VALUES (?,?,?,?,?,?,?,?)';
+
+            // Preparing the statement 
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params 
+            if (!$statement->bind_param("ss", $idEvento, $nombreEvento, $descripcionEvento, $statusEvento, $idEncuesta, $idCliente, $idCoordinador)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              } 
+
+            
+            mysqli_free_result($results);
+            disconnectBD($db);
+            return true;
+        } 
+        return false;
+    }
 ?>
