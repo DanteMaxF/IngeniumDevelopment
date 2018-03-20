@@ -1,16 +1,10 @@
 <div class="container">
-    <div class="form-group"
-      <label>Seleccionar evento:</label>
-      <select class="form-control" id="estados">
-          <option> </option>
-          <?php 
-            echo getEventosDescripcion();
-          ?>
-      </select>
-    </div>
-    <h2 class="align-left">Evento Seleccionado</h2>
-    <!-- Button to Open the Modal -->
-    <img src="Images/CalendarioUsuario.PNG" data-toggle="modal" data-target="#myModal" alt="Full Callendar" width="100%">
+    <h2 class="align-left">Evento <?=$evento?></h2>
+    <!--Aqui se despliega la info general del eventto-->
+    <h3> Información general</h3>
+    
+    <!-- Button to Open the Modal 
+    <img src="Images/CalendarioUsuario.PNG" data-toggle="modal" data-target="#myModal" alt="Full Callendar" width="100%">-->
     
     <!-- The Modal -->
     <div class="modal fade" id="myModal">

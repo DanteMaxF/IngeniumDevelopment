@@ -103,6 +103,14 @@ function getEventosDescripcion(){
                 echo "</option>";
             }
         }
+    }
+}
+
+function getInfoGeneralEvento($descripcionEvento){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = '';
         
     }
 }
