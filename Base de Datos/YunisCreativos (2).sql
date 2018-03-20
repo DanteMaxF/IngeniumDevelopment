@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-03-2018 a las 01:00:34
+-- Tiempo de generación: 19-03-2018 a las 23:57:44
 -- Versión del servidor: 5.5.57-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.22
 
@@ -160,16 +160,16 @@ CREATE TABLE IF NOT EXISTS `Encuesta` (
 --
 
 INSERT INTO `Encuesta` (`idEncuesta`, `califPromedio`) VALUES
-(1, 10),
-(2, 4),
-(3, 8),
-(4, 10),
-(5, 9),
-(6, 10),
-(7, 7),
-(8, 6),
-(9, 10),
-(10, 5);
+(1, '10'),
+(2, '4'),
+(3, '8'),
+(4, '10'),
+(5, '9'),
+(6, '10'),
+(7, '7'),
+(8, '6'),
+(9, '10'),
+(10, '5');
 
 -- --------------------------------------------------------
 
@@ -1012,7 +1012,7 @@ INSERT INTO `tiene` (`idUsuario`, `idRol`, `fechaRol`) VALUES
 (1, 1492, '0000-00-00 00:00:00'),
 (2, 1493, '0000-00-00 00:00:00'),
 (3, 1494, '0000-00-00 00:00:00'),
-(4, 1494, '0000-00-00 00:00:00'),
+(4, 1495, '2018-03-19 20:32:02'),
 (5, 1494, '0000-00-00 00:00:00'),
 (6, 1494, '0000-00-00 00:00:00'),
 (7, 1494, '0000-00-00 00:00:00'),
@@ -1050,10 +1050,10 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
 --
 
 INSERT INTO `Usuario` (`idUsuario`, `nombreUsuario`, `passwd`, `correo`, `telefono`) VALUES
-(1, 'Juan', 'francis12321', 'dudemcwaffle@gmail.com', '4661017079'),
-(2, 'Pedro', 'camilo12312', 'correo@gmail.com', '4661017080'),
-(3, 'Paco', 'contrasena3', '1@gmail.com', '4661017081'),
-(4, 'Pepe', 'pass123', '2@gmail.com', '4661017082'),
+(1, 'Director General', 'admin', 'admin@hotmail.com', '4661017079'),
+(2, 'Coordinador', 'coordi', 'coordi@hotmail.com', '4661017080'),
+(3, 'Staff', 'staff', 'staff@hotmail.com', '4661017081'),
+(4, 'Invitado', 'invitado', 'invitado@hotmail.com', '4661017082'),
 (5, 'Dante', 'waffle123', '3@hotmail.com', '4661017083'),
 (6, 'Alex', 'johncena00', '21341@yahoo.mx', '4661017084'),
 (7, 'Paulo', 'cenajohn1', 'correoqlo@prodigy.net', '4661017085'),
@@ -1065,9 +1065,9 @@ INSERT INTO `Usuario` (`idUsuario`, `nombreUsuario`, `passwd`, `correo`, `telefo
 (13, 'Kevin', '5ofnovembah', 'rafs@gmail.com', '4661017091'),
 (14, 'Carlos', 'c0ntr4s3n4', '1231@yahoo.mx', '4661017092'),
 (15, 'Ramon', '0v3rdr1v3', '1@gmail.com', '4661017093'),
-(16, 'Abraham', 'k1llb1ll', 'dudemcwaffle@gmail.com', '4661017094'),
+(16, 'Abraham', 'k1llb1ll', 'dudemcwaffle@hotmail.com', '4661017094'),
 (17, 'Paulina', 'lulz23121', 'correo@gmail.com', '4661017095'),
-(18, 'Andrea', 'roca1231321', 'dudemcwaffle@gmail.com', '4661017096'),
+(18, 'Andrea', 'roca1231321', 'dudemcwaffle@jotmail.com', '4661017096'),
 (19, 'Juana', 'hockey', 'correo@gmail.com', '4661017097'),
 (20, 'Marisol', 'robertdowneyjr1232131', '1@gmail.com', '4661017098');
 

@@ -90,12 +90,14 @@ function getEventosDescripcion(){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT E.descripcionEvento FROM Evento';
-        
+        $query = 'SELECT descripcionEvento FROM Evento';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
         $results = mysqli_query($db,$query);
         disconnectDB($db);
-        if(mysqli_num_rows($result) > 0){
-            while ($row = mysqli_fetch_assoc($result)) {
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
                 echo "<option>";
                 echo $row["descripcionEvento"];
                 echo "</option>";
