@@ -182,4 +182,36 @@ function getEventosDescripcion(){
         } 
         return false;
     }
+    
+    
+    function insertarUsuario($idUsuario, $nombreUsuario, $passwd, $correo, $telefono) {
+          $db = connectDB();
+        if ($db != NULL) {
+            
+            // insert command specification 
+            // $query='INSERT INTO productos (nombre,imagen) VALUES (?,?) ';
+            $query= 'INSERT INTO Usuario (idUsuario,nombreUsuario,passwd,correo,telefono) VALUES (?,?,?,?,?)';
+//            $query='INSERT INTO Evento (idEvento,nombreEvento,descripcionEvento,fechaCreacion,statusEvento,idEncuesta,idCliente,idCoordinador) VALUES (?,?,?,?,?,?,?,?)';
+
+            // Preparing the statement 
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params 
+            if (!$statement->bind_param("ss", $idUsuario, $nombreUsuario, $passwd, $correo, $telefono)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              } 
+
+            
+            mysqli_free_result($results);
+            disconnectBD($db);
+            return true;
+        } 
+        return false;
+    }
+    
 ?>
