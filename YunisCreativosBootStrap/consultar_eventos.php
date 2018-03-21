@@ -7,10 +7,13 @@
         include("partial/_forma_consultar_eventos.html");
         if($_POST["eventInput"] == "-"){
             unset($_SESSION["evento"]);
+            unset($_SESSION["idEvento"]);
+            
         }
         else if ($_POST["eventInput"] != "" && $_POST["eventInput"] != "-" || isset($_SESSION["evento"])){
             $_SESSION["evento"] =  $_POST["eventInput"];
             $evento = $_SESSION["evento"];
+            $_SESSION["idEvento"] = getIdEvento($evento);
             include("partial/_consultar_eventos.html"); 
         }
         include("partial/_scripts.html");

@@ -238,12 +238,12 @@ function eliminarStaff($descripcionEvento,$idStaff){
         
         
         
-    }
+    
 
 
 
 
-    function ModalEliminarEvento($idEvento){
+    function ModalEliminarEvento($descripcionEvento,$idEvento){
     echo '<div class="modal fade" id="myModalEliminar" role="dialog">
     <div class="modal-dialog">
     
@@ -253,7 +253,7 @@ function eliminarStaff($descripcionEvento,$idStaff){
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
-          <p>¿Estás seguro que quieres eliminar el evento '.$idEvento.'?</p>
+          <p>¿Estás seguro que quieres eliminar el evento '.$descripcionEvento.'?</p>
         </div>
         <div class="modal-footer">
           <a type="button" class="btn btn-danger" href="Eliminar_evento.php?idEvento='.$idEvento.'">Eliminar</a>
@@ -272,14 +272,14 @@ function EliminarEvento($idEvento){
       if ($db != NULL) {
 
             // insert command specification
-            $query='UPDATE Evento SET Ver=0 WHERE descripcionEvento=? AND idEvento=?';
+            $query='UPDATE Evento SET Ver=0 WHERE idEvento=?';
             mysqli_query($db, $query);
             // Preparing the statement
             if (!($statement = $db->prepare($query))) {
                 die("Preparation failed: (" . $db->errno . ") " . $db->error);
             }
             // Binding statement params
-            if (!$statement->bind_param("Si", $idEvento)) {
+            if (!$statement->bind_param("i", $idEvento)) {
                 die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
             }
              // Executing the statement
