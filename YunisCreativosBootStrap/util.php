@@ -201,6 +201,7 @@ function codigoEvento($codigo) {
   return false;
 }
 
+//FUNCION PARA OBTENER NOMBRE Y DESCRIPCION DEL EVENTO
 function getNombreEvento($codigo){
     $db = connectDB();
     if($db != NULL){
@@ -227,7 +228,78 @@ function getNombreEvento($codigo){
     
 }
 
+//FUNCION PARA REGISTRAR INVITADO
+function registrarInvitado($idInvitado, $Descripcion, $fechaNacimiento, $talla, $idEstado){
+    $db = connectDB();
+    if($db != NULL){
+     $query = 'INSERT INTO Invitado(idInvitado,Descripcion,fechaNacimiento,talla,idEstado) VALUES(?,?,?,?,?)';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("ss", $nombre, $imagen)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+    
+    
+        mysqli_free_result($results);
+        disconnect($db);
+        return true;
+    } 
+    return false;
+        
+    
+    
+}
 
+//FUNCION PARA REGISTRAR USUARIO
+function registrarUsuario($nombreUsuario, $passwd, $correo, $telefono){
+    $db = connectDB();
+    if($db != NULL){
+         $query = 'INSERT INTO Usuario(NULL,nombreUsuario,passwd,correo,telefono) VALUES(?,?,?,?,?)';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("ss", $nombre, $imagen)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        mysqli_free_result($results);
+        disconnect($db);
+        return true;
+    } 
+    return false;
+    
+}
+
+function getIDUserByMail($correo){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT idUsuario from Usuario WHERE correo ="'.$correo.'"';
+        //Pa' debugear
+        //var_dump($query); 
+       // die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["idUsuario"];
+            }
+        
+        }
+    }
+    
+}
 
 ?>
 
