@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-03-2018 a las 05:39:31
+-- Tiempo de generación: 21-03-2018 a las 17:08:31
 -- Versión del servidor: 5.5.57-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.22
 
@@ -941,9 +941,8 @@ CREATE TABLE IF NOT EXISTS `staffEvento` (
 --
 
 INSERT INTO `staffEvento` (`idEvento`, `idStaff`, `fechaUsuarioEvento`) VALUES
-(1, 1, '0000-00-00 00:00:00'),
 (1, 2, '0000-00-00 00:00:00'),
-(1, 3, '0000-00-00 00:00:00'),
+(1, 3, '2018-03-21 16:33:04'),
 (1, 4, '0000-00-00 00:00:00'),
 (1, 5, '0000-00-00 00:00:00'),
 (1, 6, '0000-00-00 00:00:00'),
@@ -1043,7 +1042,7 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   `correo` varchar(250) NOT NULL,
   `telefono` varchar(15) NOT NULL,
   PRIMARY KEY (`idUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
 
 --
 -- Volcado de datos para la tabla `Usuario`
@@ -1069,7 +1068,8 @@ INSERT INTO `Usuario` (`idUsuario`, `nombreUsuario`, `passwd`, `correo`, `telefo
 (17, 'Paulina', 'lulz23121', 'correo@gmail.com', '4661017095'),
 (18, 'Andrea', 'roca1231321', 'dudemcwaffle@jotmail.com', '4661017096'),
 (19, 'Juana', 'hockey', 'correo@gmail.com', '4661017097'),
-(20, 'Marisol', 'robertdowneyjr1232131', '1@gmail.com', '4661017098');
+(20, 'Marisol', 'robertdowneyjr1232131', '1@gmail.com', '4661017098'),
+(21, 'Juan Perez', 'juan', 'juanp@gmail.com', '4611233173');
 
 -- --------------------------------------------------------
 
