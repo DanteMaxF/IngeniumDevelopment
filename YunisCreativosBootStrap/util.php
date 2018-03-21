@@ -228,21 +228,21 @@ function eliminarStaff($descripcionEvento,$idStaff){
   </div>';
 }
 
-function EliminarEvento($descripcionEvento){
+function EliminarEvento($idEvento){
 
      $db = connectDB();
  
       if ($db != NULL) {
 
             // insert command specification
-            $query='UPDATE Evento SET Ver=0 WHERE descripcionEvento=?';
+            $query='UPDATE Evento SET Ver=0 WHERE descripcionEvento=? AND idEvento=?';
             mysqli_query($db, $query);
             // Preparing the statement
             if (!($statement = $db->prepare($query))) {
                 die("Preparation failed: (" . $db->errno . ") " . $db->error);
             }
             // Binding statement params
-            if (!$statement->bind_param("si",$descripcionEvento)) {
+            if (!$statement->bind_param("Si", $idEvento)) {
                 die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
             }
              // Executing the statement
