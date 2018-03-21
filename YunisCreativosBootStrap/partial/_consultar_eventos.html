@@ -1,5 +1,5 @@
 <div class="container">
-    <h2 class="align-left">Evento <?=$evento?></h2>
+    <h2 class="align-left">Evento <?php echo $_SESSION["evento"]; ?></h2>
     <!--Aqui se despliega la info general del eventto-->
     <h3> Información general</h3>
     <table class="table">
@@ -15,7 +15,7 @@
       </thead>
       <tbody>
         <!--Aqui va la funcion-->
-        <?php echo getInfoGeneralEvento($evento); ?>
+        <?php echo getInfoGeneralEvento($_SESSION["evento"]); ?>
       </tbody>
     </table>
     
@@ -30,7 +30,7 @@
       </thead>
       <tbody>
         <!--Aqui va la funcion-->
-        <?php echo getStaffEvento($evento); ?>
+        <?php echo getStaffEvento($_SESSION["evento"]); ?>
       </tbody>
     </table>
     
@@ -40,14 +40,14 @@
     
     <?php 
      echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalEliminar">Eliminar Evento</button>';
-            ModalEliminarEvento($evento,$_SESSION["idEvento"]);
+            ModalEliminarEvento($_SESSION["evento"],$_SESSION["idEvento"]);
     ?>
       
     <!-- Button to Open the Modal 
     <img src="Images/CalendarioUsuario.PNG" data-toggle="modal" data-target="#myModal" alt="Full Callendar" width="100%">-->
 
     
-    <!--Modal para asignar un usuario-->
+    <!--Modal para asignar un usuario de staff-->
     <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -64,7 +64,7 @@
                 <select class="form-control" id="staffInput" name="staffInput">
                   <option> - </option>
                   <?php
-                     echo getStaffList($evento);
+                     echo getStaffList($_SESSION["evento"]);
                   ?>
                   
                 </select>

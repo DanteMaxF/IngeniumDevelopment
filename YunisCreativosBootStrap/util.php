@@ -367,6 +367,49 @@ function getStaffList($descripcionEvento){
     }
 }
 
+function getIdByNombreUsuario($nombre) {
+    $db = connectDB();
+    
+    $query = 'SELECT idUsuario FROM Usuario WHERE nombreUsuario="'.$nombre.'"';
+    //Pa' debugear
+    //var_dump($query); 
+    //die('');
+    $results = mysqli_query($db,$query);
+    disconnectDB($db);
+    if(mysqli_num_rows($results) > 0){
+        while ($row = mysqli_fetch_assoc($results)) {
+            return "".$row["idUsuario"]."";
+        }
+    }
+}
+
+function asignarStaff($idEvento,$idStaff){
+    $db = connectDB();
+ 
+      if ($db != NULL) {
+
+            // insert command specification
+            $query='INSERT INTO  staffEvento(idEvento,idStaff,fechaUsuarioEvento) VALUES(?,?,CURRENT_TIMESTAMP)';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("ii", $idEvento,$idStaff)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
+}
+
 
 //FUNCION PARA REGISTRAR INVITADO
 function registrarInvitado($idInvitado, $Descripcion, $fechaNacimiento, $talla, $idEstado){
@@ -378,23 +421,18 @@ function registrarInvitado($idInvitado, $Descripcion, $fechaNacimiento, $talla, 
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("ss", $nombre, $imagen)) {
+        if (!$statement->bind_param("isssi", $idInvitado, $Descripcion, $fechaNacimiento, $talla, $idEstado)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
         if (!$statement->execute()) {
             die("Execution failed: (" . $statement->errno . ") " . $statement->error);
         } 
-    
-    
         mysqli_free_result($results);
         disconnect($db);
         return true;
     } 
     return false;
-        
-    
-    
 }
 
 //FUNCION PARA REGISTRAR USUARIO
@@ -407,7 +445,7 @@ function registrarUsuario($nombreUsuario, $passwd, $correo, $telefono){
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("ss", $nombre, $imagen)) {
+        if (!$statement->bind_param("sssi", $nombre, $passwd, $correo, $telefono)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -424,6 +462,7 @@ function registrarUsuario($nombreUsuario, $passwd, $correo, $telefono){
 
 function getIDUserByMail($correo){
     $db = connectDB();
+    echo $correo;
     if($db != NULL){
         $query = 'SELECT idUsuario from Usuario WHERE correo ="'.$correo.'"';
         //Pa' debugear
@@ -439,6 +478,45 @@ function getIDUserByMail($correo){
         }
     }
     
+}
+
+function getEstadoInvitado(){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT nombreEstado from Estado';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<option>'.$row["idEstado"].'</option>';
+            }
+        }
+    
+    }
+        
+}
+
+function getIDEstado($nombreEstado){
+     $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT idEstado from Estado WHERE nombreEstado =="'.$nombreEstado.'"';
+     //Pa' debugear
+    var_dump($query); 
+    die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 
+                  echo '<tr>';
+                 echo '<td>'.$row["nombreEstado"].'</td>';
+                 echo '</tr>';
+             }
+        }
+    }
 }
 
 ?>

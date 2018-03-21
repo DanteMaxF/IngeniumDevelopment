@@ -357,3 +357,16 @@
 [21-Mar-2018 04:07:07 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 215
 [21-Mar-2018 04:07:07 UTC] PHP Stack trace:
 [21-Mar-2018 04:07:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
+[21-Mar-2018 14:22:09 UTC] PHP Parse error:  syntax error, unexpected ',', expecting ']' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php on line 4
+[21-Mar-2018 15:20:14 UTC] PHP Warning:  Missing argument 2 for registrarUsuario(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php on line 4 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 401
+[21-Mar-2018 15:20:14 UTC] PHP Stack trace:
+[21-Mar-2018 15:20:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php:0
+[21-Mar-2018 15:20:14 UTC] PHP   2. registrarUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php:4
+[21-Mar-2018 15:20:14 UTC] PHP Warning:  Missing argument 3 for registrarUsuario(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php on line 4 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 401
+[21-Mar-2018 15:20:14 UTC] PHP Stack trace:
+[21-Mar-2018 15:20:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php:0
+[21-Mar-2018 15:20:14 UTC] PHP   2. registrarUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php:4
+[21-Mar-2018 15:20:14 UTC] PHP Warning:  Missing argument 4 for registrarUsuario(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php on line 4 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 401
+[21-Mar-2018 15:20:14 UTC] PHP Stack trace:
+[21-Mar-2018 15:20:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php:0
+[21-Mar-2018 15:20:14 UTC] PHP   2. registrarUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php:4
