@@ -12,7 +12,6 @@ function disconnectDB($mysql){
   mysqli_close($mysql);
 }
 
-
 //FUNCION PARA VERIFICAR EL LOGIN
 function login($mail, $passwd) {
   $db = connectDB();
@@ -90,7 +89,7 @@ function getEventosDescripcion(){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT descripcionEvento FROM Evento';
+        $query = 'SELECT descripcionEvento, Ver FROM Evento WHERE Ver="1"';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -110,7 +109,7 @@ function getInfoGeneralEvento($descripcionEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT E.nombreEvento, E.descripcionEvento, E.statusEvento, En.califPromedio, Cl.nombreUsuario AS  "Cliente", Co.nombreUsuario AS  "Coordinador" FROM Evento E, Encuesta En, Usuario Cl, Usuario Co WHERE E.idEncuesta = En.idEncuesta AND E.idCliente = Cl.idUsuario AND E.idCoordinador = Co.idUsuario AND descripcionEvento =  "'.$descripcionEvento.'"';
+        $query = 'SELECT E.nombreEvento, E.descripcionEvento, E.statusEvento, E.Ver, En.califPromedio, Cl.nombreUsuario AS  "Cliente", Co.nombreUsuario AS  "Coordinador" FROM Evento E, Encuesta En, Usuario Cl, Usuario Co WHERE E.idEncuesta = En.idEncuesta AND E.idCliente = Cl.idUsuario AND E.idCoordinador = Co.idUsuario AND descripcionEvento =  "'.$descripcionEvento.'"';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -125,6 +124,7 @@ function getInfoGeneralEvento($descripcionEvento){
                  echo '<td>'.$row["califPromedio"].'</td>';
                  echo '<td>'.$row["Cliente"].'</td>';
                  echo '<td>'.$row["Coordinador"].'</td>';
+                 echo '<td>'.$row["Ver"].'</td>';
             }
         }
     }
@@ -205,4 +205,61 @@ function eliminarStaff($descripcionEvento,$idStaff){
         return false;
 }
 
+/*
+    function ModalEliminarEvento(){
+    echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <p>¿Estás seguro que quieres eliminar el evento?</p>
+        </div>
+        <div class="modal-footer">
+          <a type="button" class="btn btn-danger" href=".">Eliminar</a>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>';
+}
+
+function EliminarEvento(){
+
+     $db = connectDB();
+ 
+      if ($db != NULL) {
+
+            // insert command specification
+            //$query='INSERT INTO alumnos (nombreA,carreraA,deuda) VALUES (?,?,?) ';
+           // $query = 'DELETE FROM staffEvento WHERE idEvento IN (SELECT idEvento FROM Evento WHERE descripcionEvento=?) AND idStaff=?';
+           //  $query = ' DELETE FROM Evento WHERE idEvento =? AND descripcionEvento=? 
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("si", $descripcionEvento, $idStaff)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
+     
+     
+     
+     
+     }
+*/
 ?>
