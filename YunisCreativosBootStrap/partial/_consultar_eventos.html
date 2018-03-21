@@ -1,16 +1,43 @@
 <div class="container">
-    <div class="form-group"
-      <label>Seleccionar evento:</label>
-      <select class="form-control" id="estados">
-          <option> </option>
-          <?php 
-            echo getEventosDescripcion();
-          ?>
-      </select>
-    </div>
-    <h2 class="align-left">Evento Seleccionado</h2>
-    <!-- Button to Open the Modal -->
-    <img src="Images/CalendarioUsuario.PNG" data-toggle="modal" data-target="#myModal" alt="Full Callendar" width="100%">
+    <h2 class="align-left">Evento <?=$evento?></h2>
+    <!--Aqui se despliega la info general del eventto-->
+    <h3> Información general</h3>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Empresa</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Estado del evento</th>
+          <th scope="col">Calificación Promedio</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Coordinador</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Aqui va la funcion-->
+        <?php echo getInfoGeneralEvento($evento); ?>
+      </tbody>
+    </table>
+    
+    <h3>Staff</h3>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Correo</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Aqui va la funcion-->
+        <?php echo getStaffEvento($evento); ?>
+      </tbody>
+    </table>
+    
+    <h3>Calendario de actividades</h3>
+      
+    <!-- Button to Open the Modal 
+    <img src="Images/CalendarioUsuario.PNG" data-toggle="modal" data-target="#myModal" alt="Full Callendar" width="100%">-->
     
     <!-- The Modal -->
     <div class="modal fade" id="myModal">
@@ -54,3 +81,9 @@
     </div>
      <br><br>
 </div>
+
+
+
+
+
+  
