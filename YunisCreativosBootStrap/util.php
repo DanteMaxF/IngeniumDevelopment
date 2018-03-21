@@ -161,6 +161,7 @@ function getStaffEvento($descripcionEvento){
     }
 }
 
+//FUNCION PARA REGISTRAR ACTIVIDAD
 function registraActividad($idActividad, $Descripcion, $fechaInicio, $fehcaFin, $statusActividad, $idEvento){
     $db = connectDB();
     if($db != NULL){
@@ -186,6 +187,30 @@ function registraActividad($idActividad, $Descripcion, $fechaInicio, $fehcaFin, 
     } 
     return false;
 }
+
+//FUNCION PARA VERIFICAR EL CÓDIGO
+function codigoEvento($codigo) {
+  $db = connectDB();
+  if ($db != NULL) {
+
+    $query='SELECT codigo FROM Evento WHERE codigo ="'.$codigo.'"';
+    
+    //Pa' debugear
+    //var_dump($query); 
+    //die('');
+    $results = $db->query($query);
+
+    if (mysqli_num_rows($results) > 0)  {
+        mysqli_free_result($results);
+        disconnectDB($db);
+        return true;
+    }
+    return false;
+  }
+  return false;
+}
+
+
 
 ?>
 
