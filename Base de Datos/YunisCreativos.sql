@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-03-2018 a las 01:01:09
+-- Tiempo de generación: 21-03-2018 a las 05:39:31
 -- Versión del servidor: 5.5.57-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.22
 
@@ -215,6 +215,7 @@ CREATE TABLE IF NOT EXISTS `Evento` (
   `idCliente` int(11) NOT NULL,
   `idCoordinador` int(11) NOT NULL,
   `Ver` tinyint(1) NOT NULL,
+  `codigo` varchar(15) NOT NULL,
   PRIMARY KEY (`idEvento`),
   KEY `idEncuesta` (`idEncuesta`),
   KEY `idCliente` (`idCliente`),
@@ -225,27 +226,27 @@ CREATE TABLE IF NOT EXISTS `Evento` (
 -- Volcado de datos para la tabla `Evento`
 --
 
-INSERT INTO `Evento` (`idEvento`, `nombreEvento`, `descripcionEvento`, `fechaCreacion`, `statusEvento`, `idEncuesta`, `idCliente`, `idCoordinador`, `Ver`) VALUES
-(1, 'Alamo seguros', 'Lima 2017', '0000-00-00 00:00:00', 'terminado', 1, 1, 1, 1),
-(2, 'Gryc', 'Brasil 2018', '0000-00-00 00:00:00', 'activo', 2, 2, 2, 1),
-(3, 'Metlife', 'Argentina 2016', '0000-00-00 00:00:00', 'terminado', 3, 3, 3, 1),
-(4, 'Seguros Monterrey', 'San Francisco 2015', '0000-00-00 00:00:00', 'terminado', 4, 4, 4, 0),
-(5, 'Alamo seguros', 'Oaxaca 2018', '0000-00-00 00:00:00', 'preparando', 5, 5, 5, 0),
-(6, 'Gryc', 'Puebla 2017', '0000-00-00 00:00:00', 'terminado', 6, 6, 6, 0),
-(7, 'Metlife', 'Guanajuato 2011', '0000-00-00 00:00:00', 'terminado', 7, 7, 7, 0),
-(8, 'Seguros Monterrey', 'Ixtapa 2009', '0000-00-00 00:00:00', 'terminado', 8, 8, 8, 0),
-(9, 'Alamo seguros', 'Cancun 2011', '0000-00-00 00:00:00', 'terminado', 9, 9, 9, 0),
-(10, 'Gryc', 'Roma 2018', '0000-00-00 00:00:00', 'preparando', 10, 10, 10, 0),
-(11, 'Seguros Monterrey', 'Grecia 2010', '0000-00-00 00:00:00', 'activo', 1, 1, 1, 0),
-(12, 'Alamo seguros', 'Marruecos 2015', '0000-00-00 00:00:00', 'terminado', 2, 2, 2, 0),
-(13, 'Gryc', 'Mexico 2013', '0000-00-00 00:00:00', 'terminado', 3, 3, 3, 0),
-(14, 'Metlife', 'Turkia 2018', '0000-00-00 00:00:00', 'terminado', 4, 4, 4, 0),
-(15, 'Seguros Monterrey', 'China 2010', '0000-00-00 00:00:00', 'terminado', 5, 5, 5, 0),
-(16, 'Alamo seguros', 'Argentina 2018', '0000-00-00 00:00:00', 'preparando', 6, 6, 6, 0),
-(17, 'Gryc', 'Argentina 2019', '0000-00-00 00:00:00', 'preparando', 7, 7, 7, 0),
-(18, 'Seguros Monterrey', 'Brasil 2019', '0000-00-00 00:00:00', 'terminado', 8, 8, 8, 0),
-(19, 'Alamo seguros', 'Lima 2020', '0000-00-00 00:00:00', 'terminado', 9, 9, 9, 0),
-(20, 'Gryc', 'Las Vegas 2018', '0000-00-00 00:00:00', 'terminado', 10, 10, 10, 0);
+INSERT INTO `Evento` (`idEvento`, `nombreEvento`, `descripcionEvento`, `fechaCreacion`, `statusEvento`, `idEncuesta`, `idCliente`, `idCoordinador`, `Ver`, `codigo`) VALUES
+(1, 'Alamo seguros', 'Lima 2017', '0000-00-00 00:00:00', 'terminado', 1, 1, 1, 1, 'A00121'),
+(2, 'Gryc', 'Brasil 2018', '0000-00-00 00:00:00', 'activo', 2, 2, 2, 1, 'B00232'),
+(3, 'Metlife', 'Argentina 2016', '0000-00-00 00:00:00', 'terminado', 3, 3, 3, 1, 'C00343'),
+(4, 'Seguros Monterrey', 'San Francisco 2015', '0000-00-00 00:00:00', 'terminado', 4, 4, 4, 0, 'D00454'),
+(5, 'Alamo seguros', 'Oaxaca 2018', '0000-00-00 00:00:00', 'preparando', 5, 5, 5, 0, 'E00565'),
+(6, 'Gryc', 'Puebla 2017', '0000-00-00 00:00:00', 'terminado', 6, 6, 6, 0, 'F00676'),
+(7, 'Metlife', 'Guanajuato 2011', '0000-00-00 00:00:00', 'terminado', 7, 7, 7, 0, 'G00787'),
+(8, 'Seguros Monterrey', 'Ixtapa 2009', '0000-00-00 00:00:00', 'terminado', 8, 8, 8, 0, 'H00898'),
+(9, 'Alamo seguros', 'Cancun 2011', '0000-00-00 00:00:00', 'terminado', 9, 9, 9, 0, 'I00909'),
+(10, 'Gryc', 'Roma 2018', '0000-00-00 00:00:00', 'preparando', 10, 10, 10, 0, 'J00212'),
+(11, 'Seguros Monterrey', 'Grecia 2010', '0000-00-00 00:00:00', 'activo', 1, 1, 1, 0, 'K00323'),
+(12, 'Alamo seguros', 'Marruecos 2015', '0000-00-00 00:00:00', 'terminado', 2, 2, 2, 0, 'L00434'),
+(13, 'Gryc', 'Mexico 2013', '0000-00-00 00:00:00', 'terminado', 3, 3, 3, 0, 'Y00275'),
+(14, 'Metlife', 'Turkia 2018', '0000-00-00 00:00:00', 'terminado', 4, 4, 4, 0, 'X00219'),
+(15, 'Seguros Monterrey', 'China 2010', '0000-00-00 00:00:00', 'terminado', 5, 5, 5, 0, 'O00564'),
+(16, 'Alamo seguros', 'Argentina 2018', '0000-00-00 00:00:00', 'preparando', 6, 6, 6, 0, 'N00875'),
+(17, 'Gryc', 'Argentina 2019', '0000-00-00 00:00:00', 'preparando', 7, 7, 7, 0, 'M00356'),
+(18, 'Seguros Monterrey', 'Brasil 2019', '0000-00-00 00:00:00', 'terminado', 8, 8, 8, 0, 'Z00274'),
+(19, 'Alamo seguros', 'Lima 2020', '0000-00-00 00:00:00', 'terminado', 9, 9, 9, 0, 'V00193'),
+(20, 'Gryc', 'Las Vegas 2018', '0000-00-00 00:00:00', 'terminado', 10, 10, 10, 0, 'P00364');
 
 -- --------------------------------------------------------
 

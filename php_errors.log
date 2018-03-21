@@ -327,3 +327,33 @@
 [15-Mar-2018 23:36:34 UTC] PHP Warning:  include(): Failed opening 'partial/_ingresar_codigo.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/ingresar_codigo_evento.php on line 4
 [15-Mar-2018 23:36:34 UTC] PHP Stack trace:
 [15-Mar-2018 23:36:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/ingresar_codigo_evento.php:0
+[21-Mar-2018 04:01:26 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 213
+[21-Mar-2018 04:01:26 UTC] PHP Stack trace:
+[21-Mar-2018 04:01:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/code_driver.php:0
+[21-Mar-2018 04:03:44 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 213
+[21-Mar-2018 04:03:44 UTC] PHP Stack trace:
+[21-Mar-2018 04:03:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
+[21-Mar-2018 04:03:45 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 213
+[21-Mar-2018 04:03:45 UTC] PHP Stack trace:
+[21-Mar-2018 04:03:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
+[21-Mar-2018 04:03:52 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 213
+[21-Mar-2018 04:03:52 UTC] PHP Stack trace:
+[21-Mar-2018 04:03:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
+[21-Mar-2018 04:04:53 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 213
+[21-Mar-2018 04:04:53 UTC] PHP Stack trace:
+[21-Mar-2018 04:04:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
+[21-Mar-2018 04:06:06 UTC] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 214
+[21-Mar-2018 04:06:06 UTC] PHP Stack trace:
+[21-Mar-2018 04:06:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
+[21-Mar-2018 04:06:33 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 215
+[21-Mar-2018 04:06:33 UTC] PHP Stack trace:
+[21-Mar-2018 04:06:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
+[21-Mar-2018 04:07:05 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 215
+[21-Mar-2018 04:07:05 UTC] PHP Stack trace:
+[21-Mar-2018 04:07:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
+[21-Mar-2018 04:07:06 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 215
+[21-Mar-2018 04:07:06 UTC] PHP Stack trace:
+[21-Mar-2018 04:07:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
+[21-Mar-2018 04:07:07 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 215
+[21-Mar-2018 04:07:07 UTC] PHP Stack trace:
+[21-Mar-2018 04:07:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
