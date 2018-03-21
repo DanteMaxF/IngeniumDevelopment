@@ -201,6 +201,32 @@ function codigoEvento($codigo) {
   return false;
 }
 
+function getNombreEvento($codigo){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT nombreEvento, descripcionEvento from Evento WHERE codigo ="'.$codigo.'"';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+            
+                 echo '<tr>';
+                 echo '<td>'.$row["nombreEvento"].'</td>';
+                 echo '<td>: </td>';
+                 echo '<td>'.$row["descripcionEvento"].'</td>';
+                 echo '</tr>';
+                 
+          
+            }
+        
+        }
+    }
+    
+}
+
 
 
 ?>
