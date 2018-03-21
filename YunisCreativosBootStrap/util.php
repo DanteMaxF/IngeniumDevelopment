@@ -207,7 +207,7 @@ function eliminarStaff($descripcionEvento,$idStaff){
 
 
     function ModalEliminarEvento($idEvento){
-    echo '<div class="modal fade" id="myModal3" role="dialog">
+    echo '<div class="modal fade" id="myModalEliminar" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
