@@ -1,47 +1,42 @@
  <div class="container">
         <h1><?php echo getNombreEvento($_SESSION["codigo"]); ?></h1>
         <h2>Forma de Registro:</h2>
-        <form>
+        <form action="registrarAlInvitado.php" method="POST">
             <div class="form-group">
               <label for="nombre">Nombre completo:</label>
-              <input type="text" class="form-control" id="usr">
+              <input type="text" class="form-control" id="usr" name = "nombreUsuario">
             </div>
             <br>
             <div class="form-group">
                 <label for="fecha_nac">Fecha Nacimiento:</label>
-                 <input type="date" class="form-control" id="usr">
+                 <input type="date" class="form-control" id="usr" name = "fechaNacimiento">
             </div>
             <br>
             <div class="form-group"
                 <label>Estado:</label>
-                <select class="form-control" id="estados">
-                    <option> </option>
-                    <option>Estado de México</option>
-                    <option>Guanajuato</option>
-                    <option>Querétaro</option>
-                    <option>Sinaloa</option>
-                    <option>Veracruz</option>
+                <select class="form-control" id="estados" name="idEstado">
+                <?php getEstadoInvitado(); ?>
                 </select>
             </div>
             <br>
             <div class="form-group row">
               <label for="example-email-input" class="col-2 col-form-label">Correo:</label>
               <div class="col-10">
-                <input class="form-control" type="email" value="correo@ejemplo.com" id="example-email-input">
+                <input class="form-control" type="email" value="correo@ejemplo.com" id="example-email-input" name="correo">
               </div>
             </div>
             <br>
             <div class="form-group row">
               <label for="example-tel-input" class="col-2 col-form-label">Teléfono:</label>
               <div class="col-10">
-                <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
+                <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input" name="telefono">
               </div>
             </div>
             <br>
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
               <div class="col-10">
-                <input class="form-control" type="password" value="" id="example-password-input">
+                <input class="form-control" type="password" value="" id="example-password-input" name="passwd">
               </div>
             </div>
             <br>
@@ -55,13 +50,12 @@
             <br>
             <div class="form-group"
                 <label>Talla:</label>
-                <select class="form-control" id="estados">
-                    <option> </option>
-                    <option>Chica (S)</option>
-                    <option>Mediana (M)</option>
-                    <option>Grande (L)</option>
-                    <option>Extra Grande (XL)</option>
-                    <option>Extra Extra Grande (XXL)</option>
+                <select class="form-control" id="estados" name="talla">
+                    <option>-</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
                 </select>
             </div>
             <br>
