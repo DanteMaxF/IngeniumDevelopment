@@ -206,13 +206,13 @@ function eliminarStaff($descripcionEvento,$idStaff){
 }
 
 
-    function getIdEvento($descripcionEvento){
-         $db = connectDB();
+function getIdEvento($descripcionEvento){
+    $db = connectDB();
  
-      if ($db != NULL) {
-      $query='SELECT idEvento FROM Evento WHERE descripcionEvento="'.$descripcionEvento.'"';
+    if ($db != NULL) {
+        $query='SELECT idEvento FROM Evento WHERE descripcionEvento="'.$descripcionEvento.'"';
       
-       $results = mysqli_query($db,$query);
+        $results = mysqli_query($db,$query);
         disconnectDB($db);
         
         if (mysqli_num_rows($results) > 0) {
@@ -225,25 +225,9 @@ function eliminarStaff($descripcionEvento,$idStaff){
         mysqli_free_result($results);
     }
     return $res;
-      
-      
-          
-          
-          
-          
-          
-      }
-      
-        
-        
-        
-        
-    
+}
 
-
-
-
-    function ModalEliminarEvento($descripcionEvento,$idEvento){
+function ModalEliminarEvento($descripcionEvento,$idEvento){
     echo '<div class="modal fade" id="myModalEliminar" role="dialog">
     <div class="modal-dialog">
     
@@ -358,13 +342,29 @@ function getNombreEvento($codigo){
                  echo '<td>: </td>';
                  echo '<td>'.$row["descripcionEvento"].'</td>';
                  echo '</tr>';
-                 
-          
             }
-        
         }
     }
-    
+}
+
+function getStaffList($descripcionEvento){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = 'SELECT U.nombreUsuario FROM Usuario U, tiene T WHERE U.idUsuario=T.idUsuario AND T.idRol=1494 AND T.idUsuario NOT IN (SELECT U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.descripcionEvento="'.$descripcionEvento.'")';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo "<option>";
+                echo $row["nombreUsuario"];
+                echo "</option>";
+            }
+        }
+    }
 }
 
 <<<<<<< HEAD
