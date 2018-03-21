@@ -89,7 +89,7 @@ function getEventosDescripcion(){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT descripcionEvento FROM Evento';
+        $query = 'SELECT descripcionEvento, Ver FROM Evento WHERE Ver="1"';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -109,7 +109,7 @@ function getInfoGeneralEvento($descripcionEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT E.nombreEvento, E.descripcionEvento, E.statusEvento, En.califPromedio, Cl.nombreUsuario AS  "Cliente", Co.nombreUsuario AS  "Coordinador" FROM Evento E, Encuesta En, Usuario Cl, Usuario Co WHERE E.idEncuesta = En.idEncuesta AND E.idCliente = Cl.idUsuario AND E.idCoordinador = Co.idUsuario AND descripcionEvento =  "'.$descripcionEvento.'"';
+        $query = 'SELECT E.nombreEvento, E.descripcionEvento, E.statusEvento, E.Ver, En.califPromedio, Cl.nombreUsuario AS  "Cliente", Co.nombreUsuario AS  "Coordinador" FROM Evento E, Encuesta En, Usuario Cl, Usuario Co WHERE E.idEncuesta = En.idEncuesta AND E.idCliente = Cl.idUsuario AND E.idCoordinador = Co.idUsuario AND descripcionEvento =  "'.$descripcionEvento.'"';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -124,6 +124,7 @@ function getInfoGeneralEvento($descripcionEvento){
                  echo '<td>'.$row["califPromedio"].'</td>';
                  echo '<td>'.$row["Cliente"].'</td>';
                  echo '<td>'.$row["Coordinador"].'</td>';
+                 echo '<td>'.$row["Ver"].'</td>';
             }
         }
     }
@@ -153,102 +154,6 @@ function getStaffEvento($descripcionEvento){
     }
 }
 
-<<<<<<< HEAD
-   function eliminarEvento($idEvento){
-        $db = connectDB();
-        
-        // insert command specification 
-        $query='DELETE FROM Evento WHERE idEvento= ?';
-        // Preparing the statement 
-        if (!($statement = $db->prepare($query))) {
-            die("Preparation failed: (" . $db->errno . ") " . $db->error);
-        }
-        // Binding statement params 
-        if (!$statement->bind_param("s", $idEvento)) {
-            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
-        }   
-        // update execution
-        if ($statement->execute()) {
-            echo 'There were ' . mysqli_affected_rows($db) . ' affected rows';
-        } else {
-            die("Update failed: (" . $statement->errno . ") " . $statement->error);
-        }
-        
-        disconnectDB($db); 
-    
-    }
-    
-    
- function editarEvento($idEvento, $nombreEvento, $descripcionEvento, $statusEvento, $idEncuesta, $idCliente, $idCoordinador, $idStaff){
-        $db = connectDb();
-        
-        // insert command specification 
-        $query='UPDATE Evento SET idEvento=?, nombreEvento=?, descripcionEvento=?, fechaCreacion=?, statusEvento=?, idEncuesta=?, idCliente=?, idCoordinador=? WHERE 1';
-        // Preparing the statement 
-        if (!($statement = $db->prepare($query))) {
-            die("Preparation failed: (" . $db->errno . ") " . $db->error);
-        }
-        // Binding statement params 
-        if (!$statement->bind_param("sssssssss", $idEvento, $nombreEvento, $descripcionEvento, $statusEvento, $idEncuesta, $idCliente, $idCoordinador)) {
-            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
-        }   
-        // update execution
-        if ($statement->execute()) {
-            echo 'There were ' . mysqli_affected_rows($db) . ' affected rows';
-        } else {
-            die("Update failed: (" . $statement->errno . ") " . $statement->error);
-        }
-        
-        disconnectDB($db);    
-    }
-
- function insertarEvento($idEvento, $nombreEvento, $descripcionEvento, $statusEvento, $idEncuesta, $idCliente, $idCoordinador, $idStaff) {
-          $db = connectDB();
-        if ($db != NULL) {
-            
-            // insert command specification 
-            // $query='INSERT INTO productos (nombre,imagen) VALUES (?,?) ';
-            $query='INSERT INTO Evento (idEvento,nombreEvento,descripcionEvento,fechaCreacion,statusEvento,idEncuesta,idCliente,idCoordinador) VALUES (?,?,?,?,?,?,?,?)';
-
-            // Preparing the statement 
-            if (!($statement = $db->prepare($query))) {
-                die("Preparation failed: (" . $db->errno . ") " . $db->error);
-            }
-            // Binding statement params 
-            if (!$statement->bind_param("ss", $idEvento, $nombreEvento, $descripcionEvento, $statusEvento, $idEncuesta, $idCliente, $idCoordinador)) {
-                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
-            }
-             // Executing the statement
-             if (!$statement->execute()) {
-                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-              } 
-
-            
-            mysqli_free_result($results);
-            disconnectBD($db);
-            return true;
-        } 
-        return false;
-    }
-    
-    
-    function insertarUsuario($idUsuario, $nombreUsuario, $passwd, $correo, $telefono) {
-          $db = connectDB();
-        if ($db != NULL) {
-            
-            // insert command specification 
-            // $query='INSERT INTO productos (nombre,imagen) VALUES (?,?) ';
-            $query= 'INSERT INTO Usuario (idUsuario,nombreUsuario,passwd,correo,telefono) VALUES (?,?,?,?,?)';
-//            $query='INSERT INTO Evento (idEvento,nombreEvento,descripcionEvento,fechaCreacion,statusEvento,idEncuesta,idCliente,idCoordinador) VALUES (?,?,?,?,?,?,?,?)';
-
-            // Preparing the statement 
-            if (!($statement = $db->prepare($query))) {
-                die("Preparation failed: (" . $db->errno . ") " . $db->error);
-            }
-            // Binding statement params 
-            if (!$statement->bind_param("ss", $idUsuario, $nombreUsuario, $passwd, $correo, $telefono)) {
-                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
-=======
 function generateModal($id,$nombre) {
     echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
     <div class="modal-dialog">
@@ -288,23 +193,10 @@ function eliminarStaff($descripcionEvento,$idStaff){
             // Binding statement params
             if (!$statement->bind_param("si", $descripcionEvento, $idStaff)) {
                 die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
->>>>>>> develop
             }
              // Executing the statement
              if (!$statement->execute()) {
                 die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-<<<<<<< HEAD
-              } 
-
-            
-            mysqli_free_result($results);
-            disconnectBD($db);
-            return true;
-        } 
-        return false;
-    }
-    
-=======
               }
             //mysqli_free_result($result);
             disconnectDB($db);
@@ -313,5 +205,61 @@ function eliminarStaff($descripcionEvento,$idStaff){
         return false;
 }
 
->>>>>>> develop
+/*
+    function ModalEliminarEvento(){
+    echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <p>¿Estás seguro que quieres eliminar el evento?</p>
+        </div>
+        <div class="modal-footer">
+          <a type="button" class="btn btn-danger" href=".">Eliminar</a>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>';
+}
+
+function EliminarEvento(){
+
+     $db = connectDB();
+ 
+      if ($db != NULL) {
+
+            // insert command specification
+            //$query='INSERT INTO alumnos (nombreA,carreraA,deuda) VALUES (?,?,?) ';
+           // $query = 'DELETE FROM staffEvento WHERE idEvento IN (SELECT idEvento FROM Evento WHERE descripcionEvento=?) AND idStaff=?';
+           //  $query = ' DELETE FROM Evento WHERE idEvento =? AND descripcionEvento=? 
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("si", $descripcionEvento, $idStaff)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
+     
+     
+     
+     
+     }
+*/
 ?>
