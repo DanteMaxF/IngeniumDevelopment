@@ -256,4 +256,83 @@ function EliminarEvento($idEvento){
         return false;
      }
 
+//FUNCION PARA REGISTRAR ACTIVIDAD
+function registraActividad($idActividad, $Descripcion, $fechaInicio, $fehcaFin, $statusActividad, $idEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'INSERT INTO Actividad(idActividad,Descripcion,fechaInicio,fehcaFin,statusActividad,idEvento) VALUES(?,?,?,?,?,?)';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("ss", $nombre, $imagen)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+    
+    
+        mysqli_free_result($results);
+        disconnect($db);
+        return true;
+    } 
+    return false;
+}
+
+//FUNCION PARA VERIFICAR EL CÓDIGO
+function codigoEvento($codigo) {
+  $db = connectDB();
+  if ($db != NULL) {
+
+    $query='SELECT codigo FROM Evento WHERE codigo ="'.$codigo.'"';
+    
+    //Pa' debugear
+    //var_dump($query); 
+    //die('');
+    $results = $db->query($query);
+
+    if (mysqli_num_rows($results) > 0)  {
+        mysqli_free_result($results);
+        disconnectDB($db);
+        return true;
+    }
+    return false;
+  }
+  return false;
+}
+
+function getNombreEvento($codigo){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT nombreEvento, descripcionEvento from Evento WHERE codigo ="'.$codigo.'"';
+        //Pa' debugear
+        var_dump($query); 
+        die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+            
+                 echo '<tr>';
+                 echo '<td>'.$row["nombreEvento"].'</td>';
+                 echo '<td>'.$row["descripcionEvento"].'</td>';
+                 echo '</tr>';
+                 
+          
+            }
+        
+        }
+    }
+    
+}
+
+
+
+
+
+
+
 ?>
