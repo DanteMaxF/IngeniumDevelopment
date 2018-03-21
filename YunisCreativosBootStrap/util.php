@@ -206,6 +206,43 @@ function eliminarStaff($descripcionEvento,$idStaff){
 }
 
 
+    function getIdEvento($descripcionEvento){
+         $db = connectDB();
+ 
+      if ($db != NULL) {
+      $query='SELECT idEvento FROM Evento WHERE descripcionEvento="'.$descripcionEvento.'"';
+      
+       $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        
+        if (mysqli_num_rows($results) > 0) {
+            if($row = mysqli_fetch_assoc($results)) {
+                $res = "".$row["idEvento"]."";
+            }else{
+                $res = "-1";
+            }
+        }
+        mysqli_free_result($results);
+    }
+    return $res;
+      
+      
+          
+          
+          
+          
+          
+      }
+      
+        
+        
+        
+        
+    }
+
+
+
+
     function ModalEliminarEvento($idEvento){
     echo '<div class="modal fade" id="myModalEliminar" role="dialog">
     <div class="modal-dialog">
