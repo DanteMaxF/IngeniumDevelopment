@@ -153,4 +153,31 @@ function getStaffEvento($descripcionEvento){
     }
 }
 
+function registraActividad($idActividad, $Descripcion, $fechaInicio, $fehcaFin, $statusActividad, $idEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'INSERT INTO Actividad(idActividad,Descripcion,fechaInicio,fehcaFin,statusActividad,idEvento) VALUES(?,?,?,?,?,?)';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("ss", $nombre, $imagen)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+    
+    
+        mysqli_free_result($results);
+        disconnect($db);
+        return true;
+    } 
+    return false;
+}
+
 ?>
+
+//'INSERT INTO Zombies(Nombre,Apellido_P,Apellido_M,Estado,Transicion) VALUES (?,?,?,?,CURRENT_TIMESTAMP()) ';//listo

@@ -1,48 +1,139 @@
 <div class="container">
-
-  <div id="demo" class="carousel slide" data-ride="carousel">
-
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="images/lasvegas.jpg" alt="Los Angeles">
-    </div>
-    <div class="carousel-item">
-      <img src="images/logo.png" alt="Chicago">
-    </div>
-    <div class="carousel-item">
-      <img src="images/background1.png" alt="New York">
-    </div>
+   <div id="calendar" class="col-centered">
+    <script>
+      $(document).ready(function(){
+        
+        $('#callendar').fullCalendar({
+          
+        })
+      })
+    </script>
+    
+    
   </div>
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
-
+              <!-- Creación de Modal -->
+            <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <!-- Inicio del formulario -->
+                        <form class="form-horizontal" method="POST" action="addEvent.php">
+                        <!-- Título del modal -->
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Añade un Evento</h4>
+                        </div>
+                        <!-- Contenido del modal -->
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="title" class="col-sm-2 control-label">Titulo</label> <!-- Primera Opción (Título del evento)-->
+                                <div class="col-sm-10">
+                                    <input type="text" name="title" class="form-control" id="title" placeholder="Titulo aquí">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="color" class="col-sm-2 control-label">Color</label> <!-- Segunda Opción (Color del evento) -->
+                                <div class="col-sm-10">
+                                    <select name="color" class="form-control" id="color">
+                                        <option value="">Elije uno</option>
+                                        <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
+                                        <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
+                                        <option style="color:#008000;" value="#008000">&#9724; Green</option>						  
+                                        <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
+                                        <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
+                                        <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
+                                        <option style="color:#000;" value="#000">&#9724; Black</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="start" class="col-sm-2 control-label">Inicia</label> <!-- Tercera Opción (Fecha de Inicio) No modificable -->
+                                <div class="col-sm-10">
+                                    <input type="text" name="start" class="form-control" id="start" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="end" class="col-sm-2 control-label">Termina</label> <!-- Cuarta Opción (Fecha de Fin) No modificable -->
+                                <div class="col-sm-10">
+                                    <input type="text" name="end" class="form-control" id="end" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button> <!-- Botón para cerrar modal -->
+                            <button type="submit" class="btn btn-primary">Guardar los cambios</button> <!-- Botón para guardar datos del evento -->
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal (Para cuando se edita) -->
+            <div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <form class="form-horizontal" method="POST" action="editEventTitle.php">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Editar Evento</h4>
+                        </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="title" class="col-sm-2 control-label">Titulo</label> <!-- Primera Opción (Título del evento)-->
+                            <div class="col-sm-10">
+                                <input type="text" name="title" class="form-control" id="title" placeholder="Titulo aquí">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="color" class="col-sm-2 control-label">Color</label> <!-- Segunda Opción (Color del evento) -->
+                            <div class="col-sm-10">
+                                <select name="color" class="form-control" id="color">
+                                    <option value="">Elije uno</option>
+                                    <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
+                                    <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
+                                    <option style="color:#008000;" value="#008000">&#9724; Green</option>						  
+                                    <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
+                                    <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
+                                    <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
+                                    <option style="color:#000;" value="#000">&#9724; Black</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group"> 
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label class="text-danger"><input type="checkbox"  name="delete">Borrar evento</label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="id" class="form-control" id="id">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button> <!-- Botón para cerrar modal -->
+                        <button type="submit" class="btn btn-primary">Guardar los cambios</button> <!-- Botón para guardar datos del evento -->
+                    </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--
     <h2 class="align-left">Evento más próximo</h2>
-    <!-- Button to Open the Modal -->
+    
+    
     <img src="Images/CalendarioUsuario.PNG" data-toggle="modal" data-target="#myModal" alt="Full Callendar" width="100%">
     
-    <!-- The Modal -->
+ 
     <div class="modal fade" id="myModal">
       <div class="modal-dialog">
         <div class="modal-content">
     
-          <!-- Modal Header -->
+     
           <div class="modal-header">
             <h4 class="modal-title">Consultar Actividad</h4>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
     
-          <!-- Modal body -->
+         
           <div class="modal-body">
              <form>
                             
@@ -66,10 +157,11 @@
                   </form>
           </div>
     
-          <!-- Modal footer -->
+ 
     
         </div>
       </div>
     </div>
+    -->
      <br><br>
 </div>
