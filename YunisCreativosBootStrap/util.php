@@ -367,9 +367,7 @@ function getStaffList($descripcionEvento){
     }
 }
 
-<<<<<<< HEAD
-?>
-=======
+
 //FUNCION PARA REGISTRAR INVITADO
 function registrarInvitado($idInvitado, $Descripcion, $fechaNacimiento, $talla, $idEstado){
     $db = connectDB();
@@ -445,4 +443,3 @@ function getIDUserByMail($correo){
 
 ?>
 
->>>>>>> alex/frontEnd
