@@ -6,5 +6,5 @@
 
     $_SESSION["message"] = 'El evento '.$_GET["nombreEvento"].' se eliminó correctamente';
 
-   header("location:index.php");
+   header('location:consultar_eventos.php?eventInput=""');
 ?>
