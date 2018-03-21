@@ -367,6 +367,49 @@ function getStaffList($descripcionEvento){
     }
 }
 
+function getIdByNombreUsuario($nombre) {
+    $db = connectDB();
+    
+    $query = 'SELECT idUsuario FROM Usuario WHERE nombreUsuario="'.$nombre.'"';
+    //Pa' debugear
+    //var_dump($query); 
+    //die('');
+    $results = mysqli_query($db,$query);
+    disconnectDB($db);
+    if(mysqli_num_rows($results) > 0){
+        while ($row = mysqli_fetch_assoc($results)) {
+            return "".$row["idUsuario"]."";
+        }
+    }
+}
+
+function asignarStaff($idEvento,$idStaff){
+    $db = connectDB();
+ 
+      if ($db != NULL) {
+
+            // insert command specification
+            $query='INSERT INTO  staffEvento(idEvento,idStaff,fechaUsuarioEvento) VALUES(?,?,CURRENT_TIMESTAMP)';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("ii", $idEvento,$idStaff)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
+}
+
 
 //FUNCION PARA REGISTRAR INVITADO
 function registrarInvitado($idInvitado, $Descripcion, $fechaNacimiento, $talla, $idEstado){
@@ -385,16 +428,11 @@ function registrarInvitado($idInvitado, $Descripcion, $fechaNacimiento, $talla, 
         if (!$statement->execute()) {
             die("Execution failed: (" . $statement->errno . ") " . $statement->error);
         } 
-    
-    
         mysqli_free_result($results);
         disconnect($db);
         return true;
     } 
     return false;
-        
-    
-    
 }
 
 //FUNCION PARA REGISTRAR USUARIO
