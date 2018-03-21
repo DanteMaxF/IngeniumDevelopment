@@ -1,13 +1,13 @@
 <div class="container">
     <form action="consultar_eventos.php" method="POST">
-          <div class="form-group"
-          <label>Seleccionar evento:</label>
-          <select class="form-control" id="eventInput" name="eventInput">
-              <option> - </option>
-              <?php 
-                echo getEventosDescripcion();
-              ?>
-          </select>
+          <div class="form-group">
+            <label>Seleccionar evento:</label>
+            <select class="form-control" id="eventInput" name="eventInput">
+                <option> - </option>
+                <?php 
+                  echo getEventosDescripcion();
+                ?>
+            </select>
           </div>
           <button type="submit" class="btn btn-secondary">Ir</button>
     </form>
