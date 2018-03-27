@@ -412,16 +412,27 @@ function asignarStaff($idEvento,$idStaff){
 
 
 //FUNCION PARA REGISTRAR INVITADO
+<<<<<<< HEAD
 function registrarInvitado($Descripcion, $fechaNacimiento, $talla, $idEstado){
     $db = connectDB();
     if($db != NULL){
      $query = 'INSERT INTO Invitado(Descripcion,fechaNacimiento,talla,idEstado) VALUES(?,?,?,?)';
+=======
+function registrarInvitado($idInvitado, $fechaNacimiento, $talla, $idEstado){
+    $db = connectDB();
+    if($db != NULL){
+     $query = 'INSERT INTO Invitado(idInvitado,fechaNacimiento,talla,idEstado) VALUES(?,?,?,?)';
+>>>>>>> alex/frontEnd
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
+<<<<<<< HEAD
         if (!$statement->bind_param("sssi",$Descripcion, $fechaNacimiento, $talla, $idEstado)) {
+=======
+        if (!$statement->bind_param("issi",$idInvitado, $fechaNacimiento, $talla, $idEstado)) {
+>>>>>>> alex/frontEnd
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -434,26 +445,25 @@ function registrarInvitado($Descripcion, $fechaNacimiento, $talla, $idEstado){
     } 
     return false;
 }
-
+//registrarUsuario($_POST["nombreUsuario,passwd,correo,telefono"]);
 //FUNCION PARA REGISTRAR USUARIO
 function registrarUsuario($nombreUsuario, $passwd, $correo, $telefono){
     $db = connectDB();
     if($db != NULL){
-         $query = 'INSERT INTO Usuario(NULL,nombreUsuario,passwd,correo,telefono) VALUES(?,?,?,?,?)';
+         $query = 'INSERT INTO Usuario(nombreUsuario,passwd,correo,telefono) VALUES(?,?,?,?)';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("sssi", $nombre, $passwd, $correo, $telefono)) {
+        if (!$statement->bind_param("sssi", $nombreUsuario, $passwd, $correo, $telefono)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
         if (!$statement->execute()) {
             die("Execution failed: (" . $statement->errno . ") " . $statement->error);
         } 
-        mysqli_free_result($results);
-        disconnect($db);
+        disconnectDB($db);
         return true;
     } 
     return false;
