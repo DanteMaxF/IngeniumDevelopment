@@ -15,28 +15,28 @@
             <div class="form-group"
                 <label>Estado:</label>
                 <select class="form-control" id="estados" name="idEstado">
-                <?php getEstadoInvitado(); ?>
+                    <?php getEstadoInvitado() ?>
                 </select>
             </div>
             <br>
             <div class="form-group row">
               <label for="example-email-input" class="col-2 col-form-label">Correo:</label>
               <div class="col-10">
-                <input class="form-control" type="email" value="correo@ejemplo.com" id="example-email-input" name="correo">
+                <input class="form-control" type="email" value="correo@ejemplo.com" id="example-email-input">
               </div>
             </div>
             <br>
             <div class="form-group row">
               <label for="example-tel-input" class="col-2 col-form-label">Teléfono:</label>
               <div class="col-10">
-                <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input" name="telefono">
+                <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
               </div>
             </div>
             <br>
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
               <div class="col-10">
-                <input class="form-control" type="password" value="" id="example-password-input" name="passwd">
+                <input class="form-control" type="password" value="" id="example-password-input">
               </div>
             </div>
             <br>
@@ -50,12 +50,13 @@
             <br>
             <div class="form-group"
                 <label>Talla:</label>
-                <select class="form-control" id="estados" name="talla">
-                    <option>-</option>
-                    <option>S</option>
-                    <option>M</option>
-                    <option>L</option>
-                    <option>XL</option>
+                <select class="form-control" id="estados">
+                    <option> </option>
+                    <option>Chica (S)</option>
+                    <option>Mediana (M)</option>
+                    <option>Grande (L)</option>
+                    <option>Extra Grande (XL)</option>
+                    <option>Extra Extra Grande (XXL)</option>
                 </select>
             </div>
             <br>
@@ -81,12 +82,7 @@
             <div class="form-group"
                 <label>Alergias:</label>
                 <select class="form-control" id="estados">
-                    <option> </option>
-                    <option>Mani</option>
-                    <option>Nueces</option>
-                    <option>Fresas</option>
-                    <option>Camarones</option>
-                    <option>Pescado</option>
+                   <?php getAlergias() ?>
                 </select>
             </div>
             <br>

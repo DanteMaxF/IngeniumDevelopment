@@ -370,3 +370,9 @@
 [21-Mar-2018 15:20:14 UTC] PHP Stack trace:
 [21-Mar-2018 15:20:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php:0
 [21-Mar-2018 15:20:14 UTC] PHP   2. registrarUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php:4
+[27-Mar-2018 17:27:51 UTC] PHP Parse error:  syntax error, unexpected 'disconnectDB' (T_STRING) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 455
+[27-Mar-2018 17:27:51 UTC] PHP Stack trace:
+[27-Mar-2018 17:27:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
+[27-Mar-2018 17:41:58 UTC] PHP Parse error:  syntax error, unexpected 'debugear' (T_STRING) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 488
+[27-Mar-2018 17:41:58 UTC] PHP Stack trace:
+[27-Mar-2018 17:41:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0

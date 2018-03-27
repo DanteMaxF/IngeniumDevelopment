@@ -412,16 +412,16 @@ function asignarStaff($idEvento,$idStaff){
 
 
 //FUNCION PARA REGISTRAR INVITADO
-function registrarInvitado($idInvitado, $Descripcion, $fechaNacimiento, $talla, $idEstado){
+function registrarInvitado($Descripcion, $fechaNacimiento, $talla, $idEstado){
     $db = connectDB();
     if($db != NULL){
-     $query = 'INSERT INTO Invitado(idInvitado,Descripcion,fechaNacimiento,talla,idEstado) VALUES(?,?,?,?,?)';
+     $query = 'INSERT INTO Invitado(Descripcion,fechaNacimiento,talla,idEstado) VALUES(?,?,?,?)';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("isssi", $idInvitado, $Descripcion, $fechaNacimiento, $talla, $idEstado)) {
+        if (!$statement->bind_param("sssi",$Descripcion, $fechaNacimiento, $talla, $idEstado)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -491,7 +491,7 @@ function getEstadoInvitado(){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 echo '<option>'.$row["idEstado"].'</option>';
+                 echo '<option>'.$row["nombreEstado"].'</option>';
             }
         }
     
@@ -502,18 +502,35 @@ function getEstadoInvitado(){
 function getIDEstado($nombreEstado){
      $db = connectDB();
     if($db != NULL){
-    $query = 'SELECT idEstado from Estado WHERE nombreEstado =="'.$nombreEstado.'"';
+    $query = 'SELECT idEstado from Estado WHERE nombreEstado ="'.$nombreEstado.'"';
      //Pa' debugear
-    var_dump($query); 
-    die('');
+    //var_dump($query); 
+    //die('');
         $results = mysqli_query($db,$query);
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
                  
-                  echo '<tr>';
-                 echo '<td>'.$row["nombreEstado"].'</td>';
+                 echo '<tr>';
+                 echo '<td>'.$row["idEstado"].'</td>';
                  echo '</tr>';
+             }
+        }
+    }
+}
+
+function getAlergias(){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT descripcion from Alergia';
+     //Pa' debugear
+    //var_dump($query); 
+    //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                echo '<option>'.$row["descripcion"].'</option>';
              }
         }
     }
