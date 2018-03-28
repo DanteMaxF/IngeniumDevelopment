@@ -367,6 +367,7 @@ function getStaffList($descripcionEvento){
     }
 }
 
+<<<<<<< HEAD
 function getIdByNombreUsuario($nombre) {
     $db = connectDB();
     
@@ -417,30 +418,27 @@ function registrarInvitado($Descripcion, $fechaNacimiento, $talla, $idEstado){
     $db = connectDB();
     if($db != NULL){
      $query = 'INSERT INTO Invitado(Descripcion,fechaNacimiento,talla,idEstado) VALUES(?,?,?,?)';
-=======
-function registrarInvitado($idInvitado, $fechaNacimiento, $talla, $idEstado){
+
+//registrarInvitado($idInvitado,$correo,$fechaNacimiento,$talla,$idEstado);
+//FUNCION PARA REGISTRAR INVITADO
+function registrarInvitado($idInvitado,$correo,$fechaNacimiento, $talla, $idEstado){
     $db = connectDB();
     if($db != NULL){
      $query = 'INSERT INTO Invitado(idInvitado,fechaNacimiento,talla,idEstado) VALUES(?,?,?,?)';
->>>>>>> alex/frontEnd
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-<<<<<<< HEAD
-        if (!$statement->bind_param("sssi",$Descripcion, $fechaNacimiento, $talla, $idEstado)) {
-=======
+
         if (!$statement->bind_param("issi",$idInvitado, $fechaNacimiento, $talla, $idEstado)) {
->>>>>>> alex/frontEnd
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
         if (!$statement->execute()) {
             die("Execution failed: (" . $statement->errno . ") " . $statement->error);
         } 
-        mysqli_free_result($results);
-        disconnect($db);
+        disconnectDB($db);
         return true;
     } 
     return false;
@@ -472,7 +470,6 @@ function registrarUsuario($nombreUsuario, $passwd, $correo, $telefono){
 
 function getIDUserByMail($correo){
     $db = connectDB();
-    echo $correo;
     if($db != NULL){
         $query = 'SELECT idUsuario from Usuario WHERE correo ="'.$correo.'"';
         //Pa' debugear
@@ -518,12 +515,9 @@ function getIDEstado($nombreEstado){
     //die('');
         $results = mysqli_query($db,$query);
         disconnectDB($db);
-        if(mysqli_num_rows($results) > 0){
+         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 
-                 echo '<tr>';
-                 echo '<td>'.$row["idEstado"].'</td>';
-                 echo '</tr>';
+                 return $row["idEstado"];
              }
         }
     }
