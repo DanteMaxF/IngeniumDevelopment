@@ -367,10 +367,9 @@ function getStaffList($descripcionEvento){
     }
 }
 
-<<<<<<< HEAD
+
 function getIdByNombreUsuario($nombre) {
     $db = connectDB();
-    
     $query = 'SELECT idUsuario FROM Usuario WHERE nombreUsuario="'.$nombre.'"';
     //Pa' debugear
     //var_dump($query); 
@@ -412,12 +411,7 @@ function asignarStaff($idEvento,$idStaff){
 }
 
 
-//FUNCION PARA REGISTRAR INVITADO
-<<<<<<< HEAD
-function registrarInvitado($Descripcion, $fechaNacimiento, $talla, $idEstado){
-    $db = connectDB();
-    if($db != NULL){
-     $query = 'INSERT INTO Invitado(Descripcion,fechaNacimiento,talla,idEstado) VALUES(?,?,?,?)';
+
 
 //registrarInvitado($idInvitado,$correo,$fechaNacimiento,$talla,$idEstado);
 //FUNCION PARA REGISTRAR INVITADO
