@@ -5,7 +5,9 @@
     $passwd =  $_POST["passwd"];
     $correo = $_POST["correo"];
     $telefono = $_POST["telefono"];
-    $idInvitado = getIDUserByMail($_POST["correo"]);
+    $idInvitado = getIdByNombreUsuario($_POST["nombreUsuario"]);
+    //var_dump($idInvitado); 
+    //die('');
     $Descripcion = $_POST["Descripcion"];
     $fechaNacimiento = $_POST["fechaNacimiento"];
     $talla = $_POST["talla"];

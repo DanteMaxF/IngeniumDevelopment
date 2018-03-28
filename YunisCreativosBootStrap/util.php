@@ -439,8 +439,11 @@ function registrarInvitado($idInvitado,$correo,$fechaNacimiento, $talla, $idEsta
 }
 //registrarUsuario($_POST["nombreUsuario,passwd,correo,telefono"]);
 //FUNCION PARA REGISTRAR USUARIO
-function registrarUsuario($nombreUsuario, $passwd, $correo, $telefono){
+function registrarUsuario($nombreUsuario,$passwd,$correo,$telefono){
     $db = connectDB();
+     //Pa' debugear
+    //var_dump($passwd); 
+      //die('');
     if($db != NULL){
          $query = 'INSERT INTO Usuario(nombreUsuario,passwd,correo,telefono) VALUES(?,?,?,?)';
         // Preparing the statement 
@@ -473,7 +476,7 @@ function getIDUserByMail($correo){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 return $row["idUsuario"];
+                 return "".$row["idUsuario"]."";
             }
         
         }
@@ -532,6 +535,14 @@ function getAlergias(){
              }
         }
     }
+}
+
+function getInvitados(){
+    
+}
+
+function getUsuarios(){
+    
 }
 
 ?>
