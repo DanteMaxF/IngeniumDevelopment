@@ -542,7 +542,21 @@ function getInvitados(){
 }
 
 function getUsuarios(){
-    
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT nombreUsuario,correo,telefono FROM Usuario'
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<tr>';
+                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["correo"].'</td>';
+                 echo '<td>'.$row["telefono"].'</td>';
+                 echo '</tr>';
+            }
+        }
+    }
 }
 
 ?>
