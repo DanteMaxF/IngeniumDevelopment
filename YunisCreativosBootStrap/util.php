@@ -367,9 +367,9 @@ function getStaffList($descripcionEvento){
     }
 }
 
-
+//registrarInvitado($idInvitado,$correo,$fechaNacimiento,$talla,$idEstado);
 //FUNCION PARA REGISTRAR INVITADO
-function registrarInvitado($idInvitado, $fechaNacimiento, $talla, $idEstado){
+function registrarInvitado($idInvitado,$correo,$fechaNacimiento, $talla, $idEstado){
     $db = connectDB();
     if($db != NULL){
      $query = 'INSERT INTO Invitado(idInvitado,fechaNacimiento,talla,idEstado) VALUES(?,?,?,?)';
@@ -385,10 +385,7 @@ function registrarInvitado($idInvitado, $fechaNacimiento, $talla, $idEstado){
         if (!$statement->execute()) {
             die("Execution failed: (" . $statement->errno . ") " . $statement->error);
         } 
-    
-    
-        mysqli_free_result($results);
-        disconnect($db);
+        disconnectDB($db);
         return true;
     } 
     return false;
@@ -423,7 +420,6 @@ function registrarUsuario($nombreUsuario, $passwd, $correo, $telefono){
 
 function getIDUserByMail($correo){
     $db = connectDB();
-    echo $correo;
     if($db != NULL){
         $query = 'SELECT idUsuario from Usuario WHERE correo ="'.$correo.'"';
         //Pa' debugear
@@ -469,12 +465,9 @@ function getIDEstado($nombreEstado){
     //die('');
         $results = mysqli_query($db,$query);
         disconnectDB($db);
-        if(mysqli_num_rows($results) > 0){
+         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 
-                 echo '<tr>';
-                 echo '<td>'.$row["idEstado"].'</td>';
-                 echo '</tr>';
+                 return $row["idEstado"];
              }
         }
     }

@@ -11,5 +11,4 @@
         $_SESSION["errorLogin"] = "Es necesario insertar un código de evento";
         header("location:index.php");
     }
-    
 ?>
