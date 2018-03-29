@@ -4,16 +4,17 @@
     $nombreUsuario = $_POST["nombreUsuario"];
     $fechaNacimiento = $_POST["fechaNacimiento"];
     $idEstado = $_POST["Estado"];
-    $correo = $_POST["correo"];
+    $talla = $_POST["talla"];
+    $idioma = $_POST["idioma"];
     $telefono = $_POST["telefono"];
-    
+    $correo = $_POST["correo"];
     $passwd1 =  $_POST["passwd1"];
     $passwd2 =  $_POST["passwd2"];
+
+    $asistencia = $_POST["asistencia"];
+    $alergias = $_POST["alergias"];
     
-    $talla = $_POST["talla"];
-    $asistenciaSi = $_POST["asistenciaSi"];
-    $asistenciaNo = $_POST["asistenciaNo"];
-    $idioma = $_POST["idioma"];
+    
     
     
     //Debugging...
@@ -22,18 +23,12 @@
     echo "<br>idEstado: $idEstado";
     echo "<br>correo: $correo";
     echo "<br>telefono: $telefono";
-    
     echo "<br>passwd1: $passwd1";
     echo "<br>passwd2: $passwd2";
     echo "<br>talla: $talla";
-    echo "<br>Asistencia SI: $asistenciaSi";
-    echo "<br>Asistencia NO: $asistenciaNo";
+    echo "<br>Asistencia: $asistencia";
     echo "<br>Idioma: $idioma";
-    if ($idioma != ""){
-      echo "<br>IDIOMA SELECCIONADO";  
-    }else{
-        echo "<br>NO IDIOMA";
-    }
+    echo "<br>alergias: $alergias";
      
     
     
