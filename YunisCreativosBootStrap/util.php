@@ -500,8 +500,6 @@ function getEstado(){
         }
     }
 }
-
-
 function getAlergias(){
     $db = connectDB();
     if($db != NULL){
@@ -518,15 +516,15 @@ function getAlergias(){
         }
     }
 }
-
 function getInvitados(){
     
 }
 
-function getUsuarios(){
+
+function getUsuarios($rol,$evento){
     $db = connectDB();
     if($db != NULL){
-        $query = 'SELECT nombreUsuario,correo,telefono FROM Usuario';
+        $query = 'SELECT nombreUsuario,correo,telefono FROM Usuario u, Evento e WHERE ';
         $results = mysqli_query($db,$query);
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
