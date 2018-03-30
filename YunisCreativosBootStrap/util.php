@@ -516,9 +516,7 @@ function getAlergias(){
         }
     }
 }
-function getInvitados(){
-    
-}
+
 
 
 function getUsuarios($rol,$evento){
@@ -538,13 +536,33 @@ function getUsuarios($rol,$evento){
         }
     }
 }
-function registrarRol($rol){
-    $db = connectDB();
-     if($db != NULL){
-        $query = 'SELECT nombreUsuario,correo,telefono FROM Usuario';
-        $results = mysqli_query($db,$query);
-     }
-    
+
+
+function registrarPlantillas($nombrePlantilla,$colorTexto,$colorFondo,$colorBotones,$imagenFondo){
+     $db = connectDB();
+     //Pa' debugear
+    //var_dump($passwd); 
+      //die('');
+    if($db != NULL){
+         $query = 'INSERT INTO Plantilla(nombrePlantilla,colorTexto,colorFondo,colorBotones,imagenFondo) VALUES(?,?,?,?,?)';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("sssss", $nombrePlantilla,$colorTexto,$colorFondo,$colorBotones,$imagenFondo)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        disconnectDB($db);
+        return true;
+    } 
+    return false;
 }
+ 
+
 ?>
 
