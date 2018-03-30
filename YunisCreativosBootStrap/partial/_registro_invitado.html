@@ -1,92 +1,98 @@
  <div class="container">
-        <h1><?php echo getNombreEvento($_SESSION["codigo"]); ?></h1>
-        <h2>Forma de Registro:</h2>
+  <br><br>
+  <div class="card">
+    <div class="card-header">
+      <h1><?php echo getNombreEvento($_SESSION["codigo"]); ?></h1>
+    </div>
+    <div class="card-block">
+      <div class="container">
+        <h4 class="card-title">Forma de Registro</h4>
         <form action="registrarAlInvitado.php" method="POST">
             <div class="form-group">
               <label for="nombre">Nombre completo:</label>
-              <input type="text" class="form-control" id="usr" name = "nombreUsuario">
+              <input type="text" class="form-control" id="usr" name = "nombreUsuario" required>
+              
             </div>
-            <br>
-            <div class="form-group">
-                <label for="fecha_nac">Fecha Nacimiento:</label>
-                 <input type="date" class="form-control" id="usr" name = "fechaNacimiento">
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="fecha_nac">Fecha Nacimiento:</label>
+                  <input type="date" class="form-control" id="usr" name = "fechaNacimiento" required>
+                </div>
+                <div class="col-md-4 mb-3">  
+                  <label>Estado:</label>
+                  <select class="form-control" id="Estado" name="Estado" required>
+                      <option> </option>
+                      <?php getEstado() ?>
+                  </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Talla:</label>
+                  <select class="form-control" id="talla" name="talla" required>
+                      <option> </option>
+                      <option value="s">Chica (S)</option>
+                      <option value="m">Mediana (M)</option>
+                      <option value="l">Grande (L)</option>
+                      <option value="xl">Extra Grande (XL)</option>
+                      <option value="xxl">Extra Extra Grande (XXL)</option>
+                  </select>
+                </div>
             </div>
-            <br>
-            <div class="form-group"
-                <label>Estado:</label>
-                <select class="form-control" id="Estado" name="Estado">
-                    <?php getEstadoInvitado() ?>
-                </select>
-            </div>
-            <br>
-            <div class="form-group row">
-              <label for="example-email-input" class="col-2 col-form-label">Correo:</label>
-              <div class="col-10">
-                <input class="form-control" type="email" value="correo@ejemplo.com" id="example-email-input" name="correo">
-              </div>
-            </div>
-            <br>
             <div class="form-group row">
               <label for="example-tel-input" class="col-2 col-form-label">Teléfono:</label>
               <div class="col-10">
-                <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input" name="telefono">
+                <input class="form-control" type="tel" placeholder="(555)-555-5555" id="example-tel-input" name="telefono" required>
               </div>
             </div>
-            <br>
+            <div class="form-group row">
+              <label for="example-email-input" class="col-2 col-form-label">Correo:</label>
+              <div class="col-10">
+                <input class="form-control" type="email" placeholder="correo@ejemplo.com" id="example-email-input" name="correo" required>
+              </div>
+            </div>
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
               <div class="col-10">
-                <input class="form-control" type="password" value="" id="example-password-input">
+                <input class="form-control" type="password" value="" id="passwd1" name="passwd1" required>
               </div>
             </div>
-            <br>
-            <p>
+              
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">Verificar Contraseña: </label>
               <div class="col-10">
-                <input class="form-control" type="password" value="" id="example-password-input" name="passwd" >
+                <input class="form-control" type="password" value="" id="passwd2" name="passwd2" required>
               </div>
             </div>
-            <br>
-            <div class="form-group"
-                <label>Talla:</label>
-                <select class="form-control" id="talla" name="talla">
-                    <option> </option>
-                    <option>Chica (S)</option>
-                    <option>Mediana (M)</option>
-                    <option>Grande (L)</option>
-                    <option>Extra Grande (XL)</option>
-                    <option>Extra Extra Grande (XXL)</option>
-                </select>
-            </div>
-            <br>
             <div>
                 <label>Confirmar Asistencia:</label><br>
                 <div class="radio">
-                  <label><input type="radio" name="optradio"> Asistiré</label>
+                  <label><input type="radio" name="asistenciaSi"> Asistiré</label>
                 </div>
                 <div class="radio">
-                  <label><input type="radio" name="optradio"> No asistiré</label>
+                  <label><input type="radio" name="asistenciaNo"> No asistiré</label>
                 </div>
             </div>
-            <br>
             <div class="form-group"
                 <label>Seleccionar Idioma:</label>
-                <select class="form-control" id="idioma" name="idioma">
+                <select class="form-control" id="idioma" name="idioma" required>
                     <option> </option>
-                    <option>Español</option>
-                    <option>English</option>
+                    <option value="esp">Español</option>
+                    <option value="eng">English</option>
                 </select>
             </div>
-            <br>
+
             <div class="form-group"
                 <label>Alergias:</label>
                 <select class="form-control" id="alergias" name="alergias">
+                  <option> </option>
                    <?php getAlergias() ?>
                 </select>
             </div>
-            <br>
             <button class="btn" type="submit" name="action">Registrar</button>
-            <br><br><br>
         </form>
+      </div>
+    </div>
+  </div>
 </div>
+<br><br><br><br><br><br>
+
+   <script src='js/password_checker.js'></script> 

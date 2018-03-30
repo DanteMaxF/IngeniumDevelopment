@@ -484,10 +484,10 @@ function getIDUserByMail($correo){
     
 }
 
-function getEstadoInvitado(){
+function getEstado(){
     $db = connectDB();
     if($db != NULL){
-    $query = 'SELECT nombreEstado from Estado';
+    $query = 'SELECT * from Estado';
      //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -495,31 +495,11 @@ function getEstadoInvitado(){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 echo '<option>'.$row["nombreEstado"].'</option>';
+                 echo '<option value='.$row["idEstado"].'>'.$row["nombreEstado"].'</option>';
             }
         }
-    
-    }
-        
-}
-
-function getIDEstado($nombreEstado){
-     $db = connectDB();
-    if($db != NULL){
-    $query = 'SELECT idEstado from Estado WHERE nombreEstado ="'.$nombreEstado.'"';
-     //Pa' debugear
-    //var_dump($query); 
-    //die('');
-        $results = mysqli_query($db,$query);
-        disconnectDB($db);
-         if(mysqli_num_rows($results) > 0){
-             while ($row = mysqli_fetch_assoc($results)) {
-                 return $row["idEstado"];
-             }
-        }
     }
 }
-
 function getAlergias(){
     $db = connectDB();
     if($db != NULL){
@@ -536,15 +516,15 @@ function getAlergias(){
         }
     }
 }
-
 function getInvitados(){
     
 }
 
-function getUsuarios(){
+
+function getUsuarios($rol,$evento){
     $db = connectDB();
     if($db != NULL){
-        $query = 'SELECT nombreUsuario,correo,telefono FROM Usuario';
+        $query = 'SELECT nombreUsuario,correo,telefono FROM Usuario u, Evento e WHERE ';
         $results = mysqli_query($db,$query);
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){

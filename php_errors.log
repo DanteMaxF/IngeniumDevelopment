@@ -497,3 +497,6 @@
 [28-Mar-2018 00:16:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php:0
 [28-Mar-2018 00:16:03 UTC] PHP   2. registrarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrarAlInvitado.php:14
 >>>>>>> alex/frontEnd
+[30-Mar-2018 16:38:22 UTC] PHP Fatal error:  Cannot redeclare getInvitados() (previously declared in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:519) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 525
+[30-Mar-2018 16:38:22 UTC] PHP Stack trace:
+[30-Mar-2018 16:38:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/code_driver.php:0

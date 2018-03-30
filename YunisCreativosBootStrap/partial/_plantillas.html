@@ -16,29 +16,29 @@
     
           <!-- Modal body -->
           <div class="modal-body">
-             <form>
+             <form action="registrar_plantilla.php" method="POST">
                  <div class="form-group">
                     <label for="formGroupExampleInput">Nombre</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre plantilla">
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre plantilla " name="nombrePlantilla">
                   </div>
                 <br>
                 <label>Color texto:</label>
                 <div class="col-10">
-                  <input class="form-control" type="color" value="#563d7c" id="example-color-input">
+                  <input class="form-control" type="color" value="#563d7c" id="example-color-input" name="colorTexto">
                 </div>
                 <br>
                 <label>Color fondo:</label>
                 <div class="col-10">
-                  <input class="form-control" type="color" value="#563d7c" id="example-color-input">
+                  <input class="form-control" type="color" value="#563d7c" id="example-color-input" name="colorFonfo">
                 </div>
                 <br>
                 <label>Color botones:</label>
                 <div class="col-10">
-                  <input class="form-control" type="color" value="#563d7c" id="example-color-input">
+                  <input class="form-control" type="color" value="#563d7c" id="example-color-input" name="colorBotones">
                 </div>
                 <br>
                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                    <input type="file" class="custom-file-input" id="customFileLang" lang="es" name="imagenFondo">
                     <label class="custom-file-label" for="customFileLang">Seleccionar Archivo:</label>
                  </div>
                   <br><br>
