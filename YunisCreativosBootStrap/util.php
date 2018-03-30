@@ -540,6 +540,13 @@ function getUsuarios(){
         }
     }
 }
-
+function registrarRol($rol){
+    $db = connectDB();
+     if($db != NULL){
+        $query = 'SELECT nombreUsuario,correo,telefono FROM Usuario';
+        $results = mysqli_query($db,$query);
+     }
+    
+}
 ?>
 
