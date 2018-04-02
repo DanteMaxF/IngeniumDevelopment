@@ -6,8 +6,9 @@
     </div>
     <div class="card-block">
       <div class="container">
+        <br>
         <h4 class="card-title">Forma de Registro</h4>
-        <form action="registrarAlInvitado.php" method="POST">
+        <form action="registrarAlInvitado.php" method="POST" accept-charset="UTF-8">
             <div class="form-group">
               <label for="nombre">Nombre completo:</label>
               <input type="text" class="form-control" id="usr" name = "nombreUsuario" required>
@@ -25,7 +26,7 @@
                       <?php getEstado() ?>
                   </select>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-2 mb-3">
                   <label>Talla:</label>
                   <select class="form-control" id="talla" name="talla" required>
                       <option> </option>
@@ -36,19 +37,28 @@
                       <option value="xxl">Extra Extra Grande (XXL)</option>
                   </select>
                 </div>
+                <div class="col-md-2 mb-3">
+                  <label>Seleccionar Idioma:</label>
+                  <select class="form-control" id="idioma" name="idioma" required>
+                      <option> </option>
+                      <option value="esp">Español</option>
+                      <option value="eng">English</option>
+                  </select>
+                </div>
             </div>
-            <div class="form-group row">
-              <label for="example-tel-input" class="col-2 col-form-label">Teléfono:</label>
-              <div class="col-10">
-                <input class="form-control" type="tel" placeholder="(555)-555-5555" id="example-tel-input" name="telefono" required>
+            
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="telefono">Teléfono:</label>
+                <input class="form-control" type="tel" placeholder="(555)-555-5555" id="telefono" name="telefono" required>
               </div>
-            </div>
-            <div class="form-group row">
-              <label for="example-email-input" class="col-2 col-form-label">Correo:</label>
-              <div class="col-10">
-                <input class="form-control" type="email" placeholder="correo@ejemplo.com" id="example-email-input" name="correo" required>
+              <div class="form-group col-md-6">
+                <label for="correo">Correo:</label>
+                <input class="form-control" type="email" placeholder="correo@ejemplo.com" id="correo" name="correo" required>
               </div>
+              
             </div>
+
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
               <div class="col-10">
@@ -63,25 +73,19 @@
               </div>
             </div>
             <div>
-                <label>Confirmar Asistencia:</label><br>
-                <div class="radio">
-                  <label><input type="radio" name="asistenciaSi"> Asistiré</label>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="asistenciaSi" name="asistencia" class="custom-control-input" value="yes">
+                  <label class="custom-control-label" for="asistenciaSi">Asistiré</label>
                 </div>
-                <div class="radio">
-                  <label><input type="radio" name="asistenciaNo"> No asistiré</label>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="asistenciaNo" name="asistencia" class="custom-control-input" value="no">
+                  <label class="custom-control-label" for="asistenciaNo">NO asistiré</label>
                 </div>
-            </div>
-            <div class="form-group"
-                <label>Seleccionar Idioma:</label>
-                <select class="form-control" id="idioma" name="idioma" required>
-                    <option> </option>
-                    <option value="esp">Español</option>
-                    <option value="eng">English</option>
-                </select>
             </div>
 
-            <div class="form-group"
-                <label>Alergias:</label>
+
+            <div class="form-group">
+                <label>Alergias (Si padeces más de una, más adelante podrás registrar las que falten más adelante):</label>
                 <select class="form-control" id="alergias" name="alergias">
                   <option> </option>
                    <?php getAlergias() ?>
