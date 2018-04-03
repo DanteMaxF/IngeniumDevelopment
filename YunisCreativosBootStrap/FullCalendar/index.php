@@ -158,7 +158,7 @@
         <script src="js/bootstrap.min.js"></script> <!-- Bootstrap JavaScript -->
         <script src='js/moment.min.js'></script> <!-- FullCalendar 1 -->
         <script src='js/fullcalendar.min.js'></script> <!-- FullCalendar 2 -->
-        <script>
+      <--!  <script>
         $(document).ready(function() {
             $('#calendar').fullCalendar({
                 header: {
@@ -191,7 +191,7 @@
                     edit(event);
                 },
                 events: [
-                <?php foreach($events as $event): 
+                <?php foreach($events as $event):
                     $start = explode(" ", $event['start']);
                     $end = explode(" ", $event['end']);
                     if($start[1] == '00:00:00'){
@@ -239,13 +239,13 @@
                         if(rep == 'OK'){
                             alert('Cambios Guardados');
                         }else{
-                            alert('No se pudieron guardar los cambios, intenta de nuevo'); 
+                            alert('No se pudieron guardar los cambios, intenta de nuevo');
                         }
                     }
                 });
             }
 
         });
-        </script>
+        </script>-->
     </body>
 </html>

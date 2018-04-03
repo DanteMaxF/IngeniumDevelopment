@@ -1,7 +1,8 @@
 <?php
 // Conexión a la base de datos y al archivo para recorrer los eventos
 require_once('bdd.php');
-require_once('moveEvent.php');
+
+
 
 if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && isset($_POST['color'])){
 	// Obtener los datos del nuevo evento del formulario 
@@ -28,8 +29,7 @@ if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && 
 	 die ('Error al ejecutar');
 	}
 
-    // Llamar a función para recorrer los eventos
-    moveEvents($start,$end);
+
 }
 header('Location: '.$_SERVER['HTTP_REFERER']);
 ?>
