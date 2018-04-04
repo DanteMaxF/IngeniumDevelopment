@@ -2,17 +2,24 @@
     session_start();
     require_once("util.php");
     $nombreUsuario = $_POST["nombreUsuario"];
-    $fechaNacimiento = $_POST["fechaNacimiento"];
-    $idEstado = $_POST["Estado"];
-    $talla = $_POST["talla"];
-    $idioma = $_POST["idioma"];
-    $telefono = $_POST["telefono"];
+    $fechaNacimiento = $_POST["fechaNacimiento"]; //invitado
+    $idEstado = $_POST["Estado"];               //invitado
+    $talla = $_POST["talla"];                   //inv
+    $idioma = $_POST["idioma"];                 //nv
+    $telefono = $_POST["telefono"];             
     $correo = $_POST["correo"];
     $passwd1 =  $_POST["passwd1"];
     $passwd2 =  $_POST["passwd2"];
-
-    $asistencia = $_POST["asistencia"];
-    $alergias = $_POST["alergias"];
+    $asistencia = $_POST["asistencia"];         
+    $alergias = $_POST["alergias"];  //inv
+    $idEvento = $_POST["idEvento"];
+    
+    
+    if (registrarUsuario($nombreUsuario,$passwd1,$correo,$telefono)){
+        header('location:registrarInvitadoEvento.php?fechaNacimiento='.$fechaNacimiento.'&idEstado='.$idEstado.'&talla='.$talla.'&idioma='.$idioma.'&alergias='.$alergias.'&correo='.$correo.'&asistencia='.$asistencia.'&idEvento='.$idEvento);
+    }else{
+        echo "ERROR";
+    }
     
     
     

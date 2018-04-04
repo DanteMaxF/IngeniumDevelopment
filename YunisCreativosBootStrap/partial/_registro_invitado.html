@@ -9,6 +9,8 @@
         <br>
         <h4 class="card-title">Forma de Registro</h4>
         <form action="registrarAlInvitado.php" method="POST" accept-charset="UTF-8">
+            
+            <div class="form-group"><?php echo printIdEventoForm($_SESSION["codigo"]); ?></div>
             <div class="form-group">
               <label for="nombre">Nombre completo:</label>
               <input type="text" class="form-control" id="usr" name = "nombreUsuario" required>
@@ -30,19 +32,19 @@
                   <label>Talla:</label>
                   <select class="form-control" id="talla" name="talla" required>
                       <option> </option>
-                      <option value="s">Chica (S)</option>
-                      <option value="m">Mediana (M)</option>
-                      <option value="l">Grande (L)</option>
-                      <option value="xl">Extra Grande (XL)</option>
-                      <option value="xxl">Extra Extra Grande (XXL)</option>
+                      <option value="S">Chica (S)</option>
+                      <option value="M">Mediana (M)</option>
+                      <option value="L">Grande (L)</option>
+                      <option value="XL">Extra Grande (XL)</option>
+                      <option value="XXL">Extra Extra Grande (XXL)</option>
                   </select>
                 </div>
                 <div class="col-md-2 mb-3">
                   <label>Seleccionar Idioma:</label>
                   <select class="form-control" id="idioma" name="idioma" required>
                       <option> </option>
-                      <option value="esp">Español</option>
-                      <option value="eng">English</option>
+                      <option value="1">Español</option>
+                      <option value="2">English</option>
                   </select>
                 </div>
             </div>
@@ -99,4 +101,4 @@
 </div>
 <br><br><br><br><br><br>
 
-   <script src='js/password_checker.js'></script> 
+<script src='js/password_checker.js'></script> 

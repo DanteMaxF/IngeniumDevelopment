@@ -415,17 +415,17 @@ function asignarStaff($idEvento,$idStaff){
 
 //registrarInvitado($idInvitado,$correo,$fechaNacimiento,$talla,$idEstado);
 //FUNCION PARA REGISTRAR INVITADO
-function registrarInvitado($idInvitado,$correo,$fechaNacimiento, $talla, $idEstado){
+function registrarInvitado($idInvitado,$fechaNacimiento, $talla, $idEstado, $idIdioma){
     $db = connectDB();
     if($db != NULL){
-     $query = 'INSERT INTO Invitado(idInvitado,fechaNacimiento,talla,idEstado) VALUES(?,?,?,?)';
+     $query = 'INSERT INTO Invitado(idInvitado,fechaNacimiento,talla,idEstado,idIdioma) VALUES(?,?,?,?,?)';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
 
-        if (!$statement->bind_param("issi",$idInvitado, $fechaNacimiento, $talla, $idEstado)) {
+        if (!$statement->bind_param("issii",$idInvitado, $fechaNacimiento, $talla, $idEstado,$idIdioma)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -563,6 +563,73 @@ function registrarPlantillas($nombrePlantilla,$colorTexto,$colorFondo,$colorBoto
     return false;
 }
  
+ 
+function registrarRol($idUsuario,$idRol){
+    $db = connectDB();
+    if($db != NULL){
+         $query = 'INSERT INTO tiene(idUsuario,idRol) VALUES(?,?)';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("ii", $idUsuario, $idRol)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        disconnectDB($db);
+        return true;
+    } 
+    return false;
+}
+
+
+function registrarUsuarioEvento($idEvento,$idUsuario){
+    $db = connectDB();
+    if($db != NULL){
+         $query = 'INSERT INTO invitadoEvento(idEvento,idInvitado) VALUES(?,?)';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("ii", $idEvento, $idUsuario)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        disconnectDB($db);
+        return true;
+    } 
+    return false;
+}
+
+function getIdEventoByCodigo($codigo){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT idEvento from Evento WHERE codigo ="'.$codigo.'"';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["idEvento"];
+            }
+        }
+    }
+}
+
+function printIdEventoForm($codigo){
+    echo '<br><input type="hidden" name="idEvento" value="'.getIdEventoByCodigo($codigo).'">';
+}
+
 
 ?>
 
