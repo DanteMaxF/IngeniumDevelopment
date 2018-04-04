@@ -518,12 +518,21 @@ function getAlergias(){
 }
 
 
+/*
+SELECT nombreInvitado 
+FROM Usuario, invitadoEvento, Evento
+WHERE Usuario.idUsuario = invitadoEvento.idUsuario AND Evento.idEvento = invitadoEvento.idEvento
+	AND Evento.nombreEvento LIKE "%Lima 2017%"
+*/
 
-function getUsuarios($rol,$evento){
+function getUsuarios($rol,$descripcionEvento){
     $db = connectDB();
     if($db != NULL){
-        $query = 'SELECT nombreUsuario,correo,telefono FROM Usuario u, Evento e WHERE ';
+        $query = 'SELECT nombreUsuario, correo, telefono FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND e.descripcionEvento = "'.$descripcionEvento.'" AND r.nombreRol = "'.$rol.'"';
         $results = mysqli_query($db,$query);
+         //Pa' debugear
+    //var_dump($query); 
+     // die('');
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
