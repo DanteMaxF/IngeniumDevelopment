@@ -3,11 +3,11 @@ var password = document.getElementById("passwd1")
 
 
 function validatePassword(){
-  /*if(checkPassword(password.value)){
-    password.setCustomValidity('Ya la cagaste prro');
-  }*/
+  if(password.value.length < 8){
+    confirm_password.setCustomValidity("La contraseña debe contener al menos 8 caracteres.");
+  }
   if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Las contraseñas no coinciden");
+    confirm_password.setCustomValidity("Las contraseñas no coinciden.");
   } else {
     confirm_password.setCustomValidity('');
   }
