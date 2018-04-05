@@ -571,7 +571,29 @@ function registrarPlantillas($nombrePlantilla,$colorTexto,$colorFondo,$colorBoto
     } 
     return false;
 }
- 
 
+function getDescripcionEvento(){
+    $db = connectDB();
+    if ($db != NULL) {
+        $query = 'SELECT descripcionEvento FROM Evento';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo "<option>";
+                echo $row["descripcionEvento"];
+                echo "</option>";
+            }
+        }
+    }
+    
+}
+
+function getRol(){
+    
+}
 ?>
 
