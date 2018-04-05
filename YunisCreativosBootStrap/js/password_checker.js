@@ -1,10 +1,6 @@
 var password = document.getElementById("passwd1")
   , confirm_password = document.getElementById("passwd2");
 
-function checkPassword(text){
-  var format = /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
-  return format.test(text);
-}
 
 function validatePassword(){
   /*if(checkPassword(password.value)){
