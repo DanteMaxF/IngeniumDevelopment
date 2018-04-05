@@ -661,8 +661,5 @@ function getDescripcionEvento(){
     
 }
 
-function getRol(){
-    
-}
 ?>
 

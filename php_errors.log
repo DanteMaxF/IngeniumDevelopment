@@ -506,3 +506,6 @@
 [03-Apr-2018 20:00:12 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:7
 [03-Apr-2018 20:00:12 UTC] PHP   3. getDescripcionEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:22
 [03-Apr-2018 20:00:12 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:584
+[05-Apr-2018 22:43:11 UTC] PHP Fatal error:  Cannot redeclare getRol() (previously declared in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:64) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 666
+[05-Apr-2018 22:43:11 UTC] PHP Stack trace:
+[05-Apr-2018 22:43:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
