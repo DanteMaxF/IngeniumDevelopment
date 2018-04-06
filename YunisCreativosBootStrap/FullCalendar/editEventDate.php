@@ -11,7 +11,7 @@ if (isset($_POST['Event'][0]) && isset($_POST['Event'][1]) && isset($_POST['Even
 
 	$sql = "UPDATE events SET  start = '$start', end = '$end' WHERE id = $id ";
 
-	
+
 	$query = $bdd->prepare( $sql );
 	if ($query == false) {
 	 print_r($bdd->errorInfo());
@@ -24,6 +24,7 @@ if (isset($_POST['Event'][0]) && isset($_POST['Event'][1]) && isset($_POST['Even
 	}else{
 		die ('OK');
 	}
+
 
 }
 //header('Location: '.$_SERVER['HTTP_REFERER']);
