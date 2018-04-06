@@ -2,10 +2,10 @@
     <form action="consultar_eventos.php" method="GET">
           <div class="form-group">
             <label>Seleccionar rol:</label>
-            <select class="form-control" id="eventInput" name="eventInput">
+            <select class="form-control" id="rolInput" name="rolInput">
                 <option> - </option>
                 <?php 
-                  echo getEventosDescripcion();
+                  echo getRollList();
                 ?>
             </select>
             <label>Seleccionar evento:</label>
