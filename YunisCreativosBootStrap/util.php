@@ -676,7 +676,129 @@ function getRollList(){
             }
         }
     }
-    
 }
+    
+function getStaff($descripcionEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT DISTINCT  nombreUsuario, correo, telefono FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND e.descripcionEvento = "'.$descripcionEvento.'" AND r.nombreRol = "Staff"';
+        $results = mysqli_query($db,$query);
+         //Pa' debugear
+    //var_dump($query); 
+     // die('');
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<tr>';
+                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["correo"].'</td>';
+                 echo '<td>'.$row["telefono"].'</td>';
+                  echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Modificar</button></td>';
+                 //($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                 modalEliminarStaff($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '</tr>';
+            }
+        }
+    }
+}
+
+function getInvitados($descripcionEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT DISTINCT  nombreUsuario, correo, telefono FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND e.descripcionEvento = "'.$descripcionEvento.'" AND r.nombreRol = "Invitado"';
+        $results = mysqli_query($db,$query);
+         //Pa' debugear
+    //var_dump($query); 
+     // die('');
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<tr>';
+                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["correo"].'</td>';
+                 echo '<td>'.$row["telefono"].'</td>';
+                 echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Modificar</button></td>';
+                 //generateModal($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                // generateModal($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '</tr>';
+            }
+        }
+    }
+}
+
+function getCoordinador($descripcionEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT DISTINCT nombreUsuario, correo, telefono FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND e.descripcionEvento = "'.$descripcionEvento.'" AND r.nombreRol = "Coordinador"';
+        $results = mysqli_query($db,$query);
+         //Pa' debugear
+    //var_dump($query); 
+     // die('');
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<tr>';
+                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["correo"].'</td>';
+                 echo '<td>'.$row["telefono"].'</td>';
+                  echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Modificar</button></td>';
+                 //generateModal($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                // generateModal($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '</tr>';
+            }
+        }
+    }
+}
+
+function eliminarStaffPerma($idUsuario){
+  $db = connectDB();
+        if ($db != NULL) {
+            $query = 'DELETE FROM Usuario WHERE idUsuario=?';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("i", $idUsuario)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
+}
+
+function modalEliminarStaff($id,$nombre) {
+    echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <p>¿Estás seguro que quieres eliminar a '.$nombre.'?</p>
+        </div>
+        <div class="modal-footer">
+          <a type="button" class="btn btn-danger" href="eliminar_staff_perma.php?idStaff='.$id.'">Borrar</a>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>';
+}
+
+    
 ?>
 
