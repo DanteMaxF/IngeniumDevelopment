@@ -2,10 +2,19 @@
 
 //CONECTAR CON BASE DE DATOS (USAR EN CADA FUNCION)
 function connectDB(){
-  $mysql = mysqli_connect("localhost","root","","YunisCreativos");
-  $mysql->set_charset("utf8");
-  return $mysql;
-}
+    $developerMode = false; //Cambiar a true solo cuando se vaya a pasar al entorno de produccion
+    
+    if ($developerMode){
+        $mysql = mysqli_connect("localhost","cpses_hg3QUkUOVU@localhost","Mandala11:11","YunisCreativos");
+    }else{
+         $mysql = mysqli_connect("localhost","root","","YunisCreativos");
+    }
+    $mysql->set_charset("utf8");
+    return $mysql;
+    
+}  
+
+
 
 //DESCONECTAR CON BASE DE DATOS (USAR EN CADA FUNCION)
 function disconnectDB($mysql){
@@ -640,6 +649,30 @@ function printIdEventoForm($codigo){
     echo '<br><input type="hidden" name="idEvento" value="'.getIdEventoByCodigo($codigo).'">';
 }
 
+
+function getInvitadoEvento($idEvento){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = 'SELECT U.nombreUsuario, U.correo, U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'"';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        
+        if(mysqli_num_rows($results) > 0) {
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<tr>';
+                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["correo"].'</td>';
+                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                 generateModal($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '</tr>';
+             } 
+        }
+    }
+}
 
 ?>
 
