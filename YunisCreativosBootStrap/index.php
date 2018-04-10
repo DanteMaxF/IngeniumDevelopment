@@ -10,7 +10,7 @@
         include("partial/_index.html");
         include("partial/_scripts.html");
         include("partial/_footer.html"); 
-         session_start();
+        session_start();
     session_unset();
     session_destroy();
     }

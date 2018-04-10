@@ -14,9 +14,9 @@
             unset($_SESSION["evento"]);
             unset($_SESSION["idEvento"]);
         }
-        else if (($_GET["eventInput"] != "" && $_GET["eventInput"] != "-") || isset($_SESSION["evento"])){
-            $_SESSION["evento"] =  $_GET["eventInput"];
-            $_SESSION["idEvento"] = getIdEvento($_SESSION["evento"]);
+        else if (($_GET["eventInput"] != "" && $_GET["eventInput"] != "-") || isset($_SESSION["idEvento"])){
+            $_SESSION["idEvento"] =  $_GET["eventInput"];
+            $_SESSION["evento"] = getDescripcionEvento($_SESSION["idEvento"]);
             include("partial/_consultar_eventos.html"); 
         }
         include("partial/_scripts.html");

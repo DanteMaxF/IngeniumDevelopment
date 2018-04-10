@@ -2,10 +2,19 @@
 
 //CONECTAR CON BASE DE DATOS (USAR EN CADA FUNCION)
 function connectDB(){
-  $mysql = mysqli_connect("localhost","root","","YunisCreativos");
-  $mysql->set_charset("utf8");
-  return $mysql;
-}
+    $developerMode = false; //Cambiar a true solo cuando se vaya a pasar al entorno de produccion
+    
+    if ($developerMode){
+        $mysql = mysqli_connect("localhost","cpses_hg3QUkUOVU@localhost","Mandala11:11","YunisCreativos");
+    }else{
+         $mysql = mysqli_connect("localhost","root","","YunisCreativos");
+    }
+    $mysql->set_charset("utf8");
+    return $mysql;
+    
+}  
+
+
 
 //DESCONECTAR CON BASE DE DATOS (USAR EN CADA FUNCION)
 function disconnectDB($mysql){
@@ -89,7 +98,7 @@ function getEventosDescripcion(){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT descripcionEvento, Ver FROM Evento WHERE Ver="1"';
+        $query = 'SELECT * FROM Evento WHERE Ver="1"';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -97,7 +106,7 @@ function getEventosDescripcion(){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
             while ($row = mysqli_fetch_assoc($results)) {
-                echo "<option>";
+                echo '<option value='.$row["idEvento"].'>';
                 echo $row["descripcionEvento"];
                 echo "</option>";
             }
@@ -105,11 +114,11 @@ function getEventosDescripcion(){
     }
 }
 
-function getInfoGeneralEvento($descripcionEvento){
+function getInfoGeneralEvento($idEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT E.nombreEvento, E.descripcionEvento, E.statusEvento,En.califPromedio, Cl.nombreUsuario AS  "Cliente", Co.nombreUsuario AS  "Coordinador" FROM Evento E, Encuesta En, Usuario Cl, Usuario Co WHERE E.idEncuesta = En.idEncuesta AND E.idCliente = Cl.idUsuario AND E.idCoordinador = Co.idUsuario AND descripcionEvento =  "'.$descripcionEvento.'"';
+        $query = 'SELECT E.nombreEvento, E.descripcionEvento, E.statusEvento,En.califPromedio, Cl.nombreUsuario AS  "Cliente", Co.nombreUsuario AS  "Coordinador" FROM Evento E, Encuesta En, Usuario Cl, Usuario Co WHERE E.idEncuesta = En.idEncuesta AND E.idCliente = Cl.idUsuario AND E.idCoordinador = Co.idUsuario AND idEvento =  "'.$idEvento.'"';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -119,22 +128,22 @@ function getInfoGeneralEvento($descripcionEvento){
             while ($row = mysqli_fetch_assoc($results)){
                  echo '<tr>';
                  echo '<th scope="row">'.$row["nombreEvento"].'</th>';
-                 echo '<td>'.$row["descripcionEvento"].'</td>';
-                 echo '<td>'.$row["statusEvento"].'</td>';
-                 echo '<td>'.$row["califPromedio"].'</td>';
-                 echo '<td>'.$row["Cliente"].'</td>';
-                 echo '<td>'.$row["Coordinador"].'</td>';
+                 echo '<th>'.$row["descripcionEvento"].'</th>';
+                 echo '<th>'.$row["statusEvento"].'</th>';
+                 echo '<th>'.$row["califPromedio"].'</th>';
+                 echo '<th>'.$row["Cliente"].'</th>';
+                 echo '<th>'.$row["Coordinador"].'</th>';
 
             }
         }
     }
 }
 
-function getStaffEvento($descripcionEvento){
+function getStaffEvento($idEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT U.nombreUsuario, U.correo, U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.descripcionEvento="'.$descripcionEvento.'"';
+        $query = 'SELECT U.nombreUsuario, U.correo, U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'"';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -164,7 +173,7 @@ function generateModal($id,$nombre) {
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
-          <p>¿Estás seguro que quieres eliminar a '.$nombre.'?</p>
+          <p>¿Estás seguro que quieres eliminar a <strong>'.$nombre.'</strong>?</p>
         </div>
         <div class="modal-footer">
           <a type="button" class="btn btn-danger" href="eliminar_staff.php?idStaff='.$id.'">Borrar</a>
@@ -206,18 +215,18 @@ function eliminarStaff($descripcionEvento,$idStaff){
 }
 
 
-function getIdEvento($descripcionEvento){
+function getDescripcionEvento($idEvento){
     $db = connectDB();
  
     if ($db != NULL) {
-        $query='SELECT idEvento FROM Evento WHERE descripcionEvento="'.$descripcionEvento.'"';
+        $query='SELECT descripcionEvento FROM Evento WHERE idEvento="'.$idEvento.'"';
       
         $results = mysqli_query($db,$query);
         disconnectDB($db);
         
         if (mysqli_num_rows($results) > 0) {
             if($row = mysqli_fetch_assoc($results)) {
-                $res = "".$row["idEvento"]."";
+                $res = "".$row["descripcionEvento"]."";
             }else{
                 $res = "-1";
             }
@@ -237,7 +246,7 @@ function ModalEliminarEvento($descripcionEvento,$idEvento){
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
-          <p>¿Estás seguro que quieres eliminar el evento '.$descripcionEvento.'?</p>
+          <p>¿Estás seguro que quieres eliminar el evento <strong>'.$descripcionEvento.'</strong>?</p>
         </div>
         <div class="modal-footer">
           <a type="button" class="btn btn-danger" href="Eliminar_evento.php?idEvento='.$idEvento.'">Eliminar</a>
@@ -500,6 +509,7 @@ function getEstado(){
         }
     }
 }
+
 function getAlergias(){
     $db = connectDB();
     if($db != NULL){
@@ -640,7 +650,6 @@ function printIdEventoForm($codigo){
 }
 
 
-
 function getDescripcionEvento(){
     $db = connectDB();
     if ($db != NULL) {
@@ -702,7 +711,6 @@ function getStaff($descripcionEvento){
         }
     }
 }
-
 function getInvitados($descripcionEvento){
     $db = connectDB();
     if($db != NULL){
@@ -727,7 +735,6 @@ function getInvitados($descripcionEvento){
         }
     }
 }
-
 function getCoordinador($descripcionEvento){
     $db = connectDB();
     if($db != NULL){
@@ -752,7 +759,6 @@ function getCoordinador($descripcionEvento){
         }
     }
 }
-
 function eliminarStaffPerma($idUsuario){
   $db = connectDB();
         if ($db != NULL) {
@@ -776,7 +782,6 @@ function eliminarStaffPerma($idUsuario){
         }
         return false;
 }
-
 function modalEliminarStaff($id,$nombre) {
     echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
     <div class="modal-dialog">
@@ -798,7 +803,5 @@ function modalEliminarStaff($id,$nombre) {
     </div>
   </div>';
 }
-
-    
 ?>
 
