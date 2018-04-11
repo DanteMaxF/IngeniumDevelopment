@@ -143,7 +143,7 @@ function getStaffEvento($idEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT U.nombreUsuario, U.correo, U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'"';
+        $query = 'SELECT U.nombreUsuario, U.correo, U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'" AND Ver=1';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -670,7 +670,7 @@ function getRollList(){
 function getStaff($idEvento){
     $db = connectDB();
     if($db != NULL){
-        $query = 'SELECT DISTINCT  nombreUsuario, correo, telefono FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Staff"';
+        $query = 'SELECT DISTINCT  nombreUsuario, correo, telefono FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Staff" AND u.Ver=1 ORDER BY nombreUsuario';
         $results = mysqli_query($db,$query);
          //Pa' debugear
     //var_dump($query); 
@@ -684,7 +684,7 @@ function getStaff($idEvento){
                  echo '<td>'.$row["telefono"].'</td>';
                   echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Modificar</button></td>';
                  //($row["idUsuario"],$row["nombreUsuario"]);
-                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarStaff'.$row["idUsuario"].'">Eliminar</button></td>';
                  modalEliminarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
             }
@@ -694,7 +694,11 @@ function getStaff($idEvento){
 function getInvitados($idEvento){
     $db = connectDB();
     if($db != NULL){
-        $query = 'SELECT DISTINCT  nombreUsuario, correo, telefono FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Invitado"';
+        $query = 'SELECT DISTINCT  nombreUsuario, correo, telefono, a.descripcion
+        FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i, usuarioAlergia ua, Alergia a  
+        WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND ua.idUsuario = u.idUsuario AND a.idAlergia = ua.idAlergia
+        AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Invitado" AND u.Ver=1
+        ORDER BY nombreUsuario ';
         $results = mysqli_query($db,$query);
          //Pa' debugear
     //var_dump($query); 
@@ -706,6 +710,7 @@ function getInvitados($idEvento){
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
                  echo '<td>'.$row["telefono"].'</td>';
+                 echo '<td>'.$row["a.descripcion"].'</td>';
                  echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Modificar</button></td>';
                  //generateModal($row["idUsuario"],$row["nombreUsuario"]);
                  echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
@@ -718,7 +723,7 @@ function getInvitados($idEvento){
 function getCoordinador($idEvento){
     $db = connectDB();
     if($db != NULL){
-        $query = 'SELECT DISTINCT nombreUsuario, correo, telefono FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Coordinador"';
+        $query = 'SELECT DISTINCT nombreUsuario, correo, telefono FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Coordinador" AND u.Ver=1 ORDER BY nombreUsuario';
         $results = mysqli_query($db,$query);
          //Pa' debugear
     //var_dump($query); 
@@ -742,14 +747,15 @@ function getCoordinador($idEvento){
 function eliminarStaffPerma($idUsuario){
   $db = connectDB();
         if ($db != NULL) {
-            $query = 'DELETE FROM Usuario WHERE idUsuario=?';
+           // insert command specification
+            $query='UPDATE Usuario SET Ver=0 WHERE idEvento=?';
             mysqli_query($db, $query);
             // Preparing the statement
             if (!($statement = $db->prepare($query))) {
                 die("Preparation failed: (" . $db->errno . ") " . $db->error);
             }
             // Binding statement params
-            if (!$statement->bind_param("i", $idUsuario)) {
+            if (!$statement->bind_param("i", $idEvento)) {
                 die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
             }
              // Executing the statement
@@ -763,7 +769,7 @@ function eliminarStaffPerma($idUsuario){
         return false;
 }
 function modalEliminarStaff($id,$nombre) {
-    echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
+    echo '<div class="modal fade" id="modalEliminarStaff'.$id.'" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
