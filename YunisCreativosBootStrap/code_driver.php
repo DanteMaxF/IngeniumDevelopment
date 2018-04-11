@@ -10,9 +10,7 @@
         $_SESSION["codigo"] = $_POST["codigo"];
 
     }else{
-        $_SESSION["errorLogin"] = "El código no existe";
+        $_SESSION["errorLogin"] = "El código no existeo ha caducado";
         header("location:index.php");
     }
-
-    
 ?>
