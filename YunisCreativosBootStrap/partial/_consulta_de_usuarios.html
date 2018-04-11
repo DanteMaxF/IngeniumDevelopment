@@ -1,0 +1,63 @@
+<div class="container"> 
+    <article> 
+        <header> 
+            <h1>Consultar Usuarios:</h1> 
+        </header><br><br>
+            <h2>Invitados</h2>
+            <table class="table"> 
+              <thead class="thead-dark"> 
+                <tr> 
+                  <th scope="col">Nombre</th> 
+                  <th scope="col">Correo</th> 
+                  <th scope="col">Telefono</th> 
+                  <th scope="col"></th> 
+                  <th scope="col"></th> 
+                </tr> 
+              </thead> 
+              <tbody> 
+                <?php getInvitados($_SESSION["idEvento"]); ?> 
+             </tbody> 
+            </table> 
+            <h2>Coordinador</h2>
+            <table class="table"> 
+              <thead class="thead-dark"> 
+                <tr> 
+                  <th scope="col">Nombre</th> 
+                  <th scope="col">Correo</th> 
+                  <th scope="col">Telefono</th> 
+                  <th scope="col"></th> 
+                  <th scope="col"></th> 
+                </tr> 
+              </thead> 
+              <tbody> 
+                <?php getCoordinador($_SESSION["idEvento"]); ?> 
+             </tbody> 
+            </table> 
+            <br>
+            <h2>Invitados</h2>
+            <table class="table"> 
+              <thead class="thead-dark"> 
+                <tr> 
+                  <th scope="col">Nombre</th> 
+                  <th scope="col">Correo</th> 
+                  <th scope="col">Telefono</th> 
+                  <th scope="col"></th> 
+                  <th scope="col"></th> 
+                </tr> 
+              </thead>
+              <br>
+              <tbody> 
+                <?php getStaff($_SESSION["idEvento"]); ?> 
+             </tbody> 
+            </table> 
+        <br> 
+        <br> 
+        <br><br> 
+
+
+ 
+    </article> 
+
+
+ 
+</div>  
