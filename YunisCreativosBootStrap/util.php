@@ -685,8 +685,8 @@ function getStaff($idEvento){
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
                  echo '<td>'.$row["telefono"].'</td>';
-                  echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Modificar</button></td>';
-                 //($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#modalModificarStaff'.$row["idUsuario"].'">Modificar</button></td>';
+                 modalModificarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarStaff'.$row["idUsuario"].'">Eliminar</button></td>';
                  modalEliminarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
@@ -714,11 +714,11 @@ function getInvitados($idEvento){
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
                  echo '<td>'.$row["telefono"].'</td>';
-                 echo '<td>'.$row["a.descripcion"].'</td>';
+                 echo '<td>'.$row["descripcion"].'</td>';
                  echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Modificar</button></td>';
                  //generateModal($row["idUsuario"],$row["nombreUsuario"]);
-                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
-                // generateModal($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarInvitado'.$row["idUsuario"].'">Eliminar</button></td>';
+                 modalEliminarInvitado($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
             }
         }
@@ -744,8 +744,8 @@ function getCoordinador($idEvento){
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
                  echo '<td>'.$row["telefono"].'</td>';
-                  echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Modificar</button></td>';
-                 //generateModal($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#modalModificarStaff'.$row["idUsuario"].'">Modificar</button></td>';
+                 modalModificarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarStaff'.$row["idUsuario"].'">Eliminar</button></td>';
                  modalEliminarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
@@ -753,7 +753,7 @@ function getCoordinador($idEvento){
         }
     }
 }
-function eliminarStaffPerma($idUsuario){
+function eliminarUsuario($idUsuario){
   $db = connectDB();
         if ($db != NULL) {
            // insert command specification
@@ -791,6 +791,97 @@ function modalEliminarStaff($id,$nombre) {
         </div>
         <div class="modal-footer">
           <a type="button" class="btn btn-danger" href="eliminar_staff_perma.php?idStaff='.$id.'">Borrar</a>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>';
+}
+
+function modalEliminarInvitado($id,$nombre) {
+    echo '<div class="modal fade" id="modalEliminarInvitado'.$id.'" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <p>¿Estás seguro que quieres eliminar a '.$nombre.'?</p>
+        </div>
+        <div class="modal-footer">
+          <a type="button" class="btn btn-danger" href="eliminar_invitado.php?id='.$id.'">Borrar</a>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>';
+}
+
+function modalModificarStaff($id,$nombre){
+     echo '<div class="modal fade" id="modalModificarStaff'.$id.'" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modificar datos de '.$nombre.'</h4>
+        </div>
+        <div class="modal-body">
+           <form action="registrarAlUsuario.php" method="POST">
+                    <div class="form-group"
+                        <label>Rol:</label>
+                        <select class="form-control" id="rol" name="rol" required>
+                            <option> </option>
+                            <?php getRollList() ?>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                      <label for="nombre">Nombre completo:</label>
+                      <input type="text" class="form-control" id="usr" name="nombreUsuario" required>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group row">
+                      <label for="example-email-input" class="col-2 col-form-label">Correo:</label>
+                      <div class="col-10">
+                        <input class="form-control" type="email" value="correo@ejemplo.com" id="example-email-input" name="correo" required>
+                      </div>
+                    </div>
+                    <br>
+                     <div class="form-group row">
+                      <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
+                      <div class="col-10">
+                        <input class="form-control" type="password" value="" id="passwd1" name="passwd1" required>
+                      </div>
+                    </div>
+                    <br>
+                    <p>
+                    <div class="form-group row">
+                      <label for="example-password-input" class="col-2 col-form-label">Verificar Contraseña: </label>
+                      <div class="col-10">
+                        <input class="form-control" type="password" value="" id="passwd2" name="passwd2" required>
+                      </div>
+                    </div>
+                    <br>
+                     <div class="form-group row">
+                      <label for="example-tel-input" class="col-2 col-form-label">Teléfono:</label>
+                      <div class="col-10">
+                        <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input" name="telefono" required>
+                      </div>
+                    </div>
+                    <br>
+                    <br>
+                   
+                    <button class="btn waves-effect waves-light grey darken-3" type="submit" name="action">Registrar</button><br><br>
+                </form>
+        </div>
+        <div class="modal-footer">
+          <a type="button" class="btn btn-danger" href="eliminar_usuario.php?id='.$id.'">Borrar</a>
           <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
         </div>
       </div>
