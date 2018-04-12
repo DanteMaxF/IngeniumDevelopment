@@ -192,7 +192,6 @@ function eliminarStaff($descripcionEvento,$idStaff){
         if ($db != NULL) {
 
             // insert command specification
-            //$query='INSERT INTO alumnos (nombreA,carreraA,deuda) VALUES (?,?,?) ';
             $query = 'DELETE FROM staffEvento WHERE idEvento IN (SELECT idEvento FROM Evento WHERE descripcionEvento=?) AND idStaff=?';
             mysqli_query($db, $query);
             // Preparing the statement
@@ -670,7 +669,11 @@ function getRollList(){
 function getStaff($idEvento){
     $db = connectDB();
     if($db != NULL){
-        $query = 'SELECT DISTINCT  nombreUsuario, correo, telefono FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Staff" AND u.Ver=1 ORDER BY nombreUsuario';
+        $query = 'SELECT* FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i 
+        WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol 
+        AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Staff" AND u.Ver=1 
+        GROUP BY nombreUsuario
+        ORDER BY nombreUsuario';
         $results = mysqli_query($db,$query);
          //Pa' debugear
     //var_dump($query); 
@@ -694,11 +697,12 @@ function getStaff($idEvento){
 function getInvitados($idEvento){
     $db = connectDB();
     if($db != NULL){
-        $query = 'SELECT DISTINCT  nombreUsuario, correo, telefono, a.descripcion
+        $query = 'SELECT *
         FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i, usuarioAlergia ua, Alergia a  
         WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND ua.idUsuario = u.idUsuario AND a.idAlergia = ua.idAlergia
         AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Invitado" AND u.Ver=1
-        ORDER BY nombreUsuario ';
+        GROUP BY nombreUsuario
+        ORDER BY nombreUsuario';
         $results = mysqli_query($db,$query);
          //Pa' debugear
     //var_dump($query); 
@@ -723,7 +727,12 @@ function getInvitados($idEvento){
 function getCoordinador($idEvento){
     $db = connectDB();
     if($db != NULL){
-        $query = 'SELECT DISTINCT nombreUsuario, correo, telefono FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Coordinador" AND u.Ver=1 ORDER BY nombreUsuario';
+        $query = 'SELECT * 
+        FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i 
+        WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol 
+        AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Coordinador" AND u.Ver=1 
+        GROUP BY nombreUsuario
+        ORDER BY nombreUsuario';
         $results = mysqli_query($db,$query);
          //Pa' debugear
     //var_dump($query); 
@@ -737,8 +746,8 @@ function getCoordinador($idEvento){
                  echo '<td>'.$row["telefono"].'</td>';
                   echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Modificar</button></td>';
                  //generateModal($row["idUsuario"],$row["nombreUsuario"]);
-                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
-                // generateModal($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarStaff'.$row["idUsuario"].'">Eliminar</button></td>';
+                 modalEliminarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
             }
         }
@@ -748,14 +757,14 @@ function eliminarStaffPerma($idUsuario){
   $db = connectDB();
         if ($db != NULL) {
            // insert command specification
-            $query='UPDATE Usuario SET Ver=0 WHERE idEvento=?';
+            $query='UPDATE Usuario SET Ver=0 WHERE idUsuario=?';
             mysqli_query($db, $query);
             // Preparing the statement
             if (!($statement = $db->prepare($query))) {
                 die("Preparation failed: (" . $db->errno . ") " . $db->error);
             }
             // Binding statement params
-            if (!$statement->bind_param("i", $idEvento)) {
+            if (!$statement->bind_param("i", $idUsuario)) {
                 die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
             }
              // Executing the statement
