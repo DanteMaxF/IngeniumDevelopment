@@ -876,12 +876,13 @@ function modalModificarStaff($id,$nombre){
                     </div>
                     <br>
                     <br>
+                    <button type="button" class="btn btn-default float-right" data-dismiss="modal" >Cancelar</button>
+                    <a type="button" class="btn btn-danger float-right" href="eliminar_usuario.php?id='.$id.'">Borrar</a>
                    
-                    <button class="btn waves-effect waves-light grey darken-3" type="submit" name="action">Registrar</button><br><br>
                 </form>
         </div>
         <div class="modal-footer">
-          <a type="button" class="btn btn-danger" href="eliminar_usuario.php?id='.$id.'">Borrar</a>
+          <a type="button" class="btn btn-danger" href="eliminar_usuario.php?id='.$id.'">Registrar</a>
           <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
         </div>
       </div>
@@ -889,5 +890,33 @@ function modalModificarStaff($id,$nombre){
     </div>
   </div>';
 }
+
+function modificarStaff($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
+     $db = connectDB();
+     //Pa' debugear
+    //var_dump($passwd); 
+      //die('');
+    if($db != NULL){
+         $query = 'UPDATE Usuario SET nombreUsuario = "'.$nombreUsuario.'" ,passwd = "'.$passwd.'",correo = "'.$correo.'",telefono = "'.$telefono.'" WHERE idUsuario = "'.$idUsuario.'"';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("isssi", $idUsuario, $nombreUsuario, $passwd, $correo, $telefono)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        disconnectDB($db);
+        return true;
+    } 
+    return false;
+}
+
+//"'.$correo.'"
+
 ?>
 
