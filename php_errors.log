@@ -732,3 +732,9 @@
 [12-Apr-2018 17:21:23 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
 [12-Apr-2018 17:21:23 UTC] PHP   3. getCoordinador() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:35
 [12-Apr-2018 17:21:23 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:742
+[13-Apr-2018 19:15:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 153
+[13-Apr-2018 19:15:42 UTC] PHP Stack trace:
+[13-Apr-2018 19:15:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[13-Apr-2018 19:15:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[13-Apr-2018 19:15:42 UTC] PHP   3. getStaffEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:33
+[13-Apr-2018 19:15:42 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:153
