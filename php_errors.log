@@ -887,3 +887,111 @@
 [16-Apr-2018 00:04:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:0
 [16-Apr-2018 00:04:43 UTC] PHP   2. modificarUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:17
 [16-Apr-2018 00:04:43 UTC] PHP   3. mysqli_stmt->bind_param() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:908
+[16-Apr-2018 13:51:25 UTC] PHP Warning:  include(_modalModificarStaff.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:51:25 UTC] PHP Stack trace:
+[16-Apr-2018 13:51:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:51:25 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:51:25 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:51:25 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[16-Apr-2018 13:51:25 UTC] PHP Warning:  include(): Failed opening '_modalModificarStaff.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:51:25 UTC] PHP Stack trace:
+[16-Apr-2018 13:51:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:51:25 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:51:25 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:51:25 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[16-Apr-2018 13:51:25 UTC] PHP Warning:  include(_modalModificarStaff.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:51:25 UTC] PHP Stack trace:
+[16-Apr-2018 13:51:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:51:25 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:51:25 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:51:25 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[16-Apr-2018 13:51:25 UTC] PHP Warning:  include(): Failed opening '_modalModificarStaff.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:51:25 UTC] PHP Stack trace:
+[16-Apr-2018 13:51:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:51:25 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:51:25 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:51:25 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[16-Apr-2018 13:51:25 UTC] PHP Warning:  include(_modalModificarStaff.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:51:25 UTC] PHP Stack trace:
+[16-Apr-2018 13:51:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:51:25 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:51:25 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:51:25 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[16-Apr-2018 13:51:25 UTC] PHP Warning:  include(): Failed opening '_modalModificarStaff.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:51:25 UTC] PHP Stack trace:
+[16-Apr-2018 13:51:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:51:25 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:51:25 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:51:25 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[16-Apr-2018 13:53:11 UTC] PHP Warning:  include(_modalModificarStaff.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:53:11 UTC] PHP Stack trace:
+[16-Apr-2018 13:53:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:53:11 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:53:11 UTC] PHP   3. getCoordinador() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:35
+[16-Apr-2018 13:53:11 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:748
+[16-Apr-2018 13:53:11 UTC] PHP Warning:  include(): Failed opening '_modalModificarStaff.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:53:11 UTC] PHP Stack trace:
+[16-Apr-2018 13:53:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:53:11 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:53:11 UTC] PHP   3. getCoordinador() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:35
+[16-Apr-2018 13:53:11 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:748
+[16-Apr-2018 13:53:11 UTC] PHP Warning:  include(_modalModificarStaff.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:53:11 UTC] PHP Stack trace:
+[16-Apr-2018 13:53:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:53:11 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:53:11 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:53:11 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[16-Apr-2018 13:53:11 UTC] PHP Warning:  include(): Failed opening '_modalModificarStaff.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:53:11 UTC] PHP Stack trace:
+[16-Apr-2018 13:53:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:53:11 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:53:11 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:53:11 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[16-Apr-2018 13:53:11 UTC] PHP Warning:  include(_modalModificarStaff.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:53:11 UTC] PHP Stack trace:
+[16-Apr-2018 13:53:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:53:11 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:53:11 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:53:11 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[16-Apr-2018 13:53:11 UTC] PHP Warning:  include(): Failed opening '_modalModificarStaff.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:53:11 UTC] PHP Stack trace:
+[16-Apr-2018 13:53:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:53:11 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:53:11 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:53:11 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[16-Apr-2018 13:54:47 UTC] PHP Warning:  include(_modalModificarStaff.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:54:47 UTC] PHP Stack trace:
+[16-Apr-2018 13:54:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:54:47 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:54:47 UTC] PHP   3. getCoordinador() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:35
+[16-Apr-2018 13:54:47 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:748
+[16-Apr-2018 13:54:47 UTC] PHP Warning:  include(): Failed opening '_modalModificarStaff.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:54:47 UTC] PHP Stack trace:
+[16-Apr-2018 13:54:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:54:47 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:54:47 UTC] PHP   3. getCoordinador() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:35
+[16-Apr-2018 13:54:47 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:748
+[16-Apr-2018 13:54:47 UTC] PHP Warning:  include(_modalModificarStaff.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:54:47 UTC] PHP Stack trace:
+[16-Apr-2018 13:54:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:54:47 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:54:47 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:54:47 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[16-Apr-2018 13:54:47 UTC] PHP Warning:  include(): Failed opening '_modalModificarStaff.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:54:47 UTC] PHP Stack trace:
+[16-Apr-2018 13:54:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:54:47 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:54:47 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:54:47 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[16-Apr-2018 13:54:47 UTC] PHP Warning:  include(_modalModificarStaff.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:54:47 UTC] PHP Stack trace:
+[16-Apr-2018 13:54:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:54:47 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:54:47 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:54:47 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[16-Apr-2018 13:54:47 UTC] PHP Warning:  include(): Failed opening '_modalModificarStaff.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 827
+[16-Apr-2018 13:54:47 UTC] PHP Stack trace:
+[16-Apr-2018 13:54:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[16-Apr-2018 13:54:47 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[16-Apr-2018 13:54:47 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[16-Apr-2018 13:54:47 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
