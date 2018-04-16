@@ -156,14 +156,14 @@ function getStaffEvento($idEvento){
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
                  echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
-                 generateModal($row["idUsuario"],$row["nombreUsuario"]);
+                 generateModalDesasignarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
              } 
         }
     }
 }
 
-function generateModal($id,$nombre) {
+function generateModalDesasignarStaff($id,$nombre) {
     echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
     <div class="modal-dialog">
     
@@ -176,7 +176,7 @@ function generateModal($id,$nombre) {
           <p>¿Estás seguro que quieres eliminar a <strong>'.$nombre.'</strong>?</p>
         </div>
         <div class="modal-footer">
-          <a type="button" class="btn btn-danger" href="eliminar_staff.php?idStaff='.$id.'">Borrar</a>
+          <a type="button" class="btn btn-danger" href="desasignar_staff.php?idStaff='.$id.'">Borrar</a>
           <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
         </div>
       </div>
@@ -187,7 +187,7 @@ function generateModal($id,$nombre) {
 
 
 
-function eliminarStaff($idEvento,$idStaff){
+function desasignarStaff($idEvento,$idStaff){
   $db = connectDB();
         if ($db != NULL) {
 
