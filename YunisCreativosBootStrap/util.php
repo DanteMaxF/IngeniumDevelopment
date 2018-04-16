@@ -1046,5 +1046,34 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
   </div>
   <script src="js/password_checker.js"></script> ';
 }
+
+function getInvitadosEvento($idEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT * 
+                FROM Usuario U, Evento E, invitadoEvento IE, Invitado INV, Idioma IDI, Estado EST
+                WHERE E.idEvento=IE.idEvento AND U.idUsuario=IE.idInvitado AND INV.idInvitado=IE.idInvitado AND IDI.idIdioma=INV.idIdioma AND EST.idEstado=INV.idEstado
+                AND IE.idEvento ='.$idEvento.' 
+                ORDER BY nombreUsuario';
+        $results = mysqli_query($db,$query);
+         //Pa' debugear
+    //var_dump($query); 
+     // die('');
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<tr>';
+                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["correo"].'</td>';
+                 echo '<td>'.$row["telefono"].'</td>';
+                 echo '<td>'.$row["fechaNacimiento"].'</td>';
+                 echo '<td>'.$row["talla"].'</td>';
+                 echo '<td>'.$row["nombreIdioma"].'</td>';
+                 echo '<td>'.$row["nombreEstado"].'</td>';
+                 echo '</tr>';
+            }
+        }
+    }
+}
 ?>
 
