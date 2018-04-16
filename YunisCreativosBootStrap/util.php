@@ -686,7 +686,7 @@ function getStaff($idEvento){
                  echo '<td>'.$row["correo"].'</td>';
                  echo '<td>'.$row["telefono"].'</td>';
                  echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#modalModificarStaff'.$row["idUsuario"].'">Modificar</button></td>';
-                 modalModificarStaff($row["idUsuario"],$row["nombreUsuario"]);
+                 modalModificarStaff($row["idUsuario"],$row["nombreUsuario"],$row["correo"],$row["telefono"] );
                  echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarStaff'.$row["idUsuario"].'">Eliminar</button></td>';
                  modalEliminarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
@@ -715,8 +715,8 @@ function getInvitados($idEvento){
                  echo '<td>'.$row["correo"].'</td>';
                  echo '<td>'.$row["telefono"].'</td>';
                  echo '<td>'.$row["descripcion"].'</td>';
-                 echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Modificar</button></td>';
-                 //generateModal($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#modalModificarInvitado'.$row["idUsuario"].'">Modificar</button></td>';
+                 modalModificarInvitado($row["idUsuario"],$row["nombreUsuario"],$row["correo"],$row["telefono"],$row["descripcion"]);
                  echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarInvitado'.$row["idUsuario"].'">Eliminar</button></td>';
                  modalEliminarInvitado($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
@@ -745,7 +745,7 @@ function getCoordinador($idEvento){
                  echo '<td>'.$row["correo"].'</td>';
                  echo '<td>'.$row["telefono"].'</td>';
                  echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#modalModificarStaff'.$row["idUsuario"].'">Modificar</button></td>';
-                 modalModificarStaff($row["idUsuario"],$row["nombreUsuario"]);
+                 modalModificarStaff($row["idUsuario"],$row["nombreUsuario"],$row["correo"],$row["telefono"] );
                  echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarStaff'.$row["idUsuario"].'">Eliminar</button></td>';
                  modalEliminarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
@@ -821,7 +821,9 @@ function modalEliminarInvitado($id,$nombre) {
   </div>';
 }
 
-function modalModificarStaff($id,$nombre){
+function modalModificarStaff($id,$nombre,$correo, $telefono){
+    $passwd = getPasswordById($id);
+    $rol = getRol($id);
      echo '<div class="modal fade" id="modalModificarStaff'.$id.'" role="dialog">
     <div class="modal-dialog">
     
@@ -831,32 +833,32 @@ function modalModificarStaff($id,$nombre){
           <h4 class="modal-title">Modificar datos de '.$nombre.'</h4>
         </div>
         <div class="modal-body">
-           <form action="registrarAlUsuario.php" method="POST">
+           <form action="modificar_staff.php" method="POST">
                     <div class="form-group"
                         <label>Rol:</label>
-                        <select class="form-control" id="rol" name="rol" required>
-                            <option> </option>
-                            <?php getRollList() ?>
-                        </select>
+                        <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>
+                            <option> </option>';
+                                getRollList();
+                       echo '</select>
                     </div>
                     <br>
                     <div class="form-group">
                       <label for="nombre">Nombre completo:</label>
-                      <input type="text" class="form-control" id="usr" name="nombreUsuario" required>
+                      <input type="text" class="form-control" id="usr" name="nombreUsuario" value="'.$nombre.'" required>
                     </div>
                     <br>
                     <br>
                     <div class="form-group row">
                       <label for="example-email-input" class="col-2 col-form-label">Correo:</label>
                       <div class="col-10">
-                        <input class="form-control" type="email" value="correo@ejemplo.com" id="example-email-input" name="correo" required>
+                        <input class="form-control" type="email" value="'.$correo.'" id="example-email-input" name="correo" required>
                       </div>
                     </div>
                     <br>
                      <div class="form-group row">
                       <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
                       <div class="col-10">
-                        <input class="form-control" type="password" value="" id="passwd1" name="passwd1" required>
+                        <input class="form-control" type="password" value="'.$passwd.'" id="passwd1" name="passwd1" required>
                       </div>
                     </div>
                     <br>
@@ -864,34 +866,35 @@ function modalModificarStaff($id,$nombre){
                     <div class="form-group row">
                       <label for="example-password-input" class="col-2 col-form-label">Verificar Contraseña: </label>
                       <div class="col-10">
-                        <input class="form-control" type="password" value="" id="passwd2" name="passwd2" required>
+                        <input class="form-control" type="password" value="'.$passwd.'" id="passwd2" name="passwd2" required>
                       </div>
                     </div>
                     <br>
                      <div class="form-group row">
                       <label for="example-tel-input" class="col-2 col-form-label">Teléfono:</label>
                       <div class="col-10">
-                        <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input" name="telefono" required>
+                        <input class="form-control" type="tel" value="'.$telefono.'" id="example-tel-input" name="telefono" required>
                       </div>
                     </div>
                     <br>
                     <br>
-                    <button type="button" class="btn btn-default float-right" data-dismiss="modal" >Cancelar</button>
-                    <a type="button" class="btn btn-danger float-right" href="eliminar_usuario.php?id='.$id.'">Borrar</a>
+              
                    
-                </form>
+                
         </div>
         <div class="modal-footer">
-          <a type="button" class="btn btn-danger" href="eliminar_usuario.php?id='.$id.'">Registrar</a>
+          <button type="submit" class="btn btn-success" name="action">Registrar</button>
           <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
         </div>
+        </form>
       </div>
       
     </div>
-  </div>';
+  </div>
+  <script src="js/password_checker.js"></script> ';
 }
 
-function modificarStaff($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
+function modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
      $db = connectDB();
      //Pa' debugear
     //var_dump($passwd); 
@@ -916,7 +919,131 @@ function modificarStaff($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
     return false;
 }
 
-//"'.$correo.'"
 
+function getPasswordById($idUsuario){
+     $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT passwd from Usuario WHERE idUsuario ="'.$idUsuario.'"';
+        //Pa' debugear
+        //var_dump($query); 
+       // die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["passwd"];
+            }
+        
+        }
+    }
+    
+}
+
+function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
+   $passwd = getPasswordById($id);
+    $rol = getRol($id);
+     echo '<div class="modal fade" id="modalModificarInvitado'.$id.'" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modificar datos de '.$nombre.'</h4>
+        </div>
+        <div class="modal-body">
+           <form action="modificar_invitado.php" method="POST">
+                   <div class="form-group">
+              <label for="nombre">Nombre completo:</label>
+              <input type="text" class="form-control" value="'.$nombre.'" id="usr" name = "nombreUsuario" required>
+              
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="fecha_nac">Fecha Nacimiento:</label>
+                  <input type="date" class="form-control" id="usr" name = "fechaNacimiento" required>
+                </div>
+                <div class="col-md-4 mb-3">  
+                  <label>Estado:</label>
+                  <select class="form-control" id="Estado" name="Estado" required>
+                      <option> </option>
+                      <?php getEstado() ?>
+                  </select>
+                </div>
+                <div class="col-md-2 mb-3">
+                  <label>Talla:</label>
+                  <select class="form-control" id="talla" name="talla" required>
+                      <option> </option>
+                      <option value="S">Chica (S)</option>
+                      <option value="M">Mediana (M)</option>
+                      <option value="L">Grande (L)</option>
+                      <option value="XL">Extra Grande (XL)</option>
+                      <option value="XXL">Extra Extra Grande (XXL)</option>
+                  </select>
+                </div>
+                <div class="col-md-2 mb-3">
+                  <label>Seleccionar Idioma:</label>
+                  <select class="form-control" id="idioma" name="idioma" required>
+                      <option> </option>
+                      <option value="1">Español</option>
+                      <option value="2">English</option>
+                  </select>
+                </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="telefono">Teléfono:</label>
+                <input class="form-control" type="tel" value="'.$telefono.'" id="telefono" name="telefono" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="correo">Correo:</label>
+                <input class="form-control" type="email" value="'.$correo.'" id="correo" name="correo" required>
+              </div>
+              
+            </div>
+
+            <div class="form-group row">
+              <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
+              <div class="col-10">
+                <input class="form-control" type="password" value="'.$passwd.'" id="passwd1" name="passwd1" required>
+              </div>
+            </div>
+              
+            <div class="form-group row">
+              <label for="example-password-input" class="col-2 col-form-label">Verificar Contraseña: </label>
+              <div class="col-10">
+                <input class="form-control" type="password" value="'.$passwd.'" id="passwd2" name="passwd2" required>
+              </div>
+            </div>
+            <div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="asistenciaSi" name="asistencia" class="custom-control-input" value="yes">
+                  <label class="custom-control-label" for="asistenciaSi">Asistiré</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="asistenciaNo" name="asistencia" class="custom-control-input" value="no">
+                  <label class="custom-control-label" for="asistenciaNo">NO asistiré</label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label>Alergias (Si padeces más de una, más adelante podrás registrar las que falten más adelante):</label>
+                <select class="form-control" id="alergias" name="alergias" value="'.$alergias.'">
+                  <option> </option>
+                   <?php getAlergias() ?>
+                </select>
+            </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" name="action">Registrar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+        </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  <script src="js/password_checker.js"></script> ';
+}
 ?>
 

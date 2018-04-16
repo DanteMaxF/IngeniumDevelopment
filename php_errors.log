@@ -738,3 +738,152 @@
 [13-Apr-2018 19:15:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
 [13-Apr-2018 19:15:42 UTC] PHP   3. getStaffEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:33
 [13-Apr-2018 19:15:42 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:153
+[14-Apr-2018 17:36:14 UTC] PHP Warning:  Missing argument 3 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 748 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:36:14 UTC] PHP Stack trace:
+[14-Apr-2018 17:36:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:36:14 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:36:14 UTC] PHP   3. getCoordinador() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:35
+[14-Apr-2018 17:36:14 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:748
+[14-Apr-2018 17:36:14 UTC] PHP Warning:  Missing argument 4 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 748 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:36:14 UTC] PHP Stack trace:
+[14-Apr-2018 17:36:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:36:14 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:36:14 UTC] PHP   3. getCoordinador() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:35
+[14-Apr-2018 17:36:14 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:748
+[14-Apr-2018 17:36:14 UTC] PHP Warning:  Missing argument 3 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 689 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:36:14 UTC] PHP Stack trace:
+[14-Apr-2018 17:36:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:36:14 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:36:14 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[14-Apr-2018 17:36:14 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[14-Apr-2018 17:36:14 UTC] PHP Warning:  Missing argument 4 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 689 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:36:14 UTC] PHP Stack trace:
+[14-Apr-2018 17:36:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:36:14 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:36:14 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[14-Apr-2018 17:36:14 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[14-Apr-2018 17:36:14 UTC] PHP Warning:  Missing argument 3 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 689 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:36:14 UTC] PHP Stack trace:
+[14-Apr-2018 17:36:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:36:14 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:36:14 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[14-Apr-2018 17:36:14 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[14-Apr-2018 17:36:14 UTC] PHP Warning:  Missing argument 4 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 689 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:36:14 UTC] PHP Stack trace:
+[14-Apr-2018 17:36:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:36:14 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:36:14 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[14-Apr-2018 17:36:14 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[14-Apr-2018 17:37:31 UTC] PHP Warning:  Missing argument 3 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 689 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:37:31 UTC] PHP Stack trace:
+[14-Apr-2018 17:37:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:37:31 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:37:31 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[14-Apr-2018 17:37:31 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[14-Apr-2018 17:37:31 UTC] PHP Warning:  Missing argument 4 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 689 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:37:31 UTC] PHP Stack trace:
+[14-Apr-2018 17:37:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:37:31 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:37:31 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[14-Apr-2018 17:37:31 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[14-Apr-2018 17:37:31 UTC] PHP Warning:  Missing argument 3 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 689 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:37:31 UTC] PHP Stack trace:
+[14-Apr-2018 17:37:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:37:31 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:37:31 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[14-Apr-2018 17:37:31 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[14-Apr-2018 17:37:31 UTC] PHP Warning:  Missing argument 4 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 689 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:37:31 UTC] PHP Stack trace:
+[14-Apr-2018 17:37:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:37:31 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:37:31 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[14-Apr-2018 17:37:31 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[14-Apr-2018 17:38:42 UTC] PHP Warning:  Missing argument 3 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 748 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:38:42 UTC] PHP Stack trace:
+[14-Apr-2018 17:38:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:38:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:38:42 UTC] PHP   3. getCoordinador() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:35
+[14-Apr-2018 17:38:42 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:748
+[14-Apr-2018 17:38:42 UTC] PHP Warning:  Missing argument 4 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 748 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:38:42 UTC] PHP Stack trace:
+[14-Apr-2018 17:38:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:38:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:38:42 UTC] PHP   3. getCoordinador() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:35
+[14-Apr-2018 17:38:42 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:748
+[14-Apr-2018 17:38:42 UTC] PHP Warning:  Missing argument 3 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 689 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:38:42 UTC] PHP Stack trace:
+[14-Apr-2018 17:38:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:38:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:38:42 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[14-Apr-2018 17:38:42 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[14-Apr-2018 17:38:42 UTC] PHP Warning:  Missing argument 4 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 689 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:38:42 UTC] PHP Stack trace:
+[14-Apr-2018 17:38:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:38:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:38:42 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[14-Apr-2018 17:38:42 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[14-Apr-2018 17:38:42 UTC] PHP Warning:  Missing argument 3 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 689 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:38:42 UTC] PHP Stack trace:
+[14-Apr-2018 17:38:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:38:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:38:42 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[14-Apr-2018 17:38:42 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[14-Apr-2018 17:38:42 UTC] PHP Warning:  Missing argument 4 for modalModificarStaff(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 689 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 824
+[14-Apr-2018 17:38:42 UTC] PHP Stack trace:
+[14-Apr-2018 17:38:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 17:38:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[14-Apr-2018 17:38:42 UTC] PHP   3. getStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:52
+[14-Apr-2018 17:38:42 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:689
+[14-Apr-2018 18:00:17 UTC] PHP Parse error:  syntax error, unexpected ''"'' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 918
+[14-Apr-2018 18:00:17 UTC] PHP Stack trace:
+[14-Apr-2018 18:00:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 18:01:10 UTC] PHP Parse error:  syntax error, unexpected ''"'' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 918
+[14-Apr-2018 18:01:10 UTC] PHP Stack trace:
+[14-Apr-2018 18:01:10 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 18:01:13 UTC] PHP Parse error:  syntax error, unexpected ''"'' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 918
+[14-Apr-2018 18:01:13 UTC] PHP Stack trace:
+[14-Apr-2018 18:01:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[14-Apr-2018 18:01:14 UTC] PHP Parse error:  syntax error, unexpected ''"'' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 918
+[14-Apr-2018 18:01:14 UTC] PHP Stack trace:
+[14-Apr-2018 18:01:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[15-Apr-2018 23:14:18 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 942
+[15-Apr-2018 23:14:18 UTC] PHP Stack trace:
+[15-Apr-2018 23:14:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[15-Apr-2018 23:15:35 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 943
+[15-Apr-2018 23:15:35 UTC] PHP Stack trace:
+[15-Apr-2018 23:15:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[15-Apr-2018 23:24:38 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 908
+[15-Apr-2018 23:24:38 UTC] PHP Stack trace:
+[15-Apr-2018 23:24:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:0
+[15-Apr-2018 23:24:38 UTC] PHP   2. modificarUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:5
+[15-Apr-2018 23:24:38 UTC] PHP   3. mysqli_stmt->bind_param() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:908
+[15-Apr-2018 23:27:30 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 908
+[15-Apr-2018 23:27:30 UTC] PHP Stack trace:
+[15-Apr-2018 23:27:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:0
+[15-Apr-2018 23:27:30 UTC] PHP   2. modificarUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:5
+[15-Apr-2018 23:27:30 UTC] PHP   3. mysqli_stmt->bind_param() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:908
+[15-Apr-2018 23:31:19 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 908
+[15-Apr-2018 23:31:19 UTC] PHP Stack trace:
+[15-Apr-2018 23:31:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:0
+[15-Apr-2018 23:31:19 UTC] PHP   2. modificarUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:11
+[15-Apr-2018 23:31:19 UTC] PHP   3. mysqli_stmt->bind_param() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:908
+[15-Apr-2018 23:35:21 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 908
+[15-Apr-2018 23:35:21 UTC] PHP Stack trace:
+[15-Apr-2018 23:35:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:0
+[15-Apr-2018 23:35:21 UTC] PHP   2. modificarUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:11
+[15-Apr-2018 23:35:21 UTC] PHP   3. mysqli_stmt->bind_param() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:908
+[15-Apr-2018 23:57:59 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 908
+[15-Apr-2018 23:57:59 UTC] PHP Stack trace:
+[15-Apr-2018 23:57:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:0
+[15-Apr-2018 23:57:59 UTC] PHP   2. modificarUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:11
+[15-Apr-2018 23:57:59 UTC] PHP   3. mysqli_stmt->bind_param() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:908
+[16-Apr-2018 00:01:58 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 908
+[16-Apr-2018 00:01:58 UTC] PHP Stack trace:
+[16-Apr-2018 00:01:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:0
+[16-Apr-2018 00:01:58 UTC] PHP   2. modificarUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:11
+[16-Apr-2018 00:01:58 UTC] PHP   3. mysqli_stmt->bind_param() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:908
+[16-Apr-2018 00:04:43 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 908
+[16-Apr-2018 00:04:43 UTC] PHP Stack trace:
+[16-Apr-2018 00:04:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:0
+[16-Apr-2018 00:04:43 UTC] PHP   2. modificarUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:17
+[16-Apr-2018 00:04:43 UTC] PHP   3. mysqli_stmt->bind_param() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:908
