@@ -833,7 +833,7 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
           <h4 class="modal-title">Modificar datos de '.$nombre.'</h4>
         </div>
         <div class="modal-body">
-           <form action="modificar_staff.php" method="POST">
+           <form action="modificar_staff.php?id='.$id.',?nombreUsuario='.$nombre.',correo='.$correo.'" method="POST">
                     <div class="form-group"
                         <label>Rol:</label>
                         <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>
@@ -878,7 +878,8 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
                     </div>
                     <br>
                     <br>
-              
+              <button type="submit" class="btn btn-success" name="action">Registrar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
                    
                 
         </div>
