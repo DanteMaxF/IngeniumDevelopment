@@ -143,7 +143,7 @@ function getStaffEvento($idEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT U.nombreUsuario, U.correo, U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'" AND Ver=1';
+        $query = 'SELECT U.nombreUsuario, U.correo, U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'" AND U.Ver=1';
         //Pa' debugear
         //var_dump($query); 
         //die('');
