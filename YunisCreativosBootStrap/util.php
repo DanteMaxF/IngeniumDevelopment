@@ -187,19 +187,19 @@ function generateModal($id,$nombre) {
 
 
 
-function eliminarStaff($descripcionEvento,$idStaff){
+function eliminarStaff($idEvento,$idStaff){
   $db = connectDB();
         if ($db != NULL) {
 
             // insert command specification
-            $query = 'DELETE FROM staffEvento WHERE idEvento IN (SELECT idEvento FROM Evento WHERE descripcionEvento=?) AND idStaff=?';
+            $query = 'DELETE FROM staffEvento WHERE idEvento IN (SELECT idEvento FROM Evento WHERE idEvento=?) AND idStaff=?';
             mysqli_query($db, $query);
             // Preparing the statement
             if (!($statement = $db->prepare($query))) {
                 die("Preparation failed: (" . $db->errno . ") " . $db->error);
             }
             // Binding statement params
-            if (!$statement->bind_param("si", $descripcionEvento, $idStaff)) {
+            if (!$statement->bind_param("ii", $idEvento, $idStaff)) {
                 die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
             }
              // Executing the statement

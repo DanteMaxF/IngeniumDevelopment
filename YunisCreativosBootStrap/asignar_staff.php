@@ -12,5 +12,5 @@
         
     }
  
-    header('location:consultar_eventos.php?eventInput='.$_SESSION["evento"]);
+    header('location:consultar_eventos.php?eventInput='.$_SESSION["idEvento"]);
 ?>

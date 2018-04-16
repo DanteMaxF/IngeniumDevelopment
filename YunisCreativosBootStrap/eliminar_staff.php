@@ -3,7 +3,7 @@
     session_start();
     require_once("util.php");
     
-    if (eliminarStaff( $_SESSION["evento"], $_GET["idStaff"])){
+    if (eliminarStaff( $_SESSION["idEvento"], $_GET["idStaff"])){
         $_SESSION["staffStatusSuccess"] = "Se ha eliminado el staff exitosamente";
         unset($_SESSION["staffStatusError"]);
     }else{
