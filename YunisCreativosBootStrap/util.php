@@ -453,7 +453,7 @@ function registrarUsuario($nombreUsuario,$passwd,$correo,$telefono){
     //var_dump($passwd); 
       //die('');
     if($db != NULL){
-         $query = 'INSERT INTO Usuario(nombreUsuario,passwd,correo,telefono) VALUES(?,?,?,?)';
+         $query = 'INSERT INTO Usuario(nombreUsuario,passwd,correo,telefono,Ver) VALUES(?,?,?,?,1)';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
@@ -714,7 +714,9 @@ function getInvitados($idEvento){
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
                  echo '<td>'.$row["telefono"].'</td>';
-                 echo '<td>'.$row["descripcion"].'</td>';
+                 echo '<td>';
+                 getAlergiasByIdUsuario($row["idUsuario"]);
+                 echo'</td>';
                  echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#modalModificarInvitado'.$row["idUsuario"].'">Modificar</button></td>';
                  modalModificarInvitado($row["idUsuario"],$row["nombreUsuario"],$row["correo"],$row["telefono"],$row["descripcion"]);
                  echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarInvitado'.$row["idUsuario"].'">Eliminar</button></td>';
@@ -1123,5 +1125,30 @@ function desasignarInvitado($idEvento,$idInvitado){
         }
         return false;
 }
+
+function getAlergiasByIdUsuario($idUsuario){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT a.descripcion
+    FROM Alergia a, Usuario u, usuarioAlergia ua
+    WHERE u.idUsuario = ua.idUsuario
+    AND a.idAlergia = ua.idAlergia
+    AND u.idUsuario ="'.$idUsuario.'"';
+     //Pa' debugear
+    //var_dump($query); 
+    //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            echo'<ul>';
+             while ($row = mysqli_fetch_assoc($results)) {
+                echo '<li>'.$row["descripcion"].'</li>';
+             }
+             echo'<ul>';
+        }
+    }
+}
+
+
 ?>
 
