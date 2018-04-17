@@ -155,7 +155,7 @@ function getStaffEvento($idEvento){
                  echo '<tr>';
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
-                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
                  generateModalDesasignarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
              } 
@@ -166,14 +166,14 @@ function getStaffEvento($idEvento){
 function generateModalDesasignarStaff($id,$nombre) {
     echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
-          <p>¿Estás seguro que quieres eliminar a <strong>'.$nombre.'</strong>?</p>
+          <p>¿Estás seguro que quieres desasignar a <strong>'.$nombre.'</strong>?</p>
         </div>
         <div class="modal-footer">
           <a type="button" class="btn btn-danger" href="desasignar_staff.php?idStaff='.$id.'">Borrar</a>
@@ -1070,10 +1070,58 @@ function getInvitadosEvento($idEvento){
                  echo '<td>'.$row["talla"].'</td>';
                  echo '<td>'.$row["nombreIdioma"].'</td>';
                  echo '<td>'.$row["nombreEstado"].'</td>';
+                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                 echo generateModalDesasignarInvitado($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
             }
         }
     }
+}
+
+function generateModalDesasignarInvitado($id,$nombre) {
+    echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <p>¿Estás seguro que quieres desasignar a <strong>'.$nombre.'</strong>?</p>
+        </div>
+        <div class="modal-footer">
+          <a type="button" class="btn btn-danger" href="desasignar_invitado.php?idInvitado='.$id.'">Borrar</a>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>';
+}
+
+function desasignarInvitado($idEvento,$idInvitado){
+  $db = connectDB();
+        if ($db != NULL) {
+            // insert command specification
+            $query = 'DELETE FROM invitadoEvento WHERE idEvento IN (SELECT idEvento FROM Evento WHERE idEvento=?) AND idInvitado=?';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("ii", $idEvento, $idInvitado)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
 }
 ?>
 
