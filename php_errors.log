@@ -1537,3 +1537,13 @@
 [17-Apr-2018 18:31:09 UTC] PHP   5. getRol() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:832
 [17-Apr-2018 18:31:09 UTC] PHP   6. mysqli_free_result() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:92
 >>>>>>> alex/frontEnd
+[17-Apr-2018 19:05:32 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1067
+[17-Apr-2018 19:05:32 UTC] PHP Stack trace:
+[17-Apr-2018 19:05:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[17-Apr-2018 19:05:32 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[17-Apr-2018 19:05:32 UTC] PHP   3. getInvitadosEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:53
+[17-Apr-2018 19:05:32 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1067
+[17-Apr-2018 19:05:32 UTC] PHP Fatal error:  Call to undefined function getInvitadosList() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html on line 122
+[17-Apr-2018 19:05:32 UTC] PHP Stack trace:
+[17-Apr-2018 19:05:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[17-Apr-2018 19:05:32 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
