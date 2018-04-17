@@ -556,19 +556,19 @@ function getUsuarios($rol,$descripcionEvento){
 }
 
 
-function registrarPlantillas($nombrePlantilla,$colorTexto,$colorFondo,$colorBotones,$imagenFondo){
+function registrarPlantillas($nombrePlantilla,$colorTexto,$colorFondo,$colorBotones,$nombreImagen){
      $db = connectDB();
      //Pa' debugear
     //var_dump($passwd); 
       //die('');
     if($db != NULL){
-         $query = 'INSERT INTO Plantilla(nombrePlantilla,colorTexto,colorFondo,colorBotones,imagenFondo) VALUES(?,?,?,?,?)';
+         $query = 'INSERT INTO Plantilla(nombrePlantilla,colorTexto,colorFondo,colorBotones,nombreImagen,Ver) VALUES(?,?,?,?,?,1)';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("sssss", $nombrePlantilla,$colorTexto,$colorFondo,$colorBotones,$imagenFondo)) {
+        if (!$statement->bind_param("sssss", $nombrePlantilla,$colorTexto,$colorFondo,$colorBotones,$nombreImagen)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -826,7 +826,7 @@ function modalEliminarInvitado($id,$nombre) {
 function modalModificarStaff($id,$nombre,$correo, $telefono){
     $passwd = getPasswordById($id);
     $rol = getRol($id);
-     echo '<div class="modal fade" id="modalModificarStaff'.$id.'" role="dialog">
+     echo'<div class="modal fade" id="modalModificarStaff'.$id.'" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -835,7 +835,7 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
           <h4 class="modal-title">Modificar datos de '.$nombre.'</h4>
         </div>
         <div class="modal-body">
-           <form action="modificar_staff.php?id='.$id.',?nombreUsuario='.$nombre.',correo='.$correo.'" method="POST">
+           <form action="modificar_staff.php?id='.$id.'" method="POST">
                     <div class="form-group"
                         <label>Rol:</label>
                         <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>

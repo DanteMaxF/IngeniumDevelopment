@@ -1001,3 +1001,20 @@
 [16-Apr-2018 22:57:27 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
 [16-Apr-2018 22:57:27 UTC] PHP   3. getStaffEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:33
 [16-Apr-2018 22:57:27 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:153
+[17-Apr-2018 02:29:10 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php on line 15
+[17-Apr-2018 02:29:10 UTC] PHP Stack trace:
+[17-Apr-2018 02:29:10 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:0
+[17-Apr-2018 02:29:10 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:15
+[17-Apr-2018 02:30:05 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php on line 15
+[17-Apr-2018 02:30:05 UTC] PHP Stack trace:
+[17-Apr-2018 02:30:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:0
+[17-Apr-2018 02:30:05 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:15
+[17-Apr-2018 02:36:47 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php on line 15
+[17-Apr-2018 02:36:47 UTC] PHP Stack trace:
+[17-Apr-2018 02:36:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:0
+[17-Apr-2018 02:36:47 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:15
+[17-Apr-2018 03:09:13 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php on line 15
+[17-Apr-2018 03:09:13 UTC] PHP Stack trace:
+[17-Apr-2018 03:09:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:0
+[17-Apr-2018 03:09:13 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:15
+[17-Apr-2018 04:00:26 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php on line 15
