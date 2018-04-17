@@ -26,14 +26,14 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `Actividad`
 --
 
-CREATE TABLE IF NOT EXISTS `events` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(250) NOT NULL,
-  `start` datetime NOT NULL,
-  `end` datetime NOT NULL,
-  `color` varchar(7) NOT NULL,
+CREATE TABLE IF NOT EXISTS `Actividad` (
+  `idActividad` int(11) NOT NULL AUTO_INCREMENT,
+  `Descripcion` varchar(250) NOT NULL,
+  `fechaInicio` datetime NOT NULL,
+  `fehcaFin` datetime NOT NULL,
+  `statusActividad` varchar(50) NOT NULL,
   `idEvento` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`idActividad`),
   KEY `idEvento` (`idEvento`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
@@ -41,17 +41,17 @@ CREATE TABLE IF NOT EXISTS `events` (
 -- Volcado de datos para la tabla `Actividad`
 --
 
-INSERT INTO `events` (`id`, `title`, `start`, `end`, `color`, `idEvento`) VALUES
-(NULL, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 1),
-(2, 'Visita parque', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 2),
-(3, 'Visita restaurante', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 3),
-(4, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 4),
-(5, 'Visita restaurante', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 5),
-(6, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 6),
-(7, 'Visita restaurante', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 7),
-(8, 'Visita parque', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 8),
-(9, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 9),
-(10, 'Visita parque', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 10);
+INSERT INTO `Actividad` (`idActividad`, `Descripcion`, `fechaInicio`, `fehcaFin`, `statusActividad`, `idEvento`) VALUES
+(1, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 1),
+(2, 'Visita parque', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 2),
+(3, 'Visita restaurante', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 3),
+(4, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 4),
+(5, 'Visita restaurante', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 5),
+(6, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 6),
+(7, 'Visita restaurante', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 7),
+(8, 'Visita parque', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 8),
+(9, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 9),
+(10, 'Visita parque', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 10);
 
 -- --------------------------------------------------------
 
@@ -860,9 +860,9 @@ INSERT INTO `Rol` (`idRol`, `nombreRol`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `seHaceEn` (
-  `id` int(11) NOT NULL,
+  `idActividad` int(11) NOT NULL,
   `idLugar` int(11) NOT NULL,
-  PRIMARY KEY (`id`,`idLugar`),
+  PRIMARY KEY (`idActividad`,`idLugar`),
   KEY `act-lugar2` (`idLugar`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -870,17 +870,17 @@ CREATE TABLE IF NOT EXISTS `seHaceEn` (
 -- Volcado de datos para la tabla `seHaceEn`
 --
 
-INSERT INTO `seHaceEn` (`id`, `idLugar`) VALUES
-(2, 1),
-(3, 2),
-(4, 3),
-(5, 4),
-(6, 5),
-(7, 6),
-(8, 7),
-(9, 8),
-(10, 9),
-(11, 10);
+INSERT INTO `seHaceEn` (`idActividad`, `idLugar`) VALUES
+(8, 1),
+(1, 2),
+(2, 3),
+(1, 4),
+(3, 5),
+(5, 6),
+(9, 7),
+(7, 8),
+(4, 9),
+(1, 10);
 
 -- --------------------------------------------------------
 
@@ -1085,7 +1085,7 @@ INSERT INTO `usuarioAlergia` (`idUsuario`, `idAlergia`) VALUES
 --
 -- Filtros para la tabla `Actividad`
 --
-ALTER TABLE `events`
+ALTER TABLE `Actividad`
   ADD CONSTRAINT `Evento_Actividad` FOREIGN KEY (`idEvento`) REFERENCES `Evento` (`idEvento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -1148,7 +1148,7 @@ ALTER TABLE `plantillaImagen`
 -- Filtros para la tabla `seHaceEn`
 --
 ALTER TABLE `seHaceEn`
-  ADD CONSTRAINT `act-lugar` FOREIGN KEY (`id`) REFERENCES `events` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `act-lugar` FOREIGN KEY (`idActividad`) REFERENCES `Actividad` (`idActividad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `act-lugar2` FOREIGN KEY (`idLugar`) REFERENCES `Lugar` (`idLugar`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --

@@ -3,8 +3,10 @@
     session_start();
     require_once("util.php");
     
-    if(asignarStaff($_SESSION["idEvento"],$_POST["staffInput"])){
-        $_SESSION["staffStatusSuccess"] = "Se ha registrado <strong>".$_POST["staffInput"]."</strong> exitosamente";
+
+    
+    if(asignarInvitado($_SESSION["idEvento"],$_POST["invitadoInput"])){
+        $_SESSION["staffStatusSuccess"] = "Se ha registrado <strong>".$_POST["invitadoInput"]."</strong> exitosamente";
         unset($_SESSION["staffStatusError"]);
     }else{
         $_SESSION["staffStatusError"] = "Hubo un error en el registro, inténtalo de nuevo más tarde";
@@ -13,4 +15,5 @@
     }
  
     header('location:consultar_eventos.php?eventInput='.$_SESSION["idEvento"]);
+    
 ?>
