@@ -4,7 +4,7 @@
 
     if( isset($_SESSION["idRol"]) ){
 
-        include("partial/_header.html");
+        include("partial/_head.html");
         include("partial/_navbarEmpleado.html");
         require("FullCalendar/index.php");
         include ("partial/_footer.html");
