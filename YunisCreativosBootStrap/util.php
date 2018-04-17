@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 //CONECTAR CON BASE DE DATOS (USAR EN CADA FUNCION)
@@ -143,7 +144,7 @@ function getStaffEvento($idEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT U.nombreUsuario, U.correo, U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'" AND U.Ver=1 ORDER BY U.nombreUsuario';
+        $query = 'SELECT U.nombreUsuario, U.correo, U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'" AND U.Ver=1';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -155,7 +156,7 @@ function getStaffEvento($idEvento){
                  echo '<tr>';
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
-                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
                  generateModalDesasignarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
              } 
@@ -166,14 +167,14 @@ function getStaffEvento($idEvento){
 function generateModalDesasignarStaff($id,$nombre) {
     echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
     <div class="modal-dialog">
-
+    
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
-          <p>¿Estás seguro que quieres desasignar a <strong>'.$nombre.'</strong>?</p>
+          <p>¿Estás seguro que quieres eliminar a <strong>'.$nombre.'</strong>?</p>
         </div>
         <div class="modal-footer">
           <a type="button" class="btn btn-danger" href="desasignar_staff.php?idStaff='.$id.'">Borrar</a>
@@ -355,11 +356,11 @@ function getNombreEvento($codigo){
     }
 }
 
-function getStaffList($idEvento){
+function getStaffList($descripcionEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT * FROM Usuario U, tiene T WHERE U.idUsuario=T.idUsuario AND T.idRol=1494 AND T.idUsuario NOT IN (SELECT U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'") GROUP BY U.nombreUsuario';
+        $query = 'SELECT U.nombreUsuario FROM Usuario U, tiene T WHERE U.idUsuario=T.idUsuario AND T.idRol=1494 AND T.idUsuario NOT IN (SELECT U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.descripcionEvento="'.$descripcionEvento.'")';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -367,7 +368,7 @@ function getStaffList($idEvento){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
             while ($row = mysqli_fetch_assoc($results)) {
-                echo '<option value='.$row["idUsuario"].'>';
+                echo "<option>";
                 echo $row["nombreUsuario"];
                 echo "</option>";
             }
@@ -556,19 +557,19 @@ function getUsuarios($rol,$descripcionEvento){
 }
 
 
-function registrarPlantillas($nombrePlantilla,$colorTexto,$colorFondo,$colorBotones,$imagenFondo){
+function registrarPlantillas($nombrePlantilla,$colorTexto,$colorFondo,$colorBotones,$nombreImagen){
      $db = connectDB();
      //Pa' debugear
     //var_dump($passwd); 
       //die('');
     if($db != NULL){
-         $query = 'INSERT INTO Plantilla(nombrePlantilla,colorTexto,colorFondo,colorBotones,imagenFondo) VALUES(?,?,?,?,?)';
+         $query = 'INSERT INTO Plantilla(nombrePlantilla,colorTexto,colorFondo,colorBotones,nombreImagen,Ver) VALUES(?,?,?,?,?,1)';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("sssss", $nombrePlantilla,$colorTexto,$colorFondo,$colorBotones,$imagenFondo)) {
+        if (!$statement->bind_param("sssss", $nombrePlantilla,$colorTexto,$colorFondo,$colorBotones,$nombreImagen)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -649,7 +650,7 @@ function printIdEventoForm($codigo){
 }
 
 
-function getRollList(){
+function getRollList($id = -1){
     $db = connectDB();
     if($db != NULL){
     $query = 'SELECT * from Rol';
@@ -660,7 +661,11 @@ function getRollList(){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 echo '<option value='.$row["idRol"].'>'.$row["nombreRol"].'</option>';
+                 echo '<option value="'.$row["idRol"].'"';
+                 if ($row["idRol"] == $id) {
+                     echo " selected";
+                 }
+                 echo '>'.$row["nombreRol"].'</option>';
             }
         }
     }
@@ -826,7 +831,7 @@ function modalEliminarInvitado($id,$nombre) {
 function modalModificarStaff($id,$nombre,$correo, $telefono){
     $passwd = getPasswordById($id);
     $rol = getRol($id);
-     echo '<div class="modal fade" id="modalModificarStaff'.$id.'" role="dialog">
+     echo'<div class="modal fade" id="modalModificarStaff'.$id.'" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -835,12 +840,13 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
           <h4 class="modal-title">Modificar datos de '.$nombre.'</h4>
         </div>
         <div class="modal-body">
-           <form action="modificar_staff.php?id='.$id.',?nombreUsuario='.$nombre.',correo='.$correo.'" method="POST">
+           <form action="modificar_staff.php" method="POST">
+                    <input type="hidden" name="id" value="'.$id.'">
                     <div class="form-group"
                         <label>Rol:</label>
                         <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>
                             <option> </option>';
-                                getRollList();
+                                getRollList($rol);
                        echo '</select>
                     </div>
                     <br>
@@ -880,10 +886,6 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
                     </div>
                     <br>
                     <br>
-              <button type="submit" class="btn btn-success" name="action">Registrar</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
-                   
-                
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-success" name="action">Registrar</button>
@@ -903,13 +905,13 @@ function modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
     //var_dump($passwd); 
       //die('');
     if($db != NULL){
-         $query = 'UPDATE Usuario SET nombreUsuario = "'.$nombreUsuario.'" ,passwd = "'.$passwd.'",correo = "'.$correo.'",telefono = "'.$telefono.'" WHERE idUsuario = "'.$idUsuario.'"';
+         $query = 'UPDATE Usuario SET nombreUsuario=?, passwd=?, correo=?, telefono=? VALUES  WHERE idUsuario = ?';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("isssi", $idUsuario, $nombreUsuario, $passwd, $correo, $telefono)) {
+        if (!$statement->bind_param("ssssi",$nombreUsuario, $passwd, $correo, $telefono,$idUsuario)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -924,7 +926,7 @@ function modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
 
 
 function getPasswordById($idUsuario){
-    $db = connectDB();
+     $db = connectDB();
     if($db != NULL){
         $query = 'SELECT passwd from Usuario WHERE idUsuario ="'.$idUsuario.'"';
         //Pa' debugear
@@ -954,7 +956,7 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
           <h4 class="modal-title">Modificar datos de '.$nombre.'</h4>
         </div>
         <div class="modal-body">
-           <form action="modificar_invitado.php" method="POST">
+           <form action="modificar_staff.php" method="POST">
                    <div class="form-group">
               <label for="nombre">Nombre completo:</label>
               <input type="text" class="form-control" value="'.$nombre.'" id="usr" name = "nombreUsuario" required>
@@ -1072,109 +1074,10 @@ function getInvitadosEvento($idEvento){
                  echo '<td>'.$row["talla"].'</td>';
                  echo '<td>'.$row["nombreIdioma"].'</td>';
                  echo '<td>'.$row["nombreEstado"].'</td>';
-                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
-                 echo generateModalDesasignarInvitado($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
             }
         }
     }
-}
-
-function generateModalDesasignarInvitado($id,$nombre) {
-    echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title"></h4>
-        </div>
-        <div class="modal-body">
-          <p>¿Estás seguro que quieres desasignar a <strong>'.$nombre.'</strong>?</p>
-        </div>
-        <div class="modal-footer">
-          <a type="button" class="btn btn-danger" href="desasignar_invitado.php?idInvitado='.$id.'">Borrar</a>
-          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
-        </div>
-      </div>
-    </div>
-  </div>';
-}
-
-function desasignarInvitado($idEvento,$idInvitado){
-  $db = connectDB();
-        if ($db != NULL) {
-            // insert command specification
-            $query = 'DELETE FROM invitadoEvento WHERE idEvento IN (SELECT idEvento FROM Evento WHERE idEvento=?) AND idInvitado=?';
-            mysqli_query($db, $query);
-            // Preparing the statement
-            if (!($statement = $db->prepare($query))) {
-                die("Preparation failed: (" . $db->errno . ") " . $db->error);
-            }
-            // Binding statement params
-            if (!$statement->bind_param("ii", $idEvento, $idInvitado)) {
-                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-            }
-             // Executing the statement
-             if (!$statement->execute()) {
-                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-              }
-            //mysqli_free_result($result);
-            disconnectDB($db);
-            return true;
-        }
-        return false;
-}
-
-function getInvitadosList($idEvento){
-    $db = connectDB();
-    if ($db != NULL) {
-        
-        $query = '  SELECT DISTINCT U.nombreUsuario, U.idUsuario
-                    FROM  Usuario U, invitadoEvento IE
-                    WHERE U.idUsuario=IE.idInvitado 
-                    	  AND U.idUsuario NOT IN (SELECT I.idInvitado FROM invitadoEvento I WHERE I.idEvento='.$idEvento.')
-                    ORDER BY U.nombreUsuario';
-        //Pa' debugear
-        //var_dump($query); 
-        //die('');
-        $results = mysqli_query($db,$query);
-        disconnectDB($db);
-        if(mysqli_num_rows($results) > 0){
-            while ($row = mysqli_fetch_assoc($results)) {
-                echo '<option value='.$row["idUsuario"].'>';
-                echo $row["nombreUsuario"];
-                echo "</option>";
-            }
-        }
-    }
-}
-
-function asignarInvitado($idEvento, $idInvitado){
-    $db = connectDB();
- 
-      if ($db != NULL) {
-
-            // insert command specification
-            $query='INSERT INTO  invitadoEvento(idEvento,idInvitado,fechaUsuarioEvento) VALUES(?,?,CURRENT_TIMESTAMP)';
-            mysqli_query($db, $query);
-            // Preparing the statement
-            if (!($statement = $db->prepare($query))) {
-                die("Preparation failed: (" . $db->errno . ") " . $db->error);
-            }
-            // Binding statement params
-            if (!$statement->bind_param("ii", $idEvento,$idInvitado)) {
-                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
-            }
-             // Executing the statement
-             if (!$statement->execute()) {
-                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-              }
-            //mysqli_free_result($result);
-            disconnectDB($db);
-            return true;
-        }
-        return false;
 }
 
 function getAlergiasByIdUsuario($idUsuario){
@@ -1200,24 +1103,32 @@ function getAlergiasByIdUsuario($idUsuario){
     }
 }
 
-function getNombreById($idUsuario){
-   $db = connectDB();
+function getPlantillas(){
+     $db = connectDB();
     if($db != NULL){
-        $query = 'SELECT * FROM Usuario WHERE idUsuario ="'.$idUsuario.'"';
-        //Pa' debugear
-        //var_dump($query); 
-       // die('');
+        $query = 'SELECT* FROM Plantilla
+        ORDER BY nombrePlantilla';
         $results = mysqli_query($db,$query);
+         //Pa' debugear
+    //var_dump($query); 
+     // die('');
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 return $row["nombreUsuario"];
+                 echo '<tr>';
+                 echo '<td>'.$row["nombrePlantilla"].'</td>';
+                 echo '<td>'.$row["colorFondo"].'</td>';
+                 echo '<td>'.$row["colorBotones"].'</td>';
+                 echo '<td>'.$row["colorTexto"].'</td>';
+                 echo '<td>'.$row["nombreImagen"].'</td>';
+                 echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#modalModificarStaff'.$row["idUsuario"].'">Modificar</button></td>';
+                 //modalModificarStaff($row["idUsuario"],$row["nombreUsuario"],$row["correo"],$row["telefono"] );
+                 echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalEliminarStaff'.$row["idUsuario"].'">Eliminar</button></td>';
+                 //modalEliminarStaff($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '</tr>';
             }
-        
         }
-    } 
+    }
 }
-
-
-
 ?>
+

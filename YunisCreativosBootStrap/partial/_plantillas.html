@@ -19,26 +19,26 @@
              <form action="registrar_plantilla.php" method="POST">
                  <div class="form-group">
                     <label for="formGroupExampleInput">Nombre</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre plantilla " name="nombrePlantilla">
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre plantilla " name="nombrePlantilla" required>
                   </div>
                 <br>
                 <label>Color texto:</label>
                 <div class="col-10">
-                  <input class="form-control" type="color" value="#563d7c" id="example-color-input" name="colorTexto">
+                  <input class="form-control" type="color"  id="color-input-1" name="colorTexto">
                 </div>
                 <br>
                 <label>Color fondo:</label>
                 <div class="col-10">
-                  <input class="form-control" type="color" value="#563d7c" id="example-color-input" name="colorFondo">
+                  <input class="form-control" type="color"  id="color-input-2" name="colorFondo">
                 </div>
                 <br>
                 <label>Color botones:</label>
                 <div class="col-10">
-                  <input class="form-control" type="color" value="#563d7c" id="example-color-input" name="colorBotones">
+                  <input class="form-control" type="color"  id="color-input-3" name="colorBotones">
                 </div>
                 <br>
                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFileLang" lang="es" name="imagenFondo">
+                    <input type="file" class="custom-file-input" id="customFileLang" lang="es" name="nombreImagen" required>
                     <label class="custom-file-label" for="customFileLang">Seleccionar Archivo:</label>
                  </div>
                   <br><br>
@@ -58,44 +58,18 @@
         <table class="table">
             <thead class="thead-dark">
               <tr>
-                <th>Nombre plantilla</th>
-                <th>Color Fuente</th>
-                <th>Color botones</th>
-                <th>Dirección de la imágen</th>
-                <th> </th>
-                <th> </th>
+                  <th scope="col">Nombre plantilla</th> 
+                  <th scope="col">Color fondo</th> 
+                  <th scope="col">Color botones</th> 
+                  <th scope="col">Color texto</th> 
+                  <th scope="col">Nombre Imagen</th> 
+                  <th scope="col"></th> 
+                  <th scope="col"></th> 
             </tr>
             </thead>
 
             <tbody>
-            <tr>
-
-                <td>Vegas</td>
-                <td>#b3ffb3</td>
-                <td>#ffb366</td>
-                <td>imagen1.jpg</td>
-                <td><button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modal2">Editar</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm"data-toggle="modal" data-target="#modaldel">Borrar</button></td>
-            </tr>
-            <tr>
-
-                <td>Machu Pichu</td>
-                <td>#ffb366</td>
-                <td>#ffb366</td>
-                <td>imagen2.jpg</td>
-                <td><button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modal3">Editar</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm"data-toggle="modal" data-target="#modaldel">Borrar</button></td>
-
-            </tr>
-            <tr>
-
-                <td>Los Cabos</td>
-                <td> #ffa31a</td>
-                <td>#9999ff</td>
-                <td>imagen3.jpg</td>
-                <td><button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modal4">Editar</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm"data-toggle="modal" data-target="#modaldel">Borrar</button></td>
-            </tr>
+                <?php getPlantillas() ?>
             </tbody>
         </table>
             
@@ -163,7 +137,7 @@
     
           <!-- Modal body -->
           <div class="modal-body">
-             <form>
+             <form action="registrar_plantilla.php" method="POST">
                  <div class="form-group">
                     <label for="formGroupExampleInput">Nombre</label>
                     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Machu Pichu">
