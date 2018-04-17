@@ -12,7 +12,7 @@
         echo $passwd;
         echo $correo;
         echo $telefono;
-        die('');
+        //die('');
         
          if (modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono)){
             $_SESSION["staffStatusSuccess"] = "Se ha modificado la información exitosamente";

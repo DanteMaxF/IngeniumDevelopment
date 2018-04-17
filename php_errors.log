@@ -13767,3 +13767,6 @@
 [17-Apr-2018 18:31:09 UTC] PHP   5. getRol() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:832
 [17-Apr-2018 18:31:09 UTC] PHP   6. mysqli_free_result() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:92
 
+[17-Apr-2018 22:31:41 UTC] PHP Fatal error:  Call to undefined function eliminarStaff() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/eliminar_staff_perma.php on line 5
+[17-Apr-2018 22:31:41 UTC] PHP Stack trace:
+[17-Apr-2018 22:31:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/eliminar_staff_perma.php:0

@@ -2,7 +2,7 @@
     session_start();
     require_once("util.php");
     if( isset($_SESSION["idRol"]) ){
-         if ((eliminarUsuario($_GET["idStaff"])) && (eliminarStaff( $_SESSION["evento"], $_GET["idStaff"]))){
+         if (eliminarUsuario($_GET["idStaff"])){
             $_SESSION["staffStatusSuccess"] = "Se ha eliminado el staff exitosamente";
             unset($_SESSION["staffStatusError"]);
         }else{
