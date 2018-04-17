@@ -1,4 +1,10 @@
-
+<?php
+    require_once('bdd.php');
+    $sql = "SELECT id, title, start, end, color FROM events ";
+    $req = $bdd->prepare($sql);
+    $req->execute();
+    $events = $req->fetchAll();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -105,7 +111,7 @@
             <div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                    <form class="form-horizontal" method="POST" action="editEventTitle.php">
+                    <form class="form-horizontal" method="POST" action="FullCalendar/editEventTitle.php">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title" id="myModalLabel">Editar Actividad</h4>
