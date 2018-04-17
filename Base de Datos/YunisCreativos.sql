@@ -25,7 +25,6 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `Actividad`
 --
-<<<<<<< HEAD:Base de Datos/YunisCreativos.sql
 CREATE TABLE IF NOT EXISTS `events` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(250) NOT NULL,
@@ -34,24 +33,12 @@ CREATE TABLE IF NOT EXISTS `events` (
   `color` varchar(7) NOT NULL,
   `idEvento` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-=======
-
-CREATE TABLE IF NOT EXISTS `Actividad` (
-  `idActividad` int(11) NOT NULL AUTO_INCREMENT,
-  `Descripcion` varchar(250) NOT NULL,
-  `fechaInicio` datetime NOT NULL,
-  `fehcaFin` datetime NOT NULL,
-  `statusActividad` varchar(50) NOT NULL,
-  `idEvento` int(11) NOT NULL,
-  PRIMARY KEY (`idActividad`),
->>>>>>> parent of ead2906... Arreglar conflicto:Base de Datos/YunisCreativos.sql
   KEY `idEvento` (`idEvento`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Volcado de datos para la tabla `Actividad`
 --
-<<<<<<< HEAD:Base de Datos/YunisCreativos.sql
 INSERT INTO `events` (`id`, `title`, `start`, `end`, `color`, `idEvento`) VALUES
 (NULL, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 1),
 (2, 'Visita parque', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 2),
@@ -63,20 +50,6 @@ INSERT INTO `events` (`id`, `title`, `start`, `end`, `color`, `idEvento`) VALUES
 (8, 'Visita parque', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 8),
 (9, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 9),
 (10, 'Visita parque', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '#FF0000', 10);
-=======
-
-INSERT INTO `Actividad` (`idActividad`, `Descripcion`, `fechaInicio`, `fehcaFin`, `statusActividad`, `idEvento`) VALUES
-(1, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 1),
-(2, 'Visita parque', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 2),
-(3, 'Visita restaurante', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 3),
-(4, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 4),
-(5, 'Visita restaurante', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 5),
-(6, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 6),
-(7, 'Visita restaurante', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 7),
-(8, 'Visita parque', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 8),
-(9, 'Visita museo', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 9),
-(10, 'Visita parque', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'terminado', 10);
->>>>>>> parent of ead2906... Arreglar conflicto:Base de Datos/YunisCreativos.sql
 
 -- --------------------------------------------------------
 
@@ -1111,11 +1084,7 @@ INSERT INTO `usuarioAlergia` (`idUsuario`, `idAlergia`) VALUES
 --
 -- Filtros para la tabla `Actividad`
 --
-<<<<<<< HEAD:Base de Datos/YunisCreativos.sql
 ALTER TABLE `events`
-=======
-ALTER TABLE `Actividad`
->>>>>>> parent of ead2906... Arreglar conflicto:Base de Datos/YunisCreativos.sql
   ADD CONSTRAINT `Evento_Actividad` FOREIGN KEY (`idEvento`) REFERENCES `Evento` (`idEvento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
