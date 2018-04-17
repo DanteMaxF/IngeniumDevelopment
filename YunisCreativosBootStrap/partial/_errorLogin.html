@@ -1,0 +1,17 @@
+<?php if (isset($_SESSION["errorLogin"]) != ""): ?>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>ERROR:</strong> <?=$_SESSION["errorLogin"] ?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php endif; ?>
+<?php if (isset($_GET["success"]) != ""): ?>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  FELICIDADES, ya eres parte del evento. Ahora inicia sesión para ver tu evento.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php endif; ?>
+
