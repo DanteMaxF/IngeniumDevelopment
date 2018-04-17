@@ -924,7 +924,7 @@ function modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
 
 
 function getPasswordById($idUsuario){
-     $db = connectDB();
+    $db = connectDB();
     if($db != NULL){
         $query = 'SELECT passwd from Usuario WHERE idUsuario ="'.$idUsuario.'"';
         //Pa' debugear
@@ -1198,6 +1198,24 @@ function getAlergiasByIdUsuario($idUsuario){
              echo'<ul>';
         }
     }
+}
+
+function getNombreById($idUsuario){
+   $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT * FROM Usuario WHERE idUsuario ="'.$idUsuario.'"';
+        //Pa' debugear
+        //var_dump($query); 
+       // die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["nombreUsuario"];
+            }
+        
+        }
+    } 
 }
 
 
