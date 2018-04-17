@@ -2,9 +2,9 @@
     session_start();
     require_once("util.php");
 
-     eliminarStaffPerma($_GET["idUsurio"]);
+    eliminarEvento($_GET["idEvento"]);
 
-    $_SESSION["message"] = 'El evento '.$_GET["nombreUsuario"].' se eliminó correctamente';
+    $_SESSION["staffStatusSuccess"] = "Se ha eliminado el evento exitosamente";
 
-   header('location:consulta_de_usuarios.php?eventInput=-');
+   header('location:consultar_eventos.php?eventInput=-');
 ?>

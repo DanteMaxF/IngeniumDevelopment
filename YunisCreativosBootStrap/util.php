@@ -156,14 +156,14 @@ function getStaffEvento($idEvento){
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
                  echo '<td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
-                 generateModal($row["idUsuario"],$row["nombreUsuario"]);
+                 generateModalDesasignarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
              } 
         }
     }
 }
 
-function generateModal($id,$nombre) {
+function generateModalDesasignarStaff($id,$nombre) {
     echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
     <div class="modal-dialog">
     
@@ -176,7 +176,7 @@ function generateModal($id,$nombre) {
           <p>¿Estás seguro que quieres eliminar a <strong>'.$nombre.'</strong>?</p>
         </div>
         <div class="modal-footer">
-          <a type="button" class="btn btn-danger" href="eliminar_staff.php?idStaff='.$id.'">Borrar</a>
+          <a type="button" class="btn btn-danger" href="desasignar_staff.php?idStaff='.$id.'">Borrar</a>
           <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
         </div>
       </div>
@@ -187,19 +187,19 @@ function generateModal($id,$nombre) {
 
 
 
-function eliminarStaff($descripcionEvento,$idStaff){
+function desasignarStaff($idEvento,$idStaff){
   $db = connectDB();
         if ($db != NULL) {
 
             // insert command specification
-            $query = 'DELETE FROM staffEvento WHERE idEvento IN (SELECT idEvento FROM Evento WHERE descripcionEvento=?) AND idStaff=?';
+            $query = 'DELETE FROM staffEvento WHERE idEvento IN (SELECT idEvento FROM Evento WHERE idEvento=?) AND idStaff=?';
             mysqli_query($db, $query);
             // Preparing the statement
             if (!($statement = $db->prepare($query))) {
                 die("Preparation failed: (" . $db->errno . ") " . $db->error);
             }
             // Binding statement params
-            if (!$statement->bind_param("si", $descripcionEvento, $idStaff)) {
+            if (!$statement->bind_param("ii", $idEvento, $idStaff)) {
                 die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
             }
              // Executing the statement
