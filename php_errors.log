@@ -509,6 +509,7 @@
 [05-Apr-2018 22:43:11 UTC] PHP Fatal error:  Cannot redeclare getRol() (previously declared in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:64) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 666
 [05-Apr-2018 22:43:11 UTC] PHP Stack trace:
 [05-Apr-2018 22:43:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+<<<<<<< HEAD
 [07-Apr-2018 17:11:28 UTC] PHP Warning:  include(partial/_forma_consultar_usuario.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php on line 7
 [07-Apr-2018 17:11:28 UTC] PHP Stack trace:
 [07-Apr-2018 17:11:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
@@ -1001,3 +1002,108 @@
 [16-Apr-2018 22:57:27 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
 [16-Apr-2018 22:57:27 UTC] PHP   3. getStaffEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:33
 [16-Apr-2018 22:57:27 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:153
+=======
+[17-Apr-2018 00:32:12 UTC] PHP Warning:  mysqli_connect(): (HY000/1049): Unknown database 'YunisCreativos' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 5
+[17-Apr-2018 00:32:12 UTC] PHP Stack trace:
+[17-Apr-2018 00:32:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:32:12 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:32:12 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:17
+[17-Apr-2018 00:32:12 UTC] PHP   4. mysqli_connect() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:5
+[17-Apr-2018 00:32:12 UTC] PHP Fatal error:  Call to a member function set_charset() on a non-object in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 6
+[17-Apr-2018 00:32:12 UTC] PHP Stack trace:
+[17-Apr-2018 00:32:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:32:12 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:32:12 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:17
+[17-Apr-2018 00:37:14 UTC] PHP Warning:  mysqli_connect(): (HY000/1049): Unknown database 'YunisCreativos' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 10
+[17-Apr-2018 00:37:14 UTC] PHP Stack trace:
+[17-Apr-2018 00:37:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:37:14 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:37:14 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:26
+[17-Apr-2018 00:37:14 UTC] PHP   4. mysqli_connect() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:10
+[17-Apr-2018 00:37:14 UTC] PHP Fatal error:  Call to a member function set_charset() on a non-object in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 12
+[17-Apr-2018 00:37:14 UTC] PHP Stack trace:
+[17-Apr-2018 00:37:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:37:14 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:37:14 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:26
+[17-Apr-2018 00:37:45 UTC] PHP Warning:  mysqli_connect(): (HY000/1049): Unknown database 'YunisCreativos' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 10
+[17-Apr-2018 00:37:45 UTC] PHP Stack trace:
+[17-Apr-2018 00:37:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:37:45 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:37:45 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:26
+[17-Apr-2018 00:37:45 UTC] PHP   4. mysqli_connect() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:10
+[17-Apr-2018 00:37:45 UTC] PHP Fatal error:  Call to a member function set_charset() on a non-object in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 12
+[17-Apr-2018 00:37:45 UTC] PHP Stack trace:
+[17-Apr-2018 00:37:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:37:45 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:37:45 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:26
+[17-Apr-2018 00:39:20 UTC] PHP Warning:  mysqli_connect(): (HY000/1049): Unknown database 'YunisCreativos' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 10
+[17-Apr-2018 00:39:20 UTC] PHP Stack trace:
+[17-Apr-2018 00:39:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:39:20 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:39:20 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:26
+[17-Apr-2018 00:39:20 UTC] PHP   4. mysqli_connect() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:10
+[17-Apr-2018 00:39:20 UTC] PHP Fatal error:  Call to a member function set_charset() on a non-object in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 12
+[17-Apr-2018 00:39:20 UTC] PHP Stack trace:
+[17-Apr-2018 00:39:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:39:20 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:39:20 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:26
+[17-Apr-2018 00:41:35 UTC] PHP Warning:  mysqli_connect(): (HY000/1049): Unknown database 'YunisCreativos' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 10
+[17-Apr-2018 00:41:35 UTC] PHP Stack trace:
+[17-Apr-2018 00:41:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:41:35 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:41:35 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:26
+[17-Apr-2018 00:41:35 UTC] PHP   4. mysqli_connect() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:10
+[17-Apr-2018 00:41:35 UTC] PHP Fatal error:  Call to a member function set_charset() on a non-object in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 12
+[17-Apr-2018 00:41:35 UTC] PHP Stack trace:
+[17-Apr-2018 00:41:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:41:35 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:41:35 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:26
+[17-Apr-2018 00:45:25 UTC] PHP Warning:  mysqli_connect(): (HY000/1049): Unknown database 'YunisCreativos' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 10
+[17-Apr-2018 00:45:25 UTC] PHP Stack trace:
+[17-Apr-2018 00:45:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:45:25 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:45:25 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:26
+[17-Apr-2018 00:45:25 UTC] PHP   4. mysqli_connect() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:10
+[17-Apr-2018 00:45:25 UTC] PHP Fatal error:  Call to a member function set_charset() on a non-object in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 12
+[17-Apr-2018 00:45:25 UTC] PHP Stack trace:
+[17-Apr-2018 00:45:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:45:25 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:45:25 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:26
+[17-Apr-2018 00:46:48 UTC] PHP Warning:  mysqli_connect(): (HY000/1049): Unknown database 'YunisCreativos' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 10
+[17-Apr-2018 00:46:48 UTC] PHP Stack trace:
+[17-Apr-2018 00:46:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:46:48 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:46:48 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:26
+[17-Apr-2018 00:46:48 UTC] PHP   4. mysqli_connect() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:10
+[17-Apr-2018 00:46:48 UTC] PHP Fatal error:  Call to a member function set_charset() on a non-object in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 12
+[17-Apr-2018 00:46:48 UTC] PHP Stack trace:
+[17-Apr-2018 00:46:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:0
+[17-Apr-2018 00:46:48 UTC] PHP   2. login() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/role_driver.php:16
+[17-Apr-2018 00:46:48 UTC] PHP   3. connectDB() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:26
+[17-Apr-2018 03:30:11 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/FullCalendar/index.php on line 189
+[17-Apr-2018 03:30:11 UTC] PHP Stack trace:
+[17-Apr-2018 03:30:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[17-Apr-2018 03:30:11 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:9
+[17-Apr-2018 03:30:11 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 55
+[17-Apr-2018 03:30:11 UTC] PHP Stack trace:
+[17-Apr-2018 03:30:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[17-Apr-2018 03:31:28 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/FullCalendar/index.php on line 187
+[17-Apr-2018 03:31:28 UTC] PHP Stack trace:
+[17-Apr-2018 03:31:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[17-Apr-2018 03:31:28 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:9
+[17-Apr-2018 03:31:28 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 55
+[17-Apr-2018 03:31:28 UTC] PHP Stack trace:
+[17-Apr-2018 03:31:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[17-Apr-2018 04:02:57 UTC] PHP Warning:  require_once(bdd.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 3
+[17-Apr-2018 04:02:57 UTC] PHP Stack trace:
+[17-Apr-2018 04:02:57 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[17-Apr-2018 04:02:57 UTC] PHP Fatal error:  require_once(): Failed opening required 'bdd.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 3
+[17-Apr-2018 04:02:57 UTC] PHP Stack trace:
+[17-Apr-2018 04:02:57 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[17-Apr-2018 04:05:08 UTC] PHP Warning:  require_once(bdd.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/addEvent.php on line 3
+[17-Apr-2018 04:05:08 UTC] PHP Stack trace:
+[17-Apr-2018 04:05:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/addEvent.php:0
+[17-Apr-2018 04:05:08 UTC] PHP Fatal error:  require_once(): Failed opening required 'bdd.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/addEvent.php on line 3
+[17-Apr-2018 04:05:08 UTC] PHP Stack trace:
+[17-Apr-2018 04:05:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/addEvent.php:0
+>>>>>>> Paulo/FrontEnd
