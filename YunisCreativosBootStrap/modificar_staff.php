@@ -2,17 +2,17 @@
     session_start();
     require_once("util.php");
     if( isset($_SESSION["idRol"]) ){
-        $idUsuario = $_GET["id"];
-        $nombreUsuario = $_GET["nombreUsuario"];
-        $passwd = $_GET["passwd2"];
-        $correo = $_GET["correo"];
-        $telefono = $_GET["telefono"];
+        $idUsuario = $_POST["id"];
+        $nombreUsuario = $_POST["nombreUsuario"];
+        $passwd = $_POST["passwd2"];
+        $correo = $_POST["correo"];
+        $telefono = $_POST["telefono"];
         echo $idUsuario;
         echo  $nombreUsuario;
         echo $passwd;
         echo $correo;
         echo $telefono;
-        die('');
+        //die('');
         
          if (modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono)){
             $_SESSION["staffStatusSuccess"] = "Se ha modificado la información exitosamente";

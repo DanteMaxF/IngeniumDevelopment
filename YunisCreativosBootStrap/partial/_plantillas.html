@@ -58,44 +58,18 @@
         <table class="table">
             <thead class="thead-dark">
               <tr>
-                <th>Nombre plantilla</th>
-                <th>Color Fuente</th>
-                <th>Color botones</th>
-                <th>Dirección de la imágen</th>
-                <th> </th>
-                <th> </th>
+                  <th scope="col">Nombre plantilla</th> 
+                  <th scope="col">Color fondo</th> 
+                  <th scope="col">Color botones</th> 
+                  <th scope="col">Color texto</th> 
+                  <th scope="col">Nombre Imagen</th> 
+                  <th scope="col"></th> 
+                  <th scope="col"></th> 
             </tr>
             </thead>
 
             <tbody>
-            <tr>
-
-                <td>Vegas</td>
-                <td>#b3ffb3</td>
-                <td>#ffb366</td>
-                <td>imagen1.jpg</td>
-                <td><button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modal2">Editar</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm"data-toggle="modal" data-target="#modaldel">Borrar</button></td>
-            </tr>
-            <tr>
-
-                <td>Machu Pichu</td>
-                <td>#ffb366</td>
-                <td>#ffb366</td>
-                <td>imagen2.jpg</td>
-                <td><button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modal3">Editar</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm"data-toggle="modal" data-target="#modaldel">Borrar</button></td>
-
-            </tr>
-            <tr>
-
-                <td>Los Cabos</td>
-                <td> #ffa31a</td>
-                <td>#9999ff</td>
-                <td>imagen3.jpg</td>
-                <td><button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modal4">Editar</button></td>
-                <td><button type="button" class="btn btn-danger btn-sm"data-toggle="modal" data-target="#modaldel">Borrar</button></td>
-            </tr>
+                <?php getPlantillas() ?>
             </tbody>
         </table>
             
