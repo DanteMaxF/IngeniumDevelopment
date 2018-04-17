@@ -858,9 +858,9 @@ INSERT INTO `Rol` (`idRol`, `nombreRol`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `seHaceEn` (
-  `idActividad` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `idLugar` int(11) NOT NULL,
-  PRIMARY KEY (`idActividad`,`idLugar`),
+  PRIMARY KEY (`id`,`idLugar`),
   KEY `act-lugar2` (`idLugar`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -869,17 +869,17 @@ CREATE TABLE IF NOT EXISTS `seHaceEn` (
 -- Volcado de datos para la tabla `seHaceEn`
 --
 
-INSERT INTO `seHaceEn` (`idActividad`, `idLugar`) VALUES
-(8, 1),
-(1, 2),
-(2, 3),
-(1, 4),
-(3, 5),
-(5, 6),
-(9, 7),
-(7, 8),
-(4, 9),
-(1, 10);
+INSERT INTO `seHaceEn` (`id`, `idLugar`) VALUES
+(2, 1),
+(3, 2),
+(4, 3),
+(5, 4),
+(6, 5),
+(7, 6),
+(8, 7),
+(9, 8),
+(10, 9),
+(11, 10);
 
 -- --------------------------------------------------------
 
@@ -1147,7 +1147,7 @@ ALTER TABLE `plantillaImagen`
 -- Filtros para la tabla `seHaceEn`
 --
 ALTER TABLE `seHaceEn`
-  ADD CONSTRAINT `act-lugar` FOREIGN KEY (`idActividad`) REFERENCES `Actividad` (`idActividad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `act-lugar` FOREIGN KEY (`id`) REFERENCES `events` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `act-lugar2` FOREIGN KEY (`idLugar`) REFERENCES `Lugar` (`idLugar`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 
