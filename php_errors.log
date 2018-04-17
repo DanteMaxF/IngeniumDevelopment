@@ -509,7 +509,6 @@
 [05-Apr-2018 22:43:11 UTC] PHP Fatal error:  Cannot redeclare getRol() (previously declared in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:64) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 666
 [05-Apr-2018 22:43:11 UTC] PHP Stack trace:
 [05-Apr-2018 22:43:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
-<<<<<<< HEAD
 [07-Apr-2018 17:11:28 UTC] PHP Warning:  include(partial/_forma_consultar_usuario.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php on line 7
 [07-Apr-2018 17:11:28 UTC] PHP Stack trace:
 [07-Apr-2018 17:11:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
@@ -1002,6 +1001,7 @@
 [16-Apr-2018 22:57:27 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
 [16-Apr-2018 22:57:27 UTC] PHP   3. getStaffEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:33
 [16-Apr-2018 22:57:27 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:153
+<<<<<<< HEAD
 =======
 [17-Apr-2018 00:32:12 UTC] PHP Warning:  mysqli_connect(): (HY000/1049): Unknown database 'YunisCreativos' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 5
 [17-Apr-2018 00:32:12 UTC] PHP Stack trace:
@@ -1154,6 +1154,8 @@
 <<<<<<< HEAD
 >>>>>>> parent of 60bd56c... error en log
 =======
+=======
+>>>>>>> parent of ead2906... Arreglar conflicto
 [17-Apr-2018 02:29:10 UTC] PHP Warning:  getimagesize(): Filename cannot be empty in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php on line 15
 [17-Apr-2018 02:29:10 UTC] PHP Stack trace:
 [17-Apr-2018 02:29:10 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:0
@@ -1581,5 +1583,8 @@
 [17-Apr-2018 18:31:09 UTC] PHP   4. modalModificarStaff() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:693
 [17-Apr-2018 18:31:09 UTC] PHP   5. getRol() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:832
 [17-Apr-2018 18:31:09 UTC] PHP   6. mysqli_free_result() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:92
+<<<<<<< HEAD
 >>>>>>> alex/frontEnd
 >>>>>>> parent of 669c1d8... Quitar HEAD
+=======
+>>>>>>> parent of ead2906... Arreglar conflicto

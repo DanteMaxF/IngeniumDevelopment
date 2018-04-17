@@ -10,9 +10,9 @@ if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && 
 	$start = $_POST['start'];
 	$end = $_POST['end'];
 	$color = $_POST['color'];
-	$eventid =1;
+
 	// Añadirlos a la base de datos como un nuevo evento
-    $sql = "INSERT INTO events(title, start, end, color,idEvento) values ('$title', '$start', '$end', '$color', '$eventid')";
+    $sql = "INSERT INTO events(title, start, end, color) values ('$title', '$start', '$end', '$color')";
 	echo $sql;
     
 	// Evitar errores de "sintaxis" al enviarlos al servidor e inicializar recursos

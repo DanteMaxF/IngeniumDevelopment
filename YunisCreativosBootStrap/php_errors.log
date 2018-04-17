@@ -1,6 +1,0 @@
-[17-Apr-2018 03:31:34 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/FullCalendar/index.php on line 187
-[17-Apr-2018 03:31:34 UTC] PHP Stack trace:
-[17-Apr-2018 03:31:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/FullCalendar/index.php:0
-[17-Apr-2018 03:37:28 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/FullCalendar/index.php on line 187
-[17-Apr-2018 03:37:28 UTC] PHP Stack trace:
-[17-Apr-2018 03:37:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/FullCalendar/index.php:0

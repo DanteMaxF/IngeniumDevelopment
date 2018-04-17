@@ -652,7 +652,7 @@ function printIdEventoForm($codigo){
 function getRollList(){
     $db = connectDB();
     if($db != NULL){
-    $query = 'SELECT * from Rol';
+    $query = 'SELECT * from Rol WHERE idRol !=1495';
      //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -903,7 +903,11 @@ function modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
     //var_dump($passwd); 
       //die('');
     if($db != NULL){
+<<<<<<< HEAD
          $query = 'UPDATE Usuario SET nombreUsuario = "'.$nombreUsuario.'" ,passwd = "'.$passwd.'",correo = "'.$correo.'",telefono = "'.$telefono.'" WHERE idUsuario = "'.$idUsuario.'"';
+=======
+         $query = 'UPDATE Usuario SET nombreUsuario=?, passwd=?, correo=?, telefono=? WHERE idUsuario = ?';
+>>>>>>> parent of ead2906... Arreglar conflicto
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
