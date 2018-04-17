@@ -25,7 +25,7 @@
         <tr>
           <th scope="col">Nombre</th>
           <th scope="col">Correo</th>
-          <th scope="col"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalRegistrotaff">Agregar</button></th>
+          <th scope="col"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalRegistroStaff">Agregar</button></th>
         </tr>
       </thead>
       <tbody>
@@ -45,7 +45,7 @@
           <th scope="col">Talla</th>
           <th scope="col">Idioma</th>
           <th scope="col">Estado</th>
-          <th scope="col"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalRegistroStaff">Agregar</button></th>
+          <th scope="col"><button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalRegistroInvitados">Agregar</button></th>
         </tr>
       </thead>
       <tbody>
@@ -80,15 +80,48 @@
           <form action="asignar_staff.php" method="POST">
             <div class="modal-body">
               <div class="form-group">
-                <label>Seleccionar staff:</label>
+                <label>Seleccionar un miembro del staff:</label>
                 <select class="form-control" id="staffInput" name="staffInput">
                   <option> - </option>
                   <?php
-                     echo getStaffList($_SESSION["evento"]);
+                     echo getStaffList($_SESSION["idEvento"]);
                   ?>
                   
                 </select>
                 
+              </div>
+            
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">Asignar Invitado</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+    
+    <!--Modal para asignar un usuario de invitado-->
+    <div class="modal fade" id="modalRegistroInvitados" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Asignar Invitado</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="asignar_invitado.php" method="POST">
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Seleccionar un Invitado</label>
+                <select class="form-control" id="invitadoInput" name="invitadoInput">
+                  <option> - </option>
+                  <?php
+                     echo getInvitadosList($_SESSION["idEvento"]);
+                  ?>
+                </select>
               </div>
             
             </div>

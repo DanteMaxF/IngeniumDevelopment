@@ -143,7 +143,7 @@ function getStaffEvento($idEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT U.nombreUsuario, U.correo, U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'" AND U.Ver=1';
+        $query = 'SELECT U.nombreUsuario, U.correo, U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'" AND U.Ver=1 ORDER BY U.nombreUsuario';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -355,11 +355,11 @@ function getNombreEvento($codigo){
     }
 }
 
-function getStaffList($descripcionEvento){
+function getStaffList($idEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT U.nombreUsuario FROM Usuario U, tiene T WHERE U.idUsuario=T.idUsuario AND T.idRol=1494 AND T.idUsuario NOT IN (SELECT U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.descripcionEvento="'.$descripcionEvento.'")';
+        $query = 'SELECT * FROM Usuario U, tiene T WHERE U.idUsuario=T.idUsuario AND T.idRol=1494 AND T.idUsuario NOT IN (SELECT U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'") GROUP BY U.nombreUsuario';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -367,7 +367,7 @@ function getStaffList($descripcionEvento){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
             while ($row = mysqli_fetch_assoc($results)) {
-                echo "<option>";
+                echo '<option value='.$row["idUsuario"].'>';
                 echo $row["nombreUsuario"];
                 echo "</option>";
             }
@@ -1126,6 +1126,57 @@ function desasignarInvitado($idEvento,$idInvitado){
         return false;
 }
 
+function getInvitadosList($idEvento){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = '  SELECT DISTINCT U.nombreUsuario, U.idUsuario
+                    FROM  Usuario U, invitadoEvento IE
+                    WHERE U.idUsuario=IE.idInvitado 
+                    	  AND U.idUsuario NOT IN (SELECT I.idInvitado FROM invitadoEvento I WHERE I.idEvento='.$idEvento.')
+                    ORDER BY U.nombreUsuario';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo '<option value='.$row["idUsuario"].'>';
+                echo $row["nombreUsuario"];
+                echo "</option>";
+            }
+        }
+    }
+}
+
+function asignarInvitado($idEvento, $idInvitado){
+    $db = connectDB();
+ 
+      if ($db != NULL) {
+
+            // insert command specification
+            $query='INSERT INTO  invitadoEvento(idEvento,idInvitado,fechaUsuarioEvento) VALUES(?,?,CURRENT_TIMESTAMP)';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("ii", $idEvento,$idInvitado)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
+}
+
 function getAlergiasByIdUsuario($idUsuario){
     $db = connectDB();
     if($db != NULL){
@@ -1148,6 +1199,7 @@ function getAlergiasByIdUsuario($idUsuario){
         }
     }
 }
+
 
 
 ?>
