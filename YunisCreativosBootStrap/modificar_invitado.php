@@ -7,6 +7,7 @@
         $passwd = $_POST["passwd2"];
         $correo = $_POST["correo"];
         $telefono = $_POST["telefono"];
+        $idEstado = $_POST[""];
         echo $idUsuario;
         echo  $nombreUsuario;
         echo $passwd;
