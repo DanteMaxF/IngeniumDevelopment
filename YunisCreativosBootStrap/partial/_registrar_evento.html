@@ -1,47 +1,62 @@
 <div class="container">
- <h2>Registrar Evento</h2>
- <br>
-    <form>
-      <div class="form-group">
-        <div>
-          <label>Nombre evento</label>
-          <input placeholder="Nombre" id="nombre_evento" type="text" class="form-control">
-             <br><br>
-        </div>
-        <div "form-group">
-          <label>Descripción del evento</label>
-          <textarea id="" class="form-control"></textarea>
-        </div><br>
-        <div>
-           <div class="form-group">
-              <label for="sel1">Seleccionar Coordinador:</label>
-              <select class="form-control" id="sel1">
-                <option>Pedro García Perez</option>
-                <option>Rodolfon Hernández Rodríguez</option>
-                <option>Gonzalo Ramírez Ramírez</option>
-                <option>Juan Cameron</option>
-                
+  <div class="card">
+    <div class="card-header">
+      <h2>Registrar Evento</h2>
+    </div>
+    <div class="card-block">
+      <div class="container">
+        <form action="registrarAlEvento.php" method="POST" accept-charset="UTF-8">
+          <br>
+          <div class="form-group">
+            <label for="nombre">Compañía:</label>
+            <input type="text" class="form-control" id="usr" name = "nombreEvento" required>
+          </div>
+          
+          <div class="form-row">
+            <div class="col">
+              <label>Nombre del evento</label>
+              <input type="text" id="descripcionEvento" class="form-control" name="descripcionEvento" required>
+            </div>
+            <div class="col">
+              <label>Código de evento:</label>
+              <input type="text" class="form-control" id="usr" name = "codigoEvento" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="col-md-4 mb-4">
+              <label>Coordinador:</label>
+              <select class="form-control" id="idCoordinador" name="idCoordinador" required>
+                  <option> </option>
+                  <!--Aqui va la funcion que despliega todos los coordinadores-->
+                  <?php echo getCoordinadorList(); ?>
               </select>
-              <br>
-              <label for="sel2">Seleccionar Staff: (hold shift to select more than one):</label>
-              <select multiple class="form-control" id="sel2">
-                <option>Raul García Perez</option>
-                <option>Ramón Hernández Rodrígue</option>
-                <option>Guillermo Ramírez Ramírez</option>
-                <option>Joaquín González Sáncez</option>
-                <option>Brian Sánchez López</option>
+            </div>
+            <div class="col-md-4 mb-4">
+              <label>Cliente:</label>
+              <select class="form-control" id="idCliente" name="idCliente" required>
+                  <option> </option>
+                  <!--Aqui va la funcion que despliega todos los clientes-->
+                  <?php echo getClienteList(); ?>
               </select>
-            </div><br>
-            <label>Seleccionar Plantillas</label>
-            <select class="form-control">
-              <option value="" disabled selected>Selecciona la plantilla</option>
-              <option value="1">Las Vegas</option>
-              <option value="2">Machu Pichu</option>
-              <option value="3">Oaxaca</option>
-            </select><br>
+            </div>
+            <div class="col-md-4 mb-4">
+              <label>Plantilla:</label>
+              <select class="form-control" id="idPlantilla" name="idPlantilla" required>
+                  <option> </option>
+                  <!--Aqui va la funcion que despliega todas las plantillas-->
+                  <?php echo getPlantillasList(); ?>
+              </select>
+            </div>
+          </div>
+          
+          <button class="btn" type="submit" name="action">Ingresar</button><br><br><br>
+        </form>
       </div>
-     </form>
-     <button class="btn" type="submit" name="action">Ingresar</button><br><br><br>
+    </div>
+  </div>
 </div>
-</div>
-     
+
+
+
+<br>

@@ -13775,6 +13775,56 @@
 [18-Apr-2018 03:00:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:0
 [18-Apr-2018 03:00:32 UTC] PHP   2. eliminarRolUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:19
 [18-Apr-2018 03:00:32 UTC] PHP   3. mysqli_stmt->bind_param() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1233
+<<<<<<< HEAD
+[18-Apr-2018 04:05:48 UTC] PHP Warning:  include(partial/FullCalendar.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:05:48 UTC] PHP Stack trace:
+[18-Apr-2018 04:05:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:05:48 UTC] PHP Warning:  include(): Failed opening 'partial/FullCalendar.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:05:48 UTC] PHP Stack trace:
+[18-Apr-2018 04:05:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:06:12 UTC] PHP Warning:  include(partial/FullCalendar.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:06:12 UTC] PHP Stack trace:
+[18-Apr-2018 04:06:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:06:12 UTC] PHP Warning:  include(): Failed opening 'partial/FullCalendar.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:06:12 UTC] PHP Stack trace:
+[18-Apr-2018 04:06:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:07:51 UTC] PHP Warning:  include(partial/FullCalendar.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:07:51 UTC] PHP Stack trace:
+[18-Apr-2018 04:07:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:07:51 UTC] PHP Warning:  include(): Failed opening 'partial/FullCalendar.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:07:51 UTC] PHP Stack trace:
+[18-Apr-2018 04:07:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:08:05 UTC] PHP Warning:  include(partial/FullCalendar.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:08:05 UTC] PHP Stack trace:
+[18-Apr-2018 04:08:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:08:05 UTC] PHP Warning:  include(): Failed opening 'partial/FullCalendar.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:08:05 UTC] PHP Stack trace:
+[18-Apr-2018 04:08:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:10:34 UTC] PHP Warning:  include(partial/FullCalendar.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:10:34 UTC] PHP Stack trace:
+[18-Apr-2018 04:10:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:10:34 UTC] PHP Warning:  include(): Failed opening 'partial/FullCalendar.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:10:34 UTC] PHP Stack trace:
+[18-Apr-2018 04:10:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:10:52 UTC] PHP Warning:  include(partial/FullCalendar.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:10:52 UTC] PHP Stack trace:
+[18-Apr-2018 04:10:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:10:52 UTC] PHP Warning:  include(): Failed opening 'partial/FullCalendar.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:10:52 UTC] PHP Stack trace:
+[18-Apr-2018 04:10:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:11:22 UTC] PHP Warning:  include(partial/FullCalendar.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:11:22 UTC] PHP Stack trace:
+[18-Apr-2018 04:11:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:11:22 UTC] PHP Warning:  include(): Failed opening 'partial/FullCalendar.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:11:22 UTC] PHP Stack trace:
+[18-Apr-2018 04:11:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:15:33 UTC] PHP Warning:  include(partial/FullCalendar.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:15:33 UTC] PHP Stack trace:
+[18-Apr-2018 04:15:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[18-Apr-2018 04:15:33 UTC] PHP Warning:  include(): Failed opening 'partial/FullCalendar.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php on line 17
+[18-Apr-2018 04:15:33 UTC] PHP Stack trace:
+[18-Apr-2018 04:15:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+=======
 [18-Apr-2018 03:35:17 UTC] PHP Parse error:  syntax error, unexpected 'getEstado' (T_STRING), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 972
 [18-Apr-2018 03:35:17 UTC] PHP Stack trace:
 [18-Apr-2018 03:35:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
@@ -14039,6 +14089,7 @@
 [18-Apr-2018 06:07:56 UTC] PHP Stack trace:
 [18-Apr-2018 06:07:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:0
 [18-Apr-2018 06:07:56 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:15
+<<<<<<< HEAD
 [18-Apr-2018 13:32:34 UTC] PHP Fatal error:  Call to undefined function getClienteList() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1320
 [18-Apr-2018 13:32:34 UTC] PHP Stack trace:
 [18-Apr-2018 13:32:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
@@ -14117,3 +14168,6 @@
 [18-Apr-2018 13:38:48 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
 [18-Apr-2018 13:38:48 UTC] PHP   3. getInvitadosList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:123
 [18-Apr-2018 13:38:48 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1152
+=======
+>>>>>>> alex/frontEnd
+>>>>>>> develop

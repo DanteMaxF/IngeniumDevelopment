@@ -151,7 +151,9 @@ function getStaffEvento($idEvento){
         //die('');
         $results = mysqli_query($db,$query);
         disconnectDB($db);
-        
+        if(mysqli_num_rows($results) == 0){
+            echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td></tr>';
+        } 
         if(mysqli_num_rows($results) > 0) {
              while ($row = mysqli_fetch_assoc($results)) {
                  echo '<tr>';
@@ -657,10 +659,10 @@ function printIdEventoForm($codigo){
 }
 
 
-function getRollList($id = -1){
+function getRollList(){
     $db = connectDB();
     if($db != NULL){
-    $query = 'SELECT * from Rol WHERE idRol !=1495';
+    $query = 'SELECT * from Rol';
      //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -668,11 +670,7 @@ function getRollList($id = -1){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 echo '<option value="'.$row["idRol"].'"';
-                 if ($row["idRol"] == $id) {
-                     echo " selected";
-                 }
-                 echo '>'.$row["nombreRol"].'</option>';
+                 echo '<option value='.$row["idRol"].'>'.$row["nombreRol"].'</option>';
             }
         }
     }
@@ -838,22 +836,21 @@ function modalEliminarInvitado($id,$nombre) {
 function modalModificarStaff($id,$nombre,$correo, $telefono){
     $passwd = getPasswordById($id);
     $rol = getRol($id);
-     echo'<div class="modal fade" id="modalModificarStaff'.$id.'" role="dialog">
+     echo '<div class="modal fade" id="modalModificarStaff'.$id.'" role="dialog">
     <div class="modal-dialog">
-
+    
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Modificar datos de '.$nombre.'</h4>
         </div>
         <div class="modal-body">
-           <form action="modificar_staff.php" method="POST">
-                    <input type="hidden" name="id" value="'.$id.'">
+           <form action="modificar_staff.php?id='.$id.',?nombreUsuario='.$nombre.',correo='.$correo.'" method="POST">
                     <div class="form-group"
                         <label>Rol:</label>
                         <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>
                             <option> </option>';
-                                getRollList($rol);
+                                getRollList();
                        echo '</select>
                     </div>
                     <br>
@@ -893,6 +890,10 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
                     </div>
                     <br>
                     <br>
+              <button type="submit" class="btn btn-success" name="action">Registrar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+                   
+                
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-success" name="action">Registrar</button>
@@ -900,6 +901,7 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
         </div>
         </form>
       </div>
+      
     </div>
   </div>
   <script src="js/password_checker.js"></script> ';
@@ -911,13 +913,13 @@ function modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
     //var_dump($passwd); 
       //die('');
     if($db != NULL){
-         $query = 'UPDATE Usuario SET nombreUsuario=?, passwd=?, correo=?, telefono=? WHERE idUsuario = ?';
+         $query = 'UPDATE Usuario SET nombreUsuario = "'.$nombreUsuario.'" ,passwd = "'.$passwd.'",correo = "'.$correo.'",telefono = "'.$telefono.'" WHERE idUsuario = "'.$idUsuario.'"';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("ssssi",  $nombreUsuario, $passwd, $correo, $telefono,$idUsuario)) {
+        if (!$statement->bind_param("isssi", $idUsuario, $nombreUsuario, $passwd, $correo, $telefono)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -1071,6 +1073,9 @@ function getInvitadosEvento($idEvento){
     //var_dump($query); 
      // die('');
         disconnectDB($db);
+        if(mysqli_num_rows($results) == 0){
+            echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+        } 
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
                  echo '<tr>';
@@ -1227,29 +1232,125 @@ function getNombreById($idUsuario){
     } 
 }
 
-function eliminarRolUsuario($idUsuario){
-     $db = connectDB();
-     //Pa' debugear
-    //var_dump($passwd); 
-      //die('');
-    if($db != NULL){
-         $query = 'Delete FROM tiene WHERE idUsuario = ?';
-        // Preparing the statement 
-         if (!($statement = $db->prepare($query))) {
-            die("Preparation failed: (" . $db->errno . ") " . $db->error);
-          }
-        // Binding statement params 
-        if (!$statement->bind_param("i",$idUsuario)) {
-            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
-        }
-        // Executing the statement
-        if (!$statement->execute()) {
-            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-        } 
+function getCoordinadorList(){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = 'SELECT * 
+                  FROM Usuario U, tiene T 
+                  WHERE U.idUsuario=T.idUsuario AND T.idRol=1493';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
         disconnectDB($db);
-        return true;
-    } 
-    return false;
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo '<option value='.$row["idUsuario"].'>';
+                echo $row["nombreUsuario"];
+                echo "</option>";
+            }
+        }
+    }
+}
+
+function getClienteList(){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = 'SELECT * 
+                  FROM Usuario U, tiene T 
+                  WHERE U.idUsuario=T.idUsuario AND T.idRol=1496';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo '<option value='.$row["idUsuario"].'>';
+                echo $row["nombreUsuario"];
+                echo "</option>";
+            }
+        }
+    }
+}
+
+function getPlantillasList(){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = 'SELECT *
+                  FROM Plantilla';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo '<option value='.$row["idDiseno"].'>';
+                echo $row["nombrePlantilla"];
+                echo "</option>";
+            }
+        }
+    }
+}
+
+function registrarEvento($nombreEvento, $descripcionEvento, $idEncuesta, $idCliente, $idCoordinador, $codigo){
+    $db = connectDB();
+ 
+      if ($db != NULL) {
+
+            // insert command specification
+            $query='INSERT INTO Evento (idEvento, nombreEvento, descripcionEvento, fechaCreacion, statusEvento, idEncuesta, idCliente, idCoordinador, Ver, codigo)
+                    VALUES (NULL , ?,  ?, CURRENT_TIMESTAMP, "preparando", ?, ?, ?, 1, ?)';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("ssiiis", $nombreEvento,$descripcionEvento,$idEncuesta,$idCliente,$idCoordinador,$codigo)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
+}
+
+function registrarEventoPlantilla($idPlantilla, $idEvento){
+   $db = connectDB();
+ 
+      if ($db != NULL) {
+
+            // insert command specification
+            $query='INSERT INTO  eventoDiseno(idDiseno, idEvento)
+                    VALUES (?, ?)';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("ii", $idPlantilla, $idEvento)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false; 
 }
 
 function getFechaNacimiento($idInvitado){

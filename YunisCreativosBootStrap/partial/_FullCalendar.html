@@ -1,11 +1,3 @@
-<?php
-    require_once('bdd.php');
-    $sql = "SELECT id, title, start, end, color FROM events ";
-    $req = $bdd->prepare($sql);
-    $req->execute();
-    $events = $req->fetchAll();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,13 +6,9 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Calendario</title>
+        
 
-        <!-- Estilos de Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Estilos de FullCalendar -->
-        <link href='css/fullcalendar.css' rel='stylesheet' />
+        
         
         <!-- Estilos Personalizados -->
         <style>
@@ -40,7 +28,7 @@
     
     <body>
 
-
+        <title>Calendario</title>
         <!-- Contenido de la página -->
         <div class="container">
             <div class="row">
@@ -59,7 +47,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <!-- Inicio del formulario -->
-                        <form class="form-horizontal" method="POST" action="FullCalendar/addEvent.php">
+                        <form class="form-horizontal" method="POST" action="addEvent.php">
                         <!-- Título del modal -->
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -74,7 +62,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="color" class="col-sm-2 control-label">Status de actividad</label> <!-- Segunda Opción (Color del evento) -->
+                                <label for="color" class="col-sm-2 control-label">Status</label> <!-- Segunda Opción (Color del evento) -->
                                 <div class="col-sm-10">
                                     <select name="color" class="form-control" id="color">
                                         <option value="">Elije uno</option>
@@ -111,26 +99,26 @@
             <div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                    <form class="form-horizontal" method="POST" action="FullCalendar/editEventTitle.php">
+                    <form class="form-horizontal" method="POST" action="editEventTitle.php">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title" id="myModalLabel">Editar Actividad</h4>
                         </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="title" class="col-sm-2 control-label">Titulo</label> <!-- Primera Opción (Título del evento)-->
+                            <label for="title" class="col-sm-2 control-label">Titulo</label> 
                             <div class="col-sm-10">
                                 <input type="text" name="title" class="form-control" id="title" placeholder="Titulo aquí">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="color" class="col-sm-2 control-label">Color</label> <!-- Segunda Opción (Color del evento) -->
+                            <label for="color" class="col-sm-2 control-label">Status</label>
                             <div class="col-sm-10">
                                 <select name="color" class="form-control" id="color">
                                     <option value="">Elije uno</option>
-                                    <option style="color:#008000;" value="#008000">&#9724; Green</option>						  
-                                    <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
-                                    <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
+                                    <option style="color:#008000;" value="#008000">&#9724; Activo</option>						  
+                                    <option style="color:#FFD700;" value="#FFD700">&#9724; Preparandose</option>
+                                    <option style="color:#FF0000;" value="#FF0000">&#9724; Terminado</option>
 
                                 </select>
                             </div>
