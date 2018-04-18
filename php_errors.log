@@ -13770,3 +13770,8 @@
 [17-Apr-2018 22:31:41 UTC] PHP Fatal error:  Call to undefined function eliminarStaff() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/eliminar_staff_perma.php on line 5
 [17-Apr-2018 22:31:41 UTC] PHP Stack trace:
 [17-Apr-2018 22:31:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/eliminar_staff_perma.php:0
+[18-Apr-2018 03:00:32 UTC] PHP Warning:  mysqli_stmt::bind_param(): Number of variables doesn't match number of parameters in prepared statement in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1233
+[18-Apr-2018 03:00:32 UTC] PHP Stack trace:
+[18-Apr-2018 03:00:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:0
+[18-Apr-2018 03:00:32 UTC] PHP   2. eliminarRolUsuario() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_staff.php:19
+[18-Apr-2018 03:00:32 UTC] PHP   3. mysqli_stmt->bind_param() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1233

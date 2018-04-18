@@ -7,16 +7,20 @@
         $passwd = $_POST["passwd2"];
         $correo = $_POST["correo"];
         $telefono = $_POST["telefono"];
+        $rol = $_POST["rol"];
         echo $idUsuario;
         echo  $nombreUsuario;
         echo $passwd;
         echo $correo;
         echo $telefono;
-        die('');
+        echo $rol;
+       //die('');
         
-         if (modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono)){
-            $_SESSION["staffStatusSuccess"] = "Se ha modificado la información exitosamente";
-            unset($_SESSION["staffStatusError"]);
+         if ((modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono))&&(eliminarRolUsuario($idUsuario))){
+            if(registrarRol($idUsuario,$rol)){
+                $_SESSION["staffStatusSuccess"] = "Se ha modificado la información exitosamente";
+                unset($_SESSION["staffStatusError"]);
+            }
         }else{
             $_SESSION["staffStatusError"] = "Hubo un error con la modificación, inténtalo de nuevo más tarde";
             unset($_SESSION["staffStatusSuccess"]);

@@ -909,7 +909,7 @@ function modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("issss", $idUsuario, $nombreUsuario, $passwd, $correo, $telefono)) {
+        if (!$statement->bind_param("ssssi",  $nombreUsuario, $passwd, $correo, $telefono,$idUsuario)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -1218,6 +1218,30 @@ function getNombreById($idUsuario){
     } 
 }
 
+function eliminarRolUsuario($idUsuario){
+     $db = connectDB();
+     //Pa' debugear
+    //var_dump($passwd); 
+      //die('');
+    if($db != NULL){
+         $query = 'Delete FROM tiene WHERE idUsuario = ?';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("i",$idUsuario)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        disconnectDB($db);
+        return true;
+    } 
+    return false;
+}
 
 
 ?>
