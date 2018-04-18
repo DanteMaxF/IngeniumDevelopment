@@ -13842,3 +13842,120 @@
 [18-Apr-2018 03:51:31 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:731
 [18-Apr-2018 03:51:31 UTC] PHP   5. getEstado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:978
 [18-Apr-2018 03:51:31 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:504
+[18-Apr-2018 04:04:02 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1271
+[18-Apr-2018 04:04:02 UTC] PHP Stack trace:
+[18-Apr-2018 04:04:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[18-Apr-2018 04:04:35 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1262
+[18-Apr-2018 04:04:35 UTC] PHP Stack trace:
+[18-Apr-2018 04:04:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[18-Apr-2018 04:04:35 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[18-Apr-2018 04:04:35 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:20
+[18-Apr-2018 04:04:35 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:731
+[18-Apr-2018 04:04:35 UTC] PHP   5. getFechaNacimiento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:954
+[18-Apr-2018 04:04:35 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1262
+[18-Apr-2018 04:04:35 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1262
+[18-Apr-2018 04:04:35 UTC] PHP Stack trace:
+[18-Apr-2018 04:04:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[18-Apr-2018 04:04:35 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[18-Apr-2018 04:04:35 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:20
+[18-Apr-2018 04:04:35 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:731
+[18-Apr-2018 04:04:35 UTC] PHP   5. getFechaNacimiento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:954
+[18-Apr-2018 04:04:35 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1262
+[18-Apr-2018 04:04:35 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1262
+[18-Apr-2018 04:04:35 UTC] PHP Stack trace:
+[18-Apr-2018 04:04:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[18-Apr-2018 04:04:35 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[18-Apr-2018 04:04:35 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:20
+[18-Apr-2018 04:04:35 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:731
+[18-Apr-2018 04:04:35 UTC] PHP   5. getFechaNacimiento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:954
+[18-Apr-2018 04:04:35 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1262
+[18-Apr-2018 04:04:35 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1262
+[18-Apr-2018 04:04:35 UTC] PHP Stack trace:
+[18-Apr-2018 04:04:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[18-Apr-2018 04:04:35 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[18-Apr-2018 04:04:35 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:20
+[18-Apr-2018 04:04:35 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:731
+[18-Apr-2018 04:04:35 UTC] PHP   5. getFechaNacimiento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:954
+[18-Apr-2018 04:04:35 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1262
+[18-Apr-2018 04:08:51 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1271
+[18-Apr-2018 04:08:51 UTC] PHP Stack trace:
+[18-Apr-2018 04:08:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[18-Apr-2018 04:09:06 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1262
+[18-Apr-2018 04:09:06 UTC] PHP Stack trace:
+[18-Apr-2018 04:09:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[18-Apr-2018 04:09:06 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[18-Apr-2018 04:09:06 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:20
+[18-Apr-2018 04:09:06 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:731
+[18-Apr-2018 04:09:06 UTC] PHP   5. getFechaNacimiento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:954
+[18-Apr-2018 04:09:06 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1262
+[18-Apr-2018 04:09:06 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1262
+[18-Apr-2018 04:09:06 UTC] PHP Stack trace:
+[18-Apr-2018 04:09:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[18-Apr-2018 04:09:06 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[18-Apr-2018 04:09:06 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:20
+[18-Apr-2018 04:09:06 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:731
+[18-Apr-2018 04:09:06 UTC] PHP   5. getFechaNacimiento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:954
+[18-Apr-2018 04:09:06 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1262
+[18-Apr-2018 04:09:06 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1262
+[18-Apr-2018 04:09:06 UTC] PHP Stack trace:
+[18-Apr-2018 04:09:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[18-Apr-2018 04:09:06 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[18-Apr-2018 04:09:06 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:20
+[18-Apr-2018 04:09:06 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:731
+[18-Apr-2018 04:09:06 UTC] PHP   5. getFechaNacimiento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:954
+[18-Apr-2018 04:09:06 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1262
+[18-Apr-2018 04:09:06 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1262
+[18-Apr-2018 04:09:06 UTC] PHP Stack trace:
+[18-Apr-2018 04:09:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[18-Apr-2018 04:09:06 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
+[18-Apr-2018 04:09:06 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:20
+[18-Apr-2018 04:09:06 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:731
+[18-Apr-2018 04:09:06 UTC] PHP   5. getFechaNacimiento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:954
+[18-Apr-2018 04:09:06 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1262
+[18-Apr-2018 05:21:56 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1072
+[18-Apr-2018 05:21:56 UTC] PHP Stack trace:
+[18-Apr-2018 05:21:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 05:21:56 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 05:21:56 UTC] PHP   3. getInvitadosEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:53
+[18-Apr-2018 05:21:56 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1072
+[18-Apr-2018 05:21:56 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1150
+[18-Apr-2018 05:21:56 UTC] PHP Stack trace:
+[18-Apr-2018 05:21:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 05:21:56 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 05:21:56 UTC] PHP   3. getInvitadosList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:122
+[18-Apr-2018 05:21:56 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1150
+[18-Apr-2018 05:27:25 UTC] PHP Fatal error:  Call to undefined function modalModificarEvento() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 137
+[18-Apr-2018 05:27:25 UTC] PHP Stack trace:
+[18-Apr-2018 05:27:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 05:27:25 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 05:27:25 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:18
+[18-Apr-2018 05:29:38 UTC] PHP Fatal error:  Call to undefined function modalModificarEvento() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 137
+[18-Apr-2018 05:29:38 UTC] PHP Stack trace:
+[18-Apr-2018 05:29:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 05:29:38 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 05:29:38 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 05:29:43 UTC] PHP Fatal error:  Call to undefined function modalModificarEvento() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 137
+[18-Apr-2018 05:29:43 UTC] PHP Stack trace:
+[18-Apr-2018 05:29:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 05:29:43 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 05:29:43 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 05:32:47 UTC] PHP Fatal error:  Call to undefined function modalModificarEvento() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 137
+[18-Apr-2018 05:32:47 UTC] PHP Stack trace:
+[18-Apr-2018 05:32:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 05:32:47 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 05:32:47 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 05:32:52 UTC] PHP Fatal error:  Call to undefined function modalModificarEvento() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 137
+[18-Apr-2018 05:32:52 UTC] PHP Stack trace:
+[18-Apr-2018 05:32:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 05:32:52 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 05:32:52 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 05:33:03 UTC] PHP Fatal error:  Call to undefined function modalModificarEvento() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 137
+[18-Apr-2018 05:33:03 UTC] PHP Stack trace:
+[18-Apr-2018 05:33:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 05:33:03 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 05:33:03 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 05:33:08 UTC] PHP Fatal error:  Call to undefined function modalModificarEvento() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 137
+[18-Apr-2018 05:33:08 UTC] PHP Stack trace:
+[18-Apr-2018 05:33:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 05:33:08 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 05:33:08 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19

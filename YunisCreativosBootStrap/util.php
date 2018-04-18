@@ -133,6 +133,8 @@ function getInfoGeneralEvento($idEvento){
                  echo '<th>'.$row["califPromedio"].'</th>';
                  echo '<th>'.$row["Cliente"].'</th>';
                  echo '<th>'.$row["Coordinador"].'</th>';
+                 echo '<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalModificarEvento'.$row["idEvento"].'">Modificar</button></td>';
+                 //modalModificarEvento($row["idUsuario"],$row["nombreUsuario"],$row["correo"],$row["telefono"],$row["descripcion"]);
 
             }
         }
@@ -951,6 +953,7 @@ function getPasswordById($idUsuario){
 function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
    $passwd = getPasswordById($id);
     $rol = getRol($id);
+    $fechaNacimiento = getFechaNacimiento($id);
      echo '<div class="modal fade" id="modalModificarInvitado'.$id.'" role="dialog">
     <div class="modal-dialog">
     
@@ -969,7 +972,7 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                   <label for="fecha_nac">Fecha Nacimiento:</label>
-                  <input type="date" class="form-control" id="usr" name = "fechaNacimiento" required>
+                  <input type="date" class="form-control" id="usr" value="'.$fechaNacimiento.'" name = "fechaNacimiento" required>
                 </div>
                 <div class="col-md-4 mb-3">  
                   <label>Estado:</label>
@@ -1249,5 +1252,38 @@ function eliminarRolUsuario($idUsuario){
     return false;
 }
 
+function getFechaNacimiento($idInvitado){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT  * from Invitado  WHERE idInvitado = "'.$idInvitado.'"';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<option>'.$row["fechaNacimiento"].'</option>';
+            }
+        }
+    }
+}
+
+function getTalla($id ){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT  * from Invitado i WHERE idInvitado = "'.$id.'"';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<option>'.$row["talla"].'</option>';
+            }
+        }
+    }
+}
 
 ?>
