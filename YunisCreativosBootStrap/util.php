@@ -492,10 +492,10 @@ function getIDUserByMail($correo){
     
 }
 
-function getEstado(){
+function getEstado($id = -1){
     $db = connectDB();
     if($db != NULL){
-    $query = 'SELECT * from Estado';
+    $query = 'SELECT DISTINCT * from Estado e, Invitado i WHERE e.idEstado = i.idEstado ';
      //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -503,11 +503,17 @@ function getEstado(){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 echo '<option value='.$row["idEstado"].'>'.$row["nombreEstado"].'</option>';
+                 echo '<option value='.$row["idEstado"].'"';
+                  if ($row["idInvitado"] == $id) {
+                     echo " selected";
+                 }
+                 echo'>'.$row["nombreEstado"].'</option>';
             }
         }
     }
 }
+
+
 
 function getAlergias(){
     $db = connectDB();
@@ -968,9 +974,9 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
                 <div class="col-md-4 mb-3">  
                   <label>Estado:</label>
                   <select class="form-control" id="Estado" name="Estado" required>
-                      <option> </option>
-                      <?php getEstado() ?>
-                  </select>
+                      <option> </option>';
+                        getEstado($id);
+            echo'</select>
                 </div>
                 <div class="col-md-2 mb-3">
                   <label>Talla:</label>
