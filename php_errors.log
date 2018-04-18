@@ -14039,3 +14039,81 @@
 [18-Apr-2018 06:07:56 UTC] PHP Stack trace:
 [18-Apr-2018 06:07:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:0
 [18-Apr-2018 06:07:56 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:15
+[18-Apr-2018 13:32:34 UTC] PHP Fatal error:  Call to undefined function getClienteList() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1320
+[18-Apr-2018 13:32:34 UTC] PHP Stack trace:
+[18-Apr-2018 13:32:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 13:32:34 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 13:32:34 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 13:32:34 UTC] PHP   4. modalModificarEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:137
+[18-Apr-2018 13:32:44 UTC] PHP Fatal error:  Call to undefined function getClienteList() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1320
+[18-Apr-2018 13:32:44 UTC] PHP Stack trace:
+[18-Apr-2018 13:32:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 13:32:44 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 13:32:44 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 13:32:44 UTC] PHP   4. modalModificarEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:137
+[18-Apr-2018 13:32:49 UTC] PHP Fatal error:  Call to undefined function getClienteList() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1320
+[18-Apr-2018 13:32:49 UTC] PHP Stack trace:
+[18-Apr-2018 13:32:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 13:32:49 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 13:32:49 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 13:32:49 UTC] PHP   4. modalModificarEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:137
+[18-Apr-2018 13:33:03 UTC] PHP Fatal error:  Call to undefined function getClienteList() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1320
+[18-Apr-2018 13:33:03 UTC] PHP Stack trace:
+[18-Apr-2018 13:33:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 13:33:03 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 13:33:03 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 13:33:03 UTC] PHP   4. modalModificarEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:137
+[18-Apr-2018 13:33:09 UTC] PHP Fatal error:  Call to undefined function getClienteList() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1320
+[18-Apr-2018 13:33:09 UTC] PHP Stack trace:
+[18-Apr-2018 13:33:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 13:33:09 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 13:33:09 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 13:33:09 UTC] PHP   4. modalModificarEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:137
+[18-Apr-2018 13:33:10 UTC] PHP Fatal error:  Call to undefined function getClienteList() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1320
+[18-Apr-2018 13:33:10 UTC] PHP Stack trace:
+[18-Apr-2018 13:33:10 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 13:33:10 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 13:33:10 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 13:33:10 UTC] PHP   4. modalModificarEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:137
+[18-Apr-2018 13:33:13 UTC] PHP Fatal error:  Call to undefined function getClienteList() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1320
+[18-Apr-2018 13:33:13 UTC] PHP Stack trace:
+[18-Apr-2018 13:33:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 13:33:13 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 13:33:13 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 13:33:13 UTC] PHP   4. modalModificarEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:137
+[18-Apr-2018 13:33:15 UTC] PHP Fatal error:  Call to undefined function getClienteList() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1320
+[18-Apr-2018 13:33:15 UTC] PHP Stack trace:
+[18-Apr-2018 13:33:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 13:33:15 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 13:33:15 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 13:33:15 UTC] PHP   4. modalModificarEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:137
+[18-Apr-2018 13:33:25 UTC] PHP Fatal error:  Call to undefined function getClienteList() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1320
+[18-Apr-2018 13:33:25 UTC] PHP Stack trace:
+[18-Apr-2018 13:33:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 13:33:25 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 13:33:25 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 13:33:25 UTC] PHP   4. modalModificarEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:137
+[18-Apr-2018 13:37:21 UTC] PHP Fatal error:  Call to undefined function getClienteList() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1320
+[18-Apr-2018 13:37:21 UTC] PHP Stack trace:
+[18-Apr-2018 13:37:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 13:37:21 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 13:37:21 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 13:37:21 UTC] PHP   4. modalModificarEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:137
+[18-Apr-2018 13:38:46 UTC] PHP Fatal error:  Call to undefined function getClienteList() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1320
+[18-Apr-2018 13:38:46 UTC] PHP Stack trace:
+[18-Apr-2018 13:38:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 13:38:46 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 13:38:46 UTC] PHP   3. getInfoGeneralEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:19
+[18-Apr-2018 13:38:46 UTC] PHP   4. modalModificarEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:137
+[18-Apr-2018 13:38:48 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1074
+[18-Apr-2018 13:38:48 UTC] PHP Stack trace:
+[18-Apr-2018 13:38:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 13:38:48 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 13:38:48 UTC] PHP   3. getInvitadosEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:54
+[18-Apr-2018 13:38:48 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1074
+[18-Apr-2018 13:38:48 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1152
+[18-Apr-2018 13:38:48 UTC] PHP Stack trace:
+[18-Apr-2018 13:38:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[18-Apr-2018 13:38:48 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:20
+[18-Apr-2018 13:38:48 UTC] PHP   3. getInvitadosList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consultar_eventos.html:123
+[18-Apr-2018 13:38:48 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1152

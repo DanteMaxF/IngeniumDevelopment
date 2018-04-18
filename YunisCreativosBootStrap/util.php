@@ -1313,6 +1313,20 @@ function modalModificarEvento($idEvento){
                       <label for="nombre">Estado del evento:</label>
                       <input type="text" class="form-control" name="estadoEvento" value="'.$estadoEvento.'" required>
                     </div>
+                    <div class="form-group"
+                        <label>Cliente:</label>
+                        <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>
+                            <option> </option>';
+                                //getClienteList();
+                       echo '</select>
+                    </div>
+                    <div class="form-group"
+                        <label>Coordinador:</label>
+                        <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>
+                            <option> </option>';
+                                //getClienteList();
+                       echo '</select>
+                    </div>
                     
         </div>
         <div class="modal-footer">
