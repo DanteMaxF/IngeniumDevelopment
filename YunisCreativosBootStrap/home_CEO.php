@@ -1,19 +1,20 @@
 <?php 
-
+    
     require_once('bdd.php');
     $sql = "SELECT id, title, start, end, color FROM events ";
     $req = $bdd->prepare($sql);
     $req->execute();
     $events = $req->fetchAll();
 
+ 
 
     session_start();
     require_once("util.php");
     if( isset($_SESSION["idRol"]) ){
         include("partial/_head.html");
         include("partial/_navbarCEO.html");
-        include("partial/_home_CEO.html"); 
-        require("FullCalendar.php");
+        //include("partial/_home_CEO.html"); 
+        include("partial/_FullCalendar.html");
         //include("partial/_scripts.html");
         include("partial/_footer.html"); 
     }else{
@@ -33,11 +34,11 @@
                 header: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'month,basicWeek,basicDay'
+                    right: 'month,basicWeek,agendaDay'
                 },
                 defaultDate: '2018-01-12',
                 editable: true,
-                eventLimit: true, // Permite "más" cuando hay demasiados eventos
+                eventLimit: true,
                 selectable: true,
                 selectHelper: true,
                 select: function(start, end) {
@@ -53,14 +54,15 @@
                         $('#ModalEdit').modal('show');
                     });
                 },
-                eventDrop: function(event, delta, revertFunc) { // Para cuando cualquier evento es movido (Drag & Drop)
+                eventDrop: function(event, delta, revertFunc) {
                     edit(event);
                 },
-                eventResize: function(event,dayDelta,minuteDelta,revertFunc) { // Para cuando cualquier evento su largo es modificado
+                eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
                     edit(event);
                 },
                 events: [
-                <?php foreach($events as $event):
+                <?PHP 
+                    foreach($events as $event):
                     $start = explode(" ", $event['start']);
                     $end = explode(" ", $event['end']);
                     if($start[1] == '00:00:00'){
@@ -115,4 +117,4 @@
             }
 
         });
-        </script>-->
+        </script>
