@@ -149,7 +149,9 @@ function getStaffEvento($idEvento){
         //die('');
         $results = mysqli_query($db,$query);
         disconnectDB($db);
-        
+        if(mysqli_num_rows($results) == 0){
+            echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td></tr>';
+        } 
         if(mysqli_num_rows($results) > 0) {
              while ($row = mysqli_fetch_assoc($results)) {
                  echo '<tr>';
@@ -1062,6 +1064,9 @@ function getInvitadosEvento($idEvento){
     //var_dump($query); 
      // die('');
         disconnectDB($db);
+        if(mysqli_num_rows($results) == 0){
+            echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+        } 
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
                  echo '<tr>';
@@ -1218,6 +1223,126 @@ function getNombreById($idUsuario){
     } 
 }
 
+function getCoordinadorList(){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = 'SELECT * 
+                  FROM Usuario U, tiene T 
+                  WHERE U.idUsuario=T.idUsuario AND T.idRol=1493';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo '<option value='.$row["idUsuario"].'>';
+                echo $row["nombreUsuario"];
+                echo "</option>";
+            }
+        }
+    }
+}
+
+function getClienteList(){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = 'SELECT * 
+                  FROM Usuario U, tiene T 
+                  WHERE U.idUsuario=T.idUsuario AND T.idRol=1496';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo '<option value='.$row["idUsuario"].'>';
+                echo $row["nombreUsuario"];
+                echo "</option>";
+            }
+        }
+    }
+}
+
+function getPlantillasList(){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = 'SELECT *
+                  FROM Plantilla';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo '<option value='.$row["idDiseno"].'>';
+                echo $row["nombrePlantilla"];
+                echo "</option>";
+            }
+        }
+    }
+}
+
+function registrarEvento($nombreEvento, $descripcionEvento, $idEncuesta, $idCliente, $idCoordinador, $codigo){
+    $db = connectDB();
+ 
+      if ($db != NULL) {
+
+            // insert command specification
+            $query='INSERT INTO Evento (idEvento, nombreEvento, descripcionEvento, fechaCreacion, statusEvento, idEncuesta, idCliente, idCoordinador, Ver, codigo)
+                    VALUES (NULL , ?,  ?, CURRENT_TIMESTAMP, "preparando", ?, ?, ?, 1, ?)';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("ssiiis", $nombreEvento,$descripcionEvento,$idEncuesta,$idCliente,$idCoordinador,$codigo)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
+}
+
+function registrarEventoPlantilla($idPlantilla, $idEvento){
+   $db = connectDB();
+ 
+      if ($db != NULL) {
+
+            // insert command specification
+            $query='INSERT INTO  eventoDiseno(idDiseno, idEvento)
+                    VALUES (?, ?)';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("ii", $idPlantilla, $idEvento)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false; 
+}
 
 
 ?>
