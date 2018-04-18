@@ -134,7 +134,7 @@ function getInfoGeneralEvento($idEvento){
                  echo '<th>'.$row["Cliente"].'</th>';
                  echo '<th>'.$row["Coordinador"].'</th>';
                  echo '<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalModificarEvento'.$row["idEvento"].'">Modificar</button></td>';
-                 //modalModificarEvento($row["idUsuario"],$row["nombreUsuario"],$row["correo"],$row["telefono"],$row["descripcion"]);
+                 modalModificarEvento($idEvento);
 
             }
         }
@@ -1281,6 +1281,79 @@ function getTalla($id ){
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
                  echo '<option>'.$row["talla"].'</option>';
+            }
+        }
+    }
+}
+
+function modalModificarEvento($idEvento){
+    $descripcionEvento = getDescripcionEvento($idEvento);
+    $nombreEmpresa = getNombreEventoByIdEvento($idEvento);
+    $estadoEvento = getStatusEvento($idEvento);
+    echo'<div class="modal fade" id="modalModificarEvento'.$id.'" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modificar datos:</h4>
+        </div>
+        <div class="modal-body">
+           <form action="modificar_staff.php" method="POST">
+                    <input type="hidden" name="idEvento" value="'.$id.'">
+                    <div class="form-group">
+                      <label for="nombre">Nombre Empresa:</label>
+                      <input type="text" class="form-control" name="nombreEmpresa" value="'.$nombreEmpresa.'" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="nombre">Descripcion del evento:</label>
+                      <input type="text" class="form-control" name="descripcionEvento" value="'.$descripcionEvento.'" required>
+                    </div>
+                     <div class="form-group">
+                      <label for="nombre">Estado del evento:</label>
+                      <input type="text" class="form-control" name="estadoEvento" value="'.$estadoEvento.'" required>
+                    </div>
+                    
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" name="action">Registrar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>';
+}
+
+function getNombreEventoByIdEvento($idEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT nombreEvento from Evento WHERE idEvento ="'.$idEvento.'"';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["nombreEvento"];
+            }
+        }
+    }
+}
+
+function getStatusEvento($idEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT statusEvento from Evento WHERE idEvento ="'.$idEvento.'"';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["statusEvento"];
             }
         }
     }
