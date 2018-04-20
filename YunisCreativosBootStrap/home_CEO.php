@@ -32,11 +32,11 @@
         $(document).ready(function() {
             $('#calendar').fullCalendar({
                 header: {
-                    left: 'prev,next today',
+                    left: 'prev,next, today',
                     center: 'title',
                     right: 'month,basicWeek,agendaDay'
                 },
-                defaultDate: '2018-01-12',
+                defaultDate: $('#calendar').fullCalendar('today'),
                 editable: true,
                 eventLimit: true,
                 selectable: true,
