@@ -913,13 +913,13 @@ function modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
     //var_dump($passwd); 
       //die('');
     if($db != NULL){
-         $query = 'UPDATE Usuario SET nombreUsuario = "'.$nombreUsuario.'" ,passwd = "'.$passwd.'",correo = "'.$correo.'",telefono = "'.$telefono.'" WHERE idUsuario = "'.$idUsuario.'"';
+         $query = 'UPDATE Usuario SET nombreUsuario=?, passwd=?, correo=?, telefono=? WHERE idUsuario = ?';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("isssi", $idUsuario, $nombreUsuario, $passwd, $correo, $telefono)) {
+        if (!$statement->bind_param("ssssi",$nombreUsuario, $passwd, $correo, $telefono,$idUsuario)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -1232,13 +1232,14 @@ function getNombreById($idUsuario){
     } 
 }
 
-function getCoordinadorList(){
+function getCoordinadorList($id = -1){
     $db = connectDB();
     if ($db != NULL) {
         
         $query = 'SELECT * 
-                  FROM Usuario U, tiene T 
-                  WHERE U.idUsuario=T.idUsuario AND T.idRol=1493';
+                  FROM Usuario U, tiene T, Evento E 
+                  WHERE U.idUsuario=T.idUsuario AND E.idCoordinador = U.idUsuario
+                  AND T.idRol=1493';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -1246,21 +1247,45 @@ function getCoordinadorList(){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
             while ($row = mysqli_fetch_assoc($results)) {
-                echo '<option value='.$row["idUsuario"].'>';
-                echo $row["nombreUsuario"];
-                echo "</option>";
+                echo '<option value='.$row["idUsuario"];
+                  if ($row["idEvento"] == $id) {
+                     echo " selected";
+                 }
+                echo '>'.$row["nombreUsuario"].'</option>';
             }
         }
     }
 }
-
-function getClienteList(){
+/*
+function getEstado($id = -1){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT DISTINCT * from Estado e, Invitado i WHERE e.idEstado = i.idEstado ';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<option value='.$row["idEstado"].'"';
+                  if ($row["idInvitado"] == $id) {
+                     echo " selected";
+                 }
+                 echo'>'.$row["nombreEstado"].'</option>';
+            }
+        }
+    }
+}
+*/
+function getClienteList($id = -1){
     $db = connectDB();
     if ($db != NULL) {
         
         $query = 'SELECT * 
-                  FROM Usuario U, tiene T 
-                  WHERE U.idUsuario=T.idUsuario AND T.idRol=1496';
+                  FROM Usuario U, tiene T, Evento E
+                  WHERE U.idUsuario=T.idUsuario AND E.idCliente = U.idUsuario
+                  AND T.idRol=1496';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -1268,9 +1293,11 @@ function getClienteList(){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
             while ($row = mysqli_fetch_assoc($results)) {
-                echo '<option value='.$row["idUsuario"].'>';
-                echo $row["nombreUsuario"];
-                echo "</option>";
+                echo '<option value='.$row["idUsuario"].'"';
+                 if ($row["idEvento"] == $id) {
+                     echo " selected";
+                 }
+                echo '>'. $row["nombreUsuario"].'</option>';
             }
         }
     }
@@ -1391,7 +1418,7 @@ function modalModificarEvento($idEvento){
     $descripcionEvento = getDescripcionEvento($idEvento);
     $nombreEmpresa = getNombreEventoByIdEvento($idEvento);
     $estadoEvento = getStatusEvento($idEvento);
-    echo'<div class="modal fade" id="modalModificarEvento'.$id.'" role="dialog">
+    echo'<div class="modal fade" id="modalModificarEvento'.$idEvento.'" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
@@ -1400,8 +1427,8 @@ function modalModificarEvento($idEvento){
           <h4 class="modal-title">Modificar datos:</h4>
         </div>
         <div class="modal-body">
-           <form action="modificar_staff.php" method="POST">
-                    <input type="hidden" name="idEvento" value="'.$id.'">
+           <form action="modificar_evento.php" method="POST">
+                    <input type="hidden" name="idEvento" value="'.$idEvento.'">
                     <div class="form-group">
                       <label for="nombre">Nombre Empresa:</label>
                       <input type="text" class="form-control" name="nombreEmpresa" value="'.$nombreEmpresa.'" required>
@@ -1416,20 +1443,18 @@ function modalModificarEvento($idEvento){
                     </div>
                     <div class="form-group"
                         <label>Cliente:</label>
-                        <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>
-                            <option> </option>
-                    
-                               <?php echo getClienteList(); ?>
-                       </select>
+                        <select class="form-control" id="rol" name="nombreCliente" value="'.$rol.'"required>
+                            <option> </option>';
+                               getClienteList($idEvento); 
+                      echo' </select>
                     </div>
                     <div class="form-group"
                         <label>Coordinador:</label>
-                        <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>
+                        <select class="form-control" id="rol" name="nombreCoordinador" value="'.$rol.'"required>
                             <option> </option>';
-                                getClienteList();
-                       echo '</select>
+                                getCoordinadorList($idEvento);
+                       echo'</select>
                     </div>
-                    
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-success" name="action">Registrar</button>
@@ -1473,6 +1498,31 @@ function getStatusEvento($idEvento){
             }
         }
     }
+}
+
+function modificarEvento($nombreEmpresa, $descripcionEvento, $estadoEvento, $nombreCliente, $nombreCoordinador, $idEvento){
+    $db = connectDB();
+    //Pa' debugear
+    //var_dump($passwd); 
+    //die('');
+    if($db != NULL){
+         $query = 'UPDATE Evento SET nombreEmpresa =? ,descripcionEvento =?, estadoEvento =?,nombreCliente =?,nombreCoordinador =? WHERE idEvento =?';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("sssssi", $nombreEmpresa, $descripcionEvento, $estadoEvento, $nombreCliente, $nombreCoordinador, $idEvento)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        disconnectDB($db);
+        return true;
+    } 
+    return false;
 }
 
 ?>
