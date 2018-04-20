@@ -1417,15 +1417,16 @@ function modalModificarEvento($idEvento){
                     <div class="form-group"
                         <label>Cliente:</label>
                         <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>
-                            <option> </option>';
-                                //getClienteList();
-                       echo '</select>
+                            <option> </option>
+                    
+                               <?php echo getClienteList(); ?>
+                       </select>
                     </div>
                     <div class="form-group"
                         <label>Coordinador:</label>
                         <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>
                             <option> </option>';
-                                //getClienteList();
+                                getClienteList();
                        echo '</select>
                     </div>
                     
