@@ -2,12 +2,12 @@
 
 //CONECTAR CON BASE DE DATOS (USAR EN CADA FUNCION)
 function connectDB(){
-    $developerMode = false; //Cambiar a true solo cuando se vaya a pasar al entorno de produccion
+    $developerMode = true; //Cambiar a true solo cuando se vaya a pasar al entorno de produccion
     
     if ($developerMode){
-        $mysql = mysqli_connect("localhost","cpses_hg3QUkUOVU@localhost","Mandala11:11","YunisCreativos");
+        $mysql = mysqli_connect("localhost","root","","YunisCreativos");
     }else{
-         $mysql = mysqli_connect("localhost","root","","YunisCreativos");
+         $mysql = mysqli_connect("localhost","DanteMaxF","Ingenium123","YunisCreativos");
     }
     $mysql->set_charset("utf8");
     return $mysql;
