@@ -3,7 +3,7 @@
     session_start();
     require_once("util.php");
     if( isset($_SESSION["idRol"]) ){
-      include("partial/_head.html");
+      include("partial/_head_invitado.html");
       include("partial/_navbarInvitado.html"); 
       include("partial/_home_invitado.html");
       include("partial/_scripts.html");

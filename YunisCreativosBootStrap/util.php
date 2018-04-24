@@ -1297,6 +1297,31 @@ function getPlantillasList(){
     }
 }
 
+// TODO Rewrite this function to diplay in plantillas page
+function getPlantillasListTemp(){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = 'SELECT *
+                  FROM Plantilla';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo '<div style="color:'.$row["colorTexto"].'; ">';
+                echo $row["nombrePlantilla"];
+                echo "</div>";
+            }
+        }
+    }
+}
+
+
+
+
 function registrarEvento($nombreEvento, $descripcionEvento, $idEncuesta, $idCliente, $idCoordinador, $codigo){
     $db = connectDB();
  
@@ -1459,5 +1484,72 @@ function getStatusEvento($idEvento){
         }
     }
 }
+
+function getIdPlantillaByIdEvento($idEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT idDiseno from eventoPlantilla WHERE idEvento ="'.$idEvento.'"';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["idDiseno"];
+            }
+        }
+    }
+    
+}
+
+function getIdEventoByIdInvitado($idInvitado){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT idEvento from invitadoEvento WHERE idInvitado ="'.$idInvitado.'"';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["idEvento"];
+            }
+        }
+    }
+    
+    
+}
+
+
+function getIdPlantillaByIdInvitado($idInvitado){
+    $idEvento = getIdEventoByIdInvitado($idInvitado);
+    return getIdPlantillaByIdEvento($idEvento);
+}
+
+
+function getPlantillaById($idPlantilla){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = 'SELECT *
+                  FROM Plantilla where idDiseno ="'.$idPlantilla.'"';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            /*while ($row = mysqli_fetch_assoc($results)) {
+                echo '<div style="color:'.$row["colorTexto"].'; ">';
+                echo $row["nombrePlantilla"];
+                echo "</div>";
+            }*/
+            return mysqli_fetch_assoc($results);
+        }
+    }
+}
+
 
 ?>
