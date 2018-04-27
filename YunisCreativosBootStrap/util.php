@@ -955,7 +955,9 @@ function getPasswordById($idUsuario){
 function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
    $passwd = getPasswordById($id);
     $rol = getRol($id);
-    $fechaNacimiento = getFechaNacimiento($id);
+ 
+   
+
      echo '<div class="modal fade" id="modalModificarInvitado'.$id.'" role="dialog">
     <div class="modal-dialog">
     
@@ -974,7 +976,11 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                   <label for="fecha_nac">Fecha Nacimiento:</label>
-                  <input type="date" class="form-control" id="usr" value="'.$fechaNacimiento.'" name = "fechaNacimiento" required>
+                  <input type="date" class="form-control" id="usr" value="';
+                  
+                   echo getFechaNacimiento($id);
+                  
+                   echo '" name = "fechaNacimiento" required>
                 </div>
                 <div class="col-md-4 mb-3">  
                   <label>Estado:</label>
@@ -1389,7 +1395,7 @@ function getFechaNacimiento($idInvitado){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 echo '<option>'.$row["fechaNacimiento"].'</option>';
+                 echo $row["fechaNacimiento"];
             }
         }
     }

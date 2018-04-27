@@ -14384,3 +14384,18 @@
 [21-Apr-2018 02:26:32 UTC] PHP Stack trace:
 [21-Apr-2018 02:26:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/plantillas.php:0
 [21-Apr-2018 02:26:32 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/plantillas.php:7
+[24-Apr-2018 18:32:10 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 960
+[24-Apr-2018 18:32:10 UTC] PHP Stack trace:
+[24-Apr-2018 18:32:10 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[24-Apr-2018 18:32:11 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 960
+[24-Apr-2018 18:32:11 UTC] PHP Stack trace:
+[24-Apr-2018 18:32:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[24-Apr-2018 18:43:50 UTC] PHP Parse error:  syntax error, unexpected 'getFechaNacimiento' (T_STRING), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 982
+[24-Apr-2018 18:43:50 UTC] PHP Stack trace:
+[24-Apr-2018 18:43:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[24-Apr-2018 18:44:06 UTC] PHP Parse error:  syntax error, unexpected 'getFechaNacimiento' (T_STRING), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 982
+[24-Apr-2018 18:44:06 UTC] PHP Stack trace:
+[24-Apr-2018 18:44:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[24-Apr-2018 18:44:08 UTC] PHP Parse error:  syntax error, unexpected 'getFechaNacimiento' (T_STRING), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 982
+[24-Apr-2018 18:44:08 UTC] PHP Stack trace:
+[24-Apr-2018 18:44:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
