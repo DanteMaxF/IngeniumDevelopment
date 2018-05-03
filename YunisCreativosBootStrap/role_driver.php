@@ -18,6 +18,7 @@
         unset($_SESSION["errorLogin"]);
         $_SESSION["mail"] = $_POST["emailInput"];
         $idUser = getUserId($_SESSION["mail"]);
+        $_SESSION["idUser"] = $idUser;
         $_SESSION["name"] = getNombreById($idUser);
         $_SESSION["idRol"] = getRol($idUser);
         // Pa' debugear

@@ -98,7 +98,7 @@ function getEventosDescripcion(){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT * FROM Evento WHERE Ver="1"';
+        $query = 'SELECT * FROM Evento WHERE Ver="1" ORDER BY descripcionEvento ASC';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -159,7 +159,7 @@ function getStaffEvento($idEvento){
                  echo '<tr>';
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
-                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Expulsar</button></td>';
                  generateModalDesasignarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
              } 
@@ -177,10 +177,10 @@ function generateModalDesasignarStaff($id,$nombre) {
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
-          <p>¿Estás seguro que quieres desasignar a <strong>'.$nombre.'</strong>?</p>
+          <p>¿Estás seguro que quieres expulsar a <strong>'.$nombre.'</strong>?</p>
         </div>
         <div class="modal-footer">
-          <a type="button" class="btn btn-danger" href="desasignar_staff.php?idStaff='.$id.'">Borrar</a>
+          <a type="button" class="btn btn-danger" href="desasignar_staff.php?idStaff='.$id.'">Expulsar</a>
           <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
         </div>
       </div>
@@ -1086,7 +1086,7 @@ function getInvitadosEvento($idEvento){
                  echo '<td>'.$row["talla"].'</td>';
                  echo '<td>'.$row["nombreIdioma"].'</td>';
                  echo '<td>'.$row["nombreEstado"].'</td>';
-                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Expulsar</button></td>';
                  echo generateModalDesasignarInvitado($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
             }
@@ -1104,10 +1104,10 @@ function generateModalDesasignarInvitado($id,$nombre) {
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
-          <p>¿Estás seguro que quieres desasignar a <strong>'.$nombre.'</strong>?</p>
+          <p>¿Estás seguro que quieres expulsar a <strong>'.$nombre.'</strong>?</p>
         </div>
         <div class="modal-footer">
-          <a type="button" class="btn btn-danger" href="desasignar_invitado.php?idInvitado='.$id.'">Borrar</a>
+          <a type="button" class="btn btn-danger" href="desasignar_invitado.php?idInvitado='.$id.'">Expulsar</a>
           <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
         </div>
       </div>
@@ -1457,6 +1457,24 @@ function getStatusEvento($idEvento){
                  return $row["statusEvento"];
             }
         }
+    }
+}
+
+function getLastEvent($idUser){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT idEvento FROM invitadoEvento WHERE idInvitado='.$idUser.' ORDER BY fechaUsuarioEvento DESC LIMIT 1';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["idEvento"];
+            }
+        }
+        return NULL;
     }
 }
 
