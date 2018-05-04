@@ -1276,14 +1276,17 @@ function getStaff($idEvento){
                  echo '</tr>';
             }
         }
+        if(mysqli_num_rows($results) == 0){
+                echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td><td></td><td></td></tr>';
+        }
     }
 }
 function getInvitados($idEvento){
     $db = connectDB();
     if($db != NULL){
         $query = 'SELECT *
-        FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i, usuarioAlergia ua, Alergia a  
-        WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND ua.idUsuario = u.idUsuario AND a.idAlergia = ua.idAlergia
+        FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i  
+        WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol 
         AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Invitado" AND u.Ver=1
         GROUP BY nombreUsuario
         ORDER BY nombreUsuario';
@@ -1299,7 +1302,7 @@ function getInvitados($idEvento){
                  echo '<td>'.$row["correo"].'</td>';
                  echo '<td>'.$row["telefono"].'</td>';
                  echo '<td>';
-                 getAlergiasByIdUsuario($row["idUsuario"]);
+                 //getAlergiasByIdUsuario($row["idUsuario"]);
                  echo'</td>';
                  echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#modalModificarInvitado'.$row["idUsuario"].'">Modificar</button></td>';
                  modalModificarInvitado($row["idUsuario"],$row["nombreUsuario"],$row["correo"],$row["telefono"],$row["descripcion"]);
@@ -1307,6 +1310,9 @@ function getInvitados($idEvento){
                  modalEliminarInvitado($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
             }
+        }
+        if(mysqli_num_rows($results) == 0){
+            echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td><td></td><td></td></tr>';
         }
     }
 }
@@ -1336,6 +1342,9 @@ function getCoordinador($idEvento){
                  modalEliminarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
             }
+        }
+         if(mysqli_num_rows($results) == 0){
+                echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td><td></td><td></td></tr>';
         }
     }
 }
