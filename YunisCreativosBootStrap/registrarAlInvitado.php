@@ -13,10 +13,11 @@
     $asistencia = $_POST["asistencia"];         
     $alergias = $_POST["alergias"];  //inv
     $idEvento = $_POST["idEvento"];
+    $medicamentos = $_POST["medicamentos"];
     
     
     if (registrarUsuario($nombreUsuario,$passwd1,$correo,$telefono)){
-        header('location:registrarInvitadoEvento.php?fechaNacimiento='.$fechaNacimiento.'&idEstado='.$idEstado.'&talla='.$talla.'&idioma='.$idioma.'&alergias='.$alergias.'&correo='.$correo.'&asistencia='.$asistencia.'&idEvento='.$idEvento);
+        header('location:registrarInvitadoEvento.php?fechaNacimiento='.$fechaNacimiento.'&idEstado='.$idEstado.'&talla='.$talla.'&idioma='.$idioma.'&alergias='.$alergias.'&correo='.$correo.'&asistencia='.$asistencia.'&idEvento='.$idEvento.'&medicamentos='.$medicamentos);
     }else{
         echo "ERROR";
     }
@@ -36,6 +37,7 @@
     echo "<br>Asistencia: $asistencia";
     echo "<br>Idioma: $idioma";
     echo "<br>alergias: $alergias";
+    echo "<br>medicamentos: $medicamentos";
      
     
     

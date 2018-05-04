@@ -427,17 +427,17 @@ function asignarStaff($idEvento,$idStaff){
 
 //registrarInvitado($idInvitado,$correo,$fechaNacimiento,$talla,$idEstado);
 //FUNCION PARA REGISTRAR INVITADO
-function registrarInvitado($idInvitado,$fechaNacimiento, $talla, $idEstado, $idIdioma){
+function registrarInvitado($idInvitado,$fechaNacimiento, $talla, $idEstado, $idIdioma,$alergias,$medicamentos){
     $db = connectDB();
     if($db != NULL){
-     $query = 'INSERT INTO Invitado(idInvitado,fechaNacimiento,talla,idEstado,idIdioma) VALUES(?,?,?,?,?)';
+     $query = 'INSERT INTO Invitado(idInvitado,fechaNacimiento,talla,idEstado,idIdioma,alergias,medicamentos) VALUES(?,?,?,?,?,?,?)';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
 
-        if (!$statement->bind_param("issii",$idInvitado, $fechaNacimiento, $talla, $idEstado,$idIdioma)) {
+        if (!$statement->bind_param("issiiss",$idInvitado, $fechaNacimiento, $talla, $idEstado,$idIdioma,$alergias,$medicamentos)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -496,10 +496,10 @@ function getIDUserByMail($correo){
     
 }
 
-function getEstado($id = -1){
+function getEstado(){
     $db = connectDB();
     if($db != NULL){
-    $query = 'SELECT DISTINCT * from Estado e, Invitado i WHERE e.idEstado = i.idEstado ';
+    $query = 'SELECT * from Estado ORDER BY nombreEstado';
      //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -507,11 +507,7 @@ function getEstado($id = -1){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 echo '<option value='.$row["idEstado"].'"';
-                  if ($row["idInvitado"] == $id) {
-                     echo " selected";
-                 }
-                 echo'>'.$row["nombreEstado"].'</option>';
+                 echo '<option value='.$row["idEstado"].'>'.$row["nombreEstado"].'</option>';
             }
         }
     }
@@ -1476,6 +1472,35 @@ function getLastEvent($idUser){
         }
         return NULL;
     }
+}
+
+function uploadMsg($idUser, $idEvent, $msg){
+    $db = connectDB();
+ 
+      if ($db != NULL) {
+
+            // insert command specification
+            $query='INSERT INTO  chat (idUsuario, idEvento, fechaMensaje, mensaje)
+                    VALUES (?,?,CURRENT_TIMESTAMP,?)';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("iis", $idUser, $idEvent, $msg)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false; 
+    
 }
 
 ?>

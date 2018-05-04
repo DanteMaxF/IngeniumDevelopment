@@ -9,9 +9,10 @@
     $alergias = $_GET["alergias"];
     $asistencia = $_GET['asistencia'];
     $idEvento = $_GET["idEvento"];
+    $medicamentos = $_GET["medicamentos"];
     
     
-    if(registrarInvitado($userId,$fechaNacimiento,$talla,$idEstado,$idioma) && registrarRol($userId,1495) && registrarUsuarioEvento($idEvento,$userId)){
+    if(registrarInvitado($userId,$fechaNacimiento,$talla,$idEstado,$idioma,$alergias,$medicamentos) && registrarRol($userId,1495) && registrarUsuarioEvento($idEvento,$userId)){
         header("location: index.php?success=1");
     }else{
         echo "ERROR";
@@ -35,5 +36,7 @@
     echo 'alergias: '.$alergias;
     echo "<br>";
     echo 'asistencia: '.$asistencia;
+    echo "<br>";
+    echo 'medicamentos: '.$medicamentos;
 
 ?>
