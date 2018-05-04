@@ -14991,3 +14991,9 @@
 [04-May-2018 00:06:46 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:20
 [04-May-2018 00:06:46 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
 [04-May-2018 00:06:46 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:722
+[04-May-2018 16:35:42 UTC] PHP Fatal error:  Cannot redeclare getInvitadosEvento() (previously declared in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:231) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1449
+[04-May-2018 16:35:42 UTC] PHP Stack trace:
+[04-May-2018 16:35:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
+[04-May-2018 16:37:08 UTC] PHP Fatal error:  Cannot redeclare generateModalDesasignarInvitado() (previously declared in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:265) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1430
+[04-May-2018 16:37:08 UTC] PHP Stack trace:
+[04-May-2018 16:37:08 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_CEO.php:0
