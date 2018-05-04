@@ -2,56 +2,62 @@
     <article> 
         <br><br>
         <header> 
-            <h1>Usuarios del evento <?php echo $_SESSION["evento"]; ?>:</h1> 
+            <h1>Usuarios <?php echo $_SESSION["evento"]; ?>:</h1> 
         </header><br><br>
             <h2>Invitados</h2>
-            <table class="table"> 
-              <thead class="thead-dark"> 
-                <tr> 
-                  <th scope="col">Nombre</th> 
-                  <th scope="col">Correo</th> 
-                  <th scope="col">Telefono</th> 
-                  <th scope="col">Alergia</th> 
-                  <th scope="col"></th> 
-                  <th scope="col"></th> 
-                </tr> 
-              </thead> 
-              <tbody> 
-                <?php getInvitados($_SESSION["idEvento"]); ?> 
-             </tbody> 
-            </table> 
+              <div class="table-responsive">
+                <table class="table"> 
+                  <thead class="thead-dark"> 
+                    <tr> 
+                      <th scope="col">Nombre</th> 
+                      <th scope="col">Correo</th> 
+                      <th scope="col">Telefono</th> 
+                      <th scope="col">Alergia</th> 
+                      <th scope="col"></th> 
+                      <th scope="col"></th> 
+                    </tr> 
+                  </thead> 
+                  <tbody> 
+                    <?php getInvitados($_SESSION["idEvento"]); ?> 
+                 </tbody> 
+                </table> 
+              </div>
             <h2>Coordinador</h2>
-            <table class="table"> 
-              <thead class="thead-dark"> 
-                <tr> 
-                  <th scope="col">Nombre</th> 
-                  <th scope="col">Correo</th> 
-                  <th scope="col">Telefono</th> 
-                  <th scope="col"></th> 
-                  <th scope="col"></th> 
-                </tr> 
-              </thead> 
-              <tbody> 
-                <?php getCoordinador($_SESSION["idEvento"]); ?> 
-             </tbody> 
-            </table> 
-            <br>
-            <h2>Staff</h2>
-            <table class="table"> 
-              <thead class="thead-dark"> 
-                <tr> 
-                  <th scope="col">Nombre</th> 
-                  <th scope="col">Correo</th> 
-                  <th scope="col">Telefono</th> 
-                  <th scope="col"></th> 
-                  <th scope="col"></th> 
-                </tr> 
-              </thead>
-              <br>
-              <tbody> 
-                <?php getStaff($_SESSION["idEvento"]); ?> 
-             </tbody> 
-            </table> 
+              <div class="table-responsive">
+                <table class="table table-responsive"> 
+                  <thead class="thead-dark"> 
+                    <tr> 
+                      <th scope="col">Nombre</th> 
+                      <th scope="col">Correo</th> 
+                      <th scope="col">Telefono</th> 
+                      <th scope="col"></th> 
+                      <th scope="col"></th> 
+                    </tr> 
+                  </thead> 
+                  <tbody> 
+                    <?php getCoordinador($_SESSION["idEvento"]); ?> 
+                 </tbody> 
+                </table> 
+              </div>
+                <br>
+                <h2>Staff</h2>
+                <div class="table-responsive">
+                <table class="table"> 
+                  <thead class="thead-dark"> 
+                    <tr> 
+                      <th scope="col">Nombre</th> 
+                      <th scope="col">Correo</th> 
+                      <th scope="col">Telefono</th> 
+                      <th scope="col"></th> 
+                      <th scope="col"></th> 
+                    </tr> 
+                  </thead>
+                  <br>
+                  <tbody> 
+                    <?php getStaff($_SESSION["idEvento"]); ?> 
+                 </tbody> 
+                </table> 
+              </div>
         <br> 
         <br> 
         <br><br> 

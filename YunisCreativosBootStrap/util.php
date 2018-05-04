@@ -496,10 +496,11 @@ function getIDUserByMail($correo){
     
 }
 
+/*
 function getEstado($id = -1){
     $db = connectDB();
     if($db != NULL){
-    $query = 'SELECT DISTINCT * from Estado e, Invitado i WHERE e.idEstado = i.idEstado ';
+    $query = 'SELECT * from Estado e, Invitado i WHERE e.idEstado = i.idEstado GROUP BY nombreEstado';
      //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -516,7 +517,7 @@ function getEstado($id = -1){
         }
     }
 }
-
+*/
 
 
 function getAlergias(){
@@ -708,8 +709,8 @@ function getInvitados($idEvento){
     $db = connectDB();
     if($db != NULL){
         $query = 'SELECT *
-        FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i, usuarioAlergia ua, Alergia a  
-        WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol AND ua.idUsuario = u.idUsuario AND a.idAlergia = ua.idAlergia
+        FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i 
+        WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol
         AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Invitado" AND u.Ver=1
         GROUP BY nombreUsuario
         ORDER BY nombreUsuario';
@@ -725,7 +726,7 @@ function getInvitados($idEvento){
                  echo '<td>'.$row["correo"].'</td>';
                  echo '<td>'.$row["telefono"].'</td>';
                  echo '<td>';
-                 getAlergiasByIdUsuario($row["idUsuario"]);
+                 //getAlergiasByIdUsuario($row["idUsuario"]);
                  echo'</td>';
                  echo '<td><button type="button" class="btn btn" data-toggle="modal" data-target="#modalModificarInvitado'.$row["idUsuario"].'">Modificar</button></td>';
                  modalModificarInvitado($row["idUsuario"],$row["nombreUsuario"],$row["correo"],$row["telefono"],$row["descripcion"]);
@@ -868,16 +869,16 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
                     </div>
                     <br>
                      <div class="form-group row">
-                      <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
-                      <div class="col-10">
+                      <label for="example-password-input" class="col-3 col-form-label">Contraseña: </label>
+                      <div class="col-15">
                         <input class="form-control" type="password" value="'.$passwd.'" id="passwd1" name="passwd1" required>
                       </div>
                     </div>
                     <br>
                     <p>
                     <div class="form-group row">
-                      <label for="example-password-input" class="col-2 col-form-label">Verificar Contraseña: </label>
-                      <div class="col-10">
+                      <label for="example-password-input" class="col-3 col-form-label">Verificar Contraseña: </label>
+                      <div class="col-15">
                         <input class="form-control" type="password" value="'.$passwd.'" id="passwd2" name="passwd2" required>
                       </div>
                     </div>
@@ -955,11 +956,9 @@ function getPasswordById($idUsuario){
 function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
    $passwd = getPasswordById($id);
     $rol = getRol($id);
- 
-   
-
+    //echo getTallaById($id);
      echo '<div class="modal fade" id="modalModificarInvitado'.$id.'" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
     
       <!-- Modal content-->
       <div class="modal-content">
@@ -967,6 +966,7 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
           <h4 class="modal-title">Modificar datos de '.$nombre.'</h4>
         </div>
         <div class="modal-body">
+        <div class="container">
            <form action="modificar_invitado.php" method="POST">
                    <div class="form-group">
               <label for="nombre">Nombre completo:</label>
@@ -984,29 +984,22 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
                 </div>
                 <div class="col-md-4 mb-3">  
                   <label>Estado:</label>
-                  <select class="form-control" id="Estado" name="Estado" required>
-                      <option> </option>';
-                        getEstado($id);
+                  <select class="form-control" id="Estado" name="Estado" required>';
+                        getEstadoList($id);
             echo'</select>
                 </div>
                 <div class="col-md-2 mb-3">
                   <label>Talla:</label>
-                  <select class="form-control" id="talla" name="talla" required>
-                      <option> </option>
-                      <option value="S">Chica (S)</option>
-                      <option value="M">Mediana (M)</option>
-                      <option value="L">Grande (L)</option>
-                      <option value="XL">Extra Grande (XL)</option>
-                      <option value="XXL">Extra Extra Grande (XXL)</option>
-                  </select>
+                  <select class="form-control"  id="talla" name="talla" required>';
+                            getTallaList($id);
+            echo'</select>
                 </div>
                 <div class="col-md-2 mb-3">
-                  <label>Seleccionar Idioma:</label>
+                  <label>Idioma:</label>
                   <select class="form-control" id="idioma" name="idioma" required>
-                      <option> </option>
-                      <option value="1">Español</option>
-                      <option value="2">English</option>
-                  </select>
+                      <option> </option>';
+                      getIdioma($id);
+                  echo'</select>
                 </div>
             </div>
             
@@ -1060,7 +1053,7 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
         </div>
         </form>
       </div>
-      
+     </div>
     </div>
   </div>
   <script src="js/password_checker.js"></script> ';
@@ -1401,10 +1394,11 @@ function getFechaNacimiento($idInvitado){
     }
 }
 
-function getTalla($id ){
+
+function getTalla($id = -1){
     $db = connectDB();
     if($db != NULL){
-    $query = 'SELECT  * from Invitado i WHERE idInvitado = "'.$id.'"';
+    $query = 'SELECT * from Invitado i, Talla t WHERE i.talla = t.idTalla GROUP BY descripcionTalla';
      //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -1412,11 +1406,17 @@ function getTalla($id ){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 echo '<option>'.$row["talla"].'</option>';
+                echo '<option';
+                  if ($row["idInvitado"] == $id) {
+                     echo " selected";
+                 }
+                 echo'>'.$row["descripcionTalla"].'</option>';
             }
         }
     }
 }
+
+
 
 function modalModificarEvento($idEvento){
     $descripcionEvento = getDescripcionEvento($idEvento);
@@ -1557,5 +1557,136 @@ function getPlantillaById($idPlantilla){
     }
 }
 
+function getIdioma($id = -1){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT * FROM Invitado CROSS JOIN Idioma GROUP BY nombreIdioma';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                echo '<option';
+                  if ($row["idInvitado"] == $id) {
+                     echo "selected";
+                 }
+                 echo'>'.$row["nombreIdioma"].'</option>';
+            }
+        }
+    }
+}
+
+function plantillaTable(){
+     $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT * 
+                  FROM Plantilla
+                  WHERE Ver=1';
+        $results = mysqli_query($db,$query);
+         //Pa' debugear
+    //var_dump($query); 
+     // die('');
+        disconnectDB($db);
+        if(mysqli_num_rows($results) == 0){
+            echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+        } 
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<tr>';
+                 echo '<td>'.$row["nombrePlantilla"].'</td>';
+                 echo '<td>'.$row["colorFondo"].'</td>';
+                 echo '<td>'.$row["colorBotones"].'</td>';
+                 echo '<td>'.$row["colorTexto"].'</td>';
+                 echo '<td>'.$row["nombreImagen"].'</td>';
+                 echo '<td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalModificarEvento'.$row["idDiseno"].'">Modificar</button></td>';
+                // modalModificarEvento($idEvento);
+                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idDiseno"].'">Eliminar</button></td>';
+                 //generateModalDesasignarInvitado($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '</tr>';
+            }
+        }
+    }
+    
+}
+
+function getEstadoById($id){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT * from Estado e, Invitado i WHERE e.idEstado = i.idEstado AND i.idInvitado = "'.$id.'"';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["nombreEstado"];
+            }
+        }
+    }
+}
+
+function getEstadoList($id){
+    $db = connectDB();
+    if($db != NULL){
+    $not = getEstadoById($id);
+    echo '<option value="selected">'.$not.'</option>';
+    $query = 'SELECT *
+                FROM Estado 
+                WHERE nombreEstado != "'.$not.'"';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<option>'.$row["nombreEstado"].'</option>';
+            }
+        }
+    }  
+}
+
+function getTallaById($id){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT * from Talla t, Invitado i WHERE t.idTalla = i.talla AND i.idInvitado = "'.$id.'"';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                return $row["DescripcionTalla"];
+            }
+        }
+    }
+}
+
+function getTallaList($id){
+    $db = connectDB();
+    if($db != NULL){
+    $not = getTallaById($id);
+    echo '<option value="selected">'.$not.'</option>';
+    $query = 'SELECT *
+                FROM Talla
+                WHERE DescripcionTalla != "'.$not.'"';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<option>'.$row["DescripcionTalla"].'</option>';
+            }
+        }
+    }  
+}
 
 ?>
