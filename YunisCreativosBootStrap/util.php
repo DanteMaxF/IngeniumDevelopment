@@ -1,5 +1,583 @@
 <?php
 
+
+
+
+function modalModificarStaff($id,$nombre,$correo, $telefono){
+    $passwd = getPasswordById($id);
+    $rol = getRol($id);
+     echo '<div class="modal fade" id="modalModificarStaff'.$id.'" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modificar datos de '.$nombre.'</h4>
+        </div>
+        <div class="modal-body">
+           <form action="modificar_staff.php?id='.$id.',?nombreUsuario='.$nombre.',correo='.$correo.'" method="POST">
+                    <div class="form-group"
+                        <label>Rol:</label>
+                        <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>
+                            <option> </option>';
+                                getRollList();
+                       echo '</select>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                      <label for="nombre">Nombre completo:</label>
+                      <input type="text" class="form-control" id="usr" name="nombreUsuario" value="'.$nombre.'" required>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group row">
+                      <label for="example-email-input" class="col-2 col-form-label">Correo:</label>
+                      <div class="col-10">
+                        <input class="form-control" type="email" value="'.$correo.'" id="example-email-input" name="correo" required>
+                      </div>
+                    </div>
+                    <br>
+                     <div class="form-group row">
+                      <label for="example-password-input" class="col-3 col-form-label">Contraseña: </label>
+                      <div class="col-15">
+                        <input class="form-control" type="password" value="'.$passwd.'" id="passwd1" name="passwd1" required>
+                      </div>
+                    </div>
+                    <br>
+                    <p>
+                    <div class="form-group row">
+                      <label for="example-password-input" class="col-3 col-form-label">Verificar Contraseña: </label>
+                      <div class="col-15">
+                        <input class="form-control" type="password" value="'.$passwd.'" id="passwd2" name="passwd2" required>
+                      </div>
+                    </div>
+                    <br>
+                     <div class="form-group row">
+                      <label for="example-tel-input" class="col-2 col-form-label">Teléfono:</label>
+                      <div class="col-10">
+                        <input class="form-control" type="tel" value="'.$telefono.'" id="example-tel-input" name="telefono" required>
+                      </div>
+                    </div>
+                    <br>
+                    <br>
+              <button type="submit" class="btn btn-success" name="action">Registrar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+                   
+                
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" name="action">Registrar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+        </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  <script src="js/password_checker.js"></script> ';
+}
+
+function modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
+     $db = connectDB();
+     //Pa' debugear
+    //var_dump($passwd); 
+      //die('');
+    if($db != NULL){
+         $query = 'UPDATE Usuario SET nombreUsuario = "'.$nombreUsuario.'" ,passwd = "'.$passwd.'",correo = "'.$correo.'",telefono = "'.$telefono.'" WHERE idUsuario = "'.$idUsuario.'"';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("isssi", $idUsuario, $nombreUsuario, $passwd, $correo, $telefono)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        disconnectDB($db);
+        return true;
+    } 
+    return false;
+}
+
+
+function getPasswordById($idUsuario){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT passwd from Usuario WHERE idUsuario ="'.$idUsuario.'"';
+        //Pa' debugear
+        //var_dump($query); 
+       // die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["passwd"];
+            }
+        
+        }
+    }
+    
+}
+
+function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
+   $passwd = getPasswordById($id);
+    $rol = getRol($id);
+    //echo getTallaById($id);
+     echo '<div class="modal fade" id="modalModificarInvitado'.$id.'" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modificar datos de '.$nombre.'</h4>
+        </div>
+        <div class="modal-body">
+        <div class="container">
+           <form action="modificar_invitado.php" method="POST">
+                   <div class="form-group">
+              <label for="nombre">Nombre completo:</label>
+              <input type="text" class="form-control" value="'.$nombre.'" id="usr" name = "nombreUsuario" required>
+              
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="fecha_nac">Fecha Nacimiento:</label>
+                  <input type="date" class="form-control" id="usr" value="';
+                  
+                   echo getFechaNacimiento($id);
+                  
+                   echo '" name = "fechaNacimiento" required>
+                </div>
+                <div class="col-md-4 mb-3">  
+                  <label>Estado:</label>
+                  <select class="form-control" id="Estado" name="Estado" required>';
+                        getEstadoList($id);
+            echo'</select>
+                </div>
+                <div class="col-md-2 mb-3">
+                  <label>Talla:</label>
+                  <select class="form-control"  id="talla" name="talla" required>';
+                            getTallaList($id);
+            echo'</select>
+                </div>
+                <div class="col-md-2 mb-3">
+                  <label>Idioma:</label>
+                  <select class="form-control" id="idioma" name="idioma" required>
+                      <option> </option>';
+                      getIdioma($id);
+                  echo'</select>
+                </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="telefono">Teléfono:</label>
+                <input class="form-control" type="tel" value="'.$telefono.'" id="telefono" name="telefono" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="correo">Correo:</label>
+                <input class="form-control" type="email" value="'.$correo.'" id="correo" name="correo" required>
+              </div>
+              
+            </div>
+
+            <div class="form-group row">
+              <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
+              <div class="col-10">
+                <input class="form-control" type="password" value="'.$passwd.'" id="passwd1" name="passwd1" required>
+              </div>
+            </div>
+              
+            <div class="form-group row">
+              <label for="example-password-input" class="col-2 col-form-label">Verificar Contraseña: </label>
+              <div class="col-10">
+                <input class="form-control" type="password" value="'.$passwd.'" id="passwd2" name="passwd2" required>
+              </div>
+            </div>
+            <div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="asistenciaSi" name="asistencia" class="custom-control-input" value="yes">
+                  <label class="custom-control-label" for="asistenciaSi">Asistiré</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="asistenciaNo" name="asistencia" class="custom-control-input" value="no">
+                  <label class="custom-control-label" for="asistenciaNo">NO asistiré</label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label>Alergias (Si padeces más de una, más adelante podrás registrar las que falten más adelante):</label>
+                <select class="form-control" id="alergias" name="alergias" value="'.$alergias.'">
+                  <option> </option>
+                   <?php getAlergias() ?>
+                </select>
+            </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" name="action">Registrar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+        </div>
+        </form>
+      </div>
+     </div>
+    </div>
+  </div>
+  <script src="js/password_checker.js"></script> ';
+}
+
+function getInvitadosEvento($idEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT * 
+                FROM Usuario U, Evento E, invitadoEvento IE, Invitado INV, Idioma IDI, Estado EST
+                WHERE E.idEvento=IE.idEvento AND U.idUsuario=IE.idInvitado AND INV.idInvitado=IE.idInvitado AND IDI.idIdioma=INV.idIdioma AND EST.idEstado=INV.idEstado
+                AND IE.idEvento ='.$idEvento.' 
+                ORDER BY nombreUsuario';
+        $results = mysqli_query($db,$query);
+         //Pa' debugear
+    //var_dump($query); 
+     // die('');
+        disconnectDB($db);
+        if(mysqli_num_rows($results) == 0){
+            echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+        } 
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<tr>';
+                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["correo"].'</td>';
+                 echo '<td>'.$row["telefono"].'</td>';
+                 echo '<td>'.$row["fechaNacimiento"].'</td>';
+                 echo '<td>'.$row["talla"].'</td>';
+                 echo '<td>'.$row["nombreIdioma"].'</td>';
+                 echo '<td>'.$row["nombreEstado"].'</td>';
+                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                 echo generateModalDesasignarInvitado($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '</tr>';
+            }
+        }
+    }
+}
+
+function generateModalDesasignarInvitado($id,$nombre) {
+    echo '<div class="modal fade" id="myModal'.$id.'" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <p>¿Estás seguro que quieres desasignar a <strong>'.$nombre.'</strong>?</p>
+        </div>
+        <div class="modal-footer">
+          <a type="button" class="btn btn-danger" href="desasignar_invitado.php?idInvitado='.$id.'">Borrar</a>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>';
+}
+
+function desasignarInvitado($idEvento,$idInvitado){
+  $db = connectDB();
+        if ($db != NULL) {
+            // insert command specification
+            $query = 'DELETE FROM invitadoEvento WHERE idEvento IN (SELECT idEvento FROM Evento WHERE idEvento=?) AND idInvitado=?';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("ii", $idEvento, $idInvitado)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
+}
+
+function getInvitadosList($idEvento){
+    $db = connectDB();
+    if ($db != NULL) {
+        
+        $query = '  SELECT DISTINCT U.nombreUsuario, U.idUsuario
+                    FROM  Usuario U, invitadoEvento IE
+                    WHERE U.idUsuario=IE.idInvitado 
+                    	  AND U.idUsuario NOT IN (SELECT I.idInvitado FROM invitadoEvento I WHERE I.idEvento='.$idEvento.')
+                    ORDER BY U.nombreUsuario';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo '<option value='.$row["idUsuario"].'>';
+                echo $row["nombreUsuario"];
+                echo "</option>";
+            }
+        }
+    }
+}
+
+function asignarInvitado($idEvento, $idInvitado){
+    $db = connectDB();
+ 
+      if ($db != NULL) {
+
+            // insert command specification
+            $query='INSERT INTO  invitadoEvento(idEvento,idInvitado,fechaUsuarioEvento) VALUES(?,?,CURRENT_TIMESTAMP)';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("ii", $idEvento,$idInvitado)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
+}
+
+function getAlergiasByIdUsuario($idUsuario){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT a.descripcion
+    FROM Alergia a, Usuario u, usuarioAlergia ua
+    WHERE u.idUsuario = ua.idUsuario
+    AND a.idAlergia = ua.idAlergia
+    AND u.idUsuario ="'.$idUsuario.'"';
+     //Pa' debugear
+    //var_dump($query); 
+    //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            echo'<ul>';
+             while ($row = mysqli_fetch_assoc($results)) {
+                echo '<li>'.$row["descripcion"].'</li>';
+             }
+             echo'<ul>';
+        }
+    }
+}
+
+function modalModificarEvento($idEvento){
+    $descripcionEvento = getDescripcionEvento($idEvento);
+    $nombreEmpresa = getNombreEventoByIdEvento($idEvento);
+    $estadoEvento = getStatusEvento($idEvento);
+    echo'<div class="modal fade" id="modalModificarEvento'.$id.'" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Modificar datos:</h4>
+        </div>
+        <div class="modal-body">
+           <form action="modificar_staff.php" method="POST">
+                    <input type="hidden" name="idEvento" value="'.$id.'">
+                    <div class="form-group">
+                      <label for="nombre">Nombre Empresa:</label>
+                      <input type="text" class="form-control" name="nombreEmpresa" value="'.$nombreEmpresa.'" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="nombre">Descripcion del evento:</label>
+                      <input type="text" class="form-control" name="descripcionEvento" value="'.$descripcionEvento.'" required>
+                    </div>
+                     <div class="form-group">
+                      <label for="nombre">Estado del evento:</label>
+                      <input type="text" class="form-control" name="estadoEvento" value="'.$estadoEvento.'" required>
+                    </div>
+                    
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" name="action">Registrar</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>';
+}
+
+
+function getIdPlantillaByIdEvento($idEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT idDiseno from eventoPlantilla WHERE idEvento ="'.$idEvento.'"';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["idDiseno"];
+            }
+        }
+    }
+    
+}
+
+
+
+
+function getIdioma($id = -1){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT * FROM Invitado CROSS JOIN Idioma GROUP BY nombreIdioma';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                echo '<option';
+                  if ($row["idInvitado"] == $id) {
+                     echo "selected";
+                 }
+                 echo'>'.$row["nombreIdioma"].'</option>';
+            }
+        }
+    }
+}
+
+function plantillaTable(){
+     $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT * 
+                  FROM Plantilla
+                  WHERE Ver=1';
+        $results = mysqli_query($db,$query);
+         //Pa' debugear
+    //var_dump($query); 
+     // die('');
+        disconnectDB($db);
+        if(mysqli_num_rows($results) == 0){
+            echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+        } 
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<tr>';
+                 echo '<td>'.$row["nombrePlantilla"].'</td>';
+                 echo '<td>'.$row["colorFondo"].'</td>';
+                 echo '<td>'.$row["colorBotones"].'</td>';
+                 echo '<td>'.$row["colorTexto"].'</td>';
+                 echo '<td>'.$row["nombreImagen"].'</td>';
+                 echo '<td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalModificarEvento'.$row["idDiseno"].'">Modificar</button></td>';
+                // modalModificarEvento($idEvento);
+                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idDiseno"].'">Eliminar</button></td>';
+                 //generateModalDesasignarInvitado($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '</tr>';
+            }
+        }
+    }
+    
+}
+
+function getEstadoById($id){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT * from Estado e, Invitado i WHERE e.idEstado = i.idEstado AND i.idInvitado = "'.$id.'"';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["nombreEstado"];
+            }
+        }
+    }
+}
+
+function getEstadoList($id){
+    $db = connectDB();
+    if($db != NULL){
+    $not = getEstadoById($id);
+    echo '<option value="selected">'.$not.'</option>';
+    $query = 'SELECT *
+                FROM Estado 
+                WHERE nombreEstado != "'.$not.'"';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<option>'.$row["nombreEstado"].'</option>';
+            }
+        }
+    }  
+}
+
+function getTallaById($id){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT * from Talla t, Invitado i WHERE t.idTalla = i.talla AND i.idInvitado = "'.$id.'"';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                return $row["DescripcionTalla"];
+            }
+        }
+    }
+}
+
+function getTallaList($id){
+    $db = connectDB();
+    if($db != NULL){
+    $not = getTallaById($id);
+    echo '<option value="selected">'.$not.'</option>';
+    $query = 'SELECT *
+                FROM Talla
+                WHERE DescripcionTalla != "'.$not.'"';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<option>'.$row["DescripcionTalla"].'</option>';
+            }
+        }
+    }  
+}
+
+?>
+<?php
+
 //CONECTAR CON BASE DE DATOS (USAR EN CADA FUNCION)
 function connectDB(){
     $developerMode = true; //Cambiar a true solo cuando se vaya a pasar al entorno de produccion
@@ -829,238 +1407,12 @@ function modalEliminarInvitado($id,$nombre) {
   </div>';
 }
 
-function modalModificarStaff($id,$nombre,$correo, $telefono){
-    $passwd = getPasswordById($id);
-    $rol = getRol($id);
-     echo '<div class="modal fade" id="modalModificarStaff'.$id.'" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Modificar datos de '.$nombre.'</h4>
-        </div>
-        <div class="modal-body">
-           <form action="modificar_staff.php?id='.$id.',?nombreUsuario='.$nombre.',correo='.$correo.'" method="POST">
-                    <div class="form-group"
-                        <label>Rol:</label>
-                        <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>
-                            <option> </option>';
-                                getRollList();
-                       echo '</select>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                      <label for="nombre">Nombre completo:</label>
-                      <input type="text" class="form-control" id="usr" name="nombreUsuario" value="'.$nombre.'" required>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="form-group row">
-                      <label for="example-email-input" class="col-2 col-form-label">Correo:</label>
-                      <div class="col-10">
-                        <input class="form-control" type="email" value="'.$correo.'" id="example-email-input" name="correo" required>
-                      </div>
-                    </div>
-                    <br>
-                     <div class="form-group row">
-                      <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
-                      <div class="col-10">
-                        <input class="form-control" type="password" value="'.$passwd.'" id="passwd1" name="passwd1" required>
-                      </div>
-                    </div>
-                    <br>
-                    <p>
-                    <div class="form-group row">
-                      <label for="example-password-input" class="col-2 col-form-label">Verificar Contraseña: </label>
-                      <div class="col-10">
-                        <input class="form-control" type="password" value="'.$passwd.'" id="passwd2" name="passwd2" required>
-                      </div>
-                    </div>
-                    <br>
-                     <div class="form-group row">
-                      <label for="example-tel-input" class="col-2 col-form-label">Teléfono:</label>
-                      <div class="col-10">
-                        <input class="form-control" type="tel" value="'.$telefono.'" id="example-tel-input" name="telefono" required>
-                      </div>
-                    </div>
-                    <br>
-                    <br>
-              <button type="submit" class="btn btn-success" name="action">Registrar</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
-                   
-                
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-success" name="action">Registrar</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
-        </div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
-  <script src="js/password_checker.js"></script> ';
-}
-
-function modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
-     $db = connectDB();
-     //Pa' debugear
-    //var_dump($passwd); 
-      //die('');
-    if($db != NULL){
-         $query = 'UPDATE Usuario SET nombreUsuario = "'.$nombreUsuario.'" ,passwd = "'.$passwd.'",correo = "'.$correo.'",telefono = "'.$telefono.'" WHERE idUsuario = "'.$idUsuario.'"';
-        // Preparing the statement 
-         if (!($statement = $db->prepare($query))) {
-            die("Preparation failed: (" . $db->errno . ") " . $db->error);
-          }
-        // Binding statement params 
-        if (!$statement->bind_param("isssi", $idUsuario, $nombreUsuario, $passwd, $correo, $telefono)) {
-            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
-        }
-        // Executing the statement
-        if (!$statement->execute()) {
-            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-        } 
-        disconnectDB($db);
-        return true;
-    } 
-    return false;
-}
 
 
-function getPasswordById($idUsuario){
-    $db = connectDB();
-    if($db != NULL){
-        $query = 'SELECT passwd from Usuario WHERE idUsuario ="'.$idUsuario.'"';
-        //Pa' debugear
-        //var_dump($query); 
-       // die('');
-        $results = mysqli_query($db,$query);
-        disconnectDB($db);
-        if(mysqli_num_rows($results) > 0){
-             while ($row = mysqli_fetch_assoc($results)) {
-                 return $row["passwd"];
-            }
-        
-        }
-    }
-    
-}
-
-function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
-   $passwd = getPasswordById($id);
-    $rol = getRol($id);
- 
-   
-
-     echo '<div class="modal fade" id="modalModificarInvitado'.$id.'" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Modificar datos de '.$nombre.'</h4>
-        </div>
-        <div class="modal-body">
-           <form action="modificar_invitado.php" method="POST">
-                   <div class="form-group">
-              <label for="nombre">Nombre completo:</label>
-              <input type="text" class="form-control" value="'.$nombre.'" id="usr" name = "nombreUsuario" required>
-              
-            </div>
-            <div class="form-row">
-                <div class="col-md-4 mb-3">
-                  <label for="fecha_nac">Fecha Nacimiento:</label>
-                  <input type="date" class="form-control" id="usr" value="';
-                  
-                   echo getFechaNacimiento($id);
-                  
-                   echo '" name = "fechaNacimiento" required>
-                </div>
-                <div class="col-md-4 mb-3">  
-                  <label>Estado:</label>
-                  <select class="form-control" id="Estado" name="Estado" required>
-                      <option> </option>';
-                        getEstado($id);
-            echo'</select>
-                </div>
-                <div class="col-md-2 mb-3">
-                  <label>Talla:</label>
-                  <select class="form-control" id="talla" name="talla" required>
-                      <option> </option>
-                      <option value="S">Chica (S)</option>
-                      <option value="M">Mediana (M)</option>
-                      <option value="L">Grande (L)</option>
-                      <option value="XL">Extra Grande (XL)</option>
-                      <option value="XXL">Extra Extra Grande (XXL)</option>
-                  </select>
-                </div>
-                <div class="col-md-2 mb-3">
-                  <label>Seleccionar Idioma:</label>
-                  <select class="form-control" id="idioma" name="idioma" required>
-                      <option> </option>
-                      <option value="1">Español</option>
-                      <option value="2">English</option>
-                  </select>
-                </div>
-            </div>
-            
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="telefono">Teléfono:</label>
-                <input class="form-control" type="tel" value="'.$telefono.'" id="telefono" name="telefono" required>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="correo">Correo:</label>
-                <input class="form-control" type="email" value="'.$correo.'" id="correo" name="correo" required>
-              </div>
-              
-            </div>
-
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
-              <div class="col-10">
-                <input class="form-control" type="password" value="'.$passwd.'" id="passwd1" name="passwd1" required>
-              </div>
-            </div>
-              
-            <div class="form-group row">
-              <label for="example-password-input" class="col-2 col-form-label">Verificar Contraseña: </label>
-              <div class="col-10">
-                <input class="form-control" type="password" value="'.$passwd.'" id="passwd2" name="passwd2" required>
-              </div>
-            </div>
-            <div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="asistenciaSi" name="asistencia" class="custom-control-input" value="yes">
-                  <label class="custom-control-label" for="asistenciaSi">Asistiré</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="asistenciaNo" name="asistencia" class="custom-control-input" value="no">
-                  <label class="custom-control-label" for="asistenciaNo">NO asistiré</label>
-                </div>
-            </div>
 
 
-            <div class="form-group">
-                <label>Alergias (Si padeces más de una, más adelante podrás registrar las que falten más adelante):</label>
-                <select class="form-control" id="alergias" name="alergias" value="'.$alergias.'">
-                  <option> </option>
-                   <?php getAlergias() ?>
-                </select>
-            </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-success" name="action">Registrar</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
-        </div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
-  <script src="js/password_checker.js"></script> ';
-}
+
+
 
 function getInvitadosEvento($idEvento){
     $db = connectDB();
@@ -1414,44 +1766,7 @@ function getTalla($id ){
     }
 }
 
-function modalModificarEvento($idEvento){
-    $descripcionEvento = getDescripcionEvento($idEvento);
-    $nombreEmpresa = getNombreEventoByIdEvento($idEvento);
-    $estadoEvento = getStatusEvento($idEvento);
-    echo'<div class="modal fade" id="modalModificarEvento'.$id.'" role="dialog">
-    <div class="modal-dialog">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Modificar datos:</h4>
-        </div>
-        <div class="modal-body">
-           <form action="modificar_staff.php" method="POST">
-                    <input type="hidden" name="idEvento" value="'.$id.'">
-                    <div class="form-group">
-                      <label for="nombre">Nombre Empresa:</label>
-                      <input type="text" class="form-control" name="nombreEmpresa" value="'.$nombreEmpresa.'" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="nombre">Descripcion del evento:</label>
-                      <input type="text" class="form-control" name="descripcionEvento" value="'.$descripcionEvento.'" required>
-                    </div>
-                     <div class="form-group">
-                      <label for="nombre">Estado del evento:</label>
-                      <input type="text" class="form-control" name="estadoEvento" value="'.$estadoEvento.'" required>
-                    </div>
-                    
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-success" name="action">Registrar</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
-        </div>
-        </form>
-      </div>
-    </div>
-  </div>';
-}
 
 function getNombreEventoByIdEvento($idEvento){
     $db = connectDB();
