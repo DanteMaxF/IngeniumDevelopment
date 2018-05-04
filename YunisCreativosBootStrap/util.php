@@ -2,12 +2,12 @@
 
 //CONECTAR CON BASE DE DATOS (USAR EN CADA FUNCION)
 function connectDB(){
-    $developerMode = false; //Cambiar a true solo cuando se vaya a pasar al entorno de produccion
+    $developerMode = true; //Cambiar a true solo cuando se vaya a pasar al entorno de produccion
     
     if ($developerMode){
-        $mysql = mysqli_connect("localhost","cpses_hg3QUkUOVU@localhost","Mandala11:11","YunisCreativos");
+        $mysql = mysqli_connect("localhost","root","","YunisCreativos");
     }else{
-         $mysql = mysqli_connect("localhost","root","","YunisCreativos");
+         $mysql = mysqli_connect("localhost","DanteMaxF","Ingenium123","YunisCreativos");
     }
     $mysql->set_charset("utf8");
     return $mysql;
@@ -98,7 +98,7 @@ function getEventosDescripcion(){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT * FROM Evento WHERE Ver="1"';
+        $query = 'SELECT * FROM Evento WHERE Ver="1" ORDER BY descripcionEvento ASC';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -159,7 +159,7 @@ function getStaffEvento($idEvento){
                  echo '<tr>';
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
-                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Expulsar</button></td>';
                  generateModalDesasignarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
              } 
@@ -177,10 +177,10 @@ function generateModalDesasignarStaff($id,$nombre) {
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
-          <p>¿Estás seguro que quieres desasignar a <strong>'.$nombre.'</strong>?</p>
+          <p>¿Estás seguro que quieres expulsar a <strong>'.$nombre.'</strong>?</p>
         </div>
         <div class="modal-footer">
-          <a type="button" class="btn btn-danger" href="desasignar_staff.php?idStaff='.$id.'">Borrar</a>
+          <a type="button" class="btn btn-danger" href="desasignar_staff.php?idStaff='.$id.'">Expulsar</a>
           <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
         </div>
       </div>
@@ -427,17 +427,17 @@ function asignarStaff($idEvento,$idStaff){
 
 //registrarInvitado($idInvitado,$correo,$fechaNacimiento,$talla,$idEstado);
 //FUNCION PARA REGISTRAR INVITADO
-function registrarInvitado($idInvitado,$fechaNacimiento, $talla, $idEstado, $idIdioma){
+function registrarInvitado($idInvitado,$fechaNacimiento, $talla, $idEstado, $idIdioma,$alergias,$medicamentos){
     $db = connectDB();
     if($db != NULL){
-     $query = 'INSERT INTO Invitado(idInvitado,fechaNacimiento,talla,idEstado,idIdioma) VALUES(?,?,?,?,?)';
+     $query = 'INSERT INTO Invitado(idInvitado,fechaNacimiento,talla,idEstado,idIdioma,alergias,medicamentos) VALUES(?,?,?,?,?,?,?)';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
 
-        if (!$statement->bind_param("issii",$idInvitado, $fechaNacimiento, $talla, $idEstado,$idIdioma)) {
+        if (!$statement->bind_param("issiiss",$idInvitado, $fechaNacimiento, $talla, $idEstado,$idIdioma,$alergias,$medicamentos)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -496,10 +496,10 @@ function getIDUserByMail($correo){
     
 }
 
-function getEstado($id = -1){
+function getEstado(){
     $db = connectDB();
     if($db != NULL){
-    $query = 'SELECT DISTINCT * from Estado e, Invitado i WHERE e.idEstado = i.idEstado ';
+    $query = 'SELECT * from Estado ORDER BY nombreEstado';
      //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -507,11 +507,7 @@ function getEstado($id = -1){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 echo '<option value='.$row["idEstado"].'"';
-                  if ($row["idInvitado"] == $id) {
-                     echo " selected";
-                 }
-                 echo'>'.$row["nombreEstado"].'</option>';
+                 echo '<option value='.$row["idEstado"].'>'.$row["nombreEstado"].'</option>';
             }
         }
     }
@@ -1092,7 +1088,7 @@ function getInvitadosEvento($idEvento){
                  echo '<td>'.$row["talla"].'</td>';
                  echo '<td>'.$row["nombreIdioma"].'</td>';
                  echo '<td>'.$row["nombreEstado"].'</td>';
-                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Expulsar</button></td>';
                  echo generateModalDesasignarInvitado($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
             }
@@ -1110,10 +1106,10 @@ function generateModalDesasignarInvitado($id,$nombre) {
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
-          <p>¿Estás seguro que quieres desasignar a <strong>'.$nombre.'</strong>?</p>
+          <p>¿Estás seguro que quieres expulsar a <strong>'.$nombre.'</strong>?</p>
         </div>
         <div class="modal-footer">
-          <a type="button" class="btn btn-danger" href="desasignar_invitado.php?idInvitado='.$id.'">Borrar</a>
+          <a type="button" class="btn btn-danger" href="desasignar_invitado.php?idInvitado='.$id.'">Expulsar</a>
           <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
         </div>
       </div>
@@ -1491,10 +1487,10 @@ function getStatusEvento($idEvento){
     }
 }
 
-function getIdPlantillaByIdEvento($idEvento){
+function getLastEvent($idUser){
     $db = connectDB();
     if($db != NULL){
-        $query = 'SELECT idDiseno from eventoPlantilla WHERE idEvento ="'.$idEvento.'"';
+        $query = 'SELECT idEvento FROM invitadoEvento WHERE idInvitado='.$idUser.' ORDER BY fechaUsuarioEvento DESC LIMIT 1';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -1557,5 +1553,34 @@ function getPlantillaById($idPlantilla){
     }
 }
 
+
+function uploadMsg($idUser, $idEvent, $msg){
+    $db = connectDB();
+ 
+      if ($db != NULL) {
+
+            // insert command specification
+            $query='INSERT INTO  chat (idUsuario, idEvento, fechaMensaje, mensaje)
+                    VALUES (?,?,CURRENT_TIMESTAMP,?)';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("iis", $idUser, $idEvent, $msg)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false; 
+    
+}
 
 ?>

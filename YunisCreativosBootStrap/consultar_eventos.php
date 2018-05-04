@@ -1,6 +1,8 @@
 <?php 
     session_start();
     require_once("util.php");
+    unset($_SESSION["evento"]);
+    unset($_SESSION["idEvento"]);
     if( isset($_SESSION["idRol"]) ){
         
         include("partial/_statusRegistroEliminarStaff.html");
@@ -18,16 +20,17 @@
             $prueba=1;
             $_SESSION["idEvento"] =  $_GET["eventInput"];
             $_SESSION["evento"] = getDescripcionEvento($_SESSION["idEvento"]);
-                require_once('bdd.php');
+            echo '<h1 class="text-center">Evento '.$_SESSION["evento"].'</h1>';
+            include("partial/_FullCalendar.html");
+            include("partial/_consultar_eventos.html");
+            require_once('bdd.php');
             $sql = 'SELECT id, title, start, end, color FROM events WHERE idEvento = "'.$_SESSION["idEvento"].'"';
-    $req = $bdd->prepare($sql);
-    $req->execute();
-    $events = $req->fetchAll();
-    include("partial/_FullCalendar.html");
-   
-
-            include("partial/_consultar_eventos.html"); 
-          
+            $req = $bdd->prepare($sql);
+            $req->execute();
+            $events = $req->fetchAll();
+            
+            
+             
         }
          
       //  include("partial/_scripts.html");
@@ -77,7 +80,7 @@
                     edit(event);
                 },
                 events: [
-                <?PHP 
+                <?PHP
                     foreach($events as $event):
                     $start = explode(" ", $event['start']);
                     $end = explode(" ", $event['end']);
