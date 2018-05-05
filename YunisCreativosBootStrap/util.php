@@ -1635,7 +1635,7 @@ function getLastEvent($idUser){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 return $row["idDiseno"];
+                 return $row["idEvento"];
             }
         }
     }
