@@ -15050,3 +15050,292 @@
 [04-May-2018 18:17:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_coordinador.php on line 54
 [04-May-2018 18:17:35 UTC] PHP Stack trace:
 [04-May-2018 18:17:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_coordinador.php:0
+[04-May-2018 19:04:46 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_coordinador.php on line 54
+[04-May-2018 19:04:46 UTC] PHP Stack trace:
+[04-May-2018 19:04:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_coordinador.php:0
+[04-May-2018 19:32:39 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php on line 84
+[04-May-2018 19:32:39 UTC] PHP Stack trace:
+[04-May-2018 19:32:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[04-May-2018 23:49:33 UTC] PHP Fatal error:  Call to undefined function getIdiomaById() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1781
+[04-May-2018 23:49:33 UTC] PHP Stack trace:
+[04-May-2018 23:49:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[04-May-2018 23:49:33 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[04-May-2018 23:49:33 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[04-May-2018 23:49:33 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1272
+[04-May-2018 23:49:33 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:169
+[04-May-2018 23:50:06 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1766
+[04-May-2018 23:50:06 UTC] PHP Stack trace:
+[04-May-2018 23:50:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[04-May-2018 23:50:06 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[04-May-2018 23:50:06 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[04-May-2018 23:50:06 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1272
+[04-May-2018 23:50:06 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:169
+[04-May-2018 23:50:06 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1781
+[04-May-2018 23:50:06 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1766
+[04-May-2018 23:50:06 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1766
+[04-May-2018 23:50:06 UTC] PHP Stack trace:
+[04-May-2018 23:50:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[04-May-2018 23:50:06 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[04-May-2018 23:50:06 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[04-May-2018 23:50:06 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1272
+[04-May-2018 23:50:06 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:169
+[04-May-2018 23:50:06 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1781
+[04-May-2018 23:50:06 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1766
+[04-May-2018 23:50:06 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1766
+[04-May-2018 23:50:06 UTC] PHP Stack trace:
+[04-May-2018 23:50:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[04-May-2018 23:50:06 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[04-May-2018 23:50:06 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[04-May-2018 23:50:06 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1272
+[04-May-2018 23:50:06 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:169
+[04-May-2018 23:50:06 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1781
+[04-May-2018 23:50:06 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1766
+[04-May-2018 23:50:06 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1766
+[04-May-2018 23:50:06 UTC] PHP Stack trace:
+[04-May-2018 23:50:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[04-May-2018 23:50:06 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[04-May-2018 23:50:06 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[04-May-2018 23:50:06 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1272
+[04-May-2018 23:50:06 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:169
+[04-May-2018 23:50:06 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1781
+[04-May-2018 23:50:06 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1766
+[04-May-2018 23:51:44 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1766
+[04-May-2018 23:51:44 UTC] PHP Stack trace:
+[04-May-2018 23:51:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[04-May-2018 23:51:44 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[04-May-2018 23:51:44 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[04-May-2018 23:51:44 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1272
+[04-May-2018 23:51:44 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:169
+[04-May-2018 23:51:44 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1781
+[04-May-2018 23:51:44 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1766
+[04-May-2018 23:51:44 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1766
+[04-May-2018 23:51:44 UTC] PHP Stack trace:
+[04-May-2018 23:51:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[04-May-2018 23:51:44 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[04-May-2018 23:51:44 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[04-May-2018 23:51:44 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1272
+[04-May-2018 23:51:44 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:169
+[04-May-2018 23:51:44 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1781
+[04-May-2018 23:51:44 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1766
+[04-May-2018 23:51:44 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1766
+[04-May-2018 23:51:44 UTC] PHP Stack trace:
+[04-May-2018 23:51:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[04-May-2018 23:51:44 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[04-May-2018 23:51:44 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[04-May-2018 23:51:44 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1272
+[04-May-2018 23:51:44 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:169
+[04-May-2018 23:51:44 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1781
+[04-May-2018 23:51:44 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1766
+[04-May-2018 23:51:44 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1766
+[04-May-2018 23:51:44 UTC] PHP Stack trace:
+[04-May-2018 23:51:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[04-May-2018 23:51:44 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[04-May-2018 23:51:44 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[04-May-2018 23:51:44 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1272
+[04-May-2018 23:51:44 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:169
+[04-May-2018 23:51:44 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1781
+[04-May-2018 23:51:44 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1766
+[05-May-2018 00:09:32 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:09:32 UTC] PHP Stack trace:
+[05-May-2018 00:09:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:09:32 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:09:32 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:09:32 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:09:32 UTC] PHP   5. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:128
+[05-May-2018 00:09:32 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:09:32 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:09:32 UTC] PHP Stack trace:
+[05-May-2018 00:09:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:09:32 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:09:32 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:09:32 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:09:32 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:170
+[05-May-2018 00:09:32 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1782
+[05-May-2018 00:09:32 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:09:32 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:09:32 UTC] PHP Stack trace:
+[05-May-2018 00:09:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:09:32 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:09:32 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:09:32 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:09:32 UTC] PHP   5. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:128
+[05-May-2018 00:09:32 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:09:32 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:09:32 UTC] PHP Stack trace:
+[05-May-2018 00:09:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:09:32 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:09:32 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:09:32 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:09:32 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:170
+[05-May-2018 00:09:32 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1782
+[05-May-2018 00:09:32 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:09:32 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:09:32 UTC] PHP Stack trace:
+[05-May-2018 00:09:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:09:32 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:09:32 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:09:32 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:09:32 UTC] PHP   5. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:128
+[05-May-2018 00:09:32 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:09:32 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:09:32 UTC] PHP Stack trace:
+[05-May-2018 00:09:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:09:32 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:09:32 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:09:32 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:09:32 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:170
+[05-May-2018 00:09:32 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1782
+[05-May-2018 00:09:32 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:09:32 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:09:32 UTC] PHP Stack trace:
+[05-May-2018 00:09:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:09:32 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:09:32 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:09:32 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:09:32 UTC] PHP   5. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:128
+[05-May-2018 00:09:32 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:09:32 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:09:32 UTC] PHP Stack trace:
+[05-May-2018 00:09:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:09:32 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:09:32 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:09:32 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:09:32 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:170
+[05-May-2018 00:09:32 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1782
+[05-May-2018 00:09:32 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:10:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:10:42 UTC] PHP Stack trace:
+[05-May-2018 00:10:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:10:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:10:42 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:10:42 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:10:42 UTC] PHP   5. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:128
+[05-May-2018 00:10:42 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:10:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:10:42 UTC] PHP Stack trace:
+[05-May-2018 00:10:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:10:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:10:42 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:10:42 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:10:42 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:170
+[05-May-2018 00:10:42 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1782
+[05-May-2018 00:10:42 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:10:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:10:42 UTC] PHP Stack trace:
+[05-May-2018 00:10:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:10:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:10:42 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:10:42 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:10:42 UTC] PHP   5. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:128
+[05-May-2018 00:10:42 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:10:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:10:42 UTC] PHP Stack trace:
+[05-May-2018 00:10:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:10:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:10:42 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:10:42 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:10:42 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:170
+[05-May-2018 00:10:42 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1782
+[05-May-2018 00:10:42 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:10:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:10:42 UTC] PHP Stack trace:
+[05-May-2018 00:10:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:10:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:10:42 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:10:42 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:10:42 UTC] PHP   5. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:128
+[05-May-2018 00:10:42 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:10:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:10:42 UTC] PHP Stack trace:
+[05-May-2018 00:10:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:10:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:10:42 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:10:42 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:10:42 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:170
+[05-May-2018 00:10:42 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1782
+[05-May-2018 00:10:42 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:10:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:10:42 UTC] PHP Stack trace:
+[05-May-2018 00:10:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:10:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:10:42 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:10:42 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:10:42 UTC] PHP   5. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:128
+[05-May-2018 00:10:42 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:10:42 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:10:42 UTC] PHP Stack trace:
+[05-May-2018 00:10:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:10:42 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:10:42 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:10:42 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:10:42 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:170
+[05-May-2018 00:10:42 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1782
+[05-May-2018 00:10:42 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:11:54 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:11:54 UTC] PHP Stack trace:
+[05-May-2018 00:11:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:11:54 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:11:54 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:11:54 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:11:54 UTC] PHP   5. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:128
+[05-May-2018 00:11:54 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:11:54 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:11:54 UTC] PHP Stack trace:
+[05-May-2018 00:11:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:11:54 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:11:54 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:11:54 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:11:54 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:170
+[05-May-2018 00:11:54 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1782
+[05-May-2018 00:11:54 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:11:54 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:11:54 UTC] PHP Stack trace:
+[05-May-2018 00:11:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:11:54 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:11:54 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:11:54 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:11:54 UTC] PHP   5. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:128
+[05-May-2018 00:11:54 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:11:54 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:11:54 UTC] PHP Stack trace:
+[05-May-2018 00:11:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:11:54 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:11:54 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:11:54 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:11:54 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:170
+[05-May-2018 00:11:54 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1782
+[05-May-2018 00:11:54 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:11:54 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:11:54 UTC] PHP Stack trace:
+[05-May-2018 00:11:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:11:54 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:11:54 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:11:54 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:11:54 UTC] PHP   5. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:128
+[05-May-2018 00:11:54 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:11:54 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:11:54 UTC] PHP Stack trace:
+[05-May-2018 00:11:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:11:54 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:11:54 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:11:54 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:11:54 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:170
+[05-May-2018 00:11:54 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1782
+[05-May-2018 00:11:54 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:11:54 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:11:54 UTC] PHP Stack trace:
+[05-May-2018 00:11:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:11:54 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:11:54 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:11:54 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:11:54 UTC] PHP   5. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:128
+[05-May-2018 00:11:54 UTC] PHP   6. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 00:11:54 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1767
+[05-May-2018 00:11:54 UTC] PHP Stack trace:
+[05-May-2018 00:11:54 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 00:11:54 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:22
+[05-May-2018 00:11:54 UTC] PHP   3. getInvitados() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_consulta_de_usuarios.html:21
+[05-May-2018 00:11:54 UTC] PHP   4. modalModificarInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1273
+[05-May-2018 00:11:54 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:170
+[05-May-2018 00:11:54 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1782
+[05-May-2018 00:11:54 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767

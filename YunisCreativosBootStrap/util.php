@@ -165,9 +165,8 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
                 </div>
                 <div class="col-md-2 mb-3">
                   <label>Idioma:</label>
-                  <select class="form-control" id="idioma" name="idioma" required>
-                      <option> </option>';
-                      getIdioma($id);
+                  <select class="form-control" id="idioma" name="idioma" required>';
+                     getIdiomaList($id);
                   echo'</select>
                 </div>
             </div>
@@ -196,20 +195,9 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
               <div class="col-10">
                 <input class="form-control" type="password" value="'.$passwd.'" id="passwd2" name="passwd2" required>
               </div>
-            </div>
-            <div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="asistenciaSi" name="asistencia" class="custom-control-input" value="yes">
-                  <label class="custom-control-label" for="asistenciaSi">Asistiré</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="asistenciaNo" name="asistencia" class="custom-control-input" value="no">
-                  <label class="custom-control-label" for="asistenciaNo">NO asistiré</label>
-                </div>
-            </div>
-
-
-            <div class="form-group">
+            </div>';
+             echo getAsistenciaByIdUsuario($id);
+            echo'<div class="form-group">
                 <label>Alergias (Si padeces más de una, más adelante podrás registrar las que falten más adelante):</label>
                 <select class="form-control" id="alergias" name="alergias" value="'.$alergias.'">
                   <option> </option>
@@ -440,30 +428,6 @@ function getIdPlantillaByIdEvento($idEvento){
     
 }
 
-
-
-
-function getIdioma($id = -1){
-    $db = connectDB();
-    if($db != NULL){
-    $query = 'SELECT * FROM Invitado CROSS JOIN Idioma GROUP BY nombreIdioma';
-     //Pa' debugear
-        //var_dump($query); 
-        //die('');
-        $results = mysqli_query($db,$query);
-        disconnectDB($db);
-        if(mysqli_num_rows($results) > 0){
-             while ($row = mysqli_fetch_assoc($results)) {
-                echo '<option';
-                  if ($row["idInvitado"] == $id) {
-                     echo "selected";
-                 }
-                 echo'>'.$row["nombreIdioma"].'</option>';
-            }
-        }
-    }
-}
-
 function plantillaTable(){
      $db = connectDB();
     if($db != NULL){
@@ -508,33 +472,38 @@ function getEstadoById($id){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
             while ($row = mysqli_fetch_assoc($results)) {
-                 return $row["nombreEstado"];
+                 return $row["idEstado"];
             }
         }
     }
 }
 
+
+
 function getEstadoList($id){
     $db = connectDB();
     if($db != NULL){
     $not = getEstadoById($id);
-    echo '<option value="selected">'.$not.'</option>';
-    $query = 'SELECT *
-                FROM Estado 
-                WHERE nombreEstado != "'.$not.'"';
+    $query = 'SELECT * FROM Estado ORDER BY nombreEstado ASC';
      //Pa' debugear
-        //var_dump($query); 
-        //die('');
-        $results = mysqli_query($db,$query);
-        disconnectDB($db);
+    //var_dump($query); 
+    //die('');
+    $results = mysqli_query($db,$query);
+    disconnectDB($db);
         
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 echo '<option>'.$row["nombreEstado"].'</option>';
+                 echo '<option value="'.$row["idEstado"].'" ';
+                 if($row["idEstado"]==$not){
+                     echo 'selected';
+                 }
+                 
+                 echo'>'.$row["nombreEstado"].'</option>';
             }
         }
     }  
 }
+
 
 function getTallaById($id){
     $db = connectDB();
@@ -547,7 +516,7 @@ function getTallaById($id){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
             while ($row = mysqli_fetch_assoc($results)) {
-                return $row["DescripcionTalla"];
+                return $row["talla"];
             }
         }
     }
@@ -557,19 +526,21 @@ function getTallaList($id){
     $db = connectDB();
     if($db != NULL){
     $not = getTallaById($id);
-    echo '<option value="selected">'.$not.'</option>';
-    $query = 'SELECT *
-                FROM Talla
-                WHERE DescripcionTalla != "'.$not.'"';
+    $query = 'SELECT * FROM Talla  ORDER BY DescripcionTalla ASC';
      //Pa' debugear
         //var_dump($query); 
         //die('');
         $results = mysqli_query($db,$query);
         disconnectDB($db);
         
-        if(mysqli_num_rows($results) > 0){
+         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 echo '<option>'.$row["DescripcionTalla"].'</option>';
+                 echo '<option value="'.$row["idTalla"].'" ';
+                 if($row["idTalla"]==$not){
+                     echo 'selected';
+                 }
+                 
+                 echo'>'.$row["DescripcionTalla"].'</option>';
             }
         }
     }  
@@ -1747,4 +1718,87 @@ function uploadMsg($idUser, $idEvent, $msg){
     
 }
 
+function getAsistenciaByIdUsuario($id){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT * from Invitado  WHERE idInvitado = "'.$id.'"';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                if($row["asistencia"]=="yes"){
+                echo
+                '<div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="asistenciaSi" name="asistencia" class="custom-control-input" value="yes" checked>
+                          <label class="custom-control-label" for="asistenciaSi">Asistiré</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="asistenciaNo" name="asistencia" class="custom-control-input" value="no">
+                          <label class="custom-control-label" for="asistenciaNo">NO asistiré</label>
+                        </div>
+                    </div>';
+                    
+                }else if ($row["asistencia"]=="no"){
+                echo
+                    '<div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="asistenciaSi" name="asistencia" class="custom-control-input" value="yes">
+                          <label class="custom-control-label" for="asistenciaSi">Asistiré</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="asistenciaNo" name="asistencia" class="custom-control-input" value="no" checked>
+                          <label class="custom-control-label" for="asistenciaNo">NO asistiré</label>
+                        </div>
+                    </div>';
+                    
+                }
+            }
+        }
+    }
+}
+
+function getIdiomaById($id){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT * FROM Invitado inv, Idioma i WHERE inv.idIdioma = i.idIdioma AND inv.idInvitado ="'.$id.'"';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                echo $row["idIdioma"];
+            }
+        }
+    }
+}
+
+function getIdiomaList($id){
+    $db = connectDB();
+    if($db != NULL){
+    $not = getTallaById($id);
+    $query = 'SELECT * FROM Idioma  ORDER BY nombreIdioma ASC';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        
+         if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<option value="'.$row["idIdioma"].'"';
+                 if($row["idIdioma"]==$not){
+                     echo 'selected';
+                 }
+                 
+                 echo'>'.$row["nombreIdioma"].'</option>';
+            }
+        }
+    }  
+}
 ?>

@@ -61,7 +61,7 @@
                     edit(event);
                 },
                 events: [
-                <?PHP 
+                <?php
                     foreach($events as $event):
                     $start = explode(" ", $event['start']);
                     $end = explode(" ", $event['end']);
