@@ -1794,7 +1794,7 @@ function showMsg($idEvento){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 echo  '<div class="card border-secondary" >
+                 echo  '<div class="card border-secondary text-left" >
                             <div class="card-header bg-info">
                                 <h6 class="text-white">'.$row["nombreUsuario"].'<strong> ['.$row["nombreRol"].']</strong></h6>
                                 <div class="text-white">'.$row["fechaMensaje"].'</div>

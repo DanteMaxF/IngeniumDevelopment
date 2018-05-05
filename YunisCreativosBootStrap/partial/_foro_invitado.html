@@ -1,6 +1,15 @@
 
 
+<script>
+  function scrollToBottom() {
 
+
+        var objDiv = document.getElementById("chatbox");
+        objDiv.scrollTop = objDiv.scrollHeight;
+    }
+</script>
+
+<script src="js/jqueryforchat.js"></script>
 
 <div class="container">
   <br><br>
@@ -14,27 +23,28 @@
         <h4 class="card-title">Foro</h4>
         <!-- VERSION 1-->
         <div  style="height: 700px" class='card'>
-            <div style="overflow-y:scroll">
-            <div class="container" >
-                <br><br>
-                
-                
-                <?php echo showMsg($_SESSION["idEventoActual"]); ?>
-                
-                
-                
-                <br><br>
+            <div style="overflow-y:scroll"  >
+              <div class="container" >
+                  <br><br>
+                  
+                  <script type="text/javascript" src="js/chat_ajax.js"></script>
+                  <div id="ajaxChat" class="text-center">
+                    <img src="https://loading.io/spinners/comets/lg.comet-spinner.gif" class="img-responsive" style="width:5%"></img>
+                  </div>
+                  
+                  
+                  <br><br>
+              </div>
             </div>
-            
             
         </div>
         
         <div class="container">
             <br>
             <form action="upload_msg.php" method="POST">
-                <textarea class="form-control" id="msg" name="msg" rows="3"></textarea>
+                <input class="form-control" id="msg" name="msg" rows="3"></input>
                 <p align="right">
-                    <button type="submit" id='button' class="btn btn-default"></button>
+                    <button type="submit" id='button' class="btn btn-default">Enviar</button>
                 </p>
             </form>  
             <br>
@@ -43,13 +53,11 @@
         
 
             </div>
-          <br>
-          <br>
+   
           
-        <br><br>
         
         
-        </div>
+        
       </div>
     </div>
   </div>
