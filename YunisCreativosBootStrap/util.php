@@ -244,7 +244,7 @@ function getInvitadosEvento($idEvento){
                  echo '<td>'.$row["nombreEstado"].'</td>';
                  echo '<td>'.$row["alergias"].'</td>';
                  echo '<td>'.$row["medicamentos"].'</td>';
-                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
+                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Expulsar</button></td>';
                  echo generateModalDesasignarInvitado($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
             }
@@ -303,8 +303,8 @@ function getInvitadosList($idEvento){
     if ($db != NULL) {
         
         $query = '  SELECT DISTINCT U.nombreUsuario, U.idUsuario
-                    FROM  Usuario U, invitadoEvento IE
-                    WHERE U.idUsuario=IE.idInvitado 
+                    FROM  Usuario U, tiene T
+                    WHERE U.idUsuario=T.idUsuario AND idRol=1495 
                     	  AND U.idUsuario NOT IN (SELECT I.idInvitado FROM invitadoEvento I WHERE I.idEvento='.$idEvento.')
                     ORDER BY U.nombreUsuario';
         //Pa' debugear
