@@ -3,7 +3,7 @@
     session_start();
     require_once("util.php");
     if( isset($_SESSION["idRol"]) ){
-        $_SESSION["idEventoActual"] = getLastEvent($_SESSION["idUser"]);
+        $_SESSION["idEventoActual"] = getLastEventInvitado($_SESSION["idUser"]);
         $_SESSION["descripcionEventoActual"] = getDescripcionEvento($_SESSION["idEventoActual"]);
         
         include("partial/_head.html");

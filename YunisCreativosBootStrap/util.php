@@ -1624,7 +1624,7 @@ function getStatusEvento($idEvento){
     }
 }
 
-function getLastEvent($idUser){
+function getLastEventInvitado($idUser){
     $db = connectDB();
     if($db != NULL){
         $query = 'SELECT idEvento FROM invitadoEvento WHERE idInvitado='.$idUser.' ORDER BY fechaUsuarioEvento DESC LIMIT 1';
@@ -1833,4 +1833,22 @@ function getIdiomaList($id){
         }
     }  
 }
+
+function getLastEventoCoordinador($idUser){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT idEvento FROM Evento WHERE idCoordinador='.$idUser.' ORDER BY fechaCreacion DESC LIMIT 1';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["idEvento"];
+            }
+        }
+    }
+}
+
 ?>
