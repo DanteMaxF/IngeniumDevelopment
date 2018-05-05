@@ -1,25 +1,5 @@
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script>
-    $(function () {
-        $('button').click(function () {
-          var msg2 = $('#msg').val();
-          
-          console.log('starting ajax');
-          $.ajax({
-            url: "upload_msg.php",
-            type: "post",
-            data: { msg: msg2 },
-            success: function (data) {
-              var dataParsed = JSON.parse(data);
-              console.log(dataParsed);
-            }
-          });
 
-        });
-      });
-</script>
 
 
 <div class="container">
@@ -33,18 +13,13 @@
         <br>
         <h4 class="card-title">Foro</h4>
         <!-- VERSION 1-->
-        <div  style="height: 1200px" class='card'>
-            <div style="overflow-y: scroll">
+        <div  style="height: 700px" class='card'>
+            <div style="overflow-y:scroll">
             <div class="container" >
                 <br><br>
                 
                 
-                <div class="card text-white bg-info" >
-                    <div class="card-header"><h6>Juanito el chido <strong>[Invitado]</strong></h6> </div>
-                    <div class="card-body">
-                        <p class="card-text">Que onda amigos! Donde es el evento?</p>
-                    </div>
-                </div>
+                <?php echo showMsg($_SESSION["idEventoActual"]); ?>
                 
                 
                 
@@ -56,8 +31,8 @@
         
         <div class="container">
             <br>
-            <form>
-                <textarea class="form-control" id="msg" rows="3"></textarea>
+            <form action="upload_msg.php" method="POST">
+                <textarea class="form-control" id="msg" name="msg" rows="3"></textarea>
                 <p align="right">
                     <button type="submit" id='button' class="btn btn-default"></button>
                 </p>
