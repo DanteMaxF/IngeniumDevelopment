@@ -3,11 +3,19 @@
     session_start();
     require_once("util.php");
     if( isset($_SESSION["idRol"]) ){
-        $_SESSION["idEventoActual"] = getLastEventInvitado($_SESSION["idUser"]);
-        $_SESSION["descripcionEventoActual"] = getDescripcionEvento($_SESSION["idEventoActual"]);
         
         include("partial/_head.html");
-        include("partial/_navbarInvitado.html"); 
+        
+        $_SESSION["idEventoActual"] = getLastEventInvitado($_SESSION["idUser"]);
+        if( $_SESSION["idEventoActual"]== -1){
+            $_SESSION["descripcionEventoActual"] = "AUN NO SE TE HA ASIGNADO UN EVENTO :("; 
+            include("partial/_navbarInvitadoNull.html");
+        }else{
+            $_SESSION["descripcionEventoActual"] = getDescripcionEvento($_SESSION["idEventoActual"]);
+            include("partial/_navbarInvitado.html");
+        }
+        
+         
         include("partial/_home_invitado.html");
         include("partial/_scripts.html");
         include("partial/_footer.html"); 

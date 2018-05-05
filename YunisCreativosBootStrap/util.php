@@ -548,8 +548,6 @@ function getTallaList($id){
     }  
 }
 
-?>
-<?php
 
 //CONECTAR CON BASE DE DATOS (USAR EN CADA FUNCION)
 function connectDB(){
@@ -560,7 +558,7 @@ function connectDB(){
     }else{
          $mysql = mysqli_connect("localhost","DanteMaxF","Ingenium123","YunisCreativos");
     }
-    $mysql->set_charset("utf8");
+    $mysql->set_charset("utf8mb4");
     return $mysql;
     
 }  
@@ -1638,6 +1636,9 @@ function getLastEventInvitado($idUser){
                  return $row["idEvento"];
             }
         }
+        else{
+            return -1;
+        }
     }
     
 }
@@ -1786,7 +1787,7 @@ function showMsg($idEvento){
         $query =   'SELECT U.nombreUsuario, R.nombreRol, C.fechaMensaje, C.mensaje
                     FROM chat C, Usuario U, Rol R, tiene T
                     WHERE U.idUsuario=C.idUsuario AND U.idUsuario=T.idUsuario AND R.idRol=T.idRol
-                    AND idEvento='.$idEvento;
+                    AND idEvento='.$idEvento.' ORDER BY C.fechaMensaje ASC';
         //Pa' debugear
         //var_dump($query); 
         //die('');
