@@ -1,3 +1,56 @@
+
+
+<script src="js/jqueryforchat.js"></script>
+
 <div class="container">
-    <img src="images/chat.png">
+  <br><br>
+  <div class="card">
+    <div class="card-header">
+      <h1>FORO EMPLEADOS</h1>
+    </div>
+    <div class="card-block">
+      <div class="container">
+        <br>
+        <h4 class="card-title">Foro</h4>
+        <!-- VERSION 1-->
+        <div  style="height: 700px" class='card'>
+            <div style="overflow-y:scroll"  >
+              <div class="container" >
+                  <br><br>
+                  
+                  <script type="text/javascript" src="js/chat_ajax.js"></script>
+                  <div id="ajaxChat" class="text-center">
+                    <img src="https://loading.io/spinners/comets/lg.comet-spinner.gif" class="img-responsive" style="width:5%"></img>
+                  </div>
+                  
+                  
+                  <br><br>
+              </div>
+            </div>
+            
+        </div>
+        
+        <div class="container">
+            <br>
+            <form action="upload_msg.php" method="POST">
+                <input class="form-control" id="msg" name="msg" rows="3"></input>
+                <p align="right">
+                    <button type="submit" id='button' class="btn btn-default">Enviar</button>
+                </p>
+            </form>  
+            <br>
+        </div>
+
+        
+
+            </div>
+   
+          
+        
+        
+        
+      </div>
+    </div>
+  </div>
 </div>
+<br><br><br><br><br><br>

@@ -1,6 +1,7 @@
 <?php 
     session_start();
     require_once("util.php");
+    $_SESSION["fEmepleado"] = 9999999;
     if( isset($_SESSION["idRol"]) ){
         include("partial/_head.html");
          if($_SESSION["idRol"]== 1492){

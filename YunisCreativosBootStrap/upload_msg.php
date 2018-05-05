@@ -7,8 +7,15 @@
         
         $msg = $_POST['msg'];
         echo $msg;
-        uploadMsg($_SESSION['idUser'], $_SESSION["idEventoActual"], $msg);
         
+        
+        if(isset($_SESSION["fEmepleado"])){
+            uploadMsg($_SESSION['idUser'], $_SESSION["fEmepleado"], $msg);
+        }else{
+            uploadMsg($_SESSION['idUser'], $_SESSION["idEventoActual"], $msg);
+    
+        }
+                
         header("location:foro_invitado.php");
         
     }else{
