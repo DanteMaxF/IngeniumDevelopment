@@ -7,17 +7,31 @@
         $passwd = $_POST["passwd2"];
         $correo = $_POST["correo"];
         $telefono = $_POST["telefono"];
-        $idEstado = $_POST[""];
-        echo $idUsuario;
-        echo  $nombreUsuario;
-        echo $passwd;
-        echo $correo;
-        echo $telefono;
+        $idEstado = $_POST["Estado"];
+        $idTalla = $_POST["talla"];
+        $idIdioma =$_POST["idioma"];
+        $asistencia = $_POST["asistencia"];
+        $alergias = $_POST["alergias"];
+        $medicamentos = $_POST["medicamentos"];
+        $fechaNacimiento = $_POST["fechaNacimiento"];
+        echo 'id: '.$idUsuario.'<br>';
+        echo 'nombreUsuario: '.$nombreUsuario.'<br>';
+        echo 'password: '.$passwd.'<br>';
+        echo 'correo: '.$correo.'<br>';
+        echo 'telefono: '.$telefono.'<br>';
+        echo 'Estado: '.$idEstado.'<br>';
+        echo 'talla: '.$idTalla.'<br>';
+        echo 'idioma: '.$idIdioma.'<br>';
+        echo 'asistencia: '.$asistencia.'<br>';
+        echo 'alergias: '.$alergias.'<br>';
+        echo 'medicamentos: '.$medicamentos.'<br>';
         //die('');
         
-         if (modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono)){
-            $_SESSION["staffStatusSuccess"] = "Se ha modificado la información exitosamente";
-            unset($_SESSION["staffStatusError"]);
+         if (modificarUsuario($nombreUsuario,$passwd,$correo,$telefono,$idUsuario)){
+            if(modificarInvitado($idEstado, $idTalla, $idIdioma, $asistencia, $alergias, $medicamentos,  $fechaNacimiento , $idUsuario)){
+                $_SESSION["staffStatusSuccess"] = "Se ha modificado la información exitosamente";
+                unset($_SESSION["staffStatusError"]);
+            }
         }else{
             $_SESSION["staffStatusError"] = "Hubo un error con la modificación, inténtalo de nuevo más tarde";
             unset($_SESSION["staffStatusSuccess"]);
