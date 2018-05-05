@@ -225,9 +225,9 @@ function getInvitadosEvento($idEvento){
                 AND IE.idEvento ='.$idEvento.' 
                 ORDER BY nombreUsuario';
         $results = mysqli_query($db,$query);
-         //Pa' debugear
-    //var_dump($query); 
-     // die('');
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
         disconnectDB($db);
         if(mysqli_num_rows($results) == 0){
             echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
@@ -242,6 +242,8 @@ function getInvitadosEvento($idEvento){
                  echo '<td>'.$row["talla"].'</td>';
                  echo '<td>'.$row["nombreIdioma"].'</td>';
                  echo '<td>'.$row["nombreEstado"].'</td>';
+                 echo '<td>'.$row["alergias"].'</td>';
+                 echo '<td>'.$row["medicamentos"].'</td>';
                  echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Eliminar</button></td>';
                  echo generateModalDesasignarInvitado($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
@@ -1291,15 +1293,15 @@ function getCoordinador($idEvento){
     $db = connectDB();
     if($db != NULL){
         $query = 'SELECT * 
-        FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i 
-        WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol 
-        AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Coordinador" AND u.Ver=1 
+        FROM Usuario u, Evento e, tiene t, Rol r
+        WHERE e.idCoordinador = u.idUsuario AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol
+		AND r.idRol = 1493 AND e.idEvento = 2
         GROUP BY nombreUsuario
         ORDER BY nombreUsuario';
         $results = mysqli_query($db,$query);
          //Pa' debugear
-    //var_dump($query); 
-     // die('');
+         //var_dump($query); 
+        //die('');
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
@@ -1777,6 +1779,36 @@ function getIdiomaById($id){
         }
     }
 }
+
+function showMsg($idEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query =   'SELECT U.nombreUsuario, R.nombreRol, C.fechaMensaje, C.mensaje
+                    FROM chat C, Usuario U, Rol R, tiene T
+                    WHERE U.idUsuario=C.idUsuario AND U.idUsuario=T.idUsuario AND R.idRol=T.idRol
+                    AND idEvento='.$idEvento;
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo  '<div class="card border-secondary" >
+                            <div class="card-header bg-info">
+                                <h6 class="text-white">'.$row["nombreUsuario"].'<strong> ['.$row["nombreRol"].']</strong></h6>
+                                <div class="text-white">'.$row["fechaMensaje"].'</div>
+                            </div>
+                            <div class="card-body bg-light">
+                              <p class="card-text">'.$row["mensaje"].'</p>
+                            </div>
+                        </div>
+                        <br>';           
+             }
+        }
+    }
+}
+
 
 function getIdiomaList($id){
     $db = connectDB();

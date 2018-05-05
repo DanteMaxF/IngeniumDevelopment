@@ -15339,3 +15339,9 @@
 [05-May-2018 00:11:54 UTC] PHP   5. getIdiomaList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:170
 [05-May-2018 00:11:54 UTC] PHP   6. getIdiomaById() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1782
 [05-May-2018 00:11:54 UTC] PHP   7. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1767
+[05-May-2018 16:36:20 UTC] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1782
+[05-May-2018 16:36:20 UTC] PHP Stack trace:
+[05-May-2018 16:36:20 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
+[05-May-2018 16:36:56 UTC] PHP Parse error:  syntax error, unexpected '>>' (T_SR) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1812
+[05-May-2018 16:36:56 UTC] PHP Stack trace:
+[05-May-2018 16:36:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consulta_de_usuarios.php:0
