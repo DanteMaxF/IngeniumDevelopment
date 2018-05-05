@@ -8,15 +8,15 @@
         $correo = $_POST["correo"];
         $telefono = $_POST["telefono"];
         $rol = $_POST["rol"];
-        echo $idUsuario;
-        echo  $nombreUsuario;
-        echo $passwd;
-        echo $correo;
-        echo $telefono;
+        echo $idUsuario.'<br>';
+        echo  $nombreUsuario.'<br>';
+        echo $passwd.'<br>';
+        echo $correo.'<br>';
+        echo $telefono.'<br>';
         echo $rol;
-       //die('');
+        //die('');
         
-         if ((modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono))&&(eliminarRolUsuario($idUsuario))){
+         if (modificarUsuario($nombreUsuario,$passwd,$correo,$telefono,$idUsuario)){
             if(registrarRol($idUsuario,$rol)){
                 $_SESSION["staffStatusSuccess"] = "Se ha modificado la información exitosamente";
                 unset($_SESSION["staffStatusError"]);

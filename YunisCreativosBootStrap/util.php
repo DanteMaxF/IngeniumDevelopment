@@ -5,7 +5,6 @@
 
 function modalModificarStaff($id,$nombre,$correo, $telefono){
     $passwd = getPasswordById($id);
-    $rol = getRol($id);
      echo '<div class="modal fade" id="modalModificarStaff'.$id.'" role="dialog">
     <div class="modal-dialog">
     
@@ -16,11 +15,11 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
         </div>
         <div class="modal-body">
            <form action="modificar_staff.php?id='.$id.',?nombreUsuario='.$nombre.',correo='.$correo.'" method="POST">
+                    <input type="hidden" class="form-control" value="'.$id.'" id="usr" name = "id" required>
                     <div class="form-group"
                         <label>Rol:</label>
-                        <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>
-                            <option> </option>';
-                                getRollList();
+                        <select class="form-control" id="rol" name="rol" value="'.$rol.'"required>';
+                            getRollList($id);
                        echo '</select>
                     </div>
                     <br>
@@ -60,10 +59,6 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
                     </div>
                     <br>
                     <br>
-              <button type="submit" class="btn btn-success" name="action">Registrar</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
-                   
-                
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-success" name="action">Registrar</button>
@@ -77,19 +72,19 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
   <script src="js/password_checker.js"></script> ';
 }
 
-function modificarUsuario($idUsuario,$nombreUsuario,$passwd,$correo,$telefono){
+function modificarUsuario($nombreUsuario,$passwd,$correo,$telefono,$idUsuario){
      $db = connectDB();
      //Pa' debugear
     //var_dump($passwd); 
       //die('');
     if($db != NULL){
-         $query = 'UPDATE Usuario SET nombreUsuario = "'.$nombreUsuario.'" ,passwd = "'.$passwd.'",correo = "'.$correo.'",telefono = "'.$telefono.'" WHERE idUsuario = "'.$idUsuario.'"';
+         $query = 'UPDATE Usuario SET nombreUsuario = ? ,passwd = ?, correo = ?,telefono = ? WHERE idUsuario = ?';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("isssi", $idUsuario, $nombreUsuario, $passwd, $correo, $telefono)) {
+        if (!$statement->bind_param("ssssi", $nombreUsuario, $passwd, $correo, $telefono, $idUsuario)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -125,7 +120,6 @@ function getPasswordById($idUsuario){
 function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
    $passwd = getPasswordById($id);
     $rol = getRol($id);
-    //echo getTallaById($id);
      echo '<div class="modal fade" id="modalModificarInvitado'.$id.'" role="dialog">
     <div class="modal-dialog modal-lg">
     
@@ -138,6 +132,7 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
         <div class="container">
            <form action="modificar_invitado.php" method="POST">
                    <div class="form-group">
+                <input type="hidden" class="form-control" value="'.$id.'" id="usr" name = "id" required>
               <label for="nombre">Nombre completo:</label>
               <input type="text" class="form-control" value="'.$nombre.'" id="usr" name = "nombreUsuario" required>
               
@@ -197,13 +192,19 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
               </div>
             </div>';
              echo getAsistenciaByIdUsuario($id);
-            echo'<div class="form-group">
-                <label>Alergias (Si padeces más de una, más adelante podrás registrar las que falten más adelante):</label>
-                <select class="form-control" id="alergias" name="alergias" value="'.$alergias.'">
-                  <option> </option>
-                   <?php getAlergias() ?>
-                </select>
-            </div>
+             echo  '<div class="form-group">
+                      <label for="alergias">Alergias (opcional)</label>
+                      <textarea class="form-control" id="alergias" name="alergias" rows="3">';
+                      echo getAlergiasById($id);
+                      echo'</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="medicamentos">Medicamentos (opcional)</label>
+                      <textarea class="form-control" id="medicamentos" name="medicamentos" rows="3">';
+                       echo getMedicamentosById($id);
+                       echo'</textarea>
+                    </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-success" name="action">Registrar</button>
           <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
@@ -492,15 +493,13 @@ function getEstadoList($id){
     //die('');
     $results = mysqli_query($db,$query);
     disconnectDB($db);
-        
-        if(mysqli_num_rows($results) > 0){
-             while ($row = mysqli_fetch_assoc($results)) {
-                 echo '<option value="'.$row["idEstado"].'" ';
-                 if($row["idEstado"]==$not){
-                     echo 'selected';
-                 }
-                 
-                 echo'>'.$row["nombreEstado"].'</option>';
+    if(mysqli_num_rows($results) > 0){
+        while ($row = mysqli_fetch_assoc($results)) {
+            echo '<option value="'.$row["idEstado"].'" ';
+            if($row["idEstado"]==$not){
+                echo 'selected';
+            }
+             echo'>'.$row["nombreEstado"].'</option>';
             }
         }
     }  
@@ -914,7 +913,7 @@ function getStaffList($idEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT * FROM Usuario U, tiene T WHERE U.idUsuario=T.idUsuario AND T.idRol=1494 AND T.idUsuario NOT IN (SELECT U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'") GROUP BY U.nombreUsuario';
+        $query = 'SELECT * FROM Usuario U, tiene T WHERE U.idUsuario=T.idUsuario AND T.idUsuario NOT IN (SELECT U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'") GROUP BY U.nombreUsuario';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -1142,7 +1141,7 @@ function registrarPlantillas($nombrePlantilla,$colorTexto,$colorFondo,$colorBoto
 function registrarRol($idUsuario,$idRol){
     $db = connectDB();
     if($db != NULL){
-         $query = 'INSERT INTO tiene(idUsuario,idRol) VALUES(?,?)';
+         $query = 'UPDATE tiene SET idRol= ? WHERE idUsuario=?';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
@@ -1206,21 +1205,28 @@ function printIdEventoForm($codigo){
 }
 
 
-function getRollList(){
+function getRollList($id){
     $db = connectDB();
     if($db != NULL){
-    $query = 'SELECT * from Rol';
+    $not = getRollById($id);
+    $query = 'SELECT * FROM Rol';
      //Pa' debugear
-        //var_dump($query); 
-        //die('');
-        $results = mysqli_query($db,$query);
-        disconnectDB($db);
+    //var_dump($query); 
+    //die('');
+    $results = mysqli_query($db,$query);
+    disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
-             while ($row = mysqli_fetch_assoc($results)) {
-                 echo '<option value='.$row["idRol"].'>'.$row["nombreRol"].'</option>';
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo '<option value="'.$row["idRol"].'"';
+                if($row["idRol"]==$not){
+                    echo 'selected';
+                }
+                echo'>'.$row["nombreRol"].'</option>';
             }
         }
-    }
+    }  
+
+
 }
     
 function getStaff($idEvento){
@@ -1833,4 +1839,108 @@ function getIdiomaList($id){
         }
     }  
 }
+
+function getRollById($id){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT * from tiene WHERE idUsuario = "'.$id.'"';
+     //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["idRol"];
+            }
+        }
+    }
+}
+
+function eliminarRolUsuario($idUsuario){ 
+     $db = connectDB(); 
+     //Pa' debugear 
+    //var_dump($passwd);  
+      //die(''); 
+    if($db != NULL){ 
+         $query = 'Delete FROM tiene WHERE idUsuario = ?'; 
+        // Preparing the statement  
+         if (!($statement = $db->prepare($query))) { 
+            die("Preparation failed: (" . $db->errno . ") " . $db->error); 
+          } 
+        // Binding statement params  
+        if (!$statement->bind_param("i",$idUsuario)) { 
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);  
+        } 
+        // Executing the statement 
+        if (!$statement->execute()) { 
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error); 
+        }  
+        disconnectDB($db); 
+        return true; 
+    }  
+    return false; 
+} 
+
+function getAlergiasById($idUsuario){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT * from Invitado WHERE idInvitado ="'.$idUsuario.'"';
+        //Pa' debugear
+        //var_dump($query); 
+       // die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["alergias"];
+            }
+        
+        }
+    }
+}
+
+function getMedicamentosById($idUsuario){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT * from Invitado WHERE idInvitado ="'.$idUsuario.'"';
+        //Pa' debugear
+        //var_dump($query); 
+       // die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["medicamentos"];
+            }
+        
+        }
+    }
+}
+
+function modificarInvitado($idEstado, $talla, $idIdioma, $asistencia, $alergias, $medicamentos,$fechaNacimiento,$idUsuario){
+    $db = connectDB();
+     //Pa' debugear
+    //var_dump($passwd); 
+      //die('');
+    if($db != NULL){
+         $query = 'UPDATE Invitado SET idEstado = ?, talla = ?, idIdioma = ?, asistencia = ?,alergias = ?, medicamentos = ?, fechaNacimiento= ? WHERE idInvitado = ?';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("isissssi", $idEstado, $talla, $idIdioma, $asistencia,$alergias, $medicamentos,$fechaNacimiento,$idUsuario)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        disconnectDB($db);
+        return true;
+    } 
+    return false;
+}
+
 ?>
