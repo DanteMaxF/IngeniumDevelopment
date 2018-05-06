@@ -572,7 +572,7 @@ function login($mail, $passwd) {
   if ($db != NULL) {
 
     $query='SELECT correo FROM Usuario WHERE correo="'.$mail.
-        '" AND passwd="'.$passwd.'"';
+        '" AND passwd="'.$passwd.'" AND Ver=1';
     
     //Pa' debugear
     //var_dump($query); 
