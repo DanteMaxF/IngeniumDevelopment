@@ -6,7 +6,7 @@
         if($_SESSION["idRol"]== 1492){
             include("partial/_navbarCEO.html");
         }
-        else{
+        else if($_SESSION["idRol"]== 1493){
             include("partial/_navbarCoordinador.html");
         }-
         include("partial/_consulta_de_invitados.html");

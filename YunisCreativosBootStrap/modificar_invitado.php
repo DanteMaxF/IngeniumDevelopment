@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once("util.php");
-    if( isset($_SESSION["idRol"]) ){
+    if( isset($_SESSION["idRol"]) && ($_SESSION["idRol"]==1492 || $_SESSION["idRol"]==1496 || $_SESSION["idRol"]==1495 ) ){
         $idUsuario = $_POST["id"];
         $nombreUsuario = $_POST["nombreUsuario"];
         $passwd = $_POST["passwd2"];
