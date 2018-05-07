@@ -1,3 +1,5 @@
+  <script src='js/checkRol.js'></script> 
+
 <div class="container">
     <br><br>
     <div class="card">
@@ -13,7 +15,7 @@
                         <br>
                         <div class="form-group"
                             <label>Rol:</label>
-                            <select class="form-control" id="rol" name="rol" required>
+                            <select class="form-control" id="rol" name="rol" onchange="testSelected()" required>
                                 <option> </option>
                                 <?php getRollList() ?>
                             </select>
@@ -53,6 +55,56 @@
                             <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input" name="telefono" required>
                           </div>
                         </div>
+                        
+                        
+                        <!-- Aqui empieza la parte que se oculta si el usuario no es un invitado -->
+                       
+                        <div id="invitadoForm" style="visibility:hidden">
+                            
+                            <div class="form-row" >
+                                <div class="col-md-4 mb-3">
+                                  <label for="fecha_nac">Fecha Nacimiento:</label>
+                                  <input type="date" class="form-control" id="fechaNacimiento" name = "fechaNacimiento" required>
+                                </div>
+                                <div class="col-md-4 mb-3">  
+                                  <label>Estado:</label>
+                                  <select class="form-control" id="Estado" name="Estado" required>
+                                      <option> </option>
+                                      <?php getEstado() ?>
+                                  </select>
+                                </div>
+                                <div class="col-md-2 mb-3">
+                                  <label>Talla:</label>
+                                  <select class="form-control" id="talla" name="talla" required>
+                                      <option> </option>
+                                      <option value="S">Chica (S)</option>
+                                      <option value="M">Mediana (M)</option>
+                                      <option value="L">Grande (L)</option>
+                                      <option value="XL">Extra Grande (XL)</option>
+                                      <option value="XXL">Extra Extra Grande (XXL)</option>
+                                  </select>
+                                </div>
+                                <div class="col-md-2 mb-3">
+                                  <label>Seleccionar Idioma:</label>
+                                  <select class="form-control" id="idioma" name="idioma" required>
+                                      <option> </option>
+                                      <option value="1">Español</option>
+                                      <option value="2">English</option>
+                                  </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="alergias">Alergias (opcional)</label>
+                                <textarea class="form-control" id="alergias" name="alergias" rows="3"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="medicamentos">Medicamentos (opcional)</label>
+                                <textarea class="form-control" id="medicamentos" name="medicamentos" rows="3"></textarea>
+                            </div>
+                            
+                        </div>
+                        
                         <br>
                         <br>
                        
