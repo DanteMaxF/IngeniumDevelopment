@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-05-2018 a las 22:42:20
+-- Tiempo de generación: 07-05-2018 a las 16:59:14
 -- Versión del servidor: 5.5.57-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.22
 
@@ -155,6 +155,7 @@ CREATE TABLE IF NOT EXISTS `Evento` (
   `idCoordinador` int(11) NOT NULL,
   `Ver` tinyint(1) NOT NULL,
   `codigo` varchar(15) NOT NULL,
+  `idDiseno` int(11) NOT NULL,
   PRIMARY KEY (`idEvento`),
   KEY `idEncuesta` (`idEncuesta`),
   KEY `idCliente` (`idCliente`),
@@ -165,67 +166,27 @@ CREATE TABLE IF NOT EXISTS `Evento` (
 -- Volcado de datos para la tabla `Evento`
 --
 
-INSERT INTO `Evento` (`idEvento`, `nombreEvento`, `descripcionEvento`, `fechaCreacion`, `statusEvento`, `idEncuesta`, `idCliente`, `idCoordinador`, `Ver`, `codigo`) VALUES
-(1, 'Alamo seguros', 'Lima 2017', '0000-00-00 00:00:00', 'terminado', 1, 1, 1, 1, 'A00121'),
-(2, 'Gryc', 'Brasil 2018', '0000-00-00 00:00:00', 'activo', 2, 2, 2, 1, 'B00232'),
-(3, 'Metlife', 'Argentina 2016', '0000-00-00 00:00:00', 'terminado', 3, 3, 3, 1, 'C00343'),
-(4, 'Seguros Monterrey', 'San Francisco 2015', '0000-00-00 00:00:00', 'terminado', 4, 4, 4, 1, 'D00454'),
-(5, 'Alamo seguros', 'Oaxaca 2018', '0000-00-00 00:00:00', 'preparando', 5, 5, 5, 1, 'E00565'),
-(6, 'Gryc', 'Puebla 2017', '0000-00-00 00:00:00', 'terminado', 6, 6, 6, 1, 'F00676'),
-(7, 'Metlife', 'Guanajuato 2011', '0000-00-00 00:00:00', 'terminado', 7, 7, 7, 1, 'G00787'),
-(8, 'Seguros Monterrey', 'Ixtapa 2009', '0000-00-00 00:00:00', 'terminado', 8, 8, 8, 1, 'H00898'),
-(9, 'Alamo seguros', 'Cancun 2011', '0000-00-00 00:00:00', 'terminado', 9, 9, 9, 1, 'I00909'),
-(10, 'Gryc', 'Roma 2018', '0000-00-00 00:00:00', 'preparando', 10, 10, 10, 1, 'J00212'),
-(11, 'Seguros Monterrey', 'Grecia 2010', '0000-00-00 00:00:00', 'activo', 1, 1, 1, 1, 'K00323'),
-(12, 'Alamo seguros', 'Marruecos 2015', '0000-00-00 00:00:00', 'terminado', 2, 2, 2, 1, 'L00434'),
-(13, 'Gryc', 'Mexico 2013', '0000-00-00 00:00:00', 'terminado', 3, 3, 3, 1, 'Y00275'),
-(14, 'Metlife', 'Turkia 2018', '0000-00-00 00:00:00', 'terminado', 4, 4, 4, 1, 'X00219'),
-(15, 'Seguros Monterrey', 'China 2010', '0000-00-00 00:00:00', 'terminado', 5, 5, 5, 1, 'O00564'),
-(16, 'Alamo seguros', 'Argentina 2018', '0000-00-00 00:00:00', 'preparando', 6, 6, 6, 1, 'N00875'),
-(17, 'Gryc', 'Argentina 2019', '0000-00-00 00:00:00', 'preparando', 7, 7, 7, 1, 'M00356'),
-(18, 'Seguros Monterrey', 'Brasil 2019', '0000-00-00 00:00:00', 'terminado', 8, 8, 8, 1, 'Z00274'),
-(19, 'Alamo seguros', 'Lima 2020', '0000-00-00 00:00:00', 'terminado', 9, 9, 9, 1, 'V00193'),
-(20, 'Gryc', 'Las Vegas 2018', '0000-00-00 00:00:00', 'terminado', 10, 10, 10, 1, 'P00364');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `eventoDiseno`
---
-
-CREATE TABLE IF NOT EXISTS `eventoDiseno` (
-  `idDiseno` int(11) NOT NULL,
-  `idEvento` int(11) NOT NULL,
-  PRIMARY KEY (`idDiseno`,`idEvento`),
-  KEY `ev-dis2` (`idEvento`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `eventoDiseno`
---
-
-INSERT INTO `eventoDiseno` (`idDiseno`, `idEvento`) VALUES
-(1, 1),
-(10, 1),
-(21, 1),
-(2, 2),
-(5, 2),
-(15, 2),
-(20, 2),
-(11, 3),
-(16, 3),
-(12, 4),
-(17, 4),
-(3, 5),
-(6, 5),
-(14, 6),
-(7, 7),
-(4, 8),
-(8, 9),
-(13, 9),
-(18, 9),
-(9, 10),
-(19, 10);
+INSERT INTO `Evento` (`idEvento`, `nombreEvento`, `descripcionEvento`, `fechaCreacion`, `statusEvento`, `idEncuesta`, `idCliente`, `idCoordinador`, `Ver`, `codigo`, `idDiseno`) VALUES
+(1, 'Alamo seguros 2', 'Argentina 2019', '0000-00-00 00:00:00', 'terminado', 1, 14, 16, 1, 'N00875', 21),
+(2, 'Gryc', 'Brasil 2018', '0000-00-00 00:00:00', 'activo', 2, 13, 2, 1, 'B00232', 2),
+(3, 'Metlife', 'Argentina 2016', '0000-00-00 00:00:00', 'terminado', 3, 3, 3, 1, 'C00343', 3),
+(4, 'Seguros Monterrey', 'San Francisco 2015', '0000-00-00 00:00:00', 'terminado', 4, 4, 4, 1, 'D00454', 20),
+(5, 'Alamo seguros', 'Oaxaca 2018', '0000-00-00 00:00:00', 'preparando', 5, 5, 5, 1, 'E00565', 4),
+(6, 'Gryc', 'Puebla 2017', '0000-00-00 00:00:00', 'terminado', 6, 6, 6, 1, 'F00676', 5),
+(7, 'Metlife', 'Guanajuato 2011', '0000-00-00 00:00:00', 'terminado', 7, 7, 7, 1, 'G00787', 6),
+(8, 'Seguros Monterrey', 'Ixtapa 2009', '0000-00-00 00:00:00', 'terminado', 8, 8, 8, 1, 'H00898', 7),
+(9, 'Alamo seguros', 'Cancun 2011', '0000-00-00 00:00:00', 'terminado', 9, 9, 9, 1, 'I00909', 8),
+(10, 'Gryc', 'Roma 2018', '0000-00-00 00:00:00', 'preparando', 10, 10, 10, 1, 'J00212', 9),
+(11, 'Seguros Monterrey', 'Grecia 2010', '0000-00-00 00:00:00', 'activo', 1, 1, 1, 1, 'K00323', 10),
+(12, 'Alamo seguros', 'Marruecos 2015', '0000-00-00 00:00:00', 'terminado', 2, 2, 2, 1, 'L00434', 11),
+(13, 'Gryc', 'Mexico 2013', '0000-00-00 00:00:00', 'terminado', 3, 3, 3, 1, 'Y00275', 12),
+(14, 'Metlife', 'Turkia 2018', '0000-00-00 00:00:00', 'terminado', 4, 4, 4, 1, 'X00219', 13),
+(15, 'Seguros Monterrey', 'China 2010', '0000-00-00 00:00:00', 'terminado', 5, 5, 5, 1, 'O00564', 14),
+(16, 'Alamo seguros', 'Argentina 2018', '0000-00-00 00:00:00', 'preparando', 6, 6, 6, 1, 'N00875', 15),
+(17, 'Gryc', 'Argentina 2019', '0000-00-00 00:00:00', 'preparando', 7, 7, 7, 1, 'M00356', 16),
+(18, 'Seguros Monterrey', 'Brasil 2019', '0000-00-00 00:00:00', 'terminado', 8, 8, 8, 1, 'Z00274', 17),
+(19, 'Alamo seguros', 'Lima 2020', '0000-00-00 00:00:00', 'terminado', 9, 9, 9, 1, 'V00193', 18),
+(20, 'Gryc', 'Las Vegas 2018', '0000-00-00 00:00:00', 'terminado', 10, 10, 10, 1, 'P00364', 19);
 
 -- --------------------------------------------------------
 
@@ -242,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `events` (
   `idEvento` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idEvento` (`idEvento`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
 
 --
 -- Volcado de datos para la tabla `events`
@@ -264,7 +225,11 @@ INSERT INTO `events` (`id`, `title`, `start`, `end`, `color`, `idEvento`) VALUES
 (29, 'cena', '2018-04-18 06:30:00', '2018-04-18 08:00:00', '#FFD700', 1),
 (33, 'entrega de playeras', '2018-04-12 00:00:00', '2018-04-13 00:00:00', '#008000', 2),
 (38, 'Museo w', '2018-04-08 00:00:00', '2018-04-11 00:00:00', '#FFD700', 2),
-(39, 'comida', '2018-04-01 00:00:00', '2018-04-04 00:00:00', '', 2);
+(39, 'comida', '2018-04-01 00:00:00', '2018-04-04 00:00:00', '', 2),
+(40, 'jkl;', '2018-04-10 00:00:00', '2018-04-13 00:00:00', '#008000', 1),
+(41, 'fiesta', '2018-04-29 00:00:00', '2018-05-03 00:00:00', '#008000', 1),
+(42, 'hola', '2018-05-14 00:00:00', '2018-05-17 00:00:00', '#FF0000', 1),
+(43, 'fiesta', '2018-05-30 00:00:00', '2018-06-02 00:00:00', '#FFD700', 1);
 
 -- --------------------------------------------------------
 
@@ -372,6 +337,7 @@ CREATE TABLE IF NOT EXISTS `Invitado` (
   `idIdioma` int(11) NOT NULL,
   `alergias` varchar(255) NOT NULL,
   `medicamentos` varchar(255) NOT NULL,
+  `asistencia` varchar(5) NOT NULL,
   PRIMARY KEY (`idInvitado`),
   KEY `idEstado` (`idEstado`),
   KEY `idIdioma` (`idIdioma`),
@@ -382,29 +348,29 @@ CREATE TABLE IF NOT EXISTS `Invitado` (
 -- Volcado de datos para la tabla `Invitado`
 --
 
-INSERT INTO `Invitado` (`idInvitado`, `fechaNacimiento`, `talla`, `idEstado`, `idIdioma`, `alergias`, `medicamentos`) VALUES
-(1, '0000-00-00', 'M', 10, 1, '', ''),
-(2, '0000-00-00', 'L', 8, 1, '', ''),
-(3, '0000-00-00', 'S', 6, 1, '', ''),
-(4, '0000-00-00', 'S', 2, 1, '', ''),
-(5, '0000-00-00', 'M', 4, 1, '', ''),
-(6, '0000-00-00', 'XL', 3, 1, '', ''),
-(7, '0000-00-00', 'L', 9, 1, '', ''),
-(8, '0000-00-00', 'S', 7, 1, '', ''),
-(9, '0000-00-00', 'M', 8, 1, '', ''),
-(10, '0000-00-00', 'L', 10, 1, '', ''),
-(11, '0000-00-00', 'XL', 2, 1, '', ''),
-(12, '0000-00-00', 'L', 8, 1, '', ''),
-(13, '0000-00-00', 'M', 5, 1, '', ''),
-(14, '0000-00-00', 'S', 6, 1, '', ''),
-(15, '0000-00-00', 'S', 8, 1, '', ''),
-(16, '0000-00-00', 'M', 9, 1, '', ''),
-(17, '0000-00-00', 'XL', 4, 1, '', ''),
-(18, '0000-00-00', 'S', 2, 1, '', ''),
-(19, '0000-00-00', 'M', 8, 1, '', ''),
-(20, '0000-00-00', 'M', 6, 1, '', ''),
-(48, '2018-01-01', 'S', 2, 1, '', ''),
-(49, '2018-01-01', 'S', 2, 1, '', '');
+INSERT INTO `Invitado` (`idInvitado`, `fechaNacimiento`, `talla`, `idEstado`, `idIdioma`, `alergias`, `medicamentos`, `asistencia`) VALUES
+(1, '0000-00-00', 'M', 10, 1, 'melón', 'XL3', 'yes'),
+(2, '0000-00-00', 'L', 8, 1, 'limon', 'paracetmol', 'yes'),
+(3, '0000-00-00', 'S', 6, 1, 'manzana', 'ibuprofeno', 'no'),
+(4, '0000-00-00', 'S', 2, 1, 'pescado', 'XL3', 'yes'),
+(5, '0000-00-00', 'M', 4, 1, 'camaron', 'ibuprofeno', 'yes'),
+(6, '0000-00-00', 'XL', 3, 1, 'cacahuate', 'paracetamol', 'yes'),
+(7, '0000-00-00', 'L', 9, 1, 'toronja', 'ibuprofeno', 'no'),
+(8, '0000-00-00', 'S', 7, 1, 'fresa', 'paracetamol', 'yes'),
+(9, '0000-00-00', 'M', 8, 1, 'piña y coco', 'XL3', 'no'),
+(10, '0000-00-00', 'L', 10, 1, 'melon', 'XL3', 'yes'),
+(11, '2018-05-05', 'S', 10, 1, 'limón y sal', 'tylenol y cefalosporina', 'no'),
+(12, '0000-00-00', 'L', 8, 1, 'manzana', 'pomada de la campana', 'yes'),
+(13, '0000-00-00', 'M', 5, 1, 'pescado', 'insulina', 'no'),
+(14, '0000-00-00', 'S', 6, 1, 'camaron', 'glucosa', 'yes'),
+(15, '0000-00-00', 'S', 8, 1, 'cacahuate', 'bengue', 'yes'),
+(16, '0000-00-00', 'M', 9, 1, 'pez globo', 'pomada del tigre', 'yes'),
+(17, '0000-00-00', 'XL', 4, 1, 'sushi', 'XL3', 'yes'),
+(18, '0000-00-00', 'S', 2, 1, 'pollo', 'XL3', 'no'),
+(19, '0000-00-00', 'M', 8, 1, 'brocoli', 'vicodin', 'yes'),
+(20, '0000-00-00', 'M', 6, 1, 'sandia', 'paracetamol', 'yes'),
+(48, '2018-01-01', 'S', 2, 1, 'berenjena', 'ibuprofeno', 'yes'),
+(49, '2018-01-01', 'S', 2, 1, 'atun', 'insulina', 'yes');
 
 -- --------------------------------------------------------
 
@@ -477,7 +443,8 @@ INSERT INTO `invitadoEvento` (`idEvento`, `idInvitado`, `fechaUsuarioEvento`) VA
 (5, 8, '0000-00-00 00:00:00'),
 (5, 9, '0000-00-00 00:00:00'),
 (5, 10, '0000-00-00 00:00:00'),
-(5, 11, '0000-00-00 00:00:00');
+(5, 11, '0000-00-00 00:00:00'),
+(16, 48, '2018-05-06 23:52:54');
 
 -- --------------------------------------------------------
 
@@ -885,12 +852,10 @@ CREATE TABLE IF NOT EXISTS `staffEvento` (
 INSERT INTO `staffEvento` (`idEvento`, `idStaff`, `fechaUsuarioEvento`) VALUES
 (1, 4, '0000-00-00 00:00:00'),
 (1, 5, '0000-00-00 00:00:00'),
-(1, 7, '2018-04-17 19:26:05'),
+(1, 7, '2018-05-04 18:05:39'),
 (1, 8, '0000-00-00 00:00:00'),
-(1, 9, '0000-00-00 00:00:00'),
-(1, 51, '2018-04-17 19:50:16'),
+(1, 51, '2018-05-04 18:05:28'),
 (2, 1, '0000-00-00 00:00:00'),
-(2, 2, '0000-00-00 00:00:00'),
 (2, 4, '0000-00-00 00:00:00'),
 (2, 5, '0000-00-00 00:00:00'),
 (2, 6, '0000-00-00 00:00:00'),
@@ -926,7 +891,8 @@ INSERT INTO `staffEvento` (`idEvento`, `idStaff`, `fechaUsuarioEvento`) VALUES
 (5, 10, '0000-00-00 00:00:00'),
 (5, 14, '0000-00-00 00:00:00'),
 (5, 15, '0000-00-00 00:00:00'),
-(5, 16, '0000-00-00 00:00:00');
+(5, 16, '0000-00-00 00:00:00'),
+(16, 51, '2018-05-06 23:52:42');
 
 -- --------------------------------------------------------
 
@@ -982,10 +948,10 @@ INSERT INTO `tiene` (`idUsuario`, `idRol`, `fechaRol`) VALUES
 (10, 1495, '0000-00-00 00:00:00'),
 (11, 1495, '0000-00-00 00:00:00'),
 (12, 1494, '0000-00-00 00:00:00'),
-(13, 1495, '0000-00-00 00:00:00'),
+(13, 1496, '2018-05-04 18:04:13'),
 (14, 1496, '2018-04-20 18:48:44'),
 (15, 1496, '2018-04-20 18:48:41'),
-(16, 1494, '0000-00-00 00:00:00'),
+(16, 1493, '2018-05-05 17:55:30'),
 (17, 1495, '0000-00-00 00:00:00'),
 (18, 1495, '0000-00-00 00:00:00'),
 (19, 1495, '0000-00-00 00:00:00'),
@@ -1016,7 +982,7 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
 
 INSERT INTO `Usuario` (`idUsuario`, `nombreUsuario`, `passwd`, `correo`, `telefono`, `Ver`) VALUES
 (1, 'Director General', 'admin', 'admin@hotmail.com', '4661017079', 1),
-(2, 'Coordinador', 'coordi', 'coordi@hotmail.com', '4661017080', 0),
+(2, 'Coordinador', 'coordi', 'coordi@hotmail.com', '4661017080', 1),
 (3, 'Staff', 'staff', 'staff@hotmail.com', '4661017081', 1),
 (4, 'Invitado', 'invitado', 'invitado@hotmail.com', '4661017082', 0),
 (5, 'Dante', 'waffle123', '3@hotmail.com', '4661017083', 0),
@@ -1024,9 +990,9 @@ INSERT INTO `Usuario` (`idUsuario`, `nombreUsuario`, `passwd`, `correo`, `telefo
 (7, 'Paulo', 'cenajohn1', 'correoqlo@prodigy.net', '4661017085', 1),
 (8, 'Andr', '123tamarindo', 'bivfsaokds@hotmail.com', '4661017086', 0),
 (9, 'Manuel', 'holaamigos1', 'sadsada@dgmail.com', '4661017087', 1),
-(10, 'Ramona', 'huehuehue3', 'dantemaxflores@gmail.com', '4661017088', 1),
-(11, 'Eugenio', 'xhderbez2', 'otrocorreoqlo@live.com', '4661017089', 1),
-(12, 'Rodrigo', 'qwerty1', 'dasda@hotmail.com', '4661017090', 1),
+(10, 'Ramona la mona', 'huehuehue3', 'dantemaxflores@gmail.com', '4661017088', 1),
+(11, 'Eugenio218746783578t', 'xhderbez2', 'otrocorreoqlo2@live.com', '4661017089', 1),
+(12, 'Rodrigo 3', 'qwerty1', 'dasda4@hotmail.com', '466101709001', 1),
 (13, 'Kevin', '5ofnovembah', 'rafs@gmail.com', '4661017091', 1),
 (14, 'Carlos', 'c0ntr4s3n4', '1231@yahoo.mx', '4661017092', 0),
 (15, 'Ramon', '0v3rdr1v3', '1@gmail.com', '4661017093', 1),
@@ -1069,13 +1035,6 @@ ALTER TABLE `Evento`
   ADD CONSTRAINT `Cliente_Evento` FOREIGN KEY (`idCliente`) REFERENCES `Usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `Coord_Evento` FOREIGN KEY (`idCoordinador`) REFERENCES `Usuario` (`idUsuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `Encuesta_Evento` FOREIGN KEY (`idEncuesta`) REFERENCES `Encuesta` (`idEncuesta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Filtros para la tabla `eventoDiseno`
---
-ALTER TABLE `eventoDiseno`
-  ADD CONSTRAINT `ev-dis` FOREIGN KEY (`idDiseno`) REFERENCES `Plantilla` (`idDiseno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `ev-dis2` FOREIGN KEY (`idEvento`) REFERENCES `Evento` (`idEvento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `events`
