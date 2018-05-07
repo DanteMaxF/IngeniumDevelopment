@@ -15757,3 +15757,6 @@
 [07-May-2018 16:47:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_evento.php:0
 [07-May-2018 16:47:11 UTC] PHP   2. modificarEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_evento.php:23
 [07-May-2018 16:47:11 UTC] PHP   3. mysqli_stmt->bind_param() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:2139
+[07-May-2018 17:10:06 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php on line 84
+[07-May-2018 17:10:06 UTC] PHP Stack trace:
+[07-May-2018 17:10:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
