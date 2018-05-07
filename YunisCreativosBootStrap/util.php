@@ -568,6 +568,8 @@ function disconnectDB($mysql){
 
 //FUNCION PARA VERIFICAR EL LOGIN
 function login($mail, $passwd) {
+  /*
+  VULNERABLE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   $db = connectDB();
   if ($db != NULL) {
 
@@ -587,6 +589,30 @@ function login($mail, $passwd) {
     return false;
   }
   return false;
+  */
+  $db = connectDB();
+        if ($db != NULL) {
+
+            // insert command specification
+            $query = 'SELECT correo FROM Usuario WHERE correo=? AND passwd=? AND Ver=1';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("ss", $mail, $passwd)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            $result = $statement->get_result();
+            disconnectDB($db);
+            return ($row = $result->fetch_assoc());
+        }
+        return false;
 }
 
 function getUserId($mail) {
