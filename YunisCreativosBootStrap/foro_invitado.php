@@ -18,6 +18,7 @@
         else if($_SESSION["idRol"]== 1496){
             include("partial/_navbarCliente.html");
         }
+        echo $_SESSION["idEventoActual"];
         include("partial/_foro_invitado.html");
         include("partial/_scripts.html");
         include("partial/_footer.html"); 

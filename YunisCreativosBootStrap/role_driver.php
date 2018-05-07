@@ -13,6 +13,8 @@
             header("location:home_empleado.php");
         }else if ($_SESSION["idRol"] == 1495 ){     //Invitado
             header("location:home_invitado.php");
+        }else if ($_SESSION["idRol"] == 1496 ){     //Cliente
+            header("location:home_cliente.php");
         }
     }else if (login($_POST["emailInput"], $_POST["passwd"])) {
         unset($_SESSION["errorLogin"]);
@@ -31,6 +33,8 @@
             header("location:home_empleado.php");
         }else if ($_SESSION["idRol"] == 1495 ){     //Invitado
             header("location:home_invitado.php");
+        }else if ($_SESSION["idRol"] == 1496 ){     //Cliente
+            header("location:home_cliente.php");
         }
 
     }else{
