@@ -3,9 +3,9 @@
     require_once("util.php");
     unset($_SESSION["evento"]);
     unset($_SESSION["idEvento"]);
-     unset($_SESSION["fEmepleado"]);
+    unset($_SESSION["fEmepleado"]);
     
-    if ( isset($_SESSION["idRol"]) ){
+    if ( isset($_SESSION["idRol"]) && $_SESSION["idRol"] ==1492 ){
         include("partial/_head.html");
         include("partial/_navbarCEO.html");
         include("partial/_menuForo.html");

@@ -2,7 +2,7 @@
  
     session_start();
     require_once("util.php");
-    if( isset($_SESSION["idRol"]) ){
+    if( isset($_SESSION["idRol"]) && $_SESSION["idRol"] ==1495){
         
         include("partial/_head.html");
         

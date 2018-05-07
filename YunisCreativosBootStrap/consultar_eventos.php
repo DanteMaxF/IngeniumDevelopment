@@ -3,7 +3,7 @@
     require_once("util.php");
     unset($_SESSION["evento"]);
     unset($_SESSION["idEvento"]);
-    if( isset($_SESSION["idRol"]) ){
+    if(  isset($_SESSION["idRol"]) && $_SESSION["idRol"] ==1492 ){
         
         include("partial/_statusRegistroEliminarStaff.html");
         unset($_SESSION["staffStatusError"]);

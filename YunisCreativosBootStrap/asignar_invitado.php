@@ -4,16 +4,19 @@
     require_once("util.php");
     
 
-    
-    if(asignarInvitado($_SESSION["idEvento"],$_POST["invitadoInput"])){
-        $_SESSION["staffStatusSuccess"] = "Se ha registrado <strong>".$_POST["invitadoInput"]."</strong> exitosamente";
-        unset($_SESSION["staffStatusError"]);
+    if ( isset($_SESSION["idRol"]) && $_SESSION["idRol"] ==1492){
+        if(asignarInvitado($_SESSION["idEvento"],$_POST["invitadoInput"])){
+            $_SESSION["staffStatusSuccess"] = "Se ha registrado <strong>".$_POST["invitadoInput"]."</strong> exitosamente";
+            unset($_SESSION["staffStatusError"]);
+        }else{
+            $_SESSION["staffStatusError"] = "Hubo un error en el registro, inténtalo de nuevo más tarde";
+            unset($_SESSION["staffStatusSuccess"]);
+            
+        }
+     
+        header('location:consultar_eventos.php?eventInput='.$_SESSION["idEvento"]);
     }else{
-        $_SESSION["staffStatusError"] = "Hubo un error en el registro, inténtalo de nuevo más tarde";
-        unset($_SESSION["staffStatusSuccess"]);
-        
+        $_SESSION["errorLogin"] = "Es necesario iniciar sesión";
+        header("location:index.php");
     }
- 
-    header('location:consultar_eventos.php?eventInput='.$_SESSION["idEvento"]);
-    
 ?>

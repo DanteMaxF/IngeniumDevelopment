@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once("util.php");
-    if( isset($_SESSION["idRol"]) ){
+    if( isset($_SESSION["idRol"]) && $_SESSION["idRol"] ==1492 ){
          if (eliminarUsuario($_GET["idStaff"])){
             $_SESSION["staffStatusSuccess"] = "Se ha eliminado el staff exitosamente";
             unset($_SESSION["staffStatusError"]);
