@@ -2,7 +2,7 @@
 function testSelected(){
     var selected = document.getElementById("rol").value;
     console.log(selected);
-    if (selected == 1495){
+    if (selected == 1495 || selected == 1496){
         document.getElementById("invitadoForm").style = 'visibility:visible';
         document.getElementById("fechaNacimiento").required = true;
         document.getElementById("Estado").required = true;
