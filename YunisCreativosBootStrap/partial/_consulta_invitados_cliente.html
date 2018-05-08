@@ -1,0 +1,19 @@
+<div class="container">
+    <h2><?php echo $_SESSION["descripcionEventoActual"] ?>: Invitados</h2>
+    <h4>Consulta y/o expulsa a los invitados de tu evento.</h4>
+    
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Correo</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php echo getInvitadosCliente($_SESSION["idEventoActual"], $_SESSION["idUser"]); ?>
+            </tbody>
+        </table>
+    </div>
+</div>

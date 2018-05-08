@@ -1548,21 +1548,21 @@ function getPlantillasListTemp(){
 
 
 
-function registrarEvento($nombreEvento, $descripcionEvento, $idEncuesta, $idCliente, $idCoordinador, $codigo){
+function registrarEvento($nombreEvento, $descripcionEvento, $idEncuesta, $idCliente, $idCoordinador, $codigo,$idDiseno){
     $db = connectDB();
  
       if ($db != NULL) {
 
             // insert command specification
-            $query='INSERT INTO Evento (idEvento, nombreEvento, descripcionEvento, fechaCreacion, statusEvento, idEncuesta, idCliente, idCoordinador, Ver, codigo)
-                    VALUES (NULL , ?,  ?, CURRENT_TIMESTAMP, "preparando", ?, ?, ?, 1, ?)';
+            $query='INSERT INTO Evento (idEvento, nombreEvento, descripcionEvento, fechaCreacion, statusEvento, idEncuesta, idCliente, idCoordinador, Ver, codigo, idDiseno) 
+                    VALUES (NULL, ?, ?, CURRENT_TIMESTAMP, "preparando", ?, ?, ?, 1, ?, ?);';
             mysqli_query($db, $query);
             // Preparing the statement
             if (!($statement = $db->prepare($query))) {
                 die("Preparation failed: (" . $db->errno . ") " . $db->error);
             }
             // Binding statement params
-            if (!$statement->bind_param("ssiiis", $nombreEvento,$descripcionEvento,$idEncuesta,$idCliente,$idCoordinador,$codigo)) {
+            if (!$statement->bind_param("ssiiisi", $nombreEvento,$descripcionEvento,$idEncuesta,$idCliente,$idCoordinador,$codigo,$idDiseno)) {
                 die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
             }
              // Executing the statement
@@ -2240,6 +2240,36 @@ function eliminarPlantilla($idDiseno){
             return true;
         }
         return false;
+}
+
+function getInvitadosCliente($idEvento, $idCliente){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT * 
+                FROM Usuario U, Evento E, invitadoEvento IE, Invitado INV, Idioma IDI, Estado EST
+                WHERE E.idEvento=IE.idEvento AND U.idUsuario=IE.idInvitado AND INV.idInvitado=IE.idInvitado AND IDI.idIdioma=INV.idIdioma AND EST.idEstado=INV.idEstado
+                AND IE.idEvento ='.$idEvento.' AND U.idUsuario !='.$idCliente.' 
+                ORDER BY nombreUsuario';
+        $results = mysqli_query($db,$query);
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        disconnectDB($db);
+        if(mysqli_num_rows($results) == 0){
+            echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+        } 
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<tr>';
+                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["correo"].'</td>';
+                 
+                 echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Expulsar</button></td>';
+                 echo generateModalDesasignarInvitado($row["idUsuario"],$row["nombreUsuario"]);
+                 echo '</tr>';
+            }
+        }
+    }
 }
 
 ?>
