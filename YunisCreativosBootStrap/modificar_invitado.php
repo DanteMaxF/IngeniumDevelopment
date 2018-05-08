@@ -28,7 +28,7 @@
         //die('');
         
          if (modificarUsuario($nombreUsuario,$passwd,$correo,$telefono,$idUsuario)){
-            if(modificarInvitado($idEstado, $talla, $idIdioma, $asistencia, $alergias, $medicamentos,  $fechaNacimiento , $idInvitado)){
+            if(modificarInvitado($idEstado, $talla, $idIdioma, $asistencia, $alergias, $medicamentos,  $fechaNacimiento , $idUsuario)){
                 $_SESSION["staffStatusSuccess"] = "Se ha modificado la información exitosamente";
                 unset($_SESSION["staffStatusError"]);
             }
@@ -36,7 +36,13 @@
             $_SESSION["staffStatusError"] = "Hubo un error con la modificación, inténtalo de nuevo más tarde";
             unset($_SESSION["staffStatusSuccess"]);
         }
-        header('location:consulta_de_usuarios.php?eventInput='.$_SESSION["idEvento"]);
+        if($_SESSION["idRol"]==1492){
+            header('location:consulta_de_usuarios.php?eventInput='.$_SESSION["idEvento"]);
+        }
+         if($_SESSION["idRol"]==1495 || $_SESSION["idRol"]==1496){
+            header('location:mi_info.php');
+        }
+        
     }else{
         $_SESSION["errorLogin"] = "Es necesario iniciar sesión";
         header("location:index.php");

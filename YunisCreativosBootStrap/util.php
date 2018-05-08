@@ -1021,7 +1021,7 @@ function asignarStaff($idEvento,$idStaff){
 function registrarInvitado($idInvitado,$fechaNacimiento, $talla, $idEstado, $idIdioma,$alergias,$medicamentos){
     $db = connectDB();
     if($db != NULL){
-     $query = 'INSERT INTO Invitado(idInvitado,fechaNacimiento,talla,idEstado,idIdioma,alergias,medicamentos) VALUES(?,?,?,?,?,?,?)';
+     $query = 'INSERT INTO Invitado(idInvitado,fechaNacimiento,talla,idEstado,idIdioma,alergias,medicamentos,asistencia) VALUES(?,?,?,?,?,?,?,"yes")';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
@@ -2268,6 +2268,25 @@ function getInvitadosCliente($idEvento, $idCliente){
                  echo generateModalDesasignarInvitado($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
             }
+        }
+    }
+}
+
+function getTelefonoById($id){
+     $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT *
+    FROM Usuario    WHERE
+    idUsuario ="'.$id.'"';
+     //Pa' debugear
+    //var_dump($query); 
+    //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo $row["telefono"];
+             }
         }
     }
 }
