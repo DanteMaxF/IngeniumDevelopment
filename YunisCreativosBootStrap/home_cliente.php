@@ -6,6 +6,7 @@
         include("partial/_head.html");
         
         $_SESSION["idEventoActual"] = getLastEventInvitado($_SESSION["idUser"]);
+        $_SESSION["idEvento"] = $_SESSION["idEventoActual"];
         if( $_SESSION["idEventoActual"]== -1){
             $_SESSION["descripcionEventoActual"] = "AUN NO SE TE HA ASIGNADO UN EVENTO :(";
             include("partial/_navbarInvitadoNull.html");
