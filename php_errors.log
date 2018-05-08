@@ -15757,3 +15757,31 @@
 [07-May-2018 16:47:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_evento.php:0
 [07-May-2018 16:47:11 UTC] PHP   2. modificarEvento() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_evento.php:23
 [07-May-2018 16:47:11 UTC] PHP   3. mysqli_stmt->bind_param() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:2139
+[07-May-2018 17:10:06 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php on line 84
+[07-May-2018 17:10:06 UTC] PHP Stack trace:
+[07-May-2018 17:10:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/consultar_eventos.php:0
+[07-May-2018 21:23:45 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1249
+[07-May-2018 21:23:45 UTC] PHP Stack trace:
+[07-May-2018 21:23:45 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[07-May-2018 21:23:45 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[07-May-2018 21:23:45 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[08-May-2018 00:17:13 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1249
+[08-May-2018 00:17:13 UTC] PHP Stack trace:
+[08-May-2018 00:17:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[08-May-2018 00:17:13 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[08-May-2018 00:17:13 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[08-May-2018 00:24:11 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1249
+[08-May-2018 00:24:11 UTC] PHP Stack trace:
+[08-May-2018 00:24:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[08-May-2018 00:24:11 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[08-May-2018 00:24:11 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[08-May-2018 00:34:50 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1249
+[08-May-2018 00:34:50 UTC] PHP Stack trace:
+[08-May-2018 00:34:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[08-May-2018 00:34:50 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[08-May-2018 00:34:50 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[08-May-2018 00:34:56 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1249
+[08-May-2018 00:34:56 UTC] PHP Stack trace:
+[08-May-2018 00:34:56 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[08-May-2018 00:34:56 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[08-May-2018 00:34:56 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20

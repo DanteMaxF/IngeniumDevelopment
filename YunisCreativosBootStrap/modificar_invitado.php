@@ -8,7 +8,7 @@
         $correo = $_POST["correo"];
         $telefono = $_POST["telefono"];
         $idEstado = $_POST["Estado"];
-        $idTalla = $_POST["talla"];
+        $talla = $_POST["talla"];
         $idIdioma =$_POST["idioma"];
         $asistencia = $_POST["asistencia"];
         $alergias = $_POST["alergias"];
@@ -28,7 +28,7 @@
         //die('');
         
          if (modificarUsuario($nombreUsuario,$passwd,$correo,$telefono,$idUsuario)){
-            if(modificarInvitado($idEstado, $idTalla, $idIdioma, $asistencia, $alergias, $medicamentos,  $fechaNacimiento , $idUsuario)){
+            if(modificarInvitado($idEstado, $talla, $idIdioma, $asistencia, $alergias, $medicamentos,  $fechaNacimiento , $idInvitado)){
                 $_SESSION["staffStatusSuccess"] = "Se ha modificado la información exitosamente";
                 unset($_SESSION["staffStatusError"]);
             }
