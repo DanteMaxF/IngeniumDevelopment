@@ -17,11 +17,13 @@
     
     
     if (registrarUsuario($nombreUsuario,$passwd1,$correo,$telefono)){
-        header('location:registrarInvitadoEvento.php?fechaNacimiento='.$fechaNacimiento.'&idEstado='.$idEstado.'&talla='.$talla.'&idioma='.$idioma.'&alergias='.$alergias.'&correo='.$correo.'&asistencia='.$asistencia.'&idEvento='.$idEvento.'&medicamentos='.$medicamentos);
+         $_SESSION["staffStatusSuccess"] = "Se ha registrado la información exitosamente";
+                unset($_SESSION["staffStatusError"]);
     }else{
-        echo "ERROR";
-    }
-    
+            $_SESSION["staffStatusError"] = "Hubo un error con el regitro, inténtalo de nuevo más tarde";
+            unset($_SESSION["staffStatusSuccess"]);
+    }     
+    header('location:registro_usuario.php');
     
     
     

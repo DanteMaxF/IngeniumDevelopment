@@ -8,13 +8,13 @@
     $talla = $_GET["talla"];
     $idIdioma = $_GET["idioma"];
     $alergias = $_GET["alergias"];
-    $mediacamentos = $_GET["medicamentos"];
+    $medicamentos = $_GET["medicamentos"];
     
 
      if (registrarRol($userId,$rol)){
             if(($rol == 1496) || ($rol ==1495)){
                 if(registrarInvitado($idInvitado,$fechaNacimiento, $talla, $idEstado, $idIdioma,$alergias,$medicamentos)){
-                    header("location: index.php?success=1");
+                    header("location: registro_usuario.php?success=1");
                 }
             }
     }else{

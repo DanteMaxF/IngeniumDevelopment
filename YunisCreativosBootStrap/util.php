@@ -1021,7 +1021,7 @@ function asignarStaff($idEvento,$idStaff){
 function registrarInvitado($idInvitado,$fechaNacimiento, $talla, $idEstado, $idIdioma,$alergias,$medicamentos){
     $db = connectDB();
     if($db != NULL){
-     $query = 'INSERT INTO Invitado(idInvitado,fechaNacimiento,talla,idEstado,idIdioma,alergias,medicamentos) VALUES(?,?,?,?,?,?,?)';
+     $query = 'INSERT INTO Invitado(idInvitado,fechaNacimiento,talla,idEstado,idIdioma,alergias,medicamentos,asistencia) VALUES(?,?,?,?,?,?,?,"yes")';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
