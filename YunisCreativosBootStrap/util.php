@@ -1548,21 +1548,21 @@ function getPlantillasListTemp(){
 
 
 
-function registrarEvento($nombreEvento, $descripcionEvento, $idEncuesta, $idCliente, $idCoordinador, $codigo){
+function registrarEvento($nombreEvento, $descripcionEvento, $idEncuesta, $idCliente, $idCoordinador, $codigo,$idDiseno){
     $db = connectDB();
  
       if ($db != NULL) {
 
             // insert command specification
-            $query='INSERT INTO Evento (idEvento, nombreEvento, descripcionEvento, fechaCreacion, statusEvento, idEncuesta, idCliente, idCoordinador, Ver, codigo)
-                    VALUES (NULL , ?,  ?, CURRENT_TIMESTAMP, "preparando", ?, ?, ?, 1, ?)';
+            $query='INSERT INTO Evento (idEvento, nombreEvento, descripcionEvento, fechaCreacion, statusEvento, idEncuesta, idCliente, idCoordinador, Ver, codigo, idDiseno) 
+                    VALUES (NULL, ?, ?, CURRENT_TIMESTAMP, "preparando", ?, ?, ?, 1, ?, ?);';
             mysqli_query($db, $query);
             // Preparing the statement
             if (!($statement = $db->prepare($query))) {
                 die("Preparation failed: (" . $db->errno . ") " . $db->error);
             }
             // Binding statement params
-            if (!$statement->bind_param("ssiiis", $nombreEvento,$descripcionEvento,$idEncuesta,$idCliente,$idCoordinador,$codigo)) {
+            if (!$statement->bind_param("ssiiisi", $nombreEvento,$descripcionEvento,$idEncuesta,$idCliente,$idCoordinador,$codigo,$idDiseno)) {
                 die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
             }
              // Executing the statement

@@ -20,8 +20,8 @@
         echo "<br>id Plantilla: $idPlantilla";
         
         
-        if (registrarEvento($nombreEvento, $descripcionEvento, $idEncuesta, $idCliente, $idCoordinador, $codigoEvento)){
-            header('location: registrarEventoPlantilla.php?idPlantilla='.$idPlantilla.'&codigoEvento='.$codigoEvento);
+        if (registrarEvento($nombreEvento, $descripcionEvento, $idEncuesta, $idCliente, $idCoordinador, $codigoEvento, $idPlantilla)){
+            header('location: home_CEO.php');
         }
     }else{
         $_SESSION["errorLogin"] = "Es necesario iniciar sesión";
