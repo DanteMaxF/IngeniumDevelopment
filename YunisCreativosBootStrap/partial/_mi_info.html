@@ -9,43 +9,36 @@
         <br>
         <h4 class="card-title">Mi información</h4>
         <!-- Falta poner a donde te va a redirigir -->
-        <form action="" method="POST" accept-charset="UTF-8">
+        <form action="modificar_invitado.php" method="POST" accept-charset="UTF-8">
             
             <div class="form-group"><?php echo printIdEventoForm($_SESSION["codigo"]); ?></div>
             <div class="form-group">
+             <input type="hidden" class="form-control" value='<?php echo $_SESSION["idUser"]; ?>' id="usr" name = "id" required>
               <label for="nombre">Nombre completo:</label>
-              <input type="text" class="form-control" id="usr" name = "nombreUsuario" required>
+              <input type="text" class="form-control" id="usr"  value= '<?php echo getNombreById($_SESSION["idUser"]); ?>' name = "nombreUsuario" required>
               
             </div>
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                   <label for="fecha_nac">Fecha Nacimiento:</label>
-                  <input type="date" class="form-control" id="fechaNacimiento" name = "fechaNacimiento" required>
+                  <input type="date" class="form-control" id="fechaNacimiento" value='<?php echo getFechaNacimiento($_SESSION["idUser"]); ?>' name = "fechaNacimiento" required>
                 </div>
                 <div class="col-md-4 mb-3">  
                   <label>Estado:</label>
                   <select class="form-control" id="Estado" name="Estado" required>
-                      <option> </option>
-                      <?php getEstado() ?>
+                      <?php getEstadoList($_SESSION["idUser"]) ?>
                   </select>
                 </div>
                 <div class="col-md-2 mb-3">
                   <label>Talla:</label>
                   <select class="form-control" id="talla" name="talla" required>
-                      <option> </option>
-                      <option value="S">Chica (S)</option>
-                      <option value="M">Mediana (M)</option>
-                      <option value="L">Grande (L)</option>
-                      <option value="XL">Extra Grande (XL)</option>
-                      <option value="XXL">Extra Extra Grande (XXL)</option>
+                       <?php getTallaList($_SESSION["idUser"]) ?>
                   </select>
                 </div>
                 <div class="col-md-2 mb-3">
                   <label>Seleccionar Idioma:</label>
                   <select class="form-control" id="idioma" name="idioma" required>
-                      <option> </option>
-                      <option value="1">Español</option>
-                      <option value="2">English</option>
+                      <?php getIdiomaList($_SESSION["idUser"]) ?>
                   </select>
                 </div>
             </div>
@@ -53,11 +46,11 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="telefono">Teléfono:</label>
-                <input class="form-control" type="tel" placeholder="(555)-555-5555" id="telefono" name="telefono" required>
+                <input class="form-control" type="tel" placeholder="(555)-555-5555" id="telefono" value='<?php echo getTelefonoById($_SESSION["idUser"]); ?>' name="telefono" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="correo">Correo:</label>
-                <input class="form-control" type="email" placeholder="correo@ejemplo.com" id="correo" name="correo" required>
+                <input class="form-control" type="email" placeholder="correo@ejemplo.com" id="correo" value='<?php echo $_SESSION["mail"]; ?>' name="correo"  required>
               </div>
               
             </div>
@@ -65,35 +58,28 @@
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
               <div class="col-10">
-                <input class="form-control" type="password" value="" id="passwd1" name="passwd1" required>
+                <input class="form-control" type="password" value='<?php echo  getPasswordById($_SESSION["idUser"]) ?>' id="passwd1" name="passwd1" required>
               </div>
             </div>
               
             <div class="form-group row">
               <label for="example-password-input" class="col-2 col-form-label">Verificar Contraseña: </label>
               <div class="col-10">
-                <input class="form-control" type="password" value="" id="passwd2" name="passwd2" required>
+                <input class="form-control" type="password" value='<?php echo  getPasswordById($_SESSION["idUser"])?>' id="passwd2" name="passwd2" required>
               </div>
             </div>
             <div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="asistenciaSi" name="asistencia" class="custom-control-input" value="yes">
-                  <label class="custom-control-label" for="asistenciaSi">Asistiré</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" id="asistenciaNo" name="asistencia" class="custom-control-input" value="no">
-                  <label class="custom-control-label" for="asistenciaNo">NO asistiré</label>
-                </div>
+               <?php  echo getAsistenciaByIdUsuario($_SESSION["idUser"]); ?>
             </div>
             
             <div class="form-group">
               <label for="alergias">Alergias (opcional)</label>
-              <textarea class="form-control" id="alergias" name="alergias" rows="3"></textarea>
+              <textarea class="form-control" id="alergias"  name="alergias" rows="3"><?php echo getAlergiasById($_SESSION["idUser"]); ?></textarea>
             </div>
             
             <div class="form-group">
               <label for="medicamentos">Medicamentos (opcional)</label>
-              <textarea class="form-control" id="medicamentos" name="medicamentos" rows="3"></textarea>
+              <textarea class="form-control" id="medicamentos"   name="medicamentos" rows="3"><?php echo getMedicamentosById($_SESSION["idUser"]); ?></textarea>
             </div>
             
             <button class="btn" type="submit" name="action">Registrar</button>

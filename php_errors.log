@@ -15795,3 +15795,6 @@
 [08-May-2018 01:29:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
 [08-May-2018 01:29:27 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
 [08-May-2018 01:29:27 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[08-May-2018 17:56:32 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 48
+[08-May-2018 17:56:32 UTC] PHP Stack trace:
+[08-May-2018 17:56:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0

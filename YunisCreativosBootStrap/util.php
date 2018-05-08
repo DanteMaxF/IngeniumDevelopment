@@ -2272,4 +2272,23 @@ function getInvitadosCliente($idEvento, $idCliente){
     }
 }
 
+function getTelefonoById($id){
+     $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT *
+    FROM Usuario    WHERE
+    idUsuario ="'.$id.'"';
+     //Pa' debugear
+    //var_dump($query); 
+    //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo $row["telefono"];
+             }
+        }
+    }
+}
+
 ?>
