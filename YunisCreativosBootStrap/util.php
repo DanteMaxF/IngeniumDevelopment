@@ -470,8 +470,8 @@ function plantillaTable(){
                  echo '<td>'.$row["colorFondo"].'</td>';
                  echo '<td>'.$row["colorBotones"].'</td>';
                  echo '<td>'.$row["nombreImagen"].'</td>';
-                 echo '<td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalModificarEvento'.$row["idDiseno"].'">Modificar</button></td>';
-                // modalModificarEvento($idEvento);
+                 echo '<td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalEditarPlantilla'.$row["idDiseno"].'">Editar</button></td>';
+                 modalEditarPlantilla($row["idDiseno"]);
                  echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idDiseno"].'">Eliminar</button></td>';
                  modalEliminarPlantilla($row["idDiseno"],$row["nombrePlantilla"]);
                  echo '</tr>';
@@ -1153,19 +1153,19 @@ function getUsuarios($rol,$descripcionEvento){
 }
 
 
-function registrarPlantillas($nombrePlantilla,$colorTexto,$colorFondo,$colorBotones,$imagenFondo){
+function registrarPlantillas($nombrePlantilla,$colorFondo,$colorBotones,$nombreImagen){
      $db = connectDB();
      //Pa' debugear
     //var_dump($passwd); 
       //die('');
     if($db != NULL){
-         $query = 'INSERT INTO Plantilla(nombrePlantilla,colorTexto,colorFondo,colorBotones,imagenFondo) VALUES(?,?,?,?,?)';
+         $query = 'INSERT INTO Plantilla(nombrePlantilla,colorFondo,colorBotones, nombreImagen, Ver) VALUES(?,?,?,?,1)';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("sssss", $nombrePlantilla,$colorTexto,$colorFondo,$colorBotones,$imagenFondo)) {
+        if (!$statement->bind_param("ssss", $nombrePlantilla,$colorFondo,$colorBotones,$nombreImagen)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -2273,7 +2273,7 @@ function getInvitadosCliente($idEvento, $idCliente){
 }
 
 function getTelefonoById($id){
-     $db = connectDB();
+    $db = connectDB();
     if($db != NULL){
     $query = 'SELECT *
     FROM Usuario    WHERE
@@ -2286,6 +2286,76 @@ function getTelefonoById($id){
         if(mysqli_num_rows($results) > 0){
             while ($row = mysqli_fetch_assoc($results)) {
                 echo $row["telefono"];
+             }
+        }
+    }
+}
+
+function modalEditarPlantilla($idDiseno){
+   echo'  <!-- The Modal -->
+    <div class="modal fade" id="modalEditarPlantilla'.$idDiseno.'">
+      <div class="modal-dialog">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Editar Plantilla</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+    
+          <!-- Modal body -->
+          <div class="modal-body">
+             <form action="modificar_plantilla.php" method="POST">
+                 <div class="form-group">
+                 <input type="hidden" class="form-control" value="'.$idDiseno.'"  name = "idDiseno" required>
+                    <label for="formGroupExampleInput">Nombre</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Las Vegas">
+                  </div>
+                <br>
+                <label>Color texto:</label>
+                <div class="col-10">
+                  <input class="form-control" type="color" value="#563d7c" placeholder="#b3ffb3" id="example-color-input">
+                </div>
+                <br>
+                <label>Color fondo:</label>
+                <div class="col-10">
+                  <input class="form-control" type="color" value="#ffb366" id="example-color-input">
+                </div>
+                <br>
+                <label>Color botones:</label>
+                <div class="col-10">
+                  <input class="form-control" type="color" value="#563d7c" id="example-color-input">
+                </div>
+                <br>
+                 <div class="custom-file">
+                    <input type="file" class="custom-file-input"  data-label="'.$idDiseno.'"  style="display:none;" id="customFileLang" lang="es">
+                    <label class="c6 btn btn-primary" id="labelFile'.$idDiseno.'" for="customFileLang" >Cambiar imagen:'.getImagenById($idDiseno).'</label>
+                 </div>
+                  <br><br>
+                  <button class="btn waves-effect waves-light" type="submit" name="action">Registrar</button>
+                  <br><br>
+                </form>
+          </div>
+    
+          <!-- Modal footer -->
+        </div>
+      </div>';
+}
+
+function getImagenById($idDiseno){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT *
+    FROM Plantilla   WHERE
+    idDiseno="'.$idDiseno.'"';
+     //Pa' debugear
+    //var_dump($query); 
+    //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                return $row["nombreImagen"];
              }
         }
     }
