@@ -39,10 +39,10 @@
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file) && uploadFoto($_SESSION["idEventoActual"], $_FILES["fileToUpload"]["name"])) {
                 echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-                
+                header("location:galeria.php");
             } else {
                 echo "Sorry, there was an error uploading your file.";
             }
         }
-        echo '  TEST: '.$_FILES["fileToUpload"]["name"];
+        
 ?>
