@@ -2291,6 +2291,7 @@ function getTelefonoById($id){
     }
 }
 
+
 function modalEditarPlantilla($idDiseno){
    echo'  <!-- The Modal -->
     <div class="modal fade" id="modalEditarPlantilla'.$idDiseno.'">
@@ -2351,14 +2352,58 @@ function getImagenById($idDiseno){
      //Pa' debugear
     //var_dump($query); 
     //die('');
-        $results = mysqli_query($db,$query);
+    $results = mysqli_query($db,$query);
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
             while ($row = mysqli_fetch_assoc($results)) {
                 return $row["nombreImagen"];
-             }
+            }      
         }
     }
+}
+
+function getFotos($idEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT *
+                  FROM Galeria    
+                  WHERE idEvento='.$idEvento;
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo '<a href="images/gallery/'.$row['path'].'"><img src="images/gallery/'.$row['path'].'" class="img-thumbnail img-responsive" alt="" width="20%"></a>';
+            }
+        }
+    }
+}
+
+function uploadFoto($idEvento, $photo){
+    $db = connectDB();
+        if ($db != NULL) {
+           // insert command specification
+            $query='INSERT INTO Galeria (idFoto,idEvento,path) VALUES (NULL ,?,?);';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("is", $idEvento,$photo)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
 }
 
 function PasswordForgot($correo){
