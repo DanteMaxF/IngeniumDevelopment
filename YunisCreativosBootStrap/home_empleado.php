@@ -7,6 +7,7 @@
         include("partial/_head.html");
         include("partial/_navbarEmpleado.html");
         require("FullCalendar/index.php");
+        include("partial/_googlemaps.html");
         include ("partial/_footer.html");
 
 
