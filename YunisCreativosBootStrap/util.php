@@ -470,7 +470,7 @@ function plantillaTable(){
                  echo '<td>'.$row["colorFondo"].'</td>';
                  echo '<td>'.$row["colorTexto"].'</td>';
                  echo '<td>'.$row["nombreImagen"].'</td>';
-                 echo '<td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalEditarPlantilla'.$row["idDiseno"].'">Editar</button></td>';
+                 echo '<td><button type="button" class="btn btn-dorado btn-sm" data-toggle="modal" data-target="#modalEditarPlantilla'.$row["idDiseno"].'">Editar</button></td>';
                  modalEditarPlantilla($row["idDiseno"]);
                  echo '<td><button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal'.$row["idDiseno"].'">Eliminar</button></td>';
                  modalEliminarPlantilla($row["idDiseno"],$row["nombrePlantilla"]);
@@ -1157,19 +1157,19 @@ function getUsuarios($rol,$descripcionEvento){
 }
 
 
-function registrarPlantillas($nombrePlantilla,$colorFondo,$colorBotones,$nombreImagen){
+function registrarPlantillas($nombrePlantilla,$colorFondo,$colorTexto,$nombreImagen){
      $db = connectDB();
      //Pa' debugear
     //var_dump($passwd); 
       //die('');
     if($db != NULL){
-         $query = 'INSERT INTO Plantilla(nombrePlantilla,colorFondo,colorBotones, nombreImagen, Ver) VALUES(?,?,?,?,1)';
+         $query = 'INSERT INTO Plantilla(nombrePlantilla,colorFondo,colorTexto, nombreImagen, Ver) VALUES(?,?,?,?,1)';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("ssss", $nombrePlantilla,$colorFondo,$colorBotones,$nombreImagen)) {
+        if (!$statement->bind_param("ssss", $nombrePlantilla,$colorFondo,$colorTexto,$nombreImagen)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -1702,7 +1702,7 @@ function getLastEventInvitado($idUser){
 function getIdEventoByIdInvitado($idInvitado){
     $db = connectDB();
     if($db != NULL){
-        $query = 'SELECT idEvento from invitadoEvento WHERE idInvitado ="'.$idInvitado.'"';
+        $query = 'SELECT idEvento from invitadoEvento WHERE idInvitado ="'.$idInvitado.'" ORDER BY idEvento DESC LIMIT 1';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -2216,7 +2216,7 @@ function modalEliminarPlantilla($idDiseno,$nombrePlantilla) {
           <p>¿Estás seguro que quieres eliminar la plantilla:  <strong>'.$nombrePlantilla.'</strong>?</p>
         </div>
         <div class="modal-footer">
-          <a type="button" class="btn btn-danger" href="eliminar_plantilla.php?idDiseno='.$idDiseno.'">Eliminar</a>
+          <a type="button" class="btn btn-dorado" href="eliminar_plantilla.php?idDiseno='.$idDiseno.'">Eliminar</a>
           <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
         </div>
       </div>
@@ -2332,7 +2332,7 @@ function modalEditarPlantilla($idDiseno){
                 <br>            
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" style="display:none;"  data-label="'.$idDiseno.'" id="customFileLang'.$idDiseno.'" lang="es" name="nombreImagen">
-                    <label class="c6 btn btn-primary" id="labelFile'.$idDiseno.'" for="customFileLang'.$idDiseno.'" >Cambiar imagen:'.getImagenById($idDiseno).'</label>
+                    <label class="c6 btn btn-dorado" id="labelFile'.$idDiseno.'" for="customFileLang'.$idDiseno.'" >Cambiar imagen:'.getImagenById($idDiseno).'</label>
                 </div>
                 <br><br>
                 <button class="btn waves-effect waves-light" type="submit" name="action">Registrar</button>
@@ -2615,4 +2615,24 @@ function getInvitadosForStaff($idEvento){
     }
 }
 
+function getImagenPlantilla($idDiseno){
+     $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT *
+    FROM Plantilla   WHERE
+    idDiseno="'.$idDiseno.'"';
+     //Pa' debugear
+    //var_dump($query); 
+    //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                return $row["nombreImagen"];
+             }
+        }
+    } 
+}
+
 ?>
+
