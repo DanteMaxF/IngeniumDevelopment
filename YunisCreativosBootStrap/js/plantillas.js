@@ -4,9 +4,14 @@ function myFunction(e){
 
 
 function myScript(){
-    let inputFile = document.getElementById("customFileLang")
+    let inputFiles = document.querySelectorAll(".custom-file-input");
     
-    inputFile.addEventListener("change", myFunction, false);
+    inputFiles.forEach(function(inputFile){
+        inputFile.addEventListener("change", function(event) {
+            let inputLabel = document.getElementById("labelFile" + event.target.dataset.label);
+            inputLabel.innerHTML = "Cambiar imagen: " + event.target.value;
+        });
+    });
 }
 
 

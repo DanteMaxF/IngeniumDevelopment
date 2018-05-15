@@ -15810,3 +15810,6 @@
 [09-May-2018 00:45:40 UTC] PHP Stack trace:
 [09-May-2018 00:45:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:0
 [09-May-2018 00:45:40 UTC] PHP   2. getimagesize() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registrar_plantilla.php:17
+[15-May-2018 00:41:34 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 2317
+[15-May-2018 00:41:34 UTC] PHP Stack trace:
+[15-May-2018 00:41:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/plantillas.php:0
