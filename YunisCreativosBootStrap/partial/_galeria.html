@@ -1,4 +1,5 @@
 <div class="container">
+    <h3 class="text-center"> Galería de fotos: <?php echo $_SESSION["descripcionEventoActual"]; ?></h3>
     <div class="thumbnail text-center">
 
         <?php echo getFotos($_SESSION["idEventoActual"]); ?>

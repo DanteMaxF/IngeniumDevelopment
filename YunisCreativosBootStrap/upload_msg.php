@@ -10,12 +10,12 @@
         
         if(isset($_SESSION["fEmepleado"])){
             uploadMsg($_SESSION['idUser'], $_SESSION["fEmepleado"], $msg);
+            header("location:foro_empleado.php");
         }else{
             uploadMsg($_SESSION['idUser'], $_SESSION["idEventoActual"], $msg);
+            header("location:foro_invitado.php");
     
         }
-                
-        header("location:foro_invitado.php");
         
     }else{
         $_SESSION["errorLogin"] = "Es necesario iniciar sesión";
