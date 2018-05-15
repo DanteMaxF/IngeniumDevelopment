@@ -16,6 +16,8 @@
                 if(registrarInvitado($idInvitado,$fechaNacimiento, $talla, $idEstado, $idIdioma,$alergias,$medicamentos)){
                     header("location: registro_usuario.php?success=1");
                 }
+            }else{
+                header("location: registro_usuario.php?success=1");
             }
     }else{
         echo "ERROR";
