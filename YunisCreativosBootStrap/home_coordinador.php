@@ -16,7 +16,7 @@
         }
         
         
-        
+        echo '<h3 class=text-center>'.$_SESSION["descripcionEventoActual"].'</h3>';
         include("partial/_FullCalendar.html");
         include("partial/_scripts.html");
         include("partial/_googlemaps.html");
