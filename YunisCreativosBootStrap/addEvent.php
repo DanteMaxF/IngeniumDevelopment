@@ -1,28 +1,30 @@
 <?php
-// Conexión a la base de datos y al archivo para recorrer los eventos
+
 require_once('bdd.php');
+require_once('util.php');
+
 
 
 
 if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && isset($_POST['color'])){
-	// Obtener los datos del nuevo evento del formulario 
+
     $title = $_POST['title'];
 	$start = $_POST['start'];
 	$end = $_POST['end'];
 	$color = $_POST['color'];
-	$eventid =1;
-	// Añadirlos a la base de datos como un nuevo evento
+
+	$eventid =   getIDactividad();
+
+	
     $sql = "INSERT INTO events(title, start, end, color,idEvento) values ('$title', '$start', '$end', '$color', '$eventid')";
 	echo $sql;
-    
-	// Evitar errores de "sintaxis" al enviarlos al servidor e inicializar recursos
-	$query = $bdd->prepare( $sql );
+    $query = $bdd->prepare( $sql );
 	if ($query == false){
 	 print_r($bdd->errorInfo());
 	 die ('Error al preparar');
 	}
     
-    // Vincula los valores de los parámetros y los envía al servidor a guardarlos en los recursos
+   
 	$sth = $query->execute();
 	if ($sth == false){
 	 print_r($query->errorInfo());

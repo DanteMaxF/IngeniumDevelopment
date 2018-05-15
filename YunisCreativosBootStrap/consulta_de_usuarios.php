@@ -1,4 +1,4 @@
-<?php 
+t<?php 
     session_start();
     require_once("util.php");
     if( isset($_SESSION["idRol"]) ){
