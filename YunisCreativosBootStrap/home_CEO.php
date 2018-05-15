@@ -16,6 +16,7 @@
         //include("partial/_home_CEO.html"); 
         include("partial/_FullCalendar.html");
         //include("partial/_scripts.html");
+        include("partial/_googlemaps.html");
         include("partial/_footer.html"); 
     }else{
         $_SESSION["errorLogin"] = "Es necesario iniciar sesión";

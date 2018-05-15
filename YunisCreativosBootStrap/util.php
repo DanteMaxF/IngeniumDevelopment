@@ -468,7 +468,7 @@ function plantillaTable(){
                  echo '<tr>';
                  echo '<td>'.$row["nombrePlantilla"].'</td>';
                  echo '<td>'.$row["colorFondo"].'</td>';
-                 echo '<td>'.$row["colorBotones"].'</td>';
+                 echo '<td>'.$row["colorTexto"].'</td>';
                  echo '<td>'.$row["nombreImagen"].'</td>';
                  echo '<td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalEditarPlantilla'.$row["idDiseno"].'">Editar</button></td>';
                  modalEditarPlantilla($row["idDiseno"]);
@@ -2291,6 +2291,7 @@ function getTelefonoById($id){
     }
 }
 
+
 function modalEditarPlantilla($idDiseno){
    echo'  <!-- The Modal -->
     <div class="modal fade" id="modalEditarPlantilla'.$idDiseno.'">
@@ -2305,36 +2306,31 @@ function modalEditarPlantilla($idDiseno){
     
           <!-- Modal body -->
           <div class="modal-body">
-             <form action="modificar_plantilla.php" method="POST">
-                 <div class="form-group">
+            <form action="modificar_plantilla.php" method="POST" enctype="multipart/form-data">
+               <div class="form-group">
                  <input type="hidden" class="form-control" value="'.$idDiseno.'"  name = "idDiseno" required>
                     <label for="formGroupExampleInput">Nombre</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Las Vegas">
+                    <input type="text" class="form-control" id="nombrePlantilla" value="'.getNombrePlantillaById($idDiseno).'" name="nombrePlantilla">
                   </div>
-                <br>
-                <label>Color texto:</label>
-                <div class="col-10">
-                  <input class="form-control" type="color" value="#563d7c" placeholder="#b3ffb3" id="example-color-input">
-                </div>
                 <br>
                 <label>Color fondo:</label>
                 <div class="col-10">
-                  <input class="form-control" type="color" value="#ffb366" id="example-color-input">
+                  <input class="form-control" type="color" id="colorFondo"  value="'.getColorFondoById($idDiseno).'" name="colorFondo">
                 </div>
                 <br>
-                <label>Color botones:</label>
+                <label>Color texto:</label>
                 <div class="col-10">
-                  <input class="form-control" type="color" value="#563d7c" id="example-color-input">
+                  <input class="form-control" type="color" id="colorTexto"  value="'.getColorTextoById($idDiseno).'" name="colorTexto">
                 </div>
-                <br>
-                 <div class="custom-file">
-                    <input type="file" class="custom-file-input"  data-label="'.$idDiseno.'"  style="display:none;" id="customFileLang" lang="es">
-                    <label class="c6 btn btn-primary" id="labelFile'.$idDiseno.'" for="customFileLang" >Cambiar imagen:'.getImagenById($idDiseno).'</label>
-                 </div>
-                  <br><br>
-                  <button class="btn waves-effect waves-light" type="submit" name="action">Registrar</button>
-                  <br><br>
-                </form>
+                <br>            
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" style="display:none;"  data-label="'.$idDiseno.'" id="customFileLang'.$idDiseno.'" lang="es" name="nombreImagen">
+                    <label class="c6 btn btn-primary" id="labelFile'.$idDiseno.'" for="customFileLang'.$idDiseno.'" >Cambiar imagen:'.getImagenById($idDiseno).'</label>
+                </div>
+                <br><br>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Registrar</button>
+                <br><br>  
+            </form>
           </div>
     
           <!-- Modal footer -->
@@ -2351,14 +2347,58 @@ function getImagenById($idDiseno){
      //Pa' debugear
     //var_dump($query); 
     //die('');
-        $results = mysqli_query($db,$query);
+    $results = mysqli_query($db,$query);
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
             while ($row = mysqli_fetch_assoc($results)) {
                 return $row["nombreImagen"];
-             }
+            }      
         }
     }
+}
+
+function getFotos($idEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT *
+                  FROM Galeria    
+                  WHERE idEvento='.$idEvento;
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                echo '<a href="images/gallery/'.$row['path'].'"><img src="images/gallery/'.$row['path'].'" class="img-thumbnail img-responsive" alt="" width="20%"></a>';
+            }
+        }
+    }
+}
+
+function uploadFoto($idEvento, $photo){
+    $db = connectDB();
+        if ($db != NULL) {
+           // insert command specification
+            $query='INSERT INTO Galeria (idFoto,idEvento,path) VALUES (NULL ,?,?);';
+            mysqli_query($db, $query);
+            // Preparing the statement
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params
+            if (!$statement->bind_param("is", $idEvento,$photo)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              }
+            //mysqli_free_result($result);
+            disconnectDB($db);
+            return true;
+        }
+        return false;
 }
 
 function PasswordForgot($correo){
@@ -2411,5 +2451,112 @@ function GetUsuarioPassword($correo){
         }
 }
 
+
+function getNombrePlantillaById($idDiseno){
+     $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT *
+    FROM Plantilla   WHERE
+    idDiseno="'.$idDiseno.'"';
+     //Pa' debugear
+    //var_dump($query); 
+    //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                return $row["nombrePlantilla"];
+             }
+        }
+    }
+}
+
+function getColorFondoById($idDiseno){
+     $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT *
+    FROM Plantilla   WHERE
+    idDiseno="'.$idDiseno.'"';
+     //Pa' debugear
+    //var_dump($query); 
+    //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                return $row["colorFondo"];
+             }
+        }
+    }
+}
+
+function getColorTextoById($idDiseno){
+     $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT *
+    FROM Plantilla   WHERE
+    idDiseno="'.$idDiseno.'"';
+     //Pa' debugear
+    //var_dump($query); 
+    //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+            while ($row = mysqli_fetch_assoc($results)) {
+                return $row["colorTexto"];
+             }
+        }
+    }
+}
+
+function modificarPlantillaNoImagen($nombrePlantilla, $colorFondo, $colorTexto, $idDiseno){
+     $db = connectDB();
+     //Pa' debugear
+    //var_dump($passwd); 
+      //die('');
+    if($db != NULL){
+         $query = 'UPDATE Plantilla SET nombrePlantilla = ? , colorFondo = ?,colorTexto = ? WHERE idDiseno = ?';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("sssi",$nombrePlantilla, $colorFondo, $colorTexto, $idDiseno)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        disconnectDB($db);
+        return true;
+    } 
+    return false;
+}
+
+function modificarPlantillaImagen($nombrePlantilla, $colorFondo, $colorTexto, $nombreImagen, $idDiseno){
+     $db = connectDB();
+     //Pa' debugear
+    //var_dump($passwd); 
+      //die('');
+    if($db != NULL){
+         $query = 'UPDATE Plantilla SET nombrePlantilla = ? , colorFondo = ?, colorTexto = ?, nombreImagen = ? WHERE idDiseno = ?';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("ssssi",$nombrePlantilla, $colorFondo, $colorTexto, $nombreImagen, $idDiseno)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        disconnectDB($db);
+        return true;
+    } 
+    return false;
+}
 
 ?>
