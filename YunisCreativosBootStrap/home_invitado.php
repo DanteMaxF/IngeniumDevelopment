@@ -4,7 +4,7 @@
     require_once("util.php");
     if( isset($_SESSION["idRol"]) && $_SESSION["idRol"] ==1495){
         
-        include("partial/_head.html");
+        include("partial/_head_invitado.html");
         
         $_SESSION["idEventoActual"] = getLastEventInvitado($_SESSION["idUser"]);
         if( $_SESSION["idEventoActual"]== -1){

@@ -4,7 +4,7 @@
     if( isset($_SESSION["idRol"]) && $_SESSION["idRol"] ==1492){
         $nombrePlantilla = $_POST["nombrePlantilla"];
         $colorFondo = $_POST["colorFondo"];
-        $colorBotones = $_POST["colorBotones"];
+        $colorTexto = $_POST["colorBotones"];
         //$nombreImagen = $_POST["nombreImagen"];
             unset($_SESSION["error_archivo"]);
             $target_dir = "images/";
@@ -69,7 +69,7 @@
         echo "<br>colorBotones: $colorBotones";
         echo "<br>nombreImagen: $nombreImagen";
         //die('');
-        registrarPlantillas($nombrePlantilla,$colorFondo,$colorBotones , basename($_FILES["imagenFondo"]["name"]));
+        registrarPlantillas($nombrePlantilla,$colorFondo,$colorTexto, basename($_FILES["imagenFondo"]["name"]));
         $_SESSION["message"] = 'La plantilla ha sido registrada';
         header("location:plantillas.php");
     }else{
