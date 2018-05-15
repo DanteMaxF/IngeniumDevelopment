@@ -630,7 +630,11 @@ function login($mail, $passwd) {
               }
             $result = $statement->get_result();
             disconnectDB($db);
-            return ($row = $result->fetch_assoc());
+            if ($row = $result->fetch_assoc()){
+                return true;
+            }else{
+                return false;
+            }
         }
         return false;
 }
@@ -954,7 +958,7 @@ function getStaffList($idEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT * FROM Usuario U, tiene T WHERE U.idUsuario=T.idUsuario AND T.idUsuario NOT IN (SELECT U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'") GROUP BY U.nombreUsuario';
+        $query = 'SELECT * FROM Usuario U, tiene T WHERE U.idUsuario=T.idUsuario AND T.idRol=1494 AND T.idUsuario NOT IN (SELECT U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'") GROUP BY U.nombreUsuario';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -1897,9 +1901,12 @@ function getLastEventoCoordinador($idUser){
         $results = mysqli_query($db,$query);
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
-           while ($row = mysqli_fetch_assoc($results)) {
+             while ($row = mysqli_fetch_assoc($results)) {
                  return $row["idEvento"];
-           }
+            }
+        }
+        else{
+            return -1;
         }
     }
 }
@@ -2557,6 +2564,55 @@ function modificarPlantillaImagen($nombrePlantilla, $colorFondo, $colorTexto, $n
         return true;
     } 
     return false;
+}
+
+function getLastEventoStaff($idUser){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT idEvento FROM staffEvento WHERE idStaff='.$idUser.' ORDER BY fechaUsuarioEvento DESC LIMIT 1';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["idEvento"];
+            }
+        }
+        else{
+            return -1;
+        }
+    }
+}
+
+function getInvitadosForStaff($idEvento){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT * 
+                FROM Usuario U, Evento E, invitadoEvento IE, Invitado INV, Idioma IDI, Estado EST
+                WHERE E.idEvento=IE.idEvento AND U.idUsuario=IE.idInvitado AND INV.idInvitado=IE.idInvitado AND IDI.idIdioma=INV.idIdioma AND EST.idEstado=INV.idEstado
+                AND IE.idEvento ='.$idEvento.' 
+                ORDER BY nombreUsuario';
+        $results = mysqli_query($db,$query);
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        disconnectDB($db);
+        if(mysqli_num_rows($results) == 0){
+            echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+        } 
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 echo '<tr>';
+                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["nombreEstado"].'</td>';
+                 echo '<td>'.$row["telefono"].'</td>';
+                 echo '<td>'.$row["talla"].'</td>';
+                 echo '</tr>';
+            }
+        }
+    }
 }
 
 ?>

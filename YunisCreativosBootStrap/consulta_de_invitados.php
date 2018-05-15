@@ -8,7 +8,7 @@
         }
         else if($_SESSION["idRol"]== 1493){
             include("partial/_navbarCoordinador.html");
-        }-
+        }
         include("partial/_consulta_de_invitados.html");
         include("partial/_scripts.html");
         include("partial/_footer.html");
