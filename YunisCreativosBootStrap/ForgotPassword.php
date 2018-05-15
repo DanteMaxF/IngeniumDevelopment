@@ -7,6 +7,7 @@ use PHPMailer\PHPMailer\Exception;
     $error = NULL;
     unset($_SESSION["correo"]);
     unset($_SESSION["correoAux"]);
+    
     include("partial/_contrasena.html");
        
         if ($_GET["correoinput"] == "") {
@@ -15,14 +16,27 @@ use PHPMailer\PHPMailer\Exception;
          $_SESSION["correo"] =  $_GET["correoinput"];
           $_SESSION["correoAux"] = PasswordForgot($_SESSION["correo"]);
            $_SESSION["UsuarioCorreo"] =  GetUsuarioPassword($_SESSION["correo"]);
-         
+            
             //var_dump($_SESSION["correoAux"]);
-             //var_dump($_SESSION["correo"]);
              //var_dump($_SESSION["UsuarioCorreo"]);
-       
-       // require'class.phpmailer.php';
-        
-
+          
+           if ($_SESSION["correoAux"] == NULL){
+             echo "CORREO INVALIDO, ESCRIBA UN CORREO VALIDO.";
+             unset($_SESSION["correo"]);
+             unset($_SESSION["correoAux"]);
+             unset($_SESSION["UsuarioCorreo"]);
+             
+             // header("Location:ForgotPassword.php");
+            //  var_dump($_SESSION["correoAux"]);
+            //var_dump($_SESSION["UsuarioCorreo"]);
+           
+            
+            
+           } else { 
+  
+            //var_dump($_SESSION["correoAux"]);
+             //var_dump($_SESSION["UsuarioCorreo"]);
+   
           require 'PHPMailer/src/Exception.php';
           require 'PHPMailer/src/PHPMailer.php';
           require 'PHPMailer/src/SMTP.php';
@@ -62,9 +76,8 @@ use PHPMailer\PHPMailer\Exception;
             $mail->Subject = "Recuperacion de Contraseña";
             //Cuerpo email con HTML.
             $mail->Body = "Estimado <b> " .$_SESSION["UsuarioCorreo"]. "</b>    su contraseña es: </br></br> <b>" .$_SESSION["correoAux"]; 
+            $mail->send();
            
-            
-            
             if(!$mail->send()) {                    
                 $error = "Ocurrió un error inesperado con él envió del correo electrónico, inténtelo de nuevo más tarde, disculpa las molestias.";
                 echo $error;
@@ -78,6 +91,6 @@ use PHPMailer\PHPMailer\Exception;
         
 
         }
- 
+       }
  
 ?>

@@ -2413,7 +2413,8 @@ function PasswordForgot($correo){
     
  
    if(mysqli_num_rows($results) == 0){
-            echo '<tr><td>No existe un correo registrado</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+           // echo '<tr><td>No existe un correo registrado</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+            return 0;
         } 
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
@@ -2437,7 +2438,8 @@ function GetUsuarioPassword($correo){
     
  
    if(mysqli_num_rows($results) == 0){
-            echo '<tr><td>No existe un correo registrado</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+          //  echo '<tr><td>No existe un correo registrado</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+            return 0;
         } 
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
@@ -2558,4 +2560,3 @@ function modificarPlantillaImagen($nombrePlantilla, $colorFondo, $colorTexto, $n
 }
 
 ?>
-
