@@ -73,7 +73,7 @@
         echo "<br>colorFondo: $colorFondo";
         echo "<br>colorBotones: $colorBotones";
         echo "<br>nombreImagen: $nombreImagen";
-        //die('Holi');
+        //die('');
         registrarPlantillas($nombrePlantilla,$colorFondo,$colorBotones , basename($_FILES["imagenFondo"]["name"]));
         $_SESSION["message"] = 'La plantilla ha sido registrada';
         header("location:plantillas.php");
