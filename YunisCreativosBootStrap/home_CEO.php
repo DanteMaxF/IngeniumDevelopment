@@ -25,12 +25,10 @@
      
 ?>
 
-  <script src="js/jquery.js"></script> <!-- jQuery Version 1.11.1 -->
-        <script src="js/bootstrap.min.js"></script> <!-- Bootstrap JavaScript -->
-        <script src='js/moment.min.js'></script> <!-- FullCalendar 1 -->
-        <script src='js/fullcalendar.min.js'></script> <!-- FullCalendar 2 -->
-            <script>
+  
+        <script>
         $(document).ready(function() {
+            
             $('#calendar').fullCalendar({
                 header: {
                     left: 'prev,next, today',
@@ -55,7 +53,7 @@
                         $('#ModalEdit').modal('show');
                     });
                 },
-                eventDrop: function(event, delta, revertFunc) {
+                eventDrop: function( event, delta, revertFunc, jsEvent, ui, view ) {
                     edit(event);
                 },
                 eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
@@ -109,13 +107,14 @@
                  data: {Event:Event},
                  success: function(rep) {
                         if(rep == 'OK'){
-                            alert('Cambios Guardados');
+                            alert('Se han guardado los cambios.');
                         }else{
-                            alert('No se pudieron guardar los cambios, intenta de nuevo');
+                            alert('No se pudieron guardar los cambios.');
                         }
                     }
                 });
             }
 
         });
+   
         </script>

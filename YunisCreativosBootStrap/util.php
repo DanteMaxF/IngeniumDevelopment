@@ -2558,3 +2558,4 @@ function modificarPlantillaImagen($nombrePlantilla, $colorFondo, $colorTexto, $n
 }
 
 ?>
+
