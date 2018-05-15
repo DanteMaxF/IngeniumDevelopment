@@ -2361,4 +2361,53 @@ function getImagenById($idDiseno){
     }
 }
 
+function PasswordForgot($correo){
+    $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT * FROM Usuario WHERE correo = "'.$correo.'"';
+    
+    $results = mysqli_query($db,$query);
+    //Pa' debugear
+    // var_dump($results); 
+    // die('');
+    
+ 
+   if(mysqli_num_rows($results) == 0){
+            echo '<tr><td>No existe un correo registrado</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+        } 
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+             return $row["passwd"]; 
+         } 
+        }
+   disconnectDB($db);
+        }
+}
+
+
+function GetUsuarioPassword($correo){
+     $db = connectDB();
+    if($db != NULL){
+    $query = 'SELECT * FROM Usuario WHERE correo = "'.$correo.'"';
+    
+    $results = mysqli_query($db,$query);
+    //Pa' debugear
+    // var_dump($results); 
+    // die('');
+    
+ 
+   if(mysqli_num_rows($results) == 0){
+            echo '<tr><td>No existe un correo registrado</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+        } 
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+             return $row["nombreUsuario"]; 
+            header("location:index.php");
+         } 
+        }
+   disconnectDB($db);
+        }
+}
+
+
 ?>
