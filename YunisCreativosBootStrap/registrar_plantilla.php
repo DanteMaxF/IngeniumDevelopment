@@ -6,11 +6,6 @@
         $colorFondo = $_POST["colorFondo"];
         $colorBotones = $_POST["colorBotones"];
         //$nombreImagen = $_POST["nombreImagen"];
-
-
-
-
-
             unset($_SESSION["error_archivo"]);
             $target_dir = "images/";
             $target_file = $target_dir . basename($_FILES["imagenFondo"]["name"]);

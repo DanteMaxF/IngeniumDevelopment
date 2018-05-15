@@ -2413,6 +2413,55 @@ function getColorTextoById($idDiseno){
     }
 }
 
+function modificarPlantillaNoImagen($nombrePlantilla, $colorFondo, $colorTexto, $idDiseno){
+     $db = connectDB();
+     //Pa' debugear
+    //var_dump($passwd); 
+      //die('');
+    if($db != NULL){
+         $query = 'UPDATE Plantilla SET nombrePlantilla = ? , colorFondo = ?,colorTexto = ? WHERE idDiseno = ?';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("sssi",$nombrePlantilla, $colorFondo, $colorTexto, $idDiseno)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        disconnectDB($db);
+        return true;
+    } 
+    return false;
+}
+
+function modificarPlantillaImagen($nombrePlantilla, $colorFondo, $colorTexto, $nombreImagen, $idDiseno){
+     $db = connectDB();
+     //Pa' debugear
+    //var_dump($passwd); 
+      //die('');
+    if($db != NULL){
+         $query = 'UPDATE Plantilla SET nombrePlantilla = ? , colorFondo = ?, colorTexto = ?, nombreImagen = ? WHERE idDiseno = ?';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("ssssi",$nombrePlantilla, $colorFondo, $colorTexto, $nombreImagen, $idDiseno)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        disconnectDB($db);
+        return true;
+    } 
+    return false;
+}
 
 
 

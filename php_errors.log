@@ -15813,3 +15813,39 @@
 [15-May-2018 00:41:34 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 2317
 [15-May-2018 00:41:34 UTC] PHP Stack trace:
 [15-May-2018 00:41:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/plantillas.php:0
+[15-May-2018 17:40:25 UTC] PHP Fatal error:  Call to undefined function modificarPlantillaImagen() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php on line 24
+[15-May-2018 17:40:25 UTC] PHP Stack trace:
+[15-May-2018 17:40:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php:0
+[15-May-2018 17:46:34 UTC] PHP Fatal error:  Call to undefined function modificarPlantillaImagen() in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php on line 24
+[15-May-2018 17:46:34 UTC] PHP Stack trace:
+[15-May-2018 17:46:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php:0
+[15-May-2018 17:59:33 UTC] PHP Warning:  include(partial/_googlemaps.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_empleado.php on line 10
+[15-May-2018 17:59:33 UTC] PHP Stack trace:
+[15-May-2018 17:59:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_empleado.php:0
+[15-May-2018 17:59:33 UTC] PHP Warning:  include(): Failed opening 'partial/_googlemaps.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_empleado.php on line 10
+[15-May-2018 17:59:33 UTC] PHP Stack trace:
+[15-May-2018 17:59:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_empleado.php:0
+[15-May-2018 18:03:07 UTC] PHP Warning:  include(statusRegistroEliminarStaff.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php on line 6
+[15-May-2018 18:03:07 UTC] PHP Stack trace:
+[15-May-2018 18:03:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php:0
+[15-May-2018 18:03:07 UTC] PHP Warning:  include(): Failed opening 'statusRegistroEliminarStaff.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php on line 6
+[15-May-2018 18:03:07 UTC] PHP Stack trace:
+[15-May-2018 18:03:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php:0
+[15-May-2018 18:06:31 UTC] PHP Warning:  include(partial/statusRegistroEliminarStaff.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php on line 6
+[15-May-2018 18:06:31 UTC] PHP Stack trace:
+[15-May-2018 18:06:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php:0
+[15-May-2018 18:06:31 UTC] PHP Warning:  include(): Failed opening 'partial/statusRegistroEliminarStaff.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php on line 6
+[15-May-2018 18:06:31 UTC] PHP Stack trace:
+[15-May-2018 18:06:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php:0
+[15-May-2018 18:22:50 UTC] PHP Warning:  include(partial/statusRegistroEliminarStaff.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php on line 6
+[15-May-2018 18:22:50 UTC] PHP Stack trace:
+[15-May-2018 18:22:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php:0
+[15-May-2018 18:22:50 UTC] PHP Warning:  include(): Failed opening 'partial/statusRegistroEliminarStaff.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php on line 6
+[15-May-2018 18:22:50 UTC] PHP Stack trace:
+[15-May-2018 18:22:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php:0
+[15-May-2018 18:24:41 UTC] PHP Warning:  include(partial/statusRegistroEliminarStaff.html): failed to open stream: No such file or directory in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php on line 6
+[15-May-2018 18:24:41 UTC] PHP Stack trace:
+[15-May-2018 18:24:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php:0
+[15-May-2018 18:24:41 UTC] PHP Warning:  include(): Failed opening 'partial/statusRegistroEliminarStaff.html' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php on line 6
+[15-May-2018 18:24:41 UTC] PHP Stack trace:
+[15-May-2018 18:24:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/modificar_plantilla.php:0
