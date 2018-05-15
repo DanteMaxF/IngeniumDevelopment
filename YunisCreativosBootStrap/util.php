@@ -630,7 +630,11 @@ function login($mail, $passwd) {
               }
             $result = $statement->get_result();
             disconnectDB($db);
-            return ($row = $result->fetch_assoc());
+            if ($row = $result->fetch_assoc()){
+                return true;
+            }else{
+                return false;
+            }
         }
         return false;
 }
@@ -1897,9 +1901,12 @@ function getLastEventoCoordinador($idUser){
         $results = mysqli_query($db,$query);
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
-           while ($row = mysqli_fetch_assoc($results)) {
+             while ($row = mysqli_fetch_assoc($results)) {
                  return $row["idEvento"];
-           }
+            }
+        }
+        else{
+            return -1;
         }
     }
 }
@@ -2555,6 +2562,26 @@ function modificarPlantillaImagen($nombrePlantilla, $colorFondo, $colorTexto, $n
         return true;
     } 
     return false;
+}
+
+function getLastEventoStaff($idUser){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT idEvento FROM staffEvento WHERE idStaff='.$idUser.' ORDER BY fechaUsuarioEvento DESC LIMIT 1';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["idEvento"];
+            }
+        }
+        else{
+            return -1;
+        }
+    }
 }
 
 ?>
