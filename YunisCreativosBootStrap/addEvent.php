@@ -1,8 +1,8 @@
 <?php
-
+session_start();
 require_once('bdd.php');
 require_once('util.php');
-	$eventid =   getIDactividad();
+	$eventid =   $_SESSION["idEvento"];
 
 if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && isset($_POST['color'])){
 

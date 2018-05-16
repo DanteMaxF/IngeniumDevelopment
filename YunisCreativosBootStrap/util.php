@@ -713,7 +713,7 @@ function getInfoGeneralEvento($idEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT E.nombreEvento, E.descripcionEvento, E.statusEvento,En.califPromedio, Cl.nombreUsuario AS  "Cliente", Co.nombreUsuario AS  "Coordinador" FROM Evento E, Encuesta En, Usuario Cl, Usuario Co WHERE E.idEncuesta = En.idEncuesta AND E.idCliente = Cl.idUsuario AND E.idCoordinador = Co.idUsuario AND idEvento =  "'.$idEvento.'"';
+        $query = 'SELECT E.codigo, E.nombreEvento, E.descripcionEvento, E.statusEvento,En.califPromedio, Cl.nombreUsuario AS  "Cliente", Co.nombreUsuario AS  "Coordinador" FROM Evento E, Encuesta En, Usuario Cl, Usuario Co WHERE E.idEncuesta = En.idEncuesta AND E.idCliente = Cl.idUsuario AND E.idCoordinador = Co.idUsuario AND idEvento =  "'.$idEvento.'"';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -725,7 +725,7 @@ function getInfoGeneralEvento($idEvento){
                  echo '<th scope="row">'.$row["nombreEvento"].'</th>';
                  echo '<th>'.$row["descripcionEvento"].'</th>';
                  echo '<th>'.$row["statusEvento"].'</th>';
-                 echo '<th>'.$row["califPromedio"].'</th>';
+                 echo '<th>'.$row["codigo"].'</th>';
                  echo '<th>'.$row["Cliente"].'</th>';
                  echo '<th>'.$row["Coordinador"].'</th>';
                  echo '<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalModificarEvento'.$row["idEvento"].'">Modificar</button></td>';
@@ -2634,17 +2634,15 @@ function getImagenPlantilla($idDiseno){
     } 
 }
 
-  $idActividad= 24 ;
-
     function setID($id){
        global $idActividad;    
-        echo "$idActividad";
+        //echo "$idActividad";
         
         
         
         $idActividad = $id;
         
-        echo "$idActividad";
+        //echo "$idActividad";
         return $idActividad;
       
      
