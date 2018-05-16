@@ -68,6 +68,10 @@
      echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalEliminar">Eliminar Evento</button>';
             ModalEliminarEvento($_SESSION["evento"],$_SESSION["idEvento"]);
     ?>
+    
+    <form method="POST" action="Export.php">
+     <input type="submit" name="Export" class="btn btn-success" value="Export">
+    </form>
       
     <!-- Button to Open the Modal 
     <img src="Images/CalendarioUsuario.PNG" data-toggle="modal" data-target="#myModal" alt="Full Callendar" width="100%">-->

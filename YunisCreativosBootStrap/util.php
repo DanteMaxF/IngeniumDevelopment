@@ -2458,6 +2458,71 @@ function GetUsuarioPassword($correo){
         }
 }
 
+function getInvitadosExcel3($idEvento){
+    
+    
+    $db = connectDB();
+    if($db != NULL){
+         
+        $query = 'SELECT * 
+                FROM Usuario U, Evento E, invitadoEvento IE, Invitado INV, Idioma IDI, Estado EST
+                WHERE E.idEvento=IE.idEvento AND U.idUsuario=IE.idInvitado AND INV.idInvitado=IE.idInvitado AND IDI.idIdioma=INV.idIdioma AND EST.idEstado=INV.idEstado
+                AND IE.idEvento ='.$idEvento.' 
+                ORDER BY nombreUsuario';
+       
+        $results = mysqli_query($db,$query);
+       
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        disconnectDB($db);
+        if(mysqli_num_rows($results) == 0){
+            echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+        } 
+        if(mysqli_num_rows($results) > 0){
+            
+             echo '<table class="table" bordered="1">';
+               echo '<tr>';
+                    
+                    echo'<th>'.'Nombre'.'</th>'; 
+                    echo'<th>'.Correo.'</th>'; 
+                    echo'<th>'.'Telefono'.'</th>';
+                    echo'<th>'.'Fecha de Nacimiento'.'</th>';
+                    echo'<th>'.Talla.'</th>' ;
+                    echo'<th>'.Idioma.'</th>' ;
+                    echo'<th>'.Estado.'</th>';
+                    echo'<th>'.Alergias.'</th>';
+                    echo'<th>'.Medicamentos.'</th>';
+                         
+                echo '</tr>';
+             
+             
+             while ($row = mysqli_fetch_array($results)) {
+                
+                 echo '<tr>';
+                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["correo"].'</td>';
+                 echo '<td>'.$row["telefono"].'</td>';
+                 echo '<td>'.$row["fechaNacimiento"].'</td>';
+                 echo '<td>'.$row["talla"].'</td>';
+                 echo '<td>'.$row["nombreIdioma"].'</td>';
+                 echo '<td>'.$row["nombreEstado"].'</td>';
+                 echo '<td>'.$row["alergias"].'</td>';
+                 echo '<td>'.$row["medicamentos"].'</td>';
+                 echo '</tr>';
+                 
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
 
 function getNombrePlantillaById($idDiseno){
      $db = connectDB();

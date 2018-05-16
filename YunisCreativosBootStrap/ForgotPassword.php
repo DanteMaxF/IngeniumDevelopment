@@ -76,7 +76,7 @@ use PHPMailer\PHPMailer\Exception;
             $mail->Subject = "Recuperacion de Contraseña";
             //Cuerpo email con HTML.
             $mail->Body = "Estimado <b> " .$_SESSION["UsuarioCorreo"]. "</b>    su contraseña es: </br></br> <b>" .$_SESSION["correoAux"]; 
-            $mail->send();
+            //$mail->send();
            
             if(!$mail->send()) {                    
                 $error = "Ocurrió un error inesperado con él envió del correo electrónico, inténtelo de nuevo más tarde, disculpa las molestias.";
