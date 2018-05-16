@@ -12,14 +12,14 @@
         <!-- Estilos Personalizados -->
         <style>
         
-  
- 
+
   body {
   
      width: 100%;
+     height: 100%;
      font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
      font-size: 14px;
-     height: 100%;
+     
    
  
 
@@ -27,12 +27,16 @@
 
 }
 
+.fc-title{
+       color: white ;
+       
+}
 #calendar {
-      max-width: 70%;
+      max-width: 80%;
       max-height: 80%;
       overflow-y: hidden !important;
       margin: 0 auto;
-  
+      color: white;
 }
     
     </style>
@@ -164,7 +168,7 @@
         <br>
         <br>
        
-     <script src="js/jquery.js"></script> 
+        <script src="js/jquery.js"></script> 
         <script src="js/bootstrap.min.js"></script> 
         <script src='js/moment.min.js'></script> 
         <script src='js/fullcalendar.min.js'></script> 
@@ -191,6 +195,7 @@
                     $('#ModalAdd').modal('show');
                 },
                 eventRender: function(event, element) {
+               
                  $(element).addTouch();
                      
                     element.bind('dblclick', function() {
@@ -207,6 +212,7 @@
                     edit(event);
                 },
                 events: [
+                
                 <?php
                     foreach($events as $event):
                     $start = explode(" ", $event['start']);
@@ -222,6 +228,7 @@
                         $end = $event['end'];
                     }
                 ?>
+                    
                     {
                         id: '<?php echo $event['id']; ?>',
                         title: '<?php echo $event['title']; ?>',
@@ -231,7 +238,7 @@
                     },
                 <?php endforeach; ?>
                 ]
-            });
+            } );
 
             function edit(event){
                 start = event.start.format('YYYY-MM-DD HH:mm:ss');
@@ -265,6 +272,7 @@
         });
    
         </script>
+
     
     </body>
     

@@ -2,9 +2,7 @@
 
 require_once('bdd.php');
 require_once('util.php');
-
-
-
+	$eventid =   getIDactividad();
 
 if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && isset($_POST['color'])){
 
@@ -12,8 +10,9 @@ if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && 
 	$start = $_POST['start'];
 	$end = $_POST['end'];
 	$color = $_POST['color'];
+	 
+           
 
-	$eventid =   getIDactividad();
 
 	
     $sql = "INSERT INTO events(title, start, end, color,idEvento) values ('$title', '$start', '$end', '$color', '$eventid')";

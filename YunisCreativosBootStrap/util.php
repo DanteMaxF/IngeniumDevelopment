@@ -2634,5 +2634,31 @@ function getImagenPlantilla($idDiseno){
     } 
 }
 
+  $idActividad= 24 ;
+
+    function setID($id){
+       global $idActividad;    
+        echo "$idActividad";
+        
+        
+        
+        $idActividad = $id;
+        
+        echo "$idActividad";
+        return $idActividad;
+      
+     
+        
+    }
+    
+    function getIDactividad(){
+        global $idActividad; 
+        echo "$idActividad";
+        return $idActividad;
+        
+    }
+
+
+
 ?>
 

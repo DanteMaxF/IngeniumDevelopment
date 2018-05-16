@@ -4,6 +4,9 @@
     if( isset($_SESSION["idRol"]) && $_SESSION["idRol"]==1493 ){
         
         include("partial/_head.html");
+       
+      
+       
         
         $_SESSION["idEventoActual"] = getLastEventoCoordinador($_SESSION["idUser"]);
         $_SESSION["idEvento"] = $_SESSION["idEventoActual"];
@@ -14,11 +17,16 @@
             $_SESSION["descripcionEventoActual"] = getDescripcionEvento($_SESSION["idEventoActual"]);
             include("partial/_navbarCoordinador.html");
         }
-        
+             require_once('bdd.php');
+    
+            $sql = 'SELECT id, title, start, end, color FROM events WHERE idEvento = "'.$_SESSION["idEventoActual"].'"';
+            $req = $bdd->prepare($sql);
+            $req->execute();
+            $events = $req->fetchAll();
+
         
         echo '<h3 class=text-center>'.$_SESSION["descripcionEventoActual"].'</h3>';
         include("partial/_FullCalendar.html");
-        include("partial/_scripts.html");
         include("partial/_googlemaps.html");
         include ("partial/_footer.html");
     }else{

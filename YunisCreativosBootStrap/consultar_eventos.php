@@ -1,6 +1,7 @@
 <?php 
     session_start();
-    require_once("util.php");
+   require_once("util.php");
+  
     unset($_SESSION["evento"]);
     unset($_SESSION["idEvento"]);
     if(  isset($_SESSION["idRol"]) && $_SESSION["idRol"] ==1492 ){
@@ -17,21 +18,22 @@
             unset($_SESSION["idEvento"]);
         }
         else if (($_GET["eventInput"] != "" && $_GET["eventInput"] != "-") || isset($_SESSION["idEvento"])){
-            $prueba=1;
+            
             $_SESSION["idEvento"] =  $_GET["eventInput"];
             $_SESSION["evento"] = getDescripcionEvento($_SESSION["idEvento"]);
 
             require_once('bdd.php');
-            setID($_SESSION["idEvento"] );
-            getIDactividad();
+           
         
 
             $sql = 'SELECT id, title, start, end, color FROM events WHERE idEvento = "'.$_SESSION["idEvento"].'"';
             $req = $bdd->prepare($sql);
             $req->execute();
             $events = $req->fetchAll();
-
+             setID($_SESSION["idEvento"] );
+           
             include("partial/_FullCalendar.html");
+           
    
 
             include("partial/_consultar_eventos.html"); 
