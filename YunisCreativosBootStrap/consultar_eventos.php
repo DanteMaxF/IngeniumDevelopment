@@ -21,7 +21,7 @@
             
             $_SESSION["idEvento"] =  $_GET["eventInput"];
             $_SESSION["evento"] = getDescripcionEvento($_SESSION["idEvento"]);
-
+            echo '<h1 class="text-center">'.$_SESSION["evento"].'</h1>';
             require_once('bdd.php');
            
         
@@ -30,7 +30,7 @@
             $req = $bdd->prepare($sql);
             $req->execute();
             $events = $req->fetchAll();
-             setID($_SESSION["idEvento"] );
+            setID($_SESSION["idEvento"] );
            
             include("partial/_FullCalendar.html");
            
