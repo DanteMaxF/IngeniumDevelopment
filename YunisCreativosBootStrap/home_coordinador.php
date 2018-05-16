@@ -13,7 +13,7 @@
             $events = $req->fetchAll();
             
         echo '<h1 class="text-center">Evento:  '.$_SESSION["descripcionEventoActual"].'</h1>';  
-        include("partial/_Calendario.html");
+        include("partial/_FullCalendar.html");
         //include("partial/_scripts.html");
         include("partial/_googlemaps.html");
         include ("partial/_footer.html");
