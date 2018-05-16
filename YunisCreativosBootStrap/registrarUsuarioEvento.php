@@ -1,7 +1,7 @@
 <?php
     require_once("util.php");
     
-    $idInvitado = getIDUserByMail($_GET['correo']);
+    $userId = getIDUserByMail($_GET['correo']);
     $rol = $_GET["rol"];
     $fechaNacimiento = $_GET["fechaNacimiento"];
     $idEstado = $_GET["Estado"];
