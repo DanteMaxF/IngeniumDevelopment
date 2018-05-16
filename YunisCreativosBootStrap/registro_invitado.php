@@ -3,7 +3,7 @@
     require_once("util.php");
     if( isset($_SESSION["codigo"]) ){
         $_SESSION["idEvento"] = getIdEventoByCodigo($_SESSION["codigo"]);
-        echo $_SESSION["idEvento"];
+        
         include("partial/_head.html"); 
         include("partial/_navbarLogOut.html"); 
         include("partial/_registro_invitado.html");

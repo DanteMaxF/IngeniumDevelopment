@@ -1183,7 +1183,7 @@ function registrarPlantillas($nombrePlantilla,$colorFondo,$colorTexto,$nombreIma
 }
  
  
-function registrarRol($idUsuario,$idRol){
+function modificarRol($idUsuario,$idRol){
     $db = connectDB();
     if($db != NULL){
          $query = 'UPDATE tiene SET idRol= ? WHERE idUsuario=?';
@@ -1552,21 +1552,21 @@ function getPlantillasListTemp(){
 
 
 
-function registrarEvento($nombreEvento, $descripcionEvento, $idEncuesta, $idCliente, $idCoordinador, $codigo,$idDiseno){
+function registrarEvento($nombreEvento, $descripcionEvento, $idCliente, $idCoordinador, $codigo,$idDiseno){
     $db = connectDB();
  
       if ($db != NULL) {
 
             // insert command specification
             $query='INSERT INTO Evento (idEvento, nombreEvento, descripcionEvento, fechaCreacion, statusEvento, idEncuesta, idCliente, idCoordinador, Ver, codigo, idDiseno) 
-                    VALUES (NULL, ?, ?, CURRENT_TIMESTAMP, "preparando", ?, ?, ?, 1, ?, ?);';
+                    VALUES (NULL, ?, ?, CURRENT_TIMESTAMP, "preparando", 1, ?, ?, 1, ?, ?);';
             mysqli_query($db, $query);
             // Preparing the statement
             if (!($statement = $db->prepare($query))) {
                 die("Preparation failed: (" . $db->errno . ") " . $db->error);
             }
             // Binding statement params
-            if (!$statement->bind_param("ssiiisi", $nombreEvento,$descripcionEvento,$idEncuesta,$idCliente,$idCoordinador,$codigo,$idDiseno)) {
+            if (!$statement->bind_param("ssiisi", $nombreEvento,$descripcionEvento,$idCliente,$idCoordinador,$codigo,$idDiseno)) {
                 die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error);
             }
              // Executing the statement
@@ -2657,6 +2657,31 @@ function getImagenPlantilla($idDiseno){
         return $idActividad;
         
     }
+    
+function registrarRol($userId,$idrol){
+    $db = connectDB();
+     //Pa' debugear
+    //var_dump($passwd); 
+      //die('');
+    if($db != NULL){
+         $query = 'INSERT INTO  tiene (idUsuario, idRol, fechaRol) VALUES (?,?, CURRENT_TIMESTAMP);';
+        // Preparing the statement 
+         if (!($statement = $db->prepare($query))) {
+            die("Preparation failed: (" . $db->errno . ") " . $db->error);
+          }
+        // Binding statement params 
+        if (!$statement->bind_param("ii",$userId, $idrol)) {
+            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+        }
+        // Executing the statement
+        if (!$statement->execute()) {
+            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+        } 
+        disconnectDB($db);
+        return true;
+    } 
+    return false;
+}
 
 
 

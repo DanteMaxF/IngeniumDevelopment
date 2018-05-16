@@ -24,7 +24,7 @@
             $_SESSION["staffStatusError"] = "Hubo un error con el regitro, inténtalo de nuevo más tarde";
             unset($_SESSION["staffStatusSuccess"]);
     }     
-    header('location:registro_usuario.php');
+   
     
     
     
