@@ -16310,3 +16310,12 @@
 [15-May-2018 22:58:40 UTC] PHP Stack trace:
 [15-May-2018 22:58:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/home_empleado.php:0
 >>>>>>> Paulo/FrontEnd
+[16-May-2018 02:55:11 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 2378
+[16-May-2018 02:55:11 UTC] PHP Stack trace:
+[16-May-2018 02:55:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/galeria.php:0
+[16-May-2018 02:55:11 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/galeria.php:26
+[16-May-2018 02:55:11 UTC] PHP   3. getFotos() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_galeria.html:5
+[16-May-2018 02:55:11 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:2378
+[16-May-2018 03:13:09 UTC] PHP Fatal error:  Cannot redeclare registrarRol() (previously declared in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1186) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 2681
+[16-May-2018 03:13:09 UTC] PHP Stack trace:
+[16-May-2018 03:13:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/code_driver.php:0
