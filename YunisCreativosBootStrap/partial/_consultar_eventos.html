@@ -1,7 +1,28 @@
+<style type="text/css">
+  hr {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr { 
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+</style>
 <div class="container">
     
     <!--Aqui se despliega la info general del eventto-->
-    
+    <hr>
+    <br>
     <h3> Información general</h3>
     <div class="table-responsive">
       <table class="table table-bordered table-striped">
@@ -23,10 +44,15 @@
         </tbody>
       </table>
     </div>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
     
     <h3>Staff</h3>
     <div class="table-responsive">
-      <table class="table table-striped table-sm">
+      <table class="table table-striped table-striped">
         <thead class="thead-dark">
           <tr>
             <th scope="col" class="thead-gris">Nombre</th>
@@ -40,10 +66,17 @@
         </tbody>
       </table>
     </div>
+     <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    
+    
     
     <h3>Invitados</h3>
     <div class="table-responsive">
-      <table class="table table-striped table-sm">
+      <table class="table table-striped table-striped">
         <thead class="thead-dark">
           <tr>
             <th scope="col" class="thead-gris">Nombre</th>
@@ -64,16 +97,19 @@
         </tbody>
       </table>
     </div>
-    
+    <div class =" row justify-content-start">
+      <div>
     <?php 
      echo '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalEliminar">Eliminar Evento</button>';
             ModalEliminarEvento($_SESSION["evento"],$_SESSION["idEvento"]);
     ?>
-    
+    </div>
+    <div class= "col-md-3 offset-md-1">
     <form method="POST" action="Export.php">
-     <input type="submit" name="Export" class="btn btn-success" value="Export">
+     <input type="submit" name="Export" class="btn btn-success" value="Exportar Usuarios">
     </form>
-      
+    </div>
+      </div>
     <!-- Button to Open the Modal 
     <img src="Images/CalendarioUsuario.PNG" data-toggle="modal" data-target="#myModal" alt="Full Callendar" width="100%">-->
 

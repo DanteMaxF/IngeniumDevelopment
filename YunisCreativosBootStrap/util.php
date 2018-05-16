@@ -242,7 +242,7 @@ function getInvitadosEvento($idEvento){
                  echo '<td>'.$row["nombreEstado"].'</td>';
                  echo '<td>'.$row["alergias"].'</td>';
                  echo '<td>'.$row["medicamentos"].'</td>';
-                 echo '<td><button type="button" class="btn btn-eliminar btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Expulsar</button></td>';
+                 echo '<td><button type="button" class="btn btn-eliminar btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Quitar</button></td>';
                  echo generateModalDesasignarInvitado($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
             }
@@ -754,7 +754,7 @@ function getStaffEvento($idEvento){
                  echo '<tr>';
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
-                 echo '<td><button type="button" class="btn btn-eliminar btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Expulsar</button></td>';
+                 echo '<td><button type="button" class="btn btn-eliminar btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Quitar</button></td>';
                  generateModalDesasignarStaff($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
              } 
@@ -772,10 +772,10 @@ function generateModalDesasignarStaff($id,$nombre) {
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
-          <p>¿Estás seguro que quieres expulsar a <strong>'.$nombre.'</strong>?</p>
+          <p>¿Estás seguro que quieres quitar a <strong>'.$nombre.'</strong>?</p>
         </div>
         <div class="modal-footer">
-          <a type="button" class="btn btn-danger" href="desasignar_staff.php?idStaff='.$id.'">Expulsar</a>
+          <a type="button" class="btn btn-danger" href="desasignar_staff.php?idStaff='.$id.'">Quitar</a>
           <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
         </div>
       </div>
@@ -2271,7 +2271,7 @@ function getInvitadosCliente($idEvento, $idCliente){
                  echo '<td>'.$row["nombreUsuario"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
                  
-                 echo '<td><button type="button" class="btn btn-eliminar btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Expulsar</button></td>';
+                 echo '<td><button type="button" class="btn btn-eliminar btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Quitar</button></td>';
                  echo generateModalDesasignarInvitado($row["idUsuario"],$row["nombreUsuario"]);
                  echo '</tr>';
             }

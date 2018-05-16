@@ -85,6 +85,7 @@ use PHPMailer\PHPMailer\Exception;
                 echo "$error";
             } else {
                 echo '<body onload="success()"></body>';
+                //header('Location: index.php');
                 require('index.php');
                 
              
