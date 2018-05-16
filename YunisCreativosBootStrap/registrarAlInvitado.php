@@ -19,11 +19,12 @@
     if (registrarUsuario($nombreUsuario,$passwd1,$correo,$telefono)){
          $_SESSION["staffStatusSuccess"] = "Se ha registrado la información exitosamente";
                 unset($_SESSION["staffStatusError"]);
+                header('location: registrarInvitadoEvento.php?correo='.$correo.'&fechaNacimiento='.$fechaNacimiento.'&idEstado='.$idEstado.'&talla='.$talla.'&idioma='.$idioma.'&alergias='.$alergias.'&asistencia='.$asistencia.'&idEvento='.$idEvento.'&medicamentos='.$medicamentos);
     }else{
             $_SESSION["staffStatusError"] = "Hubo un error con el regitro, inténtalo de nuevo más tarde";
             unset($_SESSION["staffStatusSuccess"]);
     }     
-    header('location:registro_usuario.php');
+   
     
     
     
