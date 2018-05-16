@@ -2683,27 +2683,6 @@ function registrarRol($userId,$idrol){
     return false;
 }
 
-function registrarRol($idUsuario,$idRol){
-    $db = connectDB();
-    if($db != NULL){
-         $query = 'SET tiene SET idRol WHERE idUsuario=?';
-        // Preparing the statement 
-         if (!($statement = $db->prepare($query))) {
-            die("Preparation failed: (" . $db->errno . ") " . $db->error);
-          }
-        // Binding statement params 
-        if (!$statement->bind_param("ii", $idUsuario, $idRol)) {
-            die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
-        }
-        // Executing the statement
-        if (!$statement->execute()) {
-            die("Execution failed: (" . $statement->errno . ") " . $statement->error);
-        } 
-        disconnectDB($db);
-        return true;
-    } 
-    return false;
-}
 
 ?>
 
