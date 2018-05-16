@@ -13,7 +13,7 @@
 
      if (registrarRol($userId,$rol)){
             if(($rol == 1496) || ($rol ==1495)){
-                if(registrarInvitado($idInvitado,$fechaNacimiento, $talla, $idEstado, $idIdioma,$alergias,$medicamentos)){
+                if(registrarInvitado($userId,$fechaNacimiento, $talla, $idEstado, $idIdioma,$alergias,$medicamentos)){
                     header("location: registro_usuario.php?success=1");
                 }
             }else{
