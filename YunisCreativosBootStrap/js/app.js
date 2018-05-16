@@ -13,7 +13,7 @@ function weather() {
     
 
      $.getJSON(url + apiKey + "/" + latitude + "," + longitude + "?callback=?", function(data) {
-      $('#temp').html((data.currently.temperature-32)*5/9 | 0 + '° C');
+      $('#temp').html((data.currently.temperature-32)*5/9 | 0 + '° C' );
       $('#minutely').html(data.minutely.summary);
     });
   }

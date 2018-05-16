@@ -31,3 +31,21 @@
 [15-May-2018 22:14:03 UTC] PHP   2. getIdPlantillaByIdInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/css/estilos_plantilla.php:7
 [15-May-2018 22:14:03 UTC] PHP   3. getIdEventoByIdInvitado() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1719
 [15-May-2018 22:14:03 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:1707
+[16-May-2018 04:10:07 UTC] PHP Fatal error:  Cannot redeclare registrarRol() (previously declared in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:2661) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 2706
+[16-May-2018 04:10:07 UTC] PHP Stack trace:
+[16-May-2018 04:10:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/css/estilos_plantilla.php:0
+[16-May-2018 04:10:16 UTC] PHP Fatal error:  Cannot redeclare registrarRol() (previously declared in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:2661) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 2706
+[16-May-2018 04:10:16 UTC] PHP Stack trace:
+[16-May-2018 04:10:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/css/estilos_plantilla.php:0
+[16-May-2018 04:10:26 UTC] PHP Fatal error:  Cannot redeclare registrarRol() (previously declared in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:2661) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 2706
+[16-May-2018 04:10:26 UTC] PHP Stack trace:
+[16-May-2018 04:10:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/css/estilos_plantilla.php:0
+[16-May-2018 04:11:29 UTC] PHP Fatal error:  Cannot redeclare registrarRol() (previously declared in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:2661) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 2706
+[16-May-2018 04:11:29 UTC] PHP Stack trace:
+[16-May-2018 04:11:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/css/estilos_plantilla.php:0
+[16-May-2018 04:11:32 UTC] PHP Fatal error:  Cannot redeclare registrarRol() (previously declared in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:2661) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 2706
+[16-May-2018 04:11:32 UTC] PHP Stack trace:
+[16-May-2018 04:11:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/css/estilos_plantilla.php:0
+[16-May-2018 04:12:17 UTC] PHP Fatal error:  Cannot redeclare registrarRol() (previously declared in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:2661) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 2706
+[16-May-2018 04:12:17 UTC] PHP Stack trace:
+[16-May-2018 04:12:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/css/estilos_plantilla.php:0

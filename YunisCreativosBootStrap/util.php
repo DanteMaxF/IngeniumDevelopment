@@ -2684,6 +2684,5 @@ function registrarRol($userId,$idrol){
 }
 
 
-
 ?>
 
