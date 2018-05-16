@@ -1,23 +1,40 @@
 <html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<div class ="wrapper">
-<div class="container">
-<h2 class="text-center">¿Olvidaste tu Contraseña?</h2>
-<br>
 
-<form action="ForgotPassword.php" method="GET">
-    <div class="form-group">
+<style>
+.card{
+    margin: 50px;
+    
+}
+
+button{
+    margin: 20px;
+}
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="card">
+            <br>
+            <br>
+            <h2 class="text-center">¿Olvidaste tu Contraseña?</h2>
+            <br>
+
+        <form action="ForgotPassword.php" method="GET">
+        <div class="form-group">
         <label for="exampleInputEmail1"></label>
-        <input type="email" class="form-control" id="correo" name="correoinput" placeholder="Ingrese Correo">
+            <div class="col-10">
+                <input type="email" class="form-control" id="correo" name="correoinput" placeholder="Ingrese Correo">
+        </div>
     </div>
+                <button type="submit"  class="btn btn-secondary">Submit</button>
+    
+    
+            </form>
+        </div>
+    </div>
+</body>
 
-    <button type="submit"  class="btn btn-secondary"    >Submit</button>
-</form>
-</div>
-</div>
 
 </html>
 

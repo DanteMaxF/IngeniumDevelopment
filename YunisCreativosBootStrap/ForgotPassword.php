@@ -7,9 +7,9 @@ use PHPMailer\PHPMailer\Exception;
     $error = NULL;
     unset($_SESSION["correo"]);
     unset($_SESSION["correoAux"]);
-    
-    include("partial/_contrasena.html");
-       
+   
+     
+        
         if ($_GET["correoinput"] == "") {
         
         } else {
@@ -21,7 +21,8 @@ use PHPMailer\PHPMailer\Exception;
              //var_dump($_SESSION["UsuarioCorreo"]);
           
            if ($_SESSION["correoAux"] == NULL){
-             echo "CORREO INVALIDO, ESCRIBA UN CORREO VALIDO.";
+             require("recuperarcontrasena.php");
+             echo '<body onload="fail()"></body>';
              unset($_SESSION["correo"]);
              unset($_SESSION["correoAux"]);
              unset($_SESSION["UsuarioCorreo"]);
@@ -36,6 +37,7 @@ use PHPMailer\PHPMailer\Exception;
   
             //var_dump($_SESSION["correoAux"]);
              //var_dump($_SESSION["UsuarioCorreo"]);
+        
    
           require 'PHPMailer/src/Exception.php';
           require 'PHPMailer/src/PHPMailer.php';
@@ -80,12 +82,12 @@ use PHPMailer\PHPMailer\Exception;
            
             if(!$mail->send()) {                    
                 $error = "Ocurrió un error inesperado con él envió del correo electrónico, inténtelo de nuevo más tarde, disculpa las molestias.";
-                echo $error;
+                echo "$error";
             } else {
-                $error = "Se envio correctamente el correo electrónico.";
-                echo $error;
-                 //header("location:index.php");
+                echo '<body onload="success()"></body>';
+                require('index.php');
                 
+             
             }   
        
         
@@ -94,3 +96,15 @@ use PHPMailer\PHPMailer\Exception;
        }
  
 ?>
+
+<script>
+function fail() {
+    alert("Correo no registado");
+}
+
+
+function success() {
+    alert("Se ha mandado un correo con su contraseña.");
+}
+</script>
+
