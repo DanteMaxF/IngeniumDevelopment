@@ -7,9 +7,9 @@ use PHPMailer\PHPMailer\Exception;
     $error = NULL;
     unset($_SESSION["correo"]);
     unset($_SESSION["correoAux"]);
-    
-    include("partial/_contrasena.html");
-       
+   
+     
+        
         if ($_GET["correoinput"] == "") {
         
         } else {
@@ -21,7 +21,8 @@ use PHPMailer\PHPMailer\Exception;
              //var_dump($_SESSION["UsuarioCorreo"]);
           
            if ($_SESSION["correoAux"] == NULL){
-             echo "CORREO INVALIDO, ESCRIBA UN CORREO VALIDO.";
+             require("recuperarcontrasena.php");
+             echo '<body onload="fail()"></body>';
              unset($_SESSION["correo"]);
              unset($_SESSION["correoAux"]);
              unset($_SESSION["UsuarioCorreo"]);
@@ -36,6 +37,7 @@ use PHPMailer\PHPMailer\Exception;
   
             //var_dump($_SESSION["correoAux"]);
              //var_dump($_SESSION["UsuarioCorreo"]);
+        
    
           require 'PHPMailer/src/Exception.php';
           require 'PHPMailer/src/PHPMailer.php';
@@ -47,25 +49,26 @@ use PHPMailer\PHPMailer\Exception;
          
          
             //Caracteres.
-           // $mail->SMTPDebug = 2; 
+            //$mail->SMTPDebug = 2; 
             
             $mail->isSMTP(); 
-            $mail->Host ='smtp.gmail.com';
-             $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username ='yuniscreativospruebas';                 // SMTP username
-            $mail->Password ='yuniscreativos1';    
-            $mail->SMTPSecure = 'tls';
-            $mail->Port = 587;
+            $mail->Host ='localhost';
+            //$mail->DKIM_domain = '127.0.0.1';
+             $mail->SMTPAuth = 'true';                               // Enable SMTP authentication
+            $mail->Username ='contacto@yuniscreativos.com.mx';                 // SMTP username
+            $mail->Password ='Mandala11:11';    
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port = 465;
             $mail->CharSet = 'UTF-8';
              
-           $mail->setFrom('yuniscreativospruebas@gmail.com','Yunis Creativos');
+           $mail->setFrom('contacto@yuniscreativos.com.mx','Yunis Creativos');
 
             //Dirección de envio y nombre.
              $mail->addAddress($_SESSION["correo"]);
             
             
             //Dirección a la que responderá destinatario.
-            $mail->addReplyTo('yuniscreativospruebas@gmail.com','El lechero');
+            $mail->addReplyTo('contacto@yuniscreativos.com.mx','Yunis Creativos');
 
             
             //$mail->addCC('yuniscreativospruebas@gmail.com');
@@ -76,16 +79,16 @@ use PHPMailer\PHPMailer\Exception;
             $mail->Subject = "Recuperacion de Contraseña";
             //Cuerpo email con HTML.
             $mail->Body = "Estimado <b> " .$_SESSION["UsuarioCorreo"]. "</b>    su contraseña es: </br></br> <b>" .$_SESSION["correoAux"]; 
-            $mail->send();
+            //$mail->send();
            
             if(!$mail->send()) {                    
                 $error = "Ocurrió un error inesperado con él envió del correo electrónico, inténtelo de nuevo más tarde, disculpa las molestias.";
-                echo $error;
+                echo "$error";
             } else {
-                $error = "Se envio correctamente el correo electrónico.";
-                echo $error;
-                 //header("location:index.php");
+                echo '<body onload="success()"></body>';
+                require('index.php');
                 
+             
             }   
        
         
@@ -94,3 +97,15 @@ use PHPMailer\PHPMailer\Exception;
        }
  
 ?>
+
+<script>
+function fail() {
+    alert("Correo no registado");
+}
+
+
+function success() {
+    alert("Se ha mandado un correo con su contraseña.");
+}
+</script>
+
