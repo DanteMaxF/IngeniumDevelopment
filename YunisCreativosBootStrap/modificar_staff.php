@@ -17,7 +17,7 @@
         //die('');
         
          if (modificarUsuario($nombreUsuario,$passwd,$correo,$telefono,$idUsuario)){
-            if(registrarRol($idUsuario,$rol)){
+            if(modificarRol($idUsuario,$rol)){
                 $_SESSION["staffStatusSuccess"] = "Se ha modificado la información exitosamente";
                 unset($_SESSION["staffStatusError"]);
             }
