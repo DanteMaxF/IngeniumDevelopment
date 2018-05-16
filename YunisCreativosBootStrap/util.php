@@ -628,9 +628,9 @@ function login($mail, $passwd) {
              if (!$statement->execute()) {
                 die("Execution failed: (" . $statement->errno . ") " . $statement->error);
               }
-            $result = $statement->get_result();
-            disconnectDB($db);
-            if ($row = $result->fetch_assoc()){
+            $statement->bind_result($correo);
+            $statement->store_result();
+            if($statement->num_rows == 1){
                 return true;
             }else{
                 return false;
