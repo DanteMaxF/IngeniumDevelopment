@@ -2,12 +2,12 @@
   <br><br>
   <div class="card">
     <div class="card-header">
-      <h1><?php echo $_SESSION["descripcionEventoActual"]; ?></h1>
+      <h1>Mi información</h1>
     </div>
     <div class="card-block">
       <div class="container">
         <br>
-        <h4 class="card-title">Mi información</h4>
+        <h4 class="card-title"></h4>
         <!-- Falta poner a donde te va a redirigir -->
         <form action="modificar_info_staff.php" method="POST" accept-charset="UTF-8">
             
@@ -43,7 +43,7 @@
                 <input class="form-control" type="password" value='<?php echo  getPasswordById($_SESSION["idUser"])?>' id="passwd2" name="passwd2" required>
               </div>
             </div>
-            <button class="btn" type="submit" name="action">Registrar</button>
+            <button class="btn btn-dorado" type="submit" name="action">Registrar</button>
         </form>
       </div>
     </div>

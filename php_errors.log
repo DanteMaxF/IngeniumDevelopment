@@ -16365,3 +16365,70 @@
 [16-May-2018 04:18:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
 [16-May-2018 04:18:58 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
 [16-May-2018 04:18:58 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[16-May-2018 04:33:57 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 2378
+[16-May-2018 04:33:57 UTC] PHP Stack trace:
+[16-May-2018 04:33:57 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/galeria.php:0
+[16-May-2018 04:33:57 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/galeria.php:26
+[16-May-2018 04:33:57 UTC] PHP   3. getFotos() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_galeria.html:5
+[16-May-2018 04:33:57 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:2378
+[16-May-2018 05:08:14 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1253
+[16-May-2018 05:08:14 UTC] PHP Stack trace:
+[16-May-2018 05:08:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[16-May-2018 05:08:14 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[16-May-2018 05:08:14 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[16-May-2018 05:09:09 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1253
+[16-May-2018 05:09:09 UTC] PHP Stack trace:
+[16-May-2018 05:09:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[16-May-2018 05:09:09 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[16-May-2018 05:09:09 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[16-May-2018 05:09:19 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1253
+[16-May-2018 05:09:19 UTC] PHP Stack trace:
+[16-May-2018 05:09:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[16-May-2018 05:09:19 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[16-May-2018 05:09:19 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[16-May-2018 05:09:49 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1253
+[16-May-2018 05:09:49 UTC] PHP Stack trace:
+[16-May-2018 05:09:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[16-May-2018 05:09:49 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[16-May-2018 05:09:49 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[16-May-2018 05:11:00 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1253
+[16-May-2018 05:11:00 UTC] PHP Stack trace:
+[16-May-2018 05:11:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[16-May-2018 05:11:00 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[16-May-2018 05:11:00 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[16-May-2018 05:12:00 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1253
+[16-May-2018 05:12:00 UTC] PHP Stack trace:
+[16-May-2018 05:12:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[16-May-2018 05:12:00 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[16-May-2018 05:12:00 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[16-May-2018 05:12:28 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1253
+[16-May-2018 05:12:28 UTC] PHP Stack trace:
+[16-May-2018 05:12:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[16-May-2018 05:12:28 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[16-May-2018 05:12:28 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[16-May-2018 05:13:18 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1253
+[16-May-2018 05:13:18 UTC] PHP Stack trace:
+[16-May-2018 05:13:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[16-May-2018 05:13:18 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[16-May-2018 05:13:18 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[16-May-2018 05:13:34 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1253
+[16-May-2018 05:13:34 UTC] PHP Stack trace:
+[16-May-2018 05:13:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[16-May-2018 05:13:34 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[16-May-2018 05:13:34 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[16-May-2018 05:14:12 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1253
+[16-May-2018 05:14:12 UTC] PHP Stack trace:
+[16-May-2018 05:14:12 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[16-May-2018 05:14:12 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[16-May-2018 05:14:12 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[16-May-2018 05:16:19 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1253
+[16-May-2018 05:16:19 UTC] PHP Stack trace:
+[16-May-2018 05:16:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[16-May-2018 05:16:19 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[16-May-2018 05:16:19 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[16-May-2018 05:24:41 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 2378
+[16-May-2018 05:24:41 UTC] PHP Stack trace:
+[16-May-2018 05:24:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/galeria.php:0
+[16-May-2018 05:24:41 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/galeria.php:26
+[16-May-2018 05:24:41 UTC] PHP   3. getFotos() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_galeria.html:5
+[16-May-2018 05:24:41 UTC] PHP   4. mysqli_num_rows() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php:2378
