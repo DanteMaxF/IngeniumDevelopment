@@ -1,0 +1,54 @@
+ <div class="container">
+  <br><br>
+  <div class="card">
+    <div class="card-header">
+      <h1><?php echo $_SESSION["descripcionEventoActual"]; ?></h1>
+    </div>
+    <div class="card-block">
+      <div class="container">
+        <br>
+        <h4 class="card-title">Mi información</h4>
+        <!-- Falta poner a donde te va a redirigir -->
+        <form action="modificar_info_staff.php" method="POST" accept-charset="UTF-8">
+            
+            <div class="form-group"><?php echo printIdEventoForm($_SESSION["codigo"]); ?></div>
+            <div class="form-group">
+             <input type="hidden" class="form-control" value='<?php echo $_SESSION["idUser"]; ?>' id="usr" name = "id" required>
+              <label for="nombre">Nombre completo:</label>
+              <input type="text" class="form-control" id="usr"  value= '<?php echo getNombreById($_SESSION["idUser"]); ?>' name = "nombreUsuario" required>
+              
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="telefono">Teléfono:</label>
+                <input class="form-control" type="tel" placeholder="(555)-555-5555" id="telefono" value='<?php echo getTelefonoById($_SESSION["idUser"]); ?>' name="telefono" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="correo">Correo:</label>
+                <input class="form-control" type="email" placeholder="correo@ejemplo.com" id="correo" value='<?php echo $_SESSION["mail"]; ?>' name="correo"  required>
+              </div>
+              
+            </div>
+
+            <div class="form-group row">
+              <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
+              <div class="col-10">
+                <input class="form-control" type="password" value='<?php echo  getPasswordById($_SESSION["idUser"]) ?>' id="passwd1" name="passwd1" required>
+              </div>
+            </div>
+              
+            <div class="form-group row">
+              <label for="example-password-input" class="col-2 col-form-label">Verificar Contraseña: </label>
+              <div class="col-10">
+                <input class="form-control" type="password" value='<?php echo  getPasswordById($_SESSION["idUser"])?>' id="passwd2" name="passwd2" required>
+              </div>
+            </div>
+            <button class="btn" type="submit" name="action">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br><br><br>
+
+<script src='js/password_checker.js'></script> 
