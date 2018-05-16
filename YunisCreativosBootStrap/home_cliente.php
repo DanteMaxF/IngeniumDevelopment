@@ -3,7 +3,7 @@
     session_start();
     require_once("util.php");
     if( isset($_SESSION["idRol"]) && $_SESSION["idRol"]==1496){
-        include("partial/_head.html");
+        include("partial/_head_invitado.html");
         
         $_SESSION["idEventoActual"] = getLastEventInvitado($_SESSION["idUser"]);
         $_SESSION["idEvento"] = $_SESSION["idEventoActual"];
