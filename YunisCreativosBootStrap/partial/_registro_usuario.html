@@ -21,12 +21,26 @@
                             </select>
                         </div>
                         <br>
-                        <div class="form-group">
-                          <label for="nombre">Nombre completo:</label>
-                          <input type="text" class="form-control" id="usr" name="nombreUsuario" required>
+                        <div class="row">
+                          <div class="form-group col">
+                            <label for="nombre" class="col-form-label">Nombre(s):</label>
+                            <input type="text" class="form-control" id="usr" name="nombreUsuario" required>
+                          </div>
+                          <br>
+                          <br>
+                          <div class="form-group col">
+                            <label for="nombre" class="col-form-label">Apellido Paterno:</label>
+                            <input type="text" class="form-control" id="usrP" name="apellidoP" required>
+                          </div>
+                          <br>
+                          <br>
+                          <div class="form-group col">
+                            <label for="nombre" class="col-form-label">Apellido Materno:</label>
+                            <input type="text" class="form-control" id="usrM" name="apellidoM" required>
+                          </div>
+                          <br>
+                          <br>
                         </div>
-                        <br>
-                        <br>
                         <div class="form-group row">
                           <label for="example-email-input" class="col-2 col-form-label">Correo:</label>
                           <div class="col-10">
@@ -49,13 +63,20 @@
                           </div>
                         </div>
                         <br>
-                         <div class="form-group row">
-                          <label for="example-tel-input" class="col-2 col-form-label">Teléfono:</label>
-                          <div class="col-10">
-                            <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input" name="telefono" required>
+                        <div class="row">
+                           <div class="form-group row col-sm-4">
+                            <label for="example-tel-input" class="col-3 col-form-label">Lada:</label>
+                            <div class="col-10">
+                              <input class="form-control" type="tel" placeholder="(555)" id="example-tel-input" name="lada" required>
+                            </div>
                           </div>
-                        </div>
-                        
+                          <div class="form-group row col">
+                            <label for="example-tel-input" class="col-3 col-form-label">Teléfono:</label>
+                            <div class="col-10">
+                              <input class="form-control" type="tel" placeholder="555-5555" id="example-tel-input" name="telefono" required>
+                            </div>
+                          </div>
+                        </div>                        
                         
                         <!-- Aqui empieza la parte que se oculta si el usuario no es un invitado -->
                        

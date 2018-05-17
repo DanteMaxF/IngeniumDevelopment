@@ -3,9 +3,12 @@
     require_once("util.php");
     $nombreUsuario = $_POST["nombreUsuario"];
     $fechaNacimiento = $_POST["fechaNacimiento"]; //invitado
+    $apellidoP = $_POST["apellidoP"];
+    $apellidoM = $_POST["apellidoM"];
     $idEstado = $_POST["Estado"];               //invitado
     $talla = $_POST["talla"];                   //inv
-    $idioma = $_POST["idioma"];                 //nv
+    $idioma = $_POST["idioma"];  
+    $lada = $_POST["lada"];
     $telefono = $_POST["telefono"];             
     $correo = $_POST["correo"];
     $passwd1 =  $_POST["passwd1"];
@@ -16,7 +19,7 @@
     $medicamentos = $_POST["medicamentos"];
     
     
-    if (registrarUsuario($nombreUsuario,$passwd1,$correo,$telefono)){
+    if (registrarUsuario($nombreUsuario,$apellidoP,$apellidoM,$passwd1,$correo,$lada,$telefono)){
          $_SESSION["staffStatusSuccess"] = "Se ha registrado la información exitosamente";
                 unset($_SESSION["staffStatusError"]);
                 header('location: registrarInvitadoEvento.php?correo='.$correo.'&fechaNacimiento='.$fechaNacimiento.'&idEstado='.$idEstado.'&talla='.$talla.'&idioma='.$idioma.'&alergias='.$alergias.'&asistencia='.$asistencia.'&idEvento='.$idEvento.'&medicamentos='.$medicamentos);
