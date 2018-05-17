@@ -1,0 +1,15 @@
+<div class="container">
+    <h3>Galería de Fotos</h3>
+    <form action="galeria_driver.php" method="POST">
+          <div class="form-group">
+            <label>Seleccionar evento:</label>
+            <select class="form-control" id="eventInput" name="eventInput">
+                <option> - </option>
+                <?php 
+                  echo getEventosDescripcion();
+                ?>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-secondary">Ir</button>
+    </form>
+</div><br></br>

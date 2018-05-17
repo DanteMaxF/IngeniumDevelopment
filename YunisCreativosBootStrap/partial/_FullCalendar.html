@@ -5,53 +5,79 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
+     
 
-        
-
-        
+   
         
         <!-- Estilos Personalizados -->
         <style>
-        body {
-            padding-top: 70px;
-            /* Se usa para el .navbar-fixed-top. Se puede quitar si usamos .navbar-static-top. Cambia si el alto de la navegación cambia */
-        }
-        #calendar {
-            max-width: 1000px;
-        }
-        .col-centered{
-            float: none;
-            margin: 0 auto;
-        }
-        </style>
+        
+
+  body {
+  
+     width: 100%;
+     height: 100%;
+     font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+     font-size: 14px;
+     
+   
+ 
+
+  
+
+}
+
+.fc-title{
+       color: white ;
+       
+}
+#calendar {
+      max-width: 80%;
+      max-height: 88%;
+      overflow-y: hidden !important;
+      margin: 0 auto;
+  
+}
+    
+    </style>
     </head>
     
     <body>
-        <!-- Contenido de la página -->
+
+        
+        
         <div class="container">
+
             <div class="row">
+
                 <div class="col-lg-12 text-center">
-                    <!-- Título Principal -->
+
+                 
+
                     
+
                     <p class="lead">Actividades del evento</p>
-                    <!-- Aquí se añade el calendario -->        
+
+                    <!-- Inicio de calendario -->        
+
                     <div id="calendar" class="col-centered">
+
                     </div>
+
                 </div>
+
             </div>
 
             <!-- Creación de Modal -->
             <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <!-- Inicio del formulario -->
                         <form class="form-horizontal" method="POST" action="addEvent.php">
                         <!-- Título del modal -->
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Añade una actividad</h4>
+                            <h4 class="modal-title text-left" id="myModalLabel">Añade una actividad</h4>
+                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         </div>
-                        <!-- Contenido del modal -->
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="title" class="col-sm-2 control-label">Titulo</label> <!-- Primera Opción (Título del evento)-->
@@ -64,21 +90,21 @@
                                 <div class="col-sm-10">
                                     <select name="color" class="form-control" id="color">
                                         <option value="">Elije uno</option>
-                                        <option style="color:#008000;" value="#008000">&#9724; Activo</option>
+                                        <option style="color:#008000;" value="#008000">&#9724; Finalizado</option>
                                         <option style="color:#FFD700;" value="#FFD700">&#9724; Preparandose</option>
-                                        <option style="color:#FF0000;" value="#FF0000">&#9724; Finalizado</option>
+                                        <option style="color:#FF0000;" value="#FF0000">&#9724; Activo</option>
 
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="start" class="col-sm-2 control-label">Inicia</label> <!-- Tercera Opción (Fecha de Inicio) No modificable -->
+                                <label for="start" class="col-sm-2 control-label">Inicia</label> 
                                 <div class="col-sm-10">
                                     <input type="text" name="start" class="form-control" id="start" readonly>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="end" class="col-sm-2 control-label">Termina</label> <!-- Cuarta Opción (Fecha de Fin) No modificable -->
+                                <label for="end" class="col-sm-2 control-label">Termina</label> 
                                 <div class="col-sm-10">
                                     <input type="text" name="end" class="form-control" id="end" readonly>
                                 </div>
@@ -86,7 +112,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button> <!-- Botón para cerrar modal -->
-                            <button type="submit" class="btn btn-primary">Guardar los cambios</button> <!-- Botón para guardar datos del evento -->
+                            <button type="submit" class="btn btn-outline-success">Guardar los cambios</button> <!-- Botón para guardar datos del evento -->
                         </div>
                         </form>
                     </div>
@@ -98,9 +124,9 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                     <form class="form-horizontal" method="POST" action="editEventTitle.php">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="modal-header
                             <h4 class="modal-title" id="myModalLabel">Editar Actividad</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         </div>
                     <div class="modal-body">
                         <div class="form-group">
@@ -114,9 +140,9 @@
                             <div class="col-sm-10">
                                 <select name="color" class="form-control" id="color">
                                     <option value="">Elije uno</option>
-                                    <option style="color:#008000;" value="#008000">&#9724; Activo</option>						  
+                                    <option style="color:#008000;" value="#008000">&#9724; Finalizado</option>						  
                                     <option style="color:#FFD700;" value="#FFD700">&#9724; Preparandose</option>
-                                    <option style="color:#FF0000;" value="#FF0000">&#9724; Terminado</option>
+                                    <option style="color:#FF0000;" value="#FF0000">&#9724; Activo</option>
 
                                 </select>
                             </div>
@@ -124,7 +150,7 @@
                         <div class="form-group"> 
                             <div class="col-sm-offset-2 col-sm-10">
                                 <div class="checkbox">
-                                    <label class="text-danger"><input type="checkbox"  name="delete">Borrar evento</label>
+                                    <label class="text-danger"><input type="checkbox"  name="delete">Borrar actividad</label>
                                 </div>
                             </div>
                         </div>
@@ -132,16 +158,127 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button> <!-- Botón para cerrar modal -->
-                        <button type="submit" class="btn btn-primary">Guardar los cambios</button> <!-- Botón para guardar datos del evento -->
+                        <button type="submit" class="btn btn-primary">Guardar los cambios</button>
                     </div>
                     </form>
                     </div>
                 </div>
             </div>
         </div>
-     
-    <br><br>
+        <br>
+        <br>
+       
+        <script src="js/jquery.js"></script> 
+        <script src="js/bootstrap.min.js"></script> 
+        <script src='js/moment.min.js'></script> 
+        <script src='js/fullcalendar.min.js'></script> 
+        <script src='js/jquery.ui.touch.js'></script> 
+        
+          <!--<script src="js/jquery-ui.min.js"></script>  jQuery Version 1.11.1 -->
+     <script>
+        $(document).ready(function() {
+            
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next, today',
+                    center: 'title',
+                    right: 'month,basicWeek,agendaDay'
+                },
+                defaultDate: $('#calendar').fullCalendar('today'),
+                editable: true,
+                eventLimit: true,
+                selectable: true,
+                selectHelper: true,
+                select: function(start, end) {
+                    $('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
+                    $('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD HH:mm:ss'));
+                    $('#ModalAdd').modal('show');
+                },
+                eventRender: function(event, element) {
+               
+                 $(element).addTouch();
+                     
+                    element.bind('dblclick', function() {
+                        $('#ModalEdit #id').val(event.id);
+                        $('#ModalEdit #title').val(event.title);
+                        $('#ModalEdit #color').val(event.color);
+                        $('#ModalEdit').modal('show');
+                    });
+                },
+                eventDrop: function( event, delta, revertFunc, jsEvent, ui, view ) {
+                    edit(event);
+                },
+                eventResize: function(event,dayDelta,minuteDelta,revertFunc) {
+                    edit(event);
+                },
+                events: [
+                
+                <?php
+                    foreach($events as $event):
+                    $start = explode(" ", $event['start']);
+                    $end = explode(" ", $event['end']);
+                    if($start[1] == '00:00:00'){
+                        $start = $start[0];
+                    }else{
+                        $start = $event['start'];
+                    }
+                    if($end[1] == '00:00:00'){
+                        $end = $end[0];
+                    }else{
+                        $end = $event['end'];
+                    }
+                ?>
+                    
+                    {
+                        id: '<?php echo $event['id']; ?>',
+                        title: '<?php echo $event['title']; ?>',
+                        start: '<?php echo $start; ?>',
+                        end: '<?php echo $end; ?>',
+                        color: '<?php echo $event['color']; ?>',
+                    },
+                <?php endforeach; ?>
+                ]
+            } );
+
+            function edit(event){
+                start = event.start.format('YYYY-MM-DD HH:mm:ss');
+                if(event.end){
+                    end = event.end.format('YYYY-MM-DD HH:mm:ss');
+                }else{
+                    end = start;
+                }
+
+                id =  event.id;
+
+                Event = [];
+                Event[0] = id;
+                Event[1] = start;
+                Event[2] = end;
+
+                $.ajax({
+                 url: 'editEventDate.php',
+                 type: "POST",
+                 data: {Event:Event},
+                 success: function(rep) {
+                        if(rep == 'OK'){
+                            alert('Se han guardado los cambios.');
+                        }else{
+                            alert('No se pudieron guardar los cambios.');
+                        }
+                    }
+                });
+            }
+
+        });
+   
+        </script>
+
     
     </body>
     
+
+    
+    
+
+
 </html>

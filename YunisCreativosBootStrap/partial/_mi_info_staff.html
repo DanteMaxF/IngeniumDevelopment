@@ -1,0 +1,83 @@
+ <div class="container">
+  <br><br>
+  <div class="card">
+    <div class="card-header">
+      <h1>Mi información</h1>
+    </div>
+    <div class="card-block">
+      <div class="container">
+        <br>
+        <h4 class="card-title"></h4>
+        <!-- Falta poner a donde te va a redirigir -->
+        <form action="modificar_info_staff.php" method="POST" accept-charset="UTF-8">
+            
+            <div class="form-group"><?php echo printIdEventoForm($_SESSION["codigo"]); ?></div>
+            <input type="hidden" class="form-control" value='<?php echo $_SESSION["idUser"]; ?>' id="usr" name = "id" required>
+            <div class="form-group">
+                <div class="row">
+                          <div class="form-group col">
+                            <label for="nombre" class="col-form-label">Nombre(s):</label>
+                            <input type="text" class="form-control" id="usr" name="nombreUsuario" value= '<?php echo getNombreById($_SESSION["idUser"]); ?>'required>
+                          </div>
+                          <br>
+                          <br>
+                          <div class="form-group col">
+                            <label for="nombre" class="col-form-label">Apellido Paterno:</label>
+                            <input type="text" class="form-control" id="usrP" name="apellidoP"  value='<?php echo getApellidoPById($_SESSION["idUser"]); ?>'required>
+                          </div>
+                          <br>
+                          <br>
+                          <div class="form-group col">
+                            <label for="nombre" class="col-form-label">Apellido Materno:</label>
+                            <input type="text" class="form-control" id="usrP" name="apellidoM"  value='<?php echo getApellidoMById($_SESSION["idUser"]); ?>'required>
+                          </div>
+                          <br>
+                          <br>
+                  </div>
+              
+            </div>
+            <div class="form-row">
+               <div class="row col">
+                           <div class="form-group row col">
+                            <label for="example-tel-input" class="col-4 col-form-label">Lada:</label>
+                            <div class="col-10">
+                              <input class="form-control" type="tel" placeholder="(555)" id="example-tel-input" name="lada"  value='<?php echo getLadaById($_SESSION["idUser"]); ?>'required>
+                            </div>
+                          </div>
+                          <div class="form-group row col">
+                            <label for="example-tel-input" class="col-4 col-form-label">Teléfono:</label>
+                            <div class="col-10">
+                              <input class="form-control" type="tel" placeholder="555-5555" id="example-tel-input" name="telefono" value='<?php echo getTelefonoById($_SESSION["idUser"]); ?>'required>
+                            </div>
+                          </div>
+                   
+              <div class="form-group col-md-6">
+                <label for="correo">Correo:</label>
+                <input class="form-control" type="email" placeholder="correo@ejemplo.com" id="correo" value='<?php echo $_SESSION["mail"]; ?>' name="correo"  required>
+              </div>
+              </div>  
+            </div>
+
+            <div class="form-group row">
+              <label for="example-password-input" class="col-2 col-form-label">Contraseña: </label>
+              <div class="col-10">
+                <input class="form-control" type="password" value='<?php echo  getPasswordById($_SESSION["idUser"]) ?>' id="passwd1" name="passwd1" required>
+              </div>
+            </div>
+              
+            <div class="form-group row">
+              <label for="example-password-input" class="col-2 col-form-label">Verificar Contraseña: </label>
+              <div class="col-10">
+                <input class="form-control" type="password" value='<?php echo  getPasswordById($_SESSION["idUser"])?>' id="passwd2" name="passwd2" required>
+              </div>
+            </div>
+            
+            <button class="btn btn-dorado" type="submit" name="action">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br><br><br>
+
+<script src='js/password_checker.js'></script> 

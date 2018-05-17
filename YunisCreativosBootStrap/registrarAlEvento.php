@@ -20,7 +20,7 @@
         echo "<br>id Plantilla: $idPlantilla";
         
         
-        if (registrarEvento($nombreEvento, $descripcionEvento, $idEncuesta, $idCliente, $idCoordinador, $codigoEvento, $idPlantilla)){
+        if (registrarEvento($nombreEvento, $descripcionEvento, $idCliente, $idCoordinador, $codigoEvento, $idPlantilla)){
             header('location: home_CEO.php');
         }
     }else{
