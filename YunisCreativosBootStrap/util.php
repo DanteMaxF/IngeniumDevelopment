@@ -20,10 +20,26 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
                        echo '</select>
                     </div>
                     <br>
-                    <div class="form-group">
-                      <label for="nombre">Nombre completo:</label>
-                      <input type="text" class="form-control" id="usr" name="nombreUsuario" value="'.$nombre.'" required>
-                    </div>
+                   <div class="row">
+                          <div class="form-group col">
+                            <label for="nombre" class="col-form-label">Nombre(s):</label>
+                            <input type="text" class="form-control" id="usr" name="nombreUsuario" value="'.$nombre.'" required>
+                          </div>
+                          <br>
+                          <br>
+                          <div class="form-group col">
+                            <label for="nombre" class="col-form-label">Apellido Paterno:</label>
+                            <input type="text" class="form-control" id="usrP" name="apellidoP" value="'.getApellidoPById($id).'" required>
+                          </div>
+                          <br>
+                          <br>
+                          <div class="form-group col">
+                            <label for="nombre" class="col-form-label">Apellido Materno:</label>
+                            <input type="text" class="form-control" id="usrM" name="apellidoM" value="'.getApellidoMById($id).'" required>
+                          </div>
+                          <br>
+                          <br>
+                        </div>
                     <br>
                     <br>
                     <div class="form-group row">
@@ -48,12 +64,20 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
                       </div>
                     </div>
                     <br>
-                     <div class="form-group row">
-                      <label for="example-tel-input" class="col-2 col-form-label">Teléfono:</label>
-                      <div class="col-10">
-                        <input class="form-control" type="tel" value="'.$telefono.'" id="example-tel-input" name="telefono" required>
-                      </div>
-                    </div>
+                     <div class="row">
+                           <div class="form-group row col-sm-4">
+                            <label for="example-tel-input" class="col-3 col-form-label">Lada:</label>
+                            <div class="col-10">
+                              <input class="form-control" type="tel" placeholder="(555)" id="example-tel-input" name="lada" value="'.getLadaById($id).'"required>
+                            </div>
+                          </div>
+                          <div class="form-group row col">
+                            <label for="example-tel-input" class="col-3 col-form-label">Teléfono:</label>
+                            <div class="col-10">
+                              <input class="form-control" type="tel" placeholder="555-5555" id="example-tel-input" name="telefono"  value="'.$telefono.'" required>
+                            </div>
+                          </div>
+                        </div>    
                     <br>
                     <br>
         </div>
@@ -69,19 +93,19 @@ function modalModificarStaff($id,$nombre,$correo, $telefono){
   <script src="js/password_checker.js"></script> ';
 }
 
-function modificarUsuario($nombreUsuario,$passwd,$correo,$telefono,$idUsuario){
+function modificarUsuario($nombreUsuario,$apellidoP,$apellidoM,$passwd,$correo,$lada,$telefono,$idUsuario){
      $db = connectDB();
      //Pa' debugear
     //var_dump($passwd); 
       //die('');
     if($db != NULL){
-         $query = 'UPDATE Usuario SET nombreUsuario = ? ,passwd = ?, correo = ?,telefono = ? WHERE idUsuario = ?';
+         $query = 'UPDATE Usuario SET nombreUsuario = ?, apellidoP = ?, apellidoM = ?,passwd = ?, correo = ?,lada = ?,telefono = ? WHERE idUsuario = ?';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("ssssi", $nombreUsuario, $passwd, $correo, $telefono, $idUsuario)) {
+        if (!$statement->bind_param("sssssssi", $nombreUsuario,$apellidoP,$apellidoM,$passwd,$correo,$lada,$telefono,$idUsuario)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -129,9 +153,26 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
         <div class="container">
            <form action="modificar_invitado.php" method="POST">
                    <div class="form-group">
-                <input type="hidden" class="form-control" value="'.$id.'" id="usr" name = "id" required>
-              <label for="nombre">Nombre completo:</label>
-              <input type="text" class="form-control" value="'.$nombre.'" id="usr" name = "nombreUsuario" required>
+                <div class="row">
+                          <div class="form-group col">
+                            <label for="nombre" class="col-form-label">Nombre(s):</label>
+                            <input type="text" class="form-control" id="usr" name="nombreUsuario" value="'.$nombre.'" required>
+                          </div>
+                          <br>
+                          <br>
+                          <div class="form-group col">
+                            <label for="nombre" class="col-form-label">Apellido Paterno:</label>
+                            <input type="text" class="form-control" id="usrP" name="apellidoP" value="'.getApellidoPById($id).'" required>
+                          </div>
+                          <br>
+                          <br>
+                          <div class="form-group col">
+                            <label for="nombre" class="col-form-label">Apellido Materno:</label>
+                            <input type="text" class="form-control" id="usrM" name="apellidoM" value="'.getApellidoMById($id).'" required>
+                          </div>
+                          <br>
+                          <br>
+                        </div>
               
             </div>
             <div class="form-row">
@@ -164,10 +205,20 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
             </div>
             
             <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="telefono">Teléfono:</label>
-                <input class="form-control" type="tel" value="'.$telefono.'" id="telefono" name="telefono" required>
-              </div>
+               <div class="row">
+                           <div class="form-group row col-sm-4">
+                            <label for="example-tel-input" class="col-3 col-form-label">Lada:</label>
+                            <div class="col-10">
+                              <input class="form-control" type="tel" placeholder="(555)" id="example-tel-input" name="lada" value="'.getLadaById($id).'"required>
+                            </div>
+                          </div>
+                          <div class="form-group row col">
+                            <label for="example-tel-input" class="col-3 col-form-label">Teléfono:</label>
+                            <div class="col-10">
+                              <input class="form-control" type="tel" placeholder="555-5555" id="example-tel-input" name="telefono"  value="'.$telefono.'" required>
+                            </div>
+                          </div>
+                        </div>    
               <div class="form-group col-md-6">
                 <label for="correo">Correo:</label>
                 <input class="form-control" type="email" value="'.$correo.'" id="correo" name="correo" required>
@@ -1044,21 +1095,21 @@ function registrarInvitado($idInvitado,$fechaNacimiento, $talla, $idEstado, $idI
     } 
     return false;
 }
-//registrarUsuario($_POST["nombreUsuario,passwd,correo,telefono"]);
+//registrarUsuario($_POST["nombreUsuario, passwd,correo,telefono"]);
 //FUNCION PARA REGISTRAR USUARIO
-function registrarUsuario($nombreUsuario,$passwd,$correo,$telefono){
+function registrarUsuario($nombreUsuario,$apellidoP,$apellidoM,$passwd,$correo,$lada,$telefono){
     $db = connectDB();
      //Pa' debugear
     //var_dump($passwd); 
       //die('');
     if($db != NULL){
-         $query = 'INSERT INTO Usuario(nombreUsuario,passwd,correo,telefono,Ver) VALUES(?,?,?,?,1)';
+         $query = 'INSERT INTO Usuario(nombreUsuario,apellidoP,apellidoM,passwd,correo,lada,telefono,Ver) VALUES(?,?,?,?,?,?,?,1)';
         // Preparing the statement 
          if (!($statement = $db->prepare($query))) {
             die("Preparation failed: (" . $db->errno . ") " . $db->error);
           }
         // Binding statement params 
-        if (!$statement->bind_param("sssi", $nombreUsuario, $passwd, $correo, $telefono)) {
+        if (!$statement->bind_param("sssssss", $nombreUsuario,$apellidoP,$apellidoM,$passwd,$correo,$lada,$telefono)) {
             die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
         }
         // Executing the statement
@@ -2683,6 +2734,59 @@ function registrarRol($userId,$idrol){
     return false;
 }
 
+function getApellidoPById($idUsuario){
+   $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT * FROM Usuario WHERE idUsuario ="'.$idUsuario.'"';
+        //Pa' debugear
+        //var_dump($query); 
+       // die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["apellidoP"];
+            }
+        
+        }
+    } 
+}
+
+function getApellidoMById($idUsuario){
+   $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT * FROM Usuario WHERE idUsuario ="'.$idUsuario.'"';
+        //Pa' debugear
+        //var_dump($query); 
+       // die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["apellidoM"];
+            }
+        
+        }
+    } 
+}
+
+function getLadaById($idUsuario){
+   $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT * FROM Usuario WHERE idUsuario ="'.$idUsuario.'"';
+        //Pa' debugear
+        //var_dump($query); 
+       // die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["lada"];
+            }
+        
+        }
+    } 
+}
 
 ?>
 
