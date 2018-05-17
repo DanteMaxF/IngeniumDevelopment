@@ -5,10 +5,25 @@
         <?php echo getFotos($_SESSION["idEventoActual"]); ?>
         
         <form action="upload_img.php" method="post" enctype="multipart/form-data">
-            Select image to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="Upload Image" name="submit">
+            Selecciona una imagen para subir:
+            <input type="file" name="fileToUpload" id="fileToUpload" onchange="testFile()">
+            <div id="submitButton">
+                <input type="submit" value="Upload Image" name="submit">
+            </div>
+            
         </form>
+        
+        
+        <script>
+            document.getElementById("submitButton").style = 'visibility:hidden';
+            function testFile(){
+                if( document.getElementById("fileToUpload").files.length == 0 ){
+                    document.getElementById("submitButton").style = 'visibility:hidden';
+                }else{
+                    document.getElementById("submitButton").style = 'visibility:visible';
+                }  
+            }
+        </script>
         
     </div>
     <br>
