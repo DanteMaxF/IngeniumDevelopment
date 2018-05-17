@@ -1,7 +1,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="wrapper">
     <div class="image-container">
-        <img src="images/<?php echo getImagenPlantilla(getIdPlantillaByIdInvitado(getIDUserByMail($_SESSION["mail"]))) ?>" alt="calendario" class="imagen-plantilla">
+        <img src="images/<?php echo getImagenPlantilla(getIdPlantillaByIdInvitado($_SESSION["idUser"])) ?>" alt="calendario" class="imagen-plantilla">
     </div>
 <div class="wrapper">
     <br>
