@@ -7,6 +7,7 @@
         
         $_SESSION["idEventoActual"] = getLastEventInvitado($_SESSION["idUser"]);
         $_SESSION["idEvento"] = $_SESSION["idEventoActual"];
+        echo $_SESSION["idEventoActual"];
         if( $_SESSION["idEventoActual"]== -1){
             $_SESSION["descripcionEventoActual"] = "AUN NO SE TE HA ASIGNADO UN EVENTO :(";
             include("partial/_navbarInvitadoNull.html");
@@ -17,6 +18,7 @@
         
         include("partial/_home_invitado.html");
         include("partial/_scripts.html");
+        include("partial/_googlemaps.html");
         include("partial/_footer.html");
     }else{
         $_SESSION["errorLogin"] = "Es necesario iniciar sesión";

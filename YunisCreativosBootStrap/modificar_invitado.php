@@ -4,8 +4,11 @@
     if( isset($_SESSION["idRol"]) && ($_SESSION["idRol"]==1492 || $_SESSION["idRol"]==1496 || $_SESSION["idRol"]==1495 ) ){
         $idUsuario = $_POST["id"];
         $nombreUsuario = $_POST["nombreUsuario"];
+        $apellidoP = $_POST["apellidoP"];
+        $apellidoM = $_POST["apellidoM"];
         $passwd = $_POST["passwd2"];
         $correo = $_POST["correo"];
+        $lada = $_POST["lada"];
         $telefono = $_POST["telefono"];
         $idEstado = $_POST["Estado"];
         $talla = $_POST["talla"];
@@ -16,8 +19,11 @@
         $fechaNacimiento = $_POST["fechaNacimiento"];
         echo 'id: '.$idUsuario.'<br>';
         echo 'nombreUsuario: '.$nombreUsuario.'<br>';
+        echo 'apellido P: '.$apellidoP.'<br>';
+        echo 'apellido M: '.$apellidoM.'<br>';
         echo 'password: '.$passwd.'<br>';
         echo 'correo: '.$correo.'<br>';
+        echo 'lada: '.$lada.'<br>';
         echo 'telefono: '.$telefono.'<br>';
         echo 'Estado: '.$idEstado.'<br>';
         echo 'talla: '.$idTalla.'<br>';
@@ -27,7 +33,7 @@
         echo 'medicamentos: '.$medicamentos.'<br>';
         //die('');
         
-         if (modificarUsuario($nombreUsuario,$passwd,$correo,$telefono,$idUsuario)){
+         if (modificarUsuario($nombreUsuario,$apellidoP,$apellidoM,$passwd,$correo,$lada,$telefono,$idUsuario)){
             if(modificarInvitado($idEstado, $talla, $idIdioma, $asistencia, $alergias, $medicamentos,  $fechaNacimiento , $idUsuario)){
                 $_SESSION["staffStatusSuccess"] = "Se ha modificado la información exitosamente";
                 unset($_SESSION["staffStatusError"]);
