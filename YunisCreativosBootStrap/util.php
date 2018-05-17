@@ -353,7 +353,7 @@ function getInvitadosList($idEvento){
         
         $query = '  SELECT DISTINCT U.nombreUsuario, U.idUsuario
                     FROM  Usuario U, tiene T
-                    WHERE U.idUsuario=T.idUsuario AND idRol=1495 
+                    WHERE U.idUsuario=T.idUsuario AND (idRol=1495 OR idRol=1496)
                     	  AND U.idUsuario NOT IN (SELECT I.idInvitado FROM invitadoEvento I WHERE I.idEvento='.$idEvento.')
                     ORDER BY U.nombreUsuario';
         //Pa' debugear
