@@ -49,26 +49,25 @@ use PHPMailer\PHPMailer\Exception;
          
          
             //Caracteres.
-            //$mail->SMTPDebug = 2; 
+           // $mail->SMTPDebug = 2; 
             
             $mail->isSMTP(); 
-            $mail->Host ='localhost';
-            //$mail->DKIM_domain = '127.0.0.1';
-             $mail->SMTPAuth = 'true';                               // Enable SMTP authentication
-            $mail->Username ='contacto@yuniscreativos.com.mx';                 // SMTP username
-            $mail->Password ='Mandala11:11';    
-            $mail->SMTPSecure = 'ssl';
-            $mail->Port = 465;
+            $mail->Host ='smtp.gmail.com';
+             $mail->SMTPAuth = true;                               // Enable SMTP authentication
+            $mail->Username ='yuniscreativospruebas';                 // SMTP username
+            $mail->Password ='yuniscreativos1';    
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
             $mail->CharSet = 'UTF-8';
              
-           $mail->setFrom('contacto@yuniscreativos.com.mx','Yunis Creativos');
+           $mail->setFrom('yuniscreativospruebas@gmail.com','Yunis Creativos');
 
             //Dirección de envio y nombre.
              $mail->addAddress($_SESSION["correo"]);
             
             
             //Dirección a la que responderá destinatario.
-            $mail->addReplyTo('contacto@yuniscreativos.com.mx','Yunis Creativos');
+            $mail->addReplyTo('yuniscreativospruebas@gmail.com','El lechero');
 
             
             //$mail->addCC('yuniscreativospruebas@gmail.com');
@@ -86,6 +85,7 @@ use PHPMailer\PHPMailer\Exception;
                 echo "$error";
             } else {
                 echo '<body onload="success()"></body>';
+                //header('Location: index.php');
                 require('index.php');
                 
              
