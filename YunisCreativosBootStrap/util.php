@@ -302,7 +302,7 @@ function getInvitadosList($idEvento){
         
         $query = '  SELECT DISTINCT U.nombreUsuario, U.idUsuario
                     FROM  Usuario U, tiene T
-                    WHERE U.idUsuario=T.idUsuario AND idRol=1495 
+                    WHERE U.idUsuario=T.idUsuario AND idRol=1495 AND idRol=1946
                     	  AND U.idUsuario NOT IN (SELECT I.idInvitado FROM invitadoEvento I WHERE I.idEvento='.$idEvento.')
                     ORDER BY U.nombreUsuario';
         //Pa' debugear
@@ -2746,6 +2746,25 @@ function registrarRol($userId,$idrol){
     return false;
 }
 
+function getLastEventCliente($idCliente){
+    $db = connectDB();
+    if($db != NULL){
+        $query = 'SELECT idEvento FROM Evento WHERE idCliente='.$idCliente.' ORDER BY fechaCreacion DESC LIMIT 1';
+        //Pa' debugear
+        //var_dump($query); 
+        //die('');
+        $results = mysqli_query($db,$query);
+        disconnectDB($db);
+        if(mysqli_num_rows($results) > 0){
+             while ($row = mysqli_fetch_assoc($results)) {
+                 return $row["idEvento"];
+            }
+        }
+        else{
+            return -1;
+        }
+    }
+}
 
 ?>
 
