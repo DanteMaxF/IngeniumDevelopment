@@ -284,8 +284,9 @@ function getInvitadosEvento($idEvento){
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
                  echo '<tr>';
-                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                echo '<td>'.$row["nombreUsuario"].' '.$row["apellidoP"].' '.$row["apellidoM"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
+                 echo '<td>('.$row["lada"].')</td>';
                  echo '<td>'.$row["telefono"].'</td>';
                  echo '<td>'.$row["fechaNacimiento"].'</td>';
                  echo '<td>'.$row["talla"].'</td>';
@@ -791,7 +792,7 @@ function getStaffEvento($idEvento){
     $db = connectDB();
     if ($db != NULL) {
         
-        $query = 'SELECT U.nombreUsuario, U.correo, U.idUsuario FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'" AND U.Ver=1 ORDER BY U.nombreUsuario';
+        $query = 'SELECT *FROM Evento E, staffEvento S, Usuario U WHERE E.idEvento=S.idEvento AND S.idStaff=U.idUsuario AND E.idEvento="'.$idEvento.'" AND U.Ver=1 ORDER BY U.nombreUsuario';
         //Pa' debugear
         //var_dump($query); 
         //die('');
@@ -803,7 +804,7 @@ function getStaffEvento($idEvento){
         if(mysqli_num_rows($results) > 0) {
              while ($row = mysqli_fetch_assoc($results)) {
                  echo '<tr>';
-                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["nombreUsuario"].' '.$row["apellidoP"].' '.$row["apellidoM"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
                  echo '<td><button type="button" class="btn btn-eliminar btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Quitar</button></td>';
                  generateModalDesasignarStaff($row["idUsuario"],$row["nombreUsuario"]);
@@ -1341,8 +1342,9 @@ function getStaff($idEvento){
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
                  echo '<tr>';
-                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                  echo '<td>'.$row["nombreUsuario"].' '.$row["apellidoP"].' '.$row["apellidoM"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
+                echo '<td>('.$row["lada"].')</td>';
                  echo '<td>'.$row["telefono"].'</td>';
                  echo '<td><button type="button" class="btn btn-dorado" data-toggle="modal" data-target="#modalModificarStaff'.$row["idUsuario"].'">Modificar</button></td>';
                  modalModificarStaff($row["idUsuario"],$row["nombreUsuario"],$row["correo"],$row["telefono"] );
@@ -1373,8 +1375,9 @@ function getInvitados($idEvento){
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
                  echo '<tr>';
-                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["nombreUsuario"].' '.$row["apellidoP"].' '.$row["apellidoM"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
+                 echo '<td>('.$row["lada"].')</td>';
                  echo '<td>'.$row["telefono"].'</td>';
                  echo '<td>';
                  getAlergiasByIdUsuario($row["idUsuario"]);
@@ -1411,8 +1414,9 @@ function getCoordinador($idEvento){
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
                  echo '<tr>';
-                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["nombreUsuario"].' '.$row["apellidoP"].' '.$row["apellidoM"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
+                 echo '<td>('.$row["lada"].')</td>';
                  echo '<td>'.$row["telefono"].'</td>';
                  echo '<td><button type="button" class="btn btn-dorado" data-toggle="modal" data-target="#modalModificarStaff'.$row["idUsuario"].'">Modificar</button></td>';
                  modalModificarStaff($row["idUsuario"],$row["nombreUsuario"],$row["correo"],$row["telefono"] );
@@ -2319,7 +2323,7 @@ function getInvitadosCliente($idEvento, $idCliente){
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
                  echo '<tr>';
-                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["nombreUsuario"].' '.$row["apellidoP"].' '.$row["apellidoM"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
                  
                  echo '<td><button type="button" class="btn btn-eliminar btn-sm" data-toggle="modal" data-target="#myModal'.$row["idUsuario"].'">Quitar</button></td>';
@@ -2536,8 +2540,6 @@ function getInvitadosExcel3($idEvento){
                echo '<tr>';
                     
                     echo'<th>'.'Nombre'.'</th>'; 
-                    echo'<th>'.'Apellido Materno'.'</th>';
-                    echo'<th>'.'Apellido Paterno'.'</th>';
                     echo'<th>'.Correo.'</th>'; 
                     echo'<th>'.Lada.'</th>';
                     echo'<th>'.'Telefono'.'</th>';
@@ -2554,11 +2556,9 @@ function getInvitadosExcel3($idEvento){
              while ($row = mysqli_fetch_array($results)) {
                 
                  echo '<tr>';
-                 echo '<td>'.$row["nombreUsuario"].'</td>';
-                 echo '<td>'.$row["apellidoM"].'</td>';
-                 echo '<td>'.$row["apellidoP"].'</td>';
+                 echo '<td>'.$row["nombreUsuario"].' '.$row["apellidoP"].' '.$row["apellidoM"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
-                 echo '<td>'.$row["lada"].'</td>';
+                 echo '<td>('.$row["lada"].')</td>';
                  echo '<td>'.$row["telefono"].'</td>';
                  echo '<td>'.$row["fechaNacimiento"].'</td>';
                  echo '<td>'.$row["talla"].'</td>';
@@ -2727,7 +2727,7 @@ function getInvitadosForStaff($idEvento){
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
                  echo '<tr>';
-                 echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["nombreUsuario"].' '.$row["apellidoP"].' '.$row["apellidoM"].'</td>';
                  echo '<td>'.$row["nombreEstado"].'</td>';
                  echo '<td>'.$row["telefono"].'</td>';
                  echo '<td>'.$row["talla"].'</td>';
