@@ -52,22 +52,22 @@ use PHPMailer\PHPMailer\Exception;
            // $mail->SMTPDebug = 2; 
             
             $mail->isSMTP(); 
-            $mail->Host ='smtp.gmail.com';
+            $mail->Host ='localhost';
              $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username ='yuniscreativospruebas';                 // SMTP username
-            $mail->Password ='yuniscreativos1';    
-            $mail->SMTPSecure = 'tls';
-            $mail->Port = 587;
+            $mail->Username ='contacto@yuniscreativos.com.mx';                 // SMTP username
+            $mail->Password ='Mandala11:11';    
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port = 465;
             $mail->CharSet = 'UTF-8';
              
-           $mail->setFrom('yuniscreativospruebas@gmail.com','Yunis Creativos');
+           $mail->setFrom('contacto@yuniscreativos.com.mx','Yunis Creativos');
 
             //Dirección de envio y nombre.
              $mail->addAddress($_SESSION["correo"]);
             
             
             //Dirección a la que responderá destinatario.
-            $mail->addReplyTo('yuniscreativospruebas@gmail.com','El lechero');
+            $mail->addReplyTo('contacto@yuniscreativos.com.mx','Yunis Creativos');
 
             
             //$mail->addCC('yuniscreativospruebas@gmail.com');
