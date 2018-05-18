@@ -2536,7 +2536,10 @@ function getInvitadosExcel3($idEvento){
                echo '<tr>';
                     
                     echo'<th>'.'Nombre'.'</th>'; 
+                    echo'<th>'.'Apellido Materno'.'</th>';
+                    echo'<th>'.'Apellido Paterno'.'</th>';
                     echo'<th>'.Correo.'</th>'; 
+                    echo'<th>'.Lada.'</th>';
                     echo'<th>'.'Telefono'.'</th>';
                     echo'<th>'.'Fecha de Nacimiento'.'</th>';
                     echo'<th>'.Talla.'</th>' ;
@@ -2552,7 +2555,10 @@ function getInvitadosExcel3($idEvento){
                 
                  echo '<tr>';
                  echo '<td>'.$row["nombreUsuario"].'</td>';
+                 echo '<td>'.$row["apellidoM"].'</td>';
+                 echo '<td>'.$row["apellidoP"].'</td>';
                  echo '<td>'.$row["correo"].'</td>';
+                 echo '<td>'.$row["lada"].'</td>';
                  echo '<td>'.$row["telefono"].'</td>';
                  echo '<td>'.$row["fechaNacimiento"].'</td>';
                  echo '<td>'.$row["talla"].'</td>';
