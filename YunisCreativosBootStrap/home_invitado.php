@@ -18,8 +18,9 @@
          
         include("partial/_home_invitado.html");
         include("partial/_scripts.html");
-        include("partial/_googlemaps.html");
         include("partial/_clima.html");
+        include("partial/_googlemaps.html");
+        
         include("partial/_footer.html"); 
 
     }else{
