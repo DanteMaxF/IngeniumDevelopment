@@ -26,7 +26,7 @@
         echo 'lada: '.$lada.'<br>';
         echo 'telefono: '.$telefono.'<br>';
         echo 'Estado: '.$idEstado.'<br>';
-        echo 'talla: '.$idTalla.'<br>';
+        echo 'talla: '.$talla.'<br>';
         echo 'idioma: '.$idIdioma.'<br>';
         echo 'asistencia: '.$asistencia.'<br>';
         echo 'alergias: '.$alergias.'<br>';
@@ -34,7 +34,7 @@
         //die('');
         
          if (modificarUsuario($nombreUsuario,$apellidoP,$apellidoM,$passwd,$correo,$lada,$telefono,$idUsuario)){
-            if(modificarInvitado($idEstado, $talla, $idIdioma, $asistencia, $alergias, $medicamentos,  $fechaNacimiento , $idUsuario)){
+            if(modificarInvitado($idEstado,$talla, $idIdioma, $asistencia, $alergias, $medicamentos,$fechaNacimiento,$idUsuario)){
                 $_SESSION["staffStatusSuccess"] = "Se ha modificado la información exitosamente";
                 unset($_SESSION["staffStatusError"]);
             }

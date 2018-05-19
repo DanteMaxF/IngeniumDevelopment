@@ -152,6 +152,7 @@ function modalModificarInvitado($id,$nombre,$correo, $telefono, $alergia){
         <div class="modal-body">
         <div class="container">
            <form action="modificar_invitado.php" method="POST">
+                 <input type="hidden" class="form-control" value="'.$id.'" id="usr" name = "id" required>
                    <div class="form-group">
                 <div class="row">
                           <div class="form-group col">
