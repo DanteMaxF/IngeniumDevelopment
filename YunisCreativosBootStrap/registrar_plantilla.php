@@ -3,8 +3,8 @@
     require_once("util.php");
     if( isset($_SESSION["idRol"]) && $_SESSION["idRol"] ==1492){
         $nombrePlantilla = $_POST["nombrePlantilla"];
-        $colorFondo = $_POST["colorFondo"];
-        $colorTexto = $_POST["colorBotones"];
+        $colorFondo = '#'.$_POST["colorFondo"];
+        $colorTexto = '#'.$_POST["colorBotones"];
         //$nombreImagen = $_POST["nombreImagen"];
             unset($_SESSION["error_archivo"]);
             $target_dir = "images/";
