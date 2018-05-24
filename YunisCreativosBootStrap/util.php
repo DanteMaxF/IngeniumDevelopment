@@ -505,14 +505,15 @@ function plantillaTable(){
     if($db != NULL){
         $query = 'SELECT * 
                   FROM Plantilla
-                  WHERE Ver=1';
+                  WHERE Ver=1
+                  ORDER BY nombrePlantilla';
         $results = mysqli_query($db,$query);
          //Pa' debugear
     //var_dump($query); 
      // die('');
         disconnectDB($db);
         if(mysqli_num_rows($results) == 0){
-            echo '<tr><td>No hay usuarios registrados por el momento</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+            echo '<tr><td>No hay plantillas registradas por el momento</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
         } 
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
@@ -2373,12 +2374,12 @@ function modalEditarPlantilla($idDiseno){
                 <br>
                 <label>Color fondo:</label>
                 <div class="col-10">
-                  <input class="form-control" type="color" id="colorFondo"  value="'.getColorFondoById($idDiseno).'" name="colorFondo">
+                  <input class="jscolor" value="'.getColorFondoById($idDiseno).'" id="colorFondo" name="colorFondo">
                 </div>
                 <br>
                 <label>Color texto:</label>
                 <div class="col-10">
-                  <input class="form-control" type="color" id="colorTexto"  value="'.getColorTextoById($idDiseno).'" name="colorTexto">
+                  <input class="jscolor" value="'.getColorTextoById($idDiseno).'" id="colorTexto" name="colorBotones">
                 </div>
                 <br>            
                 <div class="custom-file">
