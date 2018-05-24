@@ -34,7 +34,7 @@
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                   <label for="fecha_nac">Fecha Nacimiento:</label>
-                  <input type="date" class="form-control" id="fechaNacimiento" name = "fechaNacimiento" required>
+                  <input type="date" class="form-control" id="theDate" name = "fechaNacimiento" required>
                 </div>
                 <div class="col-md-4 mb-3">  
                   <label>Estado:</label>
@@ -129,3 +129,11 @@
 <br><br><br><br><br><br>
 
 <script src='js/password_checker.js'></script> 
+<script type="text/javascript">
+            $(function(){
+                if(!Modernizr.inputtypes.date) {
+                    console.log("The 'date' input type is not supported, so using JQueryUI datepicker instead.");
+                    $("#theDate").datepicker();
+                }
+            });
+        </script>
