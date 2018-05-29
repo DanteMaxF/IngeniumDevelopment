@@ -4,6 +4,7 @@
     if( isset($_SESSION["codigo"]) ){
         $_SESSION["idEvento"] = getIdEventoByCodigo($_SESSION["codigo"]);
         
+        
         include("partial/_head.html"); 
         include("partial/_navbarLogOut.html"); 
         include("partial/_registro_invitado.html");
