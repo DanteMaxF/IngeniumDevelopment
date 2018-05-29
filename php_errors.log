@@ -18004,3 +18004,73 @@
 [18-May-2018 02:27:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
 [18-May-2018 02:27:28 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
 [18-May-2018 02:27:28 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[29-May-2018 01:31:51 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1306
+[29-May-2018 01:31:51 UTC] PHP Stack trace:
+[29-May-2018 01:31:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[29-May-2018 01:31:51 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[29-May-2018 01:31:51 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[29-May-2018 05:52:33 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_invitado.html on line 43
+[29-May-2018 05:52:33 UTC] PHP Stack trace:
+[29-May-2018 05:52:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
+[29-May-2018 05:53:50 UTC] PHP Parse error:  syntax error, unexpected 'form' (T_STRING), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_invitado.html on line 44
+[29-May-2018 05:53:50 UTC] PHP Stack trace:
+[29-May-2018 05:53:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
+[29-May-2018 05:54:49 UTC] PHP Parse error:  syntax error, unexpected 'form' (T_STRING), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_invitado.html on line 53
+[29-May-2018 05:54:49 UTC] PHP Stack trace:
+[29-May-2018 05:54:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_invitado.php:0
+[29-May-2018 16:14:06 UTC] PHP Warning:  Missing argument 1 for getRollList(), called in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html on line 20 and defined in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/util.php on line 1306
+[29-May-2018 16:14:06 UTC] PHP Stack trace:
+[29-May-2018 16:14:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:0
+[29-May-2018 16:14:06 UTC] PHP   2. include() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/registro_usuario.php:7
+[29-May-2018 16:14:06 UTC] PHP   3. getRollList() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_registro_usuario.html:20
+[29-May-2018 16:56:22 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 43
+[29-May-2018 16:56:22 UTC] PHP Stack trace:
+[29-May-2018 16:56:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 16:57:26 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 43
+[29-May-2018 16:57:26 UTC] PHP Stack trace:
+[29-May-2018 16:57:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 16:59:38 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 44
+[29-May-2018 16:59:38 UTC] PHP Stack trace:
+[29-May-2018 16:59:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 17:00:16 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 44
+[29-May-2018 17:00:16 UTC] PHP Stack trace:
+[29-May-2018 17:00:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 17:02:48 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 44
+[29-May-2018 17:02:48 UTC] PHP Stack trace:
+[29-May-2018 17:02:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 17:03:19 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 44
+[29-May-2018 17:03:19 UTC] PHP Stack trace:
+[29-May-2018 17:03:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 17:03:43 UTC] PHP Parse error:  syntax error, unexpected 'explode' (T_STRING), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 44
+[29-May-2018 17:03:43 UTC] PHP Stack trace:
+[29-May-2018 17:03:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 17:06:46 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 44
+[29-May-2018 17:06:46 UTC] PHP Stack trace:
+[29-May-2018 17:06:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 17:06:51 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 44
+[29-May-2018 17:06:51 UTC] PHP Stack trace:
+[29-May-2018 17:06:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 17:07:03 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 44
+[29-May-2018 17:07:03 UTC] PHP Stack trace:
+[29-May-2018 17:07:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 17:09:15 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 44
+[29-May-2018 17:09:15 UTC] PHP Stack trace:
+[29-May-2018 17:09:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 17:14:01 UTC] PHP Parse error:  syntax error, unexpected '$y' (T_VARIABLE), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 47
+[29-May-2018 17:14:01 UTC] PHP Stack trace:
+[29-May-2018 17:14:01 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 17:14:34 UTC] PHP Parse error:  syntax error, unexpected '' name="year" required>'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 45
+[29-May-2018 17:14:34 UTC] PHP Stack trace:
+[29-May-2018 17:14:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 18:01:15 UTC] PHP Parse error:  syntax error, unexpected '$i' (T_VARIABLE), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 48
+[29-May-2018 18:01:15 UTC] PHP Stack trace:
+[29-May-2018 18:01:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 18:03:06 UTC] PHP Parse error:  syntax error, unexpected '$y' (T_VARIABLE), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 48
+[29-May-2018 18:03:06 UTC] PHP Stack trace:
+[29-May-2018 18:03:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 18:31:11 UTC] PHP Parse error:  syntax error, unexpected '$y' (T_VARIABLE), expecting ',' or ';' in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 48
+[29-May-2018 18:31:11 UTC] PHP Stack trace:
+[29-May-2018 18:31:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0
+[29-May-2018 18:32:28 UTC] PHP Parse error:  syntax error, unexpected '''' (T_CONSTANT_ENCAPSED_STRING), expecting identifier (T_STRING) in /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/partial/_mi_info.html on line 44
+[29-May-2018 18:32:28 UTC] PHP Stack trace:
+[29-May-2018 18:32:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/IngeniumDevelopment/YunisCreativosBootStrap/mi_info.php:0

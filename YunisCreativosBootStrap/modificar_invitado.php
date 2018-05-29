@@ -16,7 +16,10 @@
         $asistencia = $_POST["asistencia"];
         $alergias = $_POST["alergias"];
         $medicamentos = $_POST["medicamentos"];
-        $fechaNacimiento = $_POST["fechaNacimiento"];
+        $month = $_POST['month'];
+        $day = $_POST['day'];
+        $year = $_POST['year'];
+        $fechaNacimiento = "$year-$month-$day";
         echo 'id: '.$idUsuario.'<br>';
         echo 'nombreUsuario: '.$nombreUsuario.'<br>';
         echo 'apellido P: '.$apellidoP.'<br>';

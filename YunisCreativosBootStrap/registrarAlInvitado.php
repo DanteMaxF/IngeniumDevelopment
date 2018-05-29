@@ -2,7 +2,10 @@
     session_start();
     require_once("util.php");
     $nombreUsuario = $_POST["nombreUsuario"];
-    $fechaNacimiento = $_POST["fechaNacimiento"]; //invitado
+    $month = $_POST['month'];
+    $day = $_POST['day'];
+    $year = $_POST['year'];
+    $fechaNacimiento = "$year-$month-$day"; //invitado
     $apellidoP = $_POST["apellidoP"];
     $apellidoM = $_POST["apellidoM"];
     $idEstado = $_POST["Estado"];               //invitado

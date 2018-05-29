@@ -1675,7 +1675,7 @@ function getFechaNacimiento($idInvitado){
         disconnectDB($db);
         if(mysqli_num_rows($results) > 0){
              while ($row = mysqli_fetch_assoc($results)) {
-                 echo $row["fechaNacimiento"];
+                 return $row["fechaNacimiento"];
             }
         }
     }

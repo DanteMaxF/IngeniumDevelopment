@@ -10,7 +10,10 @@
     $lada = $_POST["lada"];
     $telefono = $_POST["telefono"];
     $rol = $_POST["rol"];
-    $fechaNacimiento = $_POST["fechaNacimiento"];
+    $month = $_POST['month'];
+    $day = $_POST['day'];
+    $year = $_POST['year'];
+    $fechaNacimiento = "$year-$month-$day";
     $Estado = $_POST["Estado"];
     $talla = $_POST["talla"];
     $idioma = $_POST["idioma"];

@@ -39,7 +39,35 @@
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                   <label for="fecha_nac">Fecha Nacimiento:</label>
-                  <input type="date" class="form-control" id="fechaNacimiento" value='<?php echo getFechaNacimiento($_SESSION["idUser"]); ?>' name = "fechaNacimiento" required>
+
+                   <?php
+                    $y = explode("-", getFechaNacimiento($_SESSION["idUser"]))[0]; 
+                    $m=explode("-", getFechaNacimiento($_SESSION["idUser"]))[1]; 
+                    $d= explode("-", getFechaNacimiento($_SESSION["idUser"]))[2]; 
+                    echo '<br>Año';
+                  	echo '<select class="form-control"  name="year" >';
+	                  echo "<option value = '$y'>$y</option>";
+		                for($i = date('Y'); $i >= date('Y', strtotime('-100 years')); $i--){
+		                  echo "<option value='$i'>$i</option>";
+		                } 
+	                echo '</select>';
+	                echo 'Mes';
+                	echo '<select class="form-control" name="month" required>';
+		              echo "<option value = '$m'>$m</option>";
+		              for($i = 1; $i <= 12; $i++){
+		              $i = str_pad($i, 2, 0, STR_PAD_LEFT);
+			            echo "<option value='$i'>$i</option>";
+	              	}
+              	echo '</select>';
+              	echo 'Día';
+	              echo '<select class="form-control" name="day" required>';
+	              echo "<option value = '$d'>$d</option>";
+	            	for($i = 1; $i <= 31; $i++){
+		              $i = str_pad($i, 2, 0, STR_PAD_LEFT);
+		            	echo "<option value='$i'>$i</option>";
+            		}
+              	echo '</select>';
+              ?>
                 </div>
                 <div class="col-md-4 mb-3">  
                   <label>Estado:</label>
