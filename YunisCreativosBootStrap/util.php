@@ -1365,7 +1365,7 @@ function getInvitados($idEvento){
         $query = 'SELECT *
         FROM Usuario u, Evento e, invitadoEvento ie, tiene t, Rol r, Invitado i  
         WHERE u.idUsuario = ie.idInvitado AND e.idEvento = ie.idEvento AND u.idUsuario = t.idUsuario AND t.idRol = r.idRol 
-        AND e.idEvento = "'.$idEvento.'" AND r.nombreRol = "Invitado" AND u.Ver=1
+        AND e.idEvento = "'.$idEvento.'" AND (r.nombreRol = "Invitado" OR r.nombreRol = "Cliente") AND u.Ver=1
         GROUP BY nombreUsuario
         ORDER BY nombreUsuario';
         $results = mysqli_query($db,$query);

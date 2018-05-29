@@ -87,14 +87,14 @@
                                   <label for="fecha_nac">Fecha Nacimiento:</label>
                                   <?php
                                     echo 'Año';
-                                  	echo '<select class="form-control" name="year" required>';
+                                  	echo '<select class="form-control" name="year" id="fechaNacimiento" >';
 	                                  echo '<option></option>';
 		                                for($i = date('Y'); $i >= date('Y', strtotime('-100 years')); $i--){
 		                                  echo "<option value='$i'>$i</option>";
 		                                } 
 	                                  echo '</select>';
 	                                  echo 'Mes';
-                                  	echo '<select class="form-control" name="month" onchange="Days()" required>';
+                                  	echo '<select class="form-control" name="month" onchange="Days()" id="fechaNacimiento">';
 		                                echo '<option></option>';
 		                                for($i = 1; $i <= 12; $i++){
 		                                  $i = str_pad($i, 2, 0, STR_PAD_LEFT);
@@ -102,7 +102,7 @@
 	                              	}
                                   	echo '</select>';
                                   	echo 'Día';
-	                                  echo '<select class="form-control" name="day" required>';
+	                                  echo '<select class="form-control" name="day" id="fechaNacimiento">';
 	                                  echo '<option></option>';
 	                                	for($i = 1; $i <= 31; $i++){
 		                                  $i = str_pad($i, 2, 0, STR_PAD_LEFT);
